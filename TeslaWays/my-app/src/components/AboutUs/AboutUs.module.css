@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+  width: 70%;
+  font-size: 35px;
+  text-align: center;
+  border-bottom: 5px solid #ff9600;
+  margin-top: 50px;
+  padding-bottom: 20px;
+}
+
+.naslov {
+  font-size: 25px;
+  margin-top: 40px;
+}
+
+.tekst {
+  width: 60%;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: 1px;
+  margin-top: 30px;
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    text-align: center;
+  }
+
+  .naslov {
+    margin-top: 100px;
+  }
+
+  .naslov,
+  .tekst {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1340px) {
+  .header {
+    width: 65%;
+  }
+}
