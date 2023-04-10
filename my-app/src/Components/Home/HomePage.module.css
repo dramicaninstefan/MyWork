@@ -1,0 +1,188 @@
+.background {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../assets/dogs2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -100;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 0.3);
+  z-index: -100;
+}
+
+.wrapper {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 260px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 50;
+}
+
+.title {
+  font-size: 70px;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Itim', cursive;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  width: 100vw;
+  background-color: #f2e8cf;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.container h1 {
+  margin: 30px;
+  font-size: 70px;
+  font-family: 'Itim', cursive;
+  color: #a98467;
+  margin-bottom: 80px;
+}
+
+.content-body {
+  width: 80vw;
+  margin-top: 50px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.content-items {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.content-items div {
+  text-align: center;
+  margin: auto;
+}
+
+.content-items img {
+  width: 700px;
+  height: 500px;
+  border-radius: 8px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.content-title {
+  font-size: 80px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.content-text {
+  font-size: 25px;
+  max-width: 500px;
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+
+.wrapper button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  width: 140px;
+  height: 56px;
+  overflow: hidden;
+  border: none;
+  color: #502113;
+  background: none;
+  position: relative;
+  padding-bottom: 2em;
+}
+
+.wrapper button > div,
+.wrapper button > svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.wrapper button:before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  background: currentColor;
+  transition: transform 0.25s ease-out;
+}
+
+.wrapper button .clone > *,
+.wrapper button .text > * {
+  opacity: 1;
+  font-size: 1.3rem;
+  transition: 0.2s;
+  margin-left: 4px;
+}
+
+.wrapper button .clone > * {
+  transform: translateY(60px);
+}
+
+.wrapper button:hover .clone > * {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.wrapper button:hover .text > * {
+  opacity: 1;
+  transform: translateY(-60px);
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.wrapper button:hover .clone > :nth-child(1) {
+  transition-delay: 0.15s;
+}
+
+.wrapper button:hover .clone > :nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.wrapper button:hover .clone > :nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+.wrapper button:hover .clone > :nth-child(4) {
+  transition-delay: 0.3s;
+}
+/* icon style and hover */
+.wrapper button svg {
+  width: 20px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-50deg);
+  transition: 0.2s ease-out;
+}
+
+.wrapper button:hover svg {
+  transform: translateY(-50%) rotate(-90deg);
+}

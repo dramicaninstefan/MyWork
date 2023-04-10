@@ -1,0 +1,47 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 100;
+}
+
+.background {
+  position: fixed;
+  top: -120px;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 350px;
+  background-image: url('../../assets/bg4.png');
+  background-repeat: no-repeat;
+  z-index: -10;
+}
+
+.links a {
+  margin-inline: 25px;
+  text-decoration: none;
+  color: #171717;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px;
+  z-index: 200;
+}
+
+.links a.active {
+  color: #a7c957;
+}
+
+.links a i {
+  margin-right: 5px;
+}
+
+.logo img {
+  margin-inline: 25px;
+  height: 90px;
+}
