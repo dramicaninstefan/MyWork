@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--primary-ff);
   z-index: 100;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .links a.active {
-  color: #a7c957;
+  color: var(--hover-color);
 }
 
 .links a i {

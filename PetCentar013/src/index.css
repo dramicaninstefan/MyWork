@@ -128,12 +128,37 @@ table {
   border-spacing: 0;
 }
 
+:root {
+  --primary-color: #f2e8cf;
+  --secondary-color: #502113;
+  --hover-color: #a7c957;
+  --primary-ff: 'Montserrat', sans-serif;
+  --secondary-ff: 'Itim', sans-serif;
+}
+
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--primary-ff);
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 body {
   overflow-x: hidden;
-  background-color: #f2e8cf;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--secondary-color);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border: 3px solid var(--secondary-color);
+  border-radius: 1px;
+}
+
+::selection {
+  color: var(--secondary-color);
+  background: var(--primary-color);
 }

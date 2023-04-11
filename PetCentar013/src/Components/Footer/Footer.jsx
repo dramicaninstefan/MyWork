@@ -14,19 +14,28 @@ const Footer = () => {
             <img src={logo} alt="logo" />
           </div>
           <div className={classes.links}>
-            {/* <div className={classes['links-items']}>
+            <div className={classes['links-items']}>
               <ul>
                 <li>
-                  <Link>Link1</Link>
+                  <Link>
+                    <i className="fa-solid fa-location-dot" style={{ width: '22px', textAlign: 'center' }}></i>
+                    Pet Centar 65, Srbija
+                  </Link>
                 </li>
                 <li>
-                  <Link>Link2</Link>
+                  <Link>
+                    <i className="fa-solid fa-envelope"></i>
+                    petcentar013@email.com
+                  </Link>
                 </li>
                 <li>
-                  <Link>Link3</Link>
+                  <Link>
+                    <i className="fa-solid fa-phone"></i>
+                    +381 65 985 265
+                  </Link>
                 </li>
               </ul>
-            </div> */}
+            </div>
             <div className={classes['links-items']}>
               <ul>
                 <li>

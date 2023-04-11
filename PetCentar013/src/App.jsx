@@ -5,6 +5,9 @@ import RootLayout from './Components/routes/RootLayout'
 import ErrorPage from './Components/routes/ErrorPage'
 
 import HomePage from './Components/Home/HomePage'
+import AboutUs from './Components/AboutUs/AboutUs'
+import Gallery from './Components/Gallery/Gallery'
+import Contact from './Components/Contact/Contact'
 
 const App = () => {
   window.onbeforeunload = function () {
@@ -18,9 +21,9 @@ const App = () => {
       errorElement: <ErrorPage />,
       children: [
         { path: '/', element: <HomePage /> },
-        { path: '/o_nama', element: <HomePage /> },
-        { path: '/galerija', element: <HomePage /> },
-        { path: '/kontakt', element: <HomePage /> },
+        { path: '/o_nama', element: <AboutUs /> },
+        { path: '/galerija', element: <Gallery /> },
+        { path: '/kontakt', element: <Contact /> },
         { path: '/usluge', element: <HomePage /> },
       ],
     },

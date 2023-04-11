@@ -1,0 +1,9 @@
+.title {
+  width: 85vw;
+  text-align: center;
+  font-size: 60px;
+  font-family: var(--secondary-ff);
+  border-bottom: 5px solid #f2e8cf;
+  padding-bottom: 15px;
+  margin-bottom: 70px;
+}

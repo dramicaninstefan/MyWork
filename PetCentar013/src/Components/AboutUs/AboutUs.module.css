@@ -1,0 +1,16 @@
+.title {
+  width: 55vw;
+  text-align: center;
+  font-size: 60px;
+  font-family: var(--secondary-ff);
+  border-bottom: 5px solid #f2e8cf;
+  padding-bottom: 15px;
+}
+
+.desctiption {
+  max-width: 50vw;
+  margin-top: 70px;
+  letter-spacing: 1px;
+  line-height: 23px;
+  margin-bottom: 100px;
+}

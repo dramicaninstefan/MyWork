@@ -11,11 +11,11 @@
 }
 
 .container img {
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 210px;
   border-radius: 50%;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  transform: translateY(-20px);
+  transform: translateY(-10px);
 }
 
 .container .title {
