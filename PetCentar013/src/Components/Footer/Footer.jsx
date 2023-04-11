@@ -8,7 +8,7 @@ import logo from '../../assets/logo-light.png'
 const Footer = () => {
   return (
     <Fragment>
-      <div className={classes.footer}>
+      <div className={classes.footer} id="footer">
         <div className={classes.container}>
           <div className={classes.logo}>
             <img src={logo} alt="logo" />
@@ -45,7 +45,7 @@ const Footer = () => {
                   <Link to="/galerija">Galerija</Link>
                 </li>
                 <li>
-                  <Link to="">Veterinar</Link>
+                  <Link to="/veterinar">Veterinar</Link>
                 </li>
               </ul>
             </div>
@@ -55,8 +55,11 @@ const Footer = () => {
                   <Link to="/o_nama">O Nama</Link>
                 </li>
                 <li>
-                  <Link to="/kontakt">Kontakt</Link>
+                  <Link to="/o_nama">Grooming</Link>
                 </li>
+                {/* <li>
+                  <Link to="/kontakt">Kontakt</Link>
+                </li> */}
               </ul>
             </div>
           </div>

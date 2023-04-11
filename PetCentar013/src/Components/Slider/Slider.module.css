@@ -1,7 +1,7 @@
 .container {
   display: flex;
   width: 90vw;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .panel {
@@ -15,7 +15,7 @@
   flex: 0.5;
   margin: 10px;
   position: relative;
-  transition: flex 0.7s ease-in;
+  transition: all 0.5s ease;
 }
 
 .panel > h3 {
@@ -36,4 +36,12 @@
 
 .panel.active > h3 {
   opacity: 1;
+}
+
+.panel:hover {
+  transform: scale(1.03);
+}
+
+.panel.active:hover {
+  transform: scale(1);
 }

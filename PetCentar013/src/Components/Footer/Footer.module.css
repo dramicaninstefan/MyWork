@@ -53,6 +53,7 @@
   letter-spacing: 1px;
   color: #f2e8cf;
   font-family: var(--primary-ff);
+  transition: all 0.2s;
 }
 
 .links-items ul li a i {
@@ -70,6 +71,7 @@
   justify-content: flex-end;
   align-items: flex-end;
   margin: 20px;
+  transition: all 0.2s;
 }
 
 .social a {

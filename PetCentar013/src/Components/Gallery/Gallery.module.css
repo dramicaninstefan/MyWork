@@ -2,8 +2,36 @@
   width: 85vw;
   text-align: center;
   font-size: 60px;
+  color: #171717;
   font-family: var(--secondary-ff);
   border-bottom: 5px solid #f2e8cf;
   padding-bottom: 15px;
   margin-bottom: 70px;
+}
+
+.gallery {
+  width: 100vw;
+  background-color: var(--primary-color);
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 65px;
+  padding-bottom: 100px;
+}
+
+.photo {
+  border-radius: 15px;
+  width: 90%;
+  height: 350px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.moto {
+  font-size: 70px;
+  font-family: var(--secondary-ff);
+  color: #a98467;
+  margin-bottom: 80px;
 }
