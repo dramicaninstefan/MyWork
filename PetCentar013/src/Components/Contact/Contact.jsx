@@ -1,22 +1,33 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useRef } from 'react'
+import emailjs from 'emailjs-com'
 
 import Main from '../UI/Main'
+import TopButton from '../UI/TopButton'
 
 import classes from './Contact.module.css'
 
 import contact2 from '../../assets/contact2.jpg'
 
 const Contact = () => {
+  const submitBtn = useRef()
+  const form = useRef()
+
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [number, setNumber] = useState('')
   const [message, setMessage] = useState('')
 
+  window.scrollTo(0, 0)
+
   function sendEmail(e) {
-    console.log(name)
-    console.log(email)
-    console.log(number)
-    console.log(message)
+    emailjs.sendForm('service_90anb7y', 'template_9yiiwdf', form.current, '_TykGN5dKmnTuxu5y').then(
+      (result) => {
+        console.log(result.text)
+      },
+      (error) => {
+        console.log(error.text)
+      }
+    )
   }
 
   return (
@@ -28,53 +39,58 @@ const Contact = () => {
 
           <div className={classes.form}>
             <h1>Kontaktirajte nas.</h1>
-            <form action="https://formsubmit.co/gamer95.g@email.com" method="POST">
+            <form ref={form} action="https://formsubmit.co/gamer95.g@email.com" method="POST">
               <input
                 className={classes.input}
-                required
                 name="user_name"
                 type="text"
                 placeholder="Ime i prezime *"
                 onChange={(e) => {
                   setName(e.target.value)
                 }}
+                required
+                value={name}
               />
               <input
                 className={classes.input}
-                required
                 name="user_email"
                 type="email"
                 placeholder="Email *"
                 onChange={(e) => {
                   setEmail(e.target.value)
                 }}
+                required
+                value={email}
               />
               <input
                 className={classes.input}
-                required
                 name="user_number"
                 type="text"
                 placeholder="Broj telefona *"
                 onChange={(e) => {
                   setNumber(e.target.value)
                 }}
+                required
+                value={number}
               />
               <textarea
                 className={classes.input}
-                required
                 name="message"
                 placeholder="Poruka *"
                 style={{ resize: 'none' }}
                 onChange={(e) => {
                   setMessage(e.target.value)
                 }}
+                required
+                value={message}
               ></textarea>
-              <button className={classes.btn} onClick={sendEmail} type="submit">
+              <button ref={submitBtn} className={classes.btn} onClick={sendEmail} type="submit">
                 Pošalji
               </button>
             </form>
           </div>
         </div>
+        <TopButton />
       </Main>
     </Fragment>
   )
