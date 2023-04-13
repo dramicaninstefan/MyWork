@@ -44,7 +44,7 @@
   gap: 50px;
 }
 
-.container h1 {
+.container .quote {
   margin: 30px;
   font-size: 70px;
   font-family: var(--secondary-ff);
@@ -101,3 +101,6 @@
   align-items: center;
   gap: 40px;
 }
+
+/*  */
+/*  */

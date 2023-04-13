@@ -13,6 +13,7 @@ import dog3 from '../../assets/dog3.jpg'
 import dog4 from '../../assets/dog4.jpg'
 import dog5 from '../../assets/dog5.jpg'
 import dog6 from '../../assets/dog6.jpg'
+import CallUs from '../UI/CallUs'
 import Comments from '../Comments/Comments'
 
 const HomePage = () => {
@@ -54,14 +55,17 @@ const HomePage = () => {
               <img src={dog4} alt="dog" />
             </div>
           </div>
-          <h1>Vaš pas naša odgovornost.</h1>
+          <h1 className={classes.quote}>Vaš pas naša odgovornost.</h1>
           <div className={classes.comments}>
-            <Comments user="Card1" />
-            <Comments user="Card2" />
-            <Comments user="Card3" />
-            <Comments user="Card4" />
+            {/* <Comment user="Card1" />
+            <Comment user="Card2" />
+            <Comment user="Card3" />
+            <Comment user="Card4" /> */}
+            <Comments></Comments>
           </div>
         </div>
+
+        <CallUs />
         <TopButton />
       </Main>
     </Fragment>

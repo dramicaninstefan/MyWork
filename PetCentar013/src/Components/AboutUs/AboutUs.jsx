@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 
 import Main from '../UI/Main'
 import TopButton from '../UI/TopButton'
+import CallUs from '../UI/CallUs'
 import TabTitle from '../general/TabTitle'
 
 import classes from './AboutUs.module.css'
@@ -24,6 +25,7 @@ const AboutUs = () => {
           iste sunt, voluptatem, a ab voluptatum tenetur! Illum nisi, mollitia officiis cupiditate facere quis dolor, commodi blanditiis quasi temporibus eaque explicabo ullam magni eligendi
           distinctio tenetur assumenda esse laboriosam quaerat. Voluptatibus praesentium culpa sunt provident magni impedit quod debitis iusto ut.
         </p>
+        <CallUs />
         <TopButton />
       </Main>
     </Fragment>

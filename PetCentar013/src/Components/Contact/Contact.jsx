@@ -20,9 +20,15 @@ const Contact = () => {
   window.scrollTo(0, 0)
 
   function sendEmail(e) {
+    e.preventDefault()
+
     emailjs.sendForm('service_90anb7y', 'template_9yiiwdf', form.current, '_TykGN5dKmnTuxu5y').then(
       (result) => {
-        console.log(result.text)
+        setName('')
+        setEmail('')
+        setNumber('')
+        setMessage('')
+        alert('Podaci su poslati!')
       },
       (error) => {
         console.log(error.text)

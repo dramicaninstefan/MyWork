@@ -14,6 +14,7 @@ import gallery4 from '../../assets/gallery4.jpg'
 import gallery5 from '../../assets/gallery5.jpg'
 import gallery6 from '../../assets/gallery6.jpg'
 import gallery7 from '../../assets/gallery7.jpg'
+import CallUs from '../UI/CallUs'
 
 const Gallery = () => {
   TabTitle('Pet | Galerija')
@@ -34,6 +35,7 @@ const Gallery = () => {
           <div className={classes.photo} style={{ backgroundImage: `url(${gallery6})` }}></div>
           <div className={classes.photo} style={{ backgroundImage: `url(${gallery7})` }}></div>
         </div>
+        <CallUs />
         <TopButton></TopButton>
       </Main>
     </Fragment>
