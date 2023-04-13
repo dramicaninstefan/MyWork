@@ -9,7 +9,7 @@ import slider4 from '../../assets/slider4.jpg'
 import slider5 from '../../assets/slider5.jpg'
 
 const Slider = () => {
-  const [index, setIndex] = useState('')
+  const [index, setIndex] = useState()
 
   const panels = useRef([])
   panels.current = []
@@ -37,7 +37,7 @@ const Slider = () => {
   return (
     <Fragment>
       <div className={classes.container}>
-        <div ref={addToPanels} className={`${classes.panel}`} style={{ backgroundImage: `url(${slider1})` }}>
+        <div ref={addToPanels} className={`${classes.panel} `} style={{ backgroundImage: `url(${slider1})` }}>
           <h3>Happy dogs.</h3>
         </div>
         <div ref={addToPanels} className={classes.panel} style={{ backgroundImage: `url(${slider2})` }}>

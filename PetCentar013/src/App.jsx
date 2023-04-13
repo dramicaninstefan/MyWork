@@ -7,6 +7,7 @@ import ErrorPage from './Components/routes/ErrorPage'
 import HomePage from './Components/Home/HomePage'
 import AboutUs from './Components/AboutUs/AboutUs'
 import Gallery from './Components/Gallery/Gallery'
+import Contact from './Components/Contact/Contact'
 
 const App = () => {
   window.onbeforeunload = function () {
@@ -23,6 +24,7 @@ const App = () => {
         { path: '/o_nama', element: <AboutUs /> },
         { path: '/galerija', element: <Gallery /> },
         { path: '/usluge', element: <HomePage /> },
+        { path: '/kontakt', element: <Contact /> },
         { path: '/veterinar', element: <HomePage /> },
       ],
     },

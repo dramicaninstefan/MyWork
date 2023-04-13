@@ -24,12 +24,12 @@ const Header = () => {
           <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/galerija" end>
             <i className="fa-solid fa-paw"></i>Galerija
           </NavLink>
-          {/* <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kontakt" end>
+          <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kontakt" end>
             <i className="fa-solid fa-paw"></i>Kontakt
-          </NavLink> */}
-          <a href="#footer">
+          </NavLink>
+          {/* <a href="#footer">
             <i className="fa-solid fa-paw"></i>Kontakt
-          </a>
+          </a> */}
         </div>
         <div className={classes.background}></div>
       </div>

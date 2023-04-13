@@ -13,6 +13,7 @@ import dog3 from '../../assets/dog3.jpg'
 import dog4 from '../../assets/dog4.jpg'
 import dog5 from '../../assets/dog5.jpg'
 import dog6 from '../../assets/dog6.jpg'
+import Comments from '../Comments/Comments'
 
 const HomePage = () => {
   TabTitle(`Pet | Pocetna`)
@@ -54,6 +55,12 @@ const HomePage = () => {
             </div>
           </div>
           <h1>Vaš pas naša odgovornost.</h1>
+          <div className={classes.comments}>
+            <Comments user="Card1" />
+            <Comments user="Card2" />
+            <Comments user="Card3" />
+            <Comments user="Card4" />
+          </div>
         </div>
         <TopButton />
       </Main>

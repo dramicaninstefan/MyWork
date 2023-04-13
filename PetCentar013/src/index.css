@@ -134,6 +134,7 @@ table {
   --hover-color: #a7c957;
   --primary-ff: 'Montserrat', sans-serif;
   --secondary-ff: 'Itim', sans-serif;
+  --third-ff: 'Caveat', cursive;
 }
 
 * {
