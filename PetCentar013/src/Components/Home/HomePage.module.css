@@ -29,8 +29,10 @@
 }
 
 .cards {
+  width: 80vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 60px;
 }
 
 .container {
@@ -60,19 +62,29 @@
 }
 
 .content-items {
+  height: 500px;
   display: flex;
   justify-content: space-between;
   padding: 50px;
 }
 
 .content-items div {
+  width: 50%;
+  height: 80%;
   text-align: center;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.content-items img {
-  width: 700px;
-  height: 500px;
+.content-items .image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 100%;
   border-radius: 8px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
@@ -85,7 +97,7 @@
 
 .content-text {
   font-size: 25px;
-  max-width: 500px;
+  max-width: 80%;
   letter-spacing: 1px;
   line-height: 30px;
 }
@@ -102,5 +114,64 @@
   gap: 40px;
 }
 
-/*  */
-/*  */
+@media (max-width: 1025px) {
+}
+
+@media (max-width: 1281px) {
+  /* hi-res laptops and desktops */
+  .content-title {
+    font-size: 60px;
+  }
+
+  .content-text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+}
+
+@media (max-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+
+@media (max-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+}
+
+@media (max-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+}
+
+@media (max-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+}
+
+/* TEMPLATE */
+/* TEMPLATE */
+/* TEMPLATE */
+
+@media (max-width: 1281px) {
+  /* hi-res laptops and desktops */
+}
+
+@media (max-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+}
+
+@media (max-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+
+@media (max-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+}
+
+@media (max-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+}
+
+@media (max-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+}

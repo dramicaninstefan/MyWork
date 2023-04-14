@@ -1,4 +1,5 @@
 .callUsBtn {
+  display: none;
   cursor: pointer;
   z-index: 1000;
 }
@@ -28,7 +29,7 @@
   background-color: transparent;
   border: 3px var(--secondary-color) dashed;
   border-radius: 50%;
-  transform: translate(8%, -8%);
+  transform: translate(8%, -9%);
   z-index: 200;
 }
 

@@ -14,37 +14,37 @@ const comments = [
   {
     user: 'Stefan',
     rate: 5,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque cumque ullam repellat illo explicabo, odio suscipit magnam. Temporibus voluptate, aut consectetur placeat maxime iure. Vitae neque ad similique itaque consequuntur consectetur aliquam, unde at quia est error aut rerum ut sint dolor laudantium hic voluptatibus. Magni saepe impedit vero qui ullam alias. Recusandae facilis ipsum natus! Possimus laboriosam provident deleniti dolorem ullam totam odit, itaque repudiandae aliquid soluta laudantium quo.',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque ',
     image: dog1,
   },
   {
     user: 'Mihajlo',
     rate: 4,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque cumque ullam repellat illo explicabo, odio suscipit magnam. Temporibus voluptate, aut consectetur placeat maxime iure. Vitae neque ad similique itaque consequuntur consectetur aliquam, unde at quia est error aut rerum ut sint dolor laudantium hic voluptatibus. Magni saepe impedit vero qui ullam alias. Recusandae facilis ipsum natus! Possimus laboriosam provident deleniti dolorem ullam totam odit, itaque repudiandae aliquid soluta laudantium quo.',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque ',
     image: dog2,
   },
   {
     user: 'Goran',
     rate: 2,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque cumque ullam repellat illo explicabo, odio suscipit magnam. Temporibus voluptate, aut consectetur placeat maxime iure. Vitae neque ad similique itaque consequuntur consectetur aliquam, unde at quia est error aut rerum ut sint dolor laudantium hic voluptatibus. Magni saepe impedit vero qui ullam alias. Recusandae facilis ipsum natus! Possimus laboriosam provident deleniti dolorem ullam totam odit, itaque repudiandae aliquid soluta laudantium quo.',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque ',
     image: dog3,
   },
   {
     user: 'Jelena',
     rate: 5,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque cumque ullam repellat illo explicabo, odio suscipit magnam. Temporibus voluptate, aut consectetur placeat maxime iure. Vitae neque ad similique itaque consequuntur consectetur aliquam, unde at quia est error aut rerum ut sint dolor laudantium hic voluptatibus. Magni saepe impedit vero qui ullam alias. Recusandae facilis ipsum natus! Possimus laboriosam provident deleniti dolorem ullam totam odit, itaque repudiandae aliquid soluta laudantium quo.',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque ',
     image: dog4,
   },
   {
     user: 'Sanja',
     rate: 1,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque cumque ullam repellat illo explicabo, odio suscipit magnam. Temporibus voluptate, aut consectetur placeat maxime iure. Vitae neque ad similique itaque consequuntur consectetur aliquam, unde at quia est error aut rerum ut sint dolor laudantium hic voluptatibus. Magni saepe impedit vero qui ullam alias. Recusandae facilis ipsum natus! Possimus laboriosam provident deleniti dolorem ullam totam odit, itaque repudiandae aliquid soluta laudantium quo.',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque ',
     image: dog5,
   },
   {
     user: 'Teodora',
     rate: 3,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque cumque ullam repellat illo explicabo, odio suscipit magnam. Temporibus voluptate, aut consectetur placeat maxime iure. Vitae neque ad similique itaque consequuntur consectetur aliquam, unde at quia est error aut rerum ut sint dolor laudantium hic voluptatibus. Magni saepe impedit vero qui ullam alias. Recusandae facilis ipsum natus! Possimus laboriosam provident deleniti dolorem ullam totam odit, itaque repudiandae aliquid soluta laudantium quo.',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque ',
     image: dog6,
   },
 ]

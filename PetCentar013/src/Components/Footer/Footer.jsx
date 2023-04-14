@@ -10,52 +10,50 @@ const Footer = () => {
     <Fragment>
       <div className={classes.footer} id="footer">
         <div className={classes.container}>
-          <div className={classes.logo}>
+          <div className={classes['left-side']}>
             <img src={logo} alt="logo" />
+            <ul>
+              <li>
+                <Link>
+                  <i className="fa-solid fa-location-dot" style={{ width: '22px', textAlign: 'center' }}></i>
+                  Pet Centar 65, Srbija
+                </Link>
+              </li>
+              <li>
+                <Link>
+                  <i className="fa-solid fa-envelope"></i>
+                  petcentar013@email.com
+                </Link>
+              </li>
+              <li>
+                <Link>
+                  <i className="fa-solid fa-phone"></i>
+                  +381 65 985 265
+                </Link>
+              </li>
+            </ul>
           </div>
-          <div className={classes.links}>
-            <div className={classes['links-items']}>
-              <ul>
-                <li>
-                  <Link>
-                    <i className="fa-solid fa-location-dot" style={{ width: '22px', textAlign: 'center' }}></i>
-                    Pet Centar 65, Srbija
-                  </Link>
-                </li>
-                <li>
-                  <Link>
-                    <i className="fa-solid fa-envelope"></i>
-                    petcentar013@email.com
-                  </Link>
-                </li>
-                <li>
-                  <Link>
-                    <i className="fa-solid fa-phone"></i>
-                    +381 65 985 265
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className={classes['links-items']}>
+          <div className={classes['right-side']}>
+            <div className={classes['right-side-items']}>
               <ul>
                 <li>
                   <Link to="usluge">Usluge</Link>
                 </li>
                 <li>
-                  <Link to="/galerija">Galerija</Link>
+                  <Link to="/o_nama">Grooming</Link>
                 </li>
                 <li>
                   <Link to="/veterinar">Veterinar</Link>
                 </li>
               </ul>
             </div>
-            <div className={classes['links-items']}>
+            <div className={classes['right-side-items']}>
               <ul>
                 <li>
                   <Link to="/o_nama">O Nama</Link>
                 </li>
                 <li>
-                  <Link to="/o_nama">Grooming</Link>
+                  <Link to="/galerija">Galerija</Link>
                 </li>
                 <li>
                   <Link to="/kontakt">Kontakt</Link>
@@ -63,6 +61,10 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+        </div>
+        <div className={classes.underfooter}>
+          <h1 className={classes.copyright}>Copyright © 2023 Pets Centar 013</h1>
+
           <div className={classes.social}>
             <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
               <i className="fa-brands fa-facebook"></i>
@@ -75,7 +77,6 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <h1 className={classes.copyright}>Copyright © 2023 Pets Centar 013, All rights reserved</h1>
       </div>
     </Fragment>
   )

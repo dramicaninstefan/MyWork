@@ -38,10 +38,10 @@ const HomePage = () => {
                 <h2 className={classes['content-title']}>Sigurnost</h2>
                 <p className={classes['content-text']}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, tenetur.</p>
               </div>
-              <img src={dog6} alt="dog" />
+              <div className={classes.image} style={{ backgroundImage: `url(${dog6})` }}></div>
             </div>
             <div className={classes['content-items']}>
-              <img src={dog5} alt="dog" />
+              <div className={classes.image} style={{ backgroundImage: `url(${dog5})` }}></div>
               <div>
                 <h2 className={classes['content-title']}>Briga</h2>
                 <p className={classes['content-text']}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, tenetur.</p>
@@ -52,7 +52,7 @@ const HomePage = () => {
                 <h2 className={classes['content-title']}>Komfor</h2>
                 <p className={classes['content-text']}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, tenetur.</p>
               </div>
-              <img src={dog4} alt="dog" />
+              <div className={classes.image} style={{ backgroundImage: `url(${dog4})` }}></div>
             </div>
           </div>
           <h1 className={classes.quote}>Vaš pas naša odgovornost.</h1>

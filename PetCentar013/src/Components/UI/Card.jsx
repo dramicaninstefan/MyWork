@@ -6,7 +6,7 @@ const Card = (props) => {
   return (
     <Fragment>
       <div className={classes.container}>
-        <img src={props.image} alt="dog" />
+        <div className={classes.image} style={{ backgroundImage: `url(${props.image})` }}></div>
         <h1 className={classes.title}>{props.title}</h1>
         <p className={classes.text}>{props.text}</p>
       </div>

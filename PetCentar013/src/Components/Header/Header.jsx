@@ -1,14 +1,35 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import classes from './Header.module.css'
 
 import logo from '../../assets/logo.png'
+import headerBackground from '../../assets/bg4.png'
 
 const Header = () => {
+  const headerRef = useRef()
+
+  // const [scroll, setScroll] = useState(false)
+
+  // useEffect(() => {
+  //   window.addEventListener('scroll', fixNav)
+
+  //   return () => {
+  //     window.removeEventListener('scroll', fixNav)
+  //   }
+  // })
+
+  // function fixNav() {
+  //   if (window.scrollY > headerRef.current?.offsetHeight + 150) {
+  //     setScroll(true)
+  //   } else {
+  //     setScroll(false)
+  //   }
+  // }
+
   return (
     <Fragment>
-      <div className={classes.container}>
+      <div ref={headerRef} className={classes.container}>
         <div className={classes.links}>
           <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/" end>
             <i className="fa-solid fa-paw"></i>Početna
@@ -27,9 +48,6 @@ const Header = () => {
           <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kontakt" end>
             <i className="fa-solid fa-paw"></i>Kontakt
           </NavLink>
-          {/* <a href="#footer">
-            <i className="fa-solid fa-paw"></i>Kontakt
-          </a> */}
         </div>
         <div className={classes.background}></div>
       </div>

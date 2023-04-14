@@ -9,6 +9,7 @@
   align-items: center;
   font-family: var(--primary-ff);
   z-index: 100;
+  background-color: var(--primary-color);
 }
 
 .background {
