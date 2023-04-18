@@ -45,3 +45,14 @@
 .panel.active:hover {
   transform: scale(1);
 }
+
+@media (max-width: 1222px) {
+  .panel {
+    height: 50vh;
+  }
+
+  .panel:first-child,
+  .panel:last-child {
+    display: none;
+  }
+}

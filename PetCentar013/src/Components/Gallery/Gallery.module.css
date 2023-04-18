@@ -35,8 +35,71 @@
 }
 
 .moto {
+  width: 100vw;
   font-size: 70px;
   font-family: var(--secondary-ff);
   color: #a98467;
   margin-bottom: 80px;
+}
+
+@media (max-width: 1222px) {
+  .moto {
+    font-size: 60px;
+    margin-bottom: 50px;
+  }
+
+  .photo {
+    height: 250px;
+  }
+}
+
+@media (max-width: 1108px) {
+  .moto {
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 959px) {
+  .moto {
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 889px) {
+  .gallery {
+    padding: 35px;
+  }
+}
+
+@media (max-width: 732px) {
+  .moto {
+    font-size: 35px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 612px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    padding-block: 30px;
+  }
+
+  .photo {
+    height: 150px;
+  }
+
+  .moto {
+    font-size: 25px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 472px) {
+  .moto {
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
 }
