@@ -10,12 +10,12 @@ const CallUs = () => {
       <a
         href="tel:066332095"
         className={classes.callUsBtn}
-        onMouseEnter={() => {
-          setIsOver(true)
-        }}
-        onMouseLeave={() => {
-          setIsOver(false)
-        }}
+        // onMouseEnter={() => {
+        //   setIsOver(true)
+        // }}
+        // onMouseLeave={() => {
+        //   setIsOver(false)
+        // }}
       >
         <div className={classes.circle}>
           <i className="fa-solid fa-phone"></i>

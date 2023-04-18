@@ -36,7 +36,7 @@ const Gallery = () => {
           <div className={classes.photo} style={{ backgroundImage: `url(${gallery7})` }}></div>
         </div>
         <CallUs />
-        <TopButton></TopButton>
+        {/* <TopButton></TopButton> */}
       </Main>
     </Fragment>
   )

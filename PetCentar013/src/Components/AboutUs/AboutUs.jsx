@@ -26,7 +26,7 @@ const AboutUs = () => {
           distinctio tenetur assumenda esse laboriosam quaerat. Voluptatibus praesentium culpa sunt provident magni impedit quod debitis iusto ut.
         </p>
         <CallUs />
-        <TopButton />
+        {/* <TopButton /> */}
       </Main>
     </Fragment>
   )
