@@ -36,7 +36,7 @@
 }
 
 .btn {
-  width: 30%;
+  width: 200px;
   font-size: 30px;
   padding: 20px 30px;
   background-color: var(--primary-color);
@@ -51,8 +51,9 @@
   transform: scale(0.98);
 }
 
-.form h1 {
+.form .contact {
   font-size: 35px;
+  text-align: start;
   color: gray;
   font-family: var(--third-ff);
   margin-top: 10px;
@@ -83,4 +84,58 @@
 
 .input:active {
   border-color: var(--secondary-color);
+}
+
+@media (max-width: 1684px) {
+  .form form {
+    margin-left: 40px;
+  }
+
+  .input {
+    width: 80%;
+  }
+
+  .form .contact {
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 1026px) {
+  .input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 660px) {
+  .container {
+    width: 90vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .map {
+    order: 1;
+    width: 90%;
+    height: 400px;
+    margin-top: 50px;
+  }
+
+  .form {
+    order: 0;
+    width: 90%;
+    height: 600px;
+  }
+
+  .form form {
+    margin-left: 20px;
+  }
+
+  .input {
+    width: 90%;
+  }
+
+  .form .contact {
+    margin-left: 20px;
+  }
 }

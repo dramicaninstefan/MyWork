@@ -62,7 +62,7 @@
 
 .hamburger svg {
   /* The size of the SVG defines the overall size */
-  height: 6em;
+  height: 5em;
   /* Define the transition for transforming the SVG */
   -webkit-transition: -webkit-transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: -webkit-transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -106,7 +106,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
   font-family: var(--primary-ff);
   background-color: var(--primary-color);
   transform: translateX(80vw);
@@ -119,14 +118,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 80px;
+  gap: 40px;
 }
 
 .side-bar-container-links a {
   margin-inline: 25px;
   text-decoration: none;
   color: #171717;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 600;
   padding: 10px;
   z-index: 200;
@@ -155,7 +154,7 @@
   display: none;
   position: fixed;
   top: 10px;
-  right: 40px;
+  right: 20px;
 }
 
 .social {
@@ -170,8 +169,8 @@
 }
 
 .social i {
-  font-size: 45px;
-  margin-block: 160px;
+  font-size: 30px;
+  margin-block: 120px;
   color: #171717;
   transition: all 0.2s;
   margin-inline: 20px;
@@ -202,6 +201,7 @@
 
   .background {
     background-image: none;
+    display: none;
   }
 
   .hamburger-container {

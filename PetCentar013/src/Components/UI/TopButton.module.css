@@ -1,6 +1,6 @@
 .toTopBtn {
   cursor: pointer;
-  z-index: 1000;
+  z-index: 900;
 }
 
 .circle {
@@ -48,3 +48,5 @@
     transform: scale(1.1);
   }
 }
+
+

@@ -28,6 +28,7 @@
   margin: 0;
   margin-left: 10px;
   opacity: 0;
+  display: none;
 }
 
 .panel.active {
@@ -48,7 +49,9 @@
 
 @media (max-width: 1222px) {
   .panel {
-    height: 50vh;
+    height: 60vh;
+    margin: 5px;
+    flex: 1;
   }
 
   .panel:first-child,

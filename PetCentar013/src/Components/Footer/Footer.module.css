@@ -136,6 +136,16 @@
     list-style: none;
     margin-right: 50px;
   }
+
+  .fa-location-dot {
+    width: 22px;
+    text-align: center;
+  }
+
+  .container {
+    margin-top: 0px;
+    padding-bottom: 0px;
+  }
 }
 
 @media (max-width: 1281px) {

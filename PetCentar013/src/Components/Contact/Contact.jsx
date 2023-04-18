@@ -44,7 +44,7 @@ const Contact = () => {
           <div className={classes.map} style={{ backgroundImage: `url(${contact2})` }}></div>
 
           <div className={classes.form}>
-            <h1>Kontaktirajte nas.</h1>
+            <h1 className={classes.contact}>Kontaktirajte nas.</h1>
             <form ref={form} action="https://formsubmit.co/gamer95.g@email.com" method="POST">
               <input
                 className={classes.input}
@@ -54,8 +54,8 @@ const Contact = () => {
                 onChange={(e) => {
                   setName(e.target.value)
                 }}
-                required
                 value={name}
+                required
               />
               <input
                 className={classes.input}

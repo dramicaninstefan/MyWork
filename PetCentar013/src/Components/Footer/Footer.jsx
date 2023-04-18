@@ -15,7 +15,7 @@ const Footer = () => {
             <ul>
               <li>
                 <Link>
-                  <i className="fa-solid fa-location-dot" style={{ width: '22px', textAlign: 'center' }}></i>
+                  <i className="fa-solid fa-location-dot"></i>
                   Pet Centar 65, Srbija
                 </Link>
               </li>

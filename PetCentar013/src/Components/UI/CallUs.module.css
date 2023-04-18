@@ -72,3 +72,9 @@
   white-space: nowrap;
   font-size: 25px;
 }
+
+@media (max-width: 1250px){
+  .callUsBtn {
+    display: block;
+  }
+}

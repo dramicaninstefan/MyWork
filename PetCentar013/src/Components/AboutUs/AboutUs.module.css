@@ -16,3 +16,13 @@
   line-height: 23px;
   margin-bottom: 100px;
 }
+
+@media (max-width: 1222px) {
+  .title {
+    width: 75vw;
+  }
+
+  .desctiption {
+    max-width: 80vw;
+  }
+}
