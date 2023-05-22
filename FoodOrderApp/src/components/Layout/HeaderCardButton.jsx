@@ -21,6 +21,7 @@ const HeaderCardButton = (props) => {
     if (cartCtx.items.length === 0) {
       return
     }
+    
     setBtnIsHighLighted(true)
 
     const timer = setTimeout(() => {
@@ -30,7 +31,7 @@ const HeaderCardButton = (props) => {
     return () => {
       clearTimeout(timer)
     }
-  }, [items])
+  }, [items, cartCtx.items.length])
 
   return (
     <button className={btnClasses} onClick={props.onShowCart}>
