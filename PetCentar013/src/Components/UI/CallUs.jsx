@@ -20,7 +20,7 @@ const CallUs = () => {
         <div className={classes.circle}>
           <i className="fa-solid fa-phone"></i>
         </div>
-        <div className={classes.dashed}></div>
+        {/* <div className={classes.dashed}></div> */}
         <div className={classes.box} style={{ width: isOver ? '220px' : '0px' }}>
           <h1 className={classes['box-title']} style={{ opacity: isOver ? '1' : '0' }}>
             Pozovite nas!
