@@ -33,6 +33,7 @@
   width: 50%;
   height: 600px;
   background-color: #fff;
+  border-radius: 2%;
 }
 
 .btn {
@@ -125,6 +126,7 @@
     order: 0;
     width: 90%;
     height: 600px;
+    padding: 15px;
   }
 
   .form form {
@@ -137,5 +139,10 @@
 
   .form .contact {
     margin-left: 20px;
+  }
+
+  .btn {
+    margin-top: 0;
+    padding: 15px 30px;
   }
 }

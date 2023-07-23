@@ -100,7 +100,7 @@
   height: 100vh;
   width: 80vw;
   position: fixed;
-  top: 120px;
+  top: 80px;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -187,6 +187,10 @@
 }
 
 @media (max-width: 816px) {
+  .container {
+    background-color: transparent;
+  }
+
   .links a {
     margin-inline: 15px;
   }
@@ -200,8 +204,9 @@
   }
 
   .background {
-    background-image: none;
-    display: none;
+    /* background-image: none; */
+    /* display: none; */
+    top: -155px;
   }
 
   .hamburger-container {

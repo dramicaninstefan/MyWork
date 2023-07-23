@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   box-shadow: inset 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  margin-inline: 30px;
 }
 
 .container .image {
@@ -38,39 +39,107 @@
 }
 
 @media (max-width: 1424px) {
-  /* hi-res laptops and desktops */
   .container .title {
     font-size: 22px;
   }
 }
 
 @media (max-width: 1327px) {
-  /* hi-res laptops and desktops */
   .container .title {
     font-size: 20px;
   }
 }
 
-@media (max-width: 1281px) {
-  /* hi-res laptops and desktops */
+@media (max-width: 1253px) {
+  .container {
+    width: 250px;
+    margin-inline: 15px;
+  }
+
+  .container .image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .text {
+    display: none;
+  }
 }
 
-@media (max-width: 1025px) {
-  /* big landscape tablets, laptops, and desktops */
+@media (max-width: 860px) {
+  .container {
+    width: 220px;
+    margin-inline: 15px;
+  }
+
+  .container .image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .text {
+    display: none;
+  }
 }
 
-@media (max-width: 961px) {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (max-width: 750px) {
+  .container {
+    width: 180px;
+    margin-inline: 15px;
+  }
+
+  .container .image {
+    width: 100px;
+    height: 100px;
+  }
 }
 
-@media (max-width: 641px) {
-  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (max-width: 550px) {
+  .container {
+    width: 140px;
+    margin-inline: 7px;
+  }
+
+  .container .title {
+    font-size: 17px;
+  }
+
+  .container .image {
+    width: 100px;
+    height: 100px;
+  }
 }
 
-@media (max-width: 481px) {
-  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (max-width: 475px) {
+  .container {
+    width: 125px;
+    margin-inline: 7px;
+  }
+
+  .container .image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0;
+  }
 }
 
-@media (max-width: 320px) {
-  /* smartphones, iPhone, portrait 480x320 phones */
+@media (max-width: 417px) {
+  .container {
+    width: 115px;
+    margin-inline: 5px;
+  }
+
+  .container .image {
+    width: 90px;
+    height: 90px;
+    margin-top: 0;
+  }
 }

@@ -26,10 +26,12 @@ const HomePage = () => {
       <div className={classes['background-overlay']}></div>
       <Main>
         <h1 className={classes.title}>Najbolje mesto za vaše ljubimce.</h1>
-        <div className={classes.cards}>
-          <Card text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, numquam." image={dog1} title="Igranje"></Card>
-          <Card text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, numquam." image={dog2} title="Šetnja"></Card>
-          <Card text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, numquam." image={dog3} title="Prostrano dvorište"></Card>
+        <div className="cards-container">
+          <div className={classes.cards}>
+            <Card text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, numquam." image={dog1} title="Igranje"></Card>
+            <Card text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, numquam." image={dog2} title="Šetnja"></Card>
+            <Card text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, numquam." image={dog3} title="Prostrano dvorište"></Card>
+          </div>
         </div>
         <div className={classes['container']}>
           <div className={classes['content-body']}>

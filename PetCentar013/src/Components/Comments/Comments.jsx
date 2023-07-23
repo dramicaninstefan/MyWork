@@ -14,38 +14,26 @@ const comments = [
   {
     user: 'Stefan',
     rate: 5,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque ',
+    text: 'Omg, is it real? Start building your own. Get you car Insurance in California.',
     image: dog1,
   },
   {
     user: 'Mihajlo',
     rate: 4,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque ',
+    text: 'Wow, is this a fake Facebook Post? Damn it looks so real! Use the settings to the left to begin - You can also add comments & emoticons.',
     image: dog2,
   },
   {
     user: 'Goran',
     rate: 2,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque ',
+    text: 'Omg, is it real? Start building your own. Get you car Insurance in California.',
     image: dog3,
-  },
-  {
-    user: 'Jelena',
-    rate: 5,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque ',
-    image: dog4,
   },
   {
     user: 'Sanja',
     rate: 1,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque ',
+    text: 'Wow, is this a fake Facebook Post? Damn it looks so real! Use the settings to the left to begin - You can also add comments & emoticons.',
     image: dog5,
-  },
-  {
-    user: 'Teodora',
-    rate: 3,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatum nulla suscipit, doloremque odit numquam. Vero, veniam nobis! Excepturi dolor maiores dolorum. Similique quasi atque quis quas cumque aperiam non obcaecati, praesentium consequuntur eveniet quod ipsam veritatis? Delectus eaque ',
-    image: dog6,
   },
 ]
 

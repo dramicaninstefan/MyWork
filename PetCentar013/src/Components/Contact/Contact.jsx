@@ -1,33 +1,37 @@
-import React, { Fragment, useState, useRef } from "react"
-import emailjs from "emailjs-com"
+import React, { Fragment, useState, useRef } from 'react'
+import emailjs from 'emailjs-com'
 
-import Main from "../UI/Main"
-import TopButton from "../UI/TopButton"
+import Main from '../UI/Main'
+import TabTitle from '../general/TabTitle'
+import TopButton from '../UI/TopButton'
 
-import classes from "./Contact.module.css"
+import classes from './Contact.module.css'
 
-import contact2 from "../../assets/contact2.jpg"
-import CallUs from "../UI/CallUs"
+import contact2 from '../../assets/contact2.jpg'
+import CallUs from '../UI/CallUs'
 
 const Contact = () => {
+  TabTitle('Pet | Kontakt')
+  window.scrollTo(0, 0)
+
   const submitBtn = useRef()
   const form = useRef()
 
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [number, setNumber] = useState("")
-  const [message, setMessage] = useState("")
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [number, setNumber] = useState('')
+  const [message, setMessage] = useState('')
 
   function sendEmail(e) {
     e.preventDefault()
 
-    emailjs.sendForm("service_90anb7y", "template_9yiiwdf", form.current, "_TykGN5dKmnTuxu5y").then(
+    emailjs.sendForm('service_90anb7y', 'template_9yiiwdf', form.current, '_TykGN5dKmnTuxu5y').then(
       (result) => {
-        setName("")
-        setEmail("")
-        setNumber("")
-        setMessage("")
-        alert("Podaci su poslati!")
+        setName('')
+        setEmail('')
+        setNumber('')
+        setMessage('')
+        alert('Podaci su poslati!')
       },
       (error) => {
         console.log(error.text)
@@ -82,7 +86,7 @@ const Contact = () => {
                 className={classes.input}
                 name="message"
                 placeholder="Poruka *"
-                style={{ resize: "none" }}
+                style={{ resize: 'none' }}
                 onChange={(e) => {
                   setMessage(e.target.value)
                 }}
