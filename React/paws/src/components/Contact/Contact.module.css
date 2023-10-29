@@ -1,0 +1,157 @@
+.wrapper {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 120px;
+  position: relative;
+}
+
+.title {
+  width: 85vw;
+  text-align: center;
+  font-size: 60px;
+  color: var(--secondary-color);
+  font-family: var(--secondary-ff);
+  border-bottom: 5px solid var(--primary-color);
+  padding-bottom: 15px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.map {
+  width: 50%;
+  height: 600px;
+  background-color: antiquewhite;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border: 10px solid var(--secondary-color);
+}
+
+.form {
+  width: 50%;
+  height: 600px;
+  border-radius: 2%;
+}
+
+.btn {
+  width: 200px;
+  font-size: 30px;
+  padding: 20px 30px;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  font-family: var(--primary-ff);
+  border: 0;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.form .contact {
+  font-size: 50px;
+  text-align: start;
+  color: gray;
+  font-family: var(--third-ff);
+  margin-top: 10px;
+  margin-left: 100px;
+}
+
+.form form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
+.input {
+  width: 70%;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px 30px;
+  border: 4px solid var(--secondary-color);
+  border-radius: 5px;
+}
+
+.input:nth-child(4) {
+  padding-bottom: 60px;
+}
+
+.input:active {
+  border-color: var(--forth-color);
+  outline: none;
+}
+
+@media (max-width: 1684px) {
+  .form form {
+    margin-left: 40px;
+  }
+
+  .input {
+    width: 80%;
+  }
+
+  .form .contact {
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 1026px) {
+  .input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 660px) {
+  .container {
+    width: 90vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .map {
+    order: 1;
+    width: 90%;
+    height: 400px;
+    margin-top: 50px;
+  }
+
+  .form {
+    order: 0;
+    width: 90%;
+    height: 600px;
+    padding: 15px;
+  }
+
+  .form form {
+    margin-left: 20px;
+  }
+
+  .input {
+    width: 90%;
+  }
+
+  .form .contact {
+    margin-left: 20px;
+  }
+
+  .btn {
+    margin-top: 0;
+    padding: 15px 30px;
+  }
+}

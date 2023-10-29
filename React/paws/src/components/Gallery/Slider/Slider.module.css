@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  width: 90vw;
+  margin-bottom: 50px;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: all 1.2s ease;
+}
+
+.panel > h3 {
+  font-family: var(--primary-ff);
+  font-weight: 700;
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  margin-left: 10px;
+  opacity: 0;
+  display: none;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active > h3 {
+  opacity: 1;
+}
+
+.panel:hover {
+  transform: scale(1.03);
+}
+
+.panel.active:hover {
+  transform: scale(1);
+}
+
+@media (max-width: 1222px) {
+  .panel {
+    height: 60vh;
+    margin: 5px;
+    flex: 1;
+  }
+
+  .panel:first-child,
+  .panel:last-child {
+    display: none;
+  }
+}
