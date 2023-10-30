@@ -8,7 +8,7 @@ const Footer = () => {
     <Fragment>
       <div className={classes.container}>
         <div className={classes.social}>
-          <a href="viber://chat/?number=+38166332095" target="_blank" rel="noreferrer">
+          <a href="viber://chat/?number=%2B38166332095" target="_blank" rel="noreferrer">
             <div className={classes.viber}>
               <i className="fa-brands fa-viber"></i>
             </div>
