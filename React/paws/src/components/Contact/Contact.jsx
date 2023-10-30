@@ -1,8 +1,10 @@
 import React, { Fragment, useState, useRef } from 'react'
 import emailjs from 'emailjs-com'
+import { motion } from 'framer-motion'
 
 import TabTitle from '../general/TabTitle'
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
 import classes from './Contact.module.css'
 
@@ -40,7 +42,7 @@ const Contact = () => {
   return (
     <Fragment>
       <Header />
-      <div className={classes.wrapper}>
+      <motion.div initial={{ x: '100%' }} transition={{ duration: 0.6 }} animate={{ x: 0 }} exit={{ opacity: 0 }} className={classes.wrapper}>
         {/* <h1 className={classes.title}>Kontakt</h1> */}
         <div className={classes.container}>
           <div className={classes.map} style={{ backgroundImage: `url(${contact2})` }}></div>
@@ -98,7 +100,8 @@ const Contact = () => {
             </form>
           </div>
         </div>
-      </div>
+      </motion.div>
+      <Footer />
     </Fragment>
   )
 }

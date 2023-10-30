@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react'
+import { motion } from 'framer-motion'
 
 import TabTitle from '../general/TabTitle'
-
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
 import classes from './AboutUs.module.css'
 
@@ -13,7 +14,7 @@ const AboutUs = () => {
   return (
     <Fragment>
       <Header />
-      <div className={classes.container}>
+      <motion.div initial={{ x: '-100%' }} transition={{ duration: 0.6 }} animate={{ x: 0 }} exit={{ opacity: 0 }} className={classes.container}>
         {/* <h1 className={classes.title}>O Nama</h1> */}
         <p className={classes.desctiption}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis enim nobis, in nulla cum nam quos iure ratione delectus repudiandae illo commodi itaque. Dolores nobis sed totam corporis aut
@@ -25,7 +26,8 @@ const AboutUs = () => {
           iste sunt, voluptatem, a ab voluptatum tenetur! Illum nisi, mollitia officiis cupiditate facere quis dolor, commodi blanditiis quasi temporibus eaque explicabo ullam magni eligendi
           distinctio tenetur assumenda esse laboriosam quaerat. Voluptatibus praesentium culpa sunt provident magni impedit quod debitis iusto ut.
         </p>
-      </div>
+      </motion.div>
+      <Footer />
     </Fragment>
   )
 }

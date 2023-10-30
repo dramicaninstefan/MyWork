@@ -40,6 +40,9 @@
   font-family: var(--primary-ff);
   cursor: pointer;
   transition: all 0.5s;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .container .navbar a.active {

@@ -1,7 +1,10 @@
 import { Fragment } from 'react'
+import { motion } from 'framer-motion'
 
 import Backplate from './Backplate/Backplate'
 import Header from '../Header/Header'
+import Card from './Cards/Card'
+import Footer from '../Footer/Footer'
 
 import TabTitle from '../general/TabTitle'
 
@@ -10,14 +13,13 @@ import classes from './Home.module.css'
 import contentImage1 from '../../assets/contentImage1.jpg'
 import contentImage2 from '../../assets/contentImage2.jpg'
 import contentImage3 from '../../assets/contentImage3.jpg'
-import Card from './Cards/Card'
 
 const Home = () => {
   TabTitle(`Pet | Pocetna`)
   window.scrollTo(0, 0)
 
   return (
-    <Fragment>
+    <motion.div initial={{ opacity: 0 }} transition={{ duration: 0.5, ease: 'easeIn' }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       <Backplate />
       <Header />
 
@@ -35,7 +37,9 @@ const Home = () => {
 
         <h1 className={classes.quote}>Vaš pas naša odgovornost.</h1>
       </div>
-    </Fragment>
+
+      <Footer />
+    </motion.div>
   )
 }
 
