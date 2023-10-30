@@ -13,6 +13,13 @@ import contact2 from '../../assets/contact2.jpg'
 const Contact = () => {
   TabTitle('Pet | Kontakt')
   window.scrollTo(0, 0)
+  const nameRef = useRef()
+  const emailRef = useRef()
+  const numberRef = useRef()
+  const messageRef = useRef()
+
+  const [isSent, setIsSent] = useState(false)
+  const [isntSent, setIsntSent] = useState(false)
 
   const submitBtn = useRef()
   const form = useRef()
@@ -22,7 +29,7 @@ const Contact = () => {
   const [number, setNumber] = useState('')
   const [message, setMessage] = useState('')
 
-  function sendEmail(e) {
+  const sendEmail = (e) => {
     e.preventDefault()
 
     emailjs.sendForm('service_90anb7y', 'template_9yiiwdf', form.current, '_TykGN5dKmnTuxu5y').then(
@@ -31,17 +38,62 @@ const Contact = () => {
         setEmail('')
         setNumber('')
         setMessage('')
-        alert('Podaci su poslati!')
+        setIsSent(true)
       },
       (error) => {
-        console.log(error.text)
+        setIsntSent(true)
       }
     )
   }
 
+  const checkInfo = (e) => {
+    if (nameRef.current.value === '') {
+      nameRef.current.focus()
+    } else if (emailRef.current.value === '') {
+      nameRef.current.focus()
+    } else if (numberRef.current.value === '') {
+      nameRef.current.focus()
+    } else if (messageRef.current.value === '') {
+      nameRef.current.focus()
+    } else {
+      sendEmail(e)
+    }
+  }
+
+  const closeInfoHandler = () => {
+    setIsSent(false)
+    setIsntSent(false)
+  }
+
+  if (isSent) {
+    setTimeout(() => {
+      setIsSent(false)
+      setIsntSent(false)
+    }, 3000)
+  }
+
   return (
     <Fragment>
+      {isSent ? (
+        <div className={classes.success}>
+          <p className={classes.information}>Poslato...</p>
+          <button className={classes.btnX} onClick={closeInfoHandler}>
+            X
+          </button>
+        </div>
+      ) : null}
+
+      {isntSent ? (
+        <div className={classes.error}>
+          <p className={classes.information}>Graska!</p>
+          <button className={classes.btnX} onClick={closeInfoHandler}>
+            X
+          </button>
+        </div>
+      ) : null}
+
       <Header />
+
       <motion.div initial={{ x: '100%' }} transition={{ duration: 0.6 }} animate={{ x: 0 }} exit={{ opacity: 0 }} className={classes.wrapper}>
         {/* <h1 className={classes.title}>Kontakt</h1> */}
         <div className={classes.container}>
@@ -51,6 +103,7 @@ const Contact = () => {
             <h1 className={classes.contact}>Kontaktirajte nas.</h1>
             <form ref={form} action="https://formsubmit.co/gamer95.g@email.com" method="POST">
               <input
+                ref={nameRef}
                 className={classes.input}
                 name="user_name"
                 type="text"
@@ -62,6 +115,7 @@ const Contact = () => {
                 required
               />
               <input
+                ref={emailRef}
                 className={classes.input}
                 name="user_email"
                 type="email"
@@ -69,10 +123,11 @@ const Contact = () => {
                 onChange={(e) => {
                   setEmail(e.target.value)
                 }}
-                required
                 value={email}
+                required
               />
               <input
+                ref={numberRef}
                 className={classes.input}
                 name="user_number"
                 type="text"
@@ -80,10 +135,11 @@ const Contact = () => {
                 onChange={(e) => {
                   setNumber(e.target.value)
                 }}
-                required
                 value={number}
+                required
               />
               <textarea
+                ref={messageRef}
                 className={classes.input}
                 name="message"
                 placeholder="Poruka *"
@@ -91,10 +147,10 @@ const Contact = () => {
                 onChange={(e) => {
                   setMessage(e.target.value)
                 }}
-                required
                 value={message}
+                required
               ></textarea>
-              <button ref={submitBtn} className={classes.btn} onClick={sendEmail} type="submit">
+              <button ref={submitBtn} className={classes.btn} onClick={checkInfo} type="submit">
                 Pošalji
               </button>
             </form>
