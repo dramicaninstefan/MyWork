@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { motion } from 'framer-motion'
 
 import Backplate from './Backplate/Backplate'

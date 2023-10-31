@@ -7,8 +7,8 @@ import gallery1 from '../../assets/gallery1.jpg'
 import gallery2 from '../../assets/gallery2.jpg'
 import gallery3 from '../../assets/gallery3.jpg'
 import gallery4 from '../../assets/gallery4.jpg'
-import gallery5 from '../../assets/gallery5.jpg'
-import gallery6 from '../../assets/gallery6.jpg'
+// import gallery5 from '../../assets/gallery5.jpg'
+// import gallery6 from '../../assets/gallery6.jpg'
 
 const comments = [
   {
@@ -33,7 +33,7 @@ const comments = [
     user: 'Sanja',
     rate: 1,
     text: 'Wow, is this a fake Facebook Post? Damn it looks so real! Use the settings to the left to begin - You can also add comments & emoticons.',
-    image: gallery5,
+    image: gallery4,
   },
 ]
 

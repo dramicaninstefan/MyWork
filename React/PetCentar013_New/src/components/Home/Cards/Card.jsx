@@ -2,9 +2,9 @@ import React, { Fragment } from 'react'
 
 import classes from './Card.module.css'
 
-import play from '../../../assets/play.png'
-import walk from '../../../assets/walk.png'
-import yard from '../../../assets/yard.png'
+// import play from '../../../assets/play.png'
+// import walk from '../../../assets/walk.png'
+// import yard from '../../../assets/yard.png'
 import play2 from '../../../assets/play2.png'
 import walk2 from '../../../assets/walk2.png'
 import yard2 from '../../../assets/yard2.png'

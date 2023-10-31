@@ -20,16 +20,16 @@ const Slider = () => {
     }
 
     panels.current?.map((panel, idx) => {
-      panel.addEventListener('mouseenter', () => {
+      return panel.addEventListener('mouseenter', () => {
         setIndex(idx)
       })
     })
 
     panels.current?.map((panels, idx) => {
       if (index === idx) {
-        panels.classList.add(`${classes.active}`)
+        return panels.classList.add(`${classes.active}`)
       } else {
-        panels.classList.remove(`${classes.active}`)
+        return panels.classList.remove(`${classes.active}`)
       }
     })
   }

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import classes from './Header.module.css'
 
 import paws from '../../assets/paws.png'
-import paws2 from '../../assets/paws2.png'
+// import paws2 from '../../assets/paws2.png'
 
 const Header = () => {
   return (
