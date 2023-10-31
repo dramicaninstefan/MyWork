@@ -3,7 +3,7 @@
   "editor.formatOnSave": true,
   "git.confirmSync": false,
   "editor.minimap.enabled": false,
-  "window.zoomLevel": 2,
+  "window.zoomLevel": 1,
   "liveServer.settings.donotShowInfoMsg": true,
   "workbench.startupEditor": "newUntitledFile",
   "prettier.printWidth": 200,
