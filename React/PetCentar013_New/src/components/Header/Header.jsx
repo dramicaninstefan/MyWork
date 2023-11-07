@@ -4,15 +4,16 @@ import { NavLink } from 'react-router-dom'
 import classes from './Header.module.css'
 
 import paws from '../../assets/paws.png'
+import logo from '../../assets/logo.png'
 // import paws2 from '../../assets/paws2.png'
 
 const Header = () => {
   return (
     <Fragment>
       <div className={classes.container}>
-        <div className={classes.logo}>
+        {/* <div className={classes.logo}>
           <img src={paws} alt="logo" />
-        </div>
+        </div> */}
         <nav className={classes.navbar}>
           <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/" end>
             <i className="fa-solid fa-paw"></i> Početna
@@ -20,6 +21,11 @@ const Header = () => {
           <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/o_nama" end>
             <i className="fa-solid fa-paw"></i> O Nama
           </NavLink>
+
+          <div className={classes.logo}>
+            <img src={paws} alt="logo" />
+          </div>
+
           <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/galerija" end>
             <i className="fa-solid fa-paw"></i> Galerija
           </NavLink>
