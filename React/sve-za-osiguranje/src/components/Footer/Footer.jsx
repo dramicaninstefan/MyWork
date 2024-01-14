@@ -29,7 +29,7 @@ const Footer = () => {
           </a>
         </div>
         <div className={classes.text}>
-          <p>Naša usluga je prema Vama u potpunosti BESPLATNA i bez skrivenih troškova.</p>
+          <p>Naš savet je prema Vama u potpunosti BESPLATAN i bez skrivenih troškova.</p>
         </div>
         <h3 className={classes.contact}>Kontakt info:</h3>
         <div className={classes.info}>
@@ -37,7 +37,7 @@ const Footer = () => {
             <i className="fa-solid fa-envelope"></i>svezaosiguranje@gmail.com
           </a>
           <a href="tel:+381608060001" className={classes.phone}>
-            <i c="fa-solid fa-phone"></i>+381 608060001
+            <i className="fa-solid fa-phone"></i>+381 608060001
           </a>
         </div>
         <div className={classes.copyright}>&copy; Copyright {new Date().getFullYear()}</div>

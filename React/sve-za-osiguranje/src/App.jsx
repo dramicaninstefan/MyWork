@@ -22,7 +22,7 @@ function App() {
         { path: '/galerija', element: <Home /> },
         { path: '/usluge', element: <Home /> },
         { path: '/kontakt', element: <Home /> },
-        { path: '/veterinar', element: <Home /> },
+        { path: '/kasko', element: <Home /> },
       ],
     },
   ]);

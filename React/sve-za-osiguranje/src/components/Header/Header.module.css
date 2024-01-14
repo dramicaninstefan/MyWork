@@ -107,16 +107,6 @@
   color: var(--secondary-color);
 }
 
-/* .container .header-content .header-info .header-info-social a img {
-  width: 20px;
-  height: 20px;
-  transition: all 0.3s;
-}
-
-.container .header-content .header-info .header-info-social a img:hover {
-  transform: translateY(-3px);
-} */
-
 /* header-links */
 
 .container .header-content .header-links {

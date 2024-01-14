@@ -60,7 +60,7 @@ const Home = () => {
             <h1 className={classes['content-title']}>Odaberite najbolje ponude za osiguranje, rešite štetu koju imate.</h1>
             <p className={classes['content-text']}>Profesionalno i odgovorno ćemo Vam pomoći oko odabira najbolje ponude za Vaše osiguranje, kao i ako imate štetu, tu smo za Vas.</p>
             <p className={classes['content-free']}>
-              <i class="fa-regular fa-square-check"></i>Besplatna usluga
+              <i className="fa-regular fa-square-check"></i>Besplatan savet
             </p>
           </div>
         </div>
@@ -136,8 +136,9 @@ const Home = () => {
             </li>
             <li>Bićete adekvatno obeštećeni kod štetnog događaja, jer ćete imati adkevatno pokriće na polisi i imaćete nas kao savetnika za prijavu i naplatu štete.</li>
             <li>
-              <b>BESPLATNA USLUGA</b> – potpuno besplatno, bez ikakvih skrivenih troškova je naša pomoć <b>MI ZASTUPAMO VAS I VAŠE INTERESE KOD OSIGURAVAJUĆIH KUĆA!</b>
+              <b>BESPLATAN SAVET</b> – potpuno besplatno, bez ikakvih skrivenih troškova je naša pomoć <b>MI ZASTUPAMO VAS I VAŠE INTERESE KOD OSIGURAVAJUĆIH KUĆA!</b>
             </li>
+
             <li>
               <b>Bez sitnih slova polisa</b> – mi ćemo Vam ih pročitati/protumačiti umesto Vas. Savetovaćemo Vas na koji deo Uslova da posebno obratite pažnju prilikom ugovaranja polise (najbitnije je
               dobro pročitati Isključenja na polisi!)
