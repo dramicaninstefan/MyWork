@@ -7,6 +7,8 @@ import ContactForm from '../../../ContactForm/ContactForm';
 import classes from './RegistracijaVozila.module.css';
 
 const RegistracijaVozila = () => {
+  window.scrollTo(0, 0);
+
   return (
     <Fragment>
       <Header />

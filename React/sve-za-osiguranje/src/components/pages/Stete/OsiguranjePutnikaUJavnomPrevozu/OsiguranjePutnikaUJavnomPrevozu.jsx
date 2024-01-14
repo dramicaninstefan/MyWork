@@ -7,6 +7,8 @@ import ContactForm from '../../../ContactForm/ContactForm';
 import classes from './OsiguranjePutnikaUJavnomPrevozu.module.css';
 
 const OsiguranjePutnikaUJavnomPrevozu = () => {
+  window.scrollTo(0, 0);
+
   return (
     <Fragment>
       <Header />

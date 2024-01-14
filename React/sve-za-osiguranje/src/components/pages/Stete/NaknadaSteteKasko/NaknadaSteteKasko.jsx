@@ -7,6 +7,8 @@ import ContactForm from '../../../ContactForm/ContactForm';
 import classes from './NaknadaSteteKasko.module.css';
 
 const NaknadaSteteKasko = () => {
+  window.scrollTo(0, 0);
+
   return (
     <Fragment>
       <Header />

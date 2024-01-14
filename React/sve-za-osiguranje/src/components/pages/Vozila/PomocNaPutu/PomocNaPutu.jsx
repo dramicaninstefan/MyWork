@@ -7,6 +7,8 @@ import ContactForm from '../../../ContactForm/ContactForm';
 import classes from './PomocNaPutu.module.css';
 
 const PomocNaPutu = () => {
+  window.scrollTo(0, 0);
+
   return (
     <Fragment>
       <Header />

@@ -7,6 +7,8 @@ import ContactForm from '../../ContactForm/ContactForm';
 import classes from './Putno.module.css';
 
 const Putno = () => {
+  window.scrollTo(0, 0);
+
   return (
     <Fragment>
       <Header />

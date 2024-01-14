@@ -5,8 +5,6 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import ContactForm from '../ContactForm/ContactForm';
 
-import TabTitle from '../general/TabTitle';
-
 import classes from './Home.module.css';
 
 import heroImage from '../../assets/hero-women-accountant.jpg';
@@ -16,7 +14,6 @@ import slika3 from '../../assets/slika3-400x400.jpg';
 import slika4 from '../../assets/putno3-600x600.jpg';
 
 const Home = () => {
-  TabTitle('Sve za osiguranje | Početna');
   window.scrollTo(0, 0);
 
   return (

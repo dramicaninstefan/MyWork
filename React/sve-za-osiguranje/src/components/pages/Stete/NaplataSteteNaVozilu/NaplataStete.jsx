@@ -7,6 +7,8 @@ import ContactForm from '../../../ContactForm/ContactForm';
 import classes from './NaplataStete.module.css';
 
 const NaplataStete = () => {
+  window.scrollTo(0, 0);
+
   return (
     <Fragment>
       <Header />

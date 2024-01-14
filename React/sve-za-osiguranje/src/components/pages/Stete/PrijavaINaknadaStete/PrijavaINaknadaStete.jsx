@@ -7,6 +7,8 @@ import ContactForm from '../../../ContactForm/ContactForm';
 import classes from './PrijavaINaknadaStete.module.css';
 
 const PrijavaINaknadaStete = () => {
+  window.scrollTo(0, 0);
+
   return (
     <Fragment>
       <Header />
