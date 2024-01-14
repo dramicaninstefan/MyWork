@@ -91,7 +91,7 @@ const Header = () => {
                 Vozila <i style={vehicles ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
                 <ul className={vehicles ? `${classes['dropdown-vehicle']} ${classes.active}` : classes['dropdown-vehicle']}>
                   <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kasko" end>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kasko-osiguranje-vozila" end>
                       Kasko osiguranje vozila
                     </NavLink>
                   </li>
@@ -102,65 +102,65 @@ const Header = () => {
                   </li>
 
                   <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/registracija" end>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/registracija-vozila" end>
                       Registracija vozila
                     </NavLink>
                   </li>
                 </ul>
               </div>
-              <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kontakt" end>
+              <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/osiguranje-domacinstva" end>
                 Domaćinstvo
               </NavLink>
               <div onMouseEnter={showHealthDropdown} onMouseLeave={hideHealthDropdown} className={classes.health}>
                 Životno i zdravstveno <i style={health ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
                 <ul className={health ? `${classes['dropdown-health']} ${classes.active}` : classes['dropdown-health']}>
                   <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kasko" end>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/zivotno-osiguranje" end>
                       Životno osiguranje
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/autoodgovornost" end>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/dobrovoljno-zdravstveno-osiguranje" end>
                       Dobrovoljno zdravstveno <br /> osiguranje
                     </NavLink>
                   </li>
 
                   <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/registracija" end>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/osiguranje-od-nezgode" end>
                       Osiguranje od nezgode
                     </NavLink>
                   </li>
                 </ul>
               </div>
-              <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kontakt" end>
+              <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/putno-osiguranje" end>
                 Putno
               </NavLink>
               <div onMouseEnter={showDamageDropdown} onMouseLeave={hideDamageDropdown} className={classes.damage}>
                 Naplata štete <i style={damage ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
                 <ul className={damage ? `${classes['dropdown-damage']} ${classes.active}` : classes['dropdown-damage']}>
                   <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kasko" end>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/prijava-i-naknada-stete" end>
                       Prijava i naknada štete
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/autoodgovornost" end>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naplata-naknada-stete-na-vozilu" end>
                       Naplata štete na vozilu
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/registracija" end>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naknada-stete-kasko-osiguranje" end>
                       Naknada stete kasko <br /> osiguranja
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/registracija" end>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/osiguranje-putnika-u-javnom-prevozu" end>
                       Osiguranje putnika u <br />
                       javnom prevozu
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/registracija" end>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naknada-stete-za-fizicki-i-dusevni-bol" end>
                       Naknada štete za fizičku <br /> i duševnu bol
                     </NavLink>
                   </li>
