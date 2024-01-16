@@ -1,10 +1,10 @@
-import { Fragment } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Fragment } from 'react';
+import { NavLink } from 'react-router-dom';
 
-import classes from './Header.module.css'
+import classes from './Header.module.css';
 
-import paws from '../../assets/paws.png'
-import logo from '../../assets/logo.png'
+import paws from '../../assets/paws.png';
+import logo from '../../assets/logo.png';
 // import paws2 from '../../assets/paws2.png'
 
 const Header = () => {
@@ -35,7 +35,7 @@ const Header = () => {
         </nav>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
