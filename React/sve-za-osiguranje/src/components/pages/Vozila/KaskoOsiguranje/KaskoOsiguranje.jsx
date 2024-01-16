@@ -14,12 +14,14 @@ const KaskoOsiguranje = () => {
 
   return (
     <Fragment>
-      <Header />
+      <Header backgroundColor="--white-color" backgroundColorScroll="--white-color" />
       <main className={classes.main}>
         <div className={classes.info1}>
           <div className={classes['content']}>
             <h2 className={classes['content-small-title']}>Kasko osiguranje vozila</h2>
-            <h1 className={classes['content-title']}>Kasko osiguranje.</h1>
+            <h1 className={classes['content-title']}>
+              Kasko osiguranje<span>.</span>{' '}
+            </h1>
             <p className={classes['content-text']}>
               Šta je kasko osiguranje vozila i zašto da <br /> odaberete ovo osiguranje za svoje vozilo?
             </p>

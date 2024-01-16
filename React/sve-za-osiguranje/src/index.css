@@ -122,8 +122,18 @@ table {
 :root {
   --primary-ff: 'Manrope', sans-serif;
 
+  --typography1-font-size: 55px;
+  --typography2-font-size: 50px;
+  --typography3-font-size: 22.5px;
+
+  --typography4-font-size: 40px;
+  --typography5-font-size: 25px;
+  --typography6-font-size: 65px;
+
   --primary-color: #023a51;
   --secondary-color: #2cbc63;
+  --hero-color: #e0ecf0;
+  --white-color: #fff;
 }
 
 * {

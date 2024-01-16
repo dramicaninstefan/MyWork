@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <Fragment>
-      <Header />
+      <Header backgroundColor="--hero-color" backgroundColorScroll="--white-color" />
       <section className={classes.hero}>
         <div className={classes['hero-content']}>
           <h1 className={classes['hero-content-title']}>Sve za osiguranje</h1>

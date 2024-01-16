@@ -5,7 +5,7 @@ import classes from './Header.module.css';
 
 import logo from '../../assets/szo-logo-@2x.png';
 
-const Header = () => {
+const Header = (props) => {
   // show vehicles dropdown
   const [vehicles, setVehicles] = useState(false);
 
@@ -53,7 +53,8 @@ const Header = () => {
 
   return (
     <Fragment>
-      <header className={color ? `${classes['wrapper']} ${classes.scroll}` : classes['wrapper']}>
+      {/* <header className={color ? `${classes['wrapper']} ${classes.scroll}` : classes['wrapper']}> */}
+      <header className={classes['wrapper']} style={color ? { backgroundColor: `var(${props.backgroundColorScroll})` } : { backgroundColor: `var(${props.backgroundColor})` }}>
         <div className={classes.container}>
           <div className={classes['header-logo']}>
             <Link to="/">
@@ -100,7 +101,11 @@ const Header = () => {
                       Autoodgovornost
                     </NavLink>
                   </li>
-
+                  <li>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/pomoc-na-putu" end>
+                      Pomoc na putu
+                    </NavLink>
+                  </li>
                   <li>
                     <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/registracija-vozila" end>
                       Registracija vozila

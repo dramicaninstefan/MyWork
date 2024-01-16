@@ -11,7 +11,7 @@ const NaknadaSteteZaFizickuIDusevnuBol = () => {
 
   return (
     <Fragment>
-      <Header />
+      <Header backgroundColor="--hero-color" backgroundColorScroll="--white-color" />
       <main className={classes.main}>
         <div className={classes.hero}>
           <div className={classes.content}>
@@ -27,26 +27,29 @@ const NaknadaSteteZaFizickuIDusevnuBol = () => {
             NEMATERIJALNA ŠTETA je pravno priznata povreda nematerijalnog dobra, sa različitim pojavnim oblicima. Sledeći oblici nematerijalne štete postoje:
             <br />
             <br />
-            <ul>
-              <li>
-                pretrpljeni i budući fizički bolovi obično se definiše kao zaštitini mehanizam ljudskog tela, koji se manifestuje refleksnim reagovanjem u slučaju povrede nekog tkiva. Dokazuje se pred
-                sudom, veštačenjem posredstvom veštaka medicinske struke
-              </li>
-              <li>
-                pretrpljeni i budući strah je najneprijatniji ljudski doživljaj, uslovljen saznanjem o neposrednoj ugrožavajućoj opasnosti. Po pravilu, lako je dokaziv i kod suda se dokazuje
-                veštačenjem
-              </li>
-              <li>
-                pretrpljeni i budući duševni bolovi zbog umanjenja opšte životne aktivnosti je vrsta nematerijalne štete koja nastaje kao posledica povrede tela.Visina i procenat umanjenja opšte
-                životne aktivnosti pretežno zavise od sposobnosti veštaka da ovu naknadu personalizuje u skladu sa stanjem oštećenog lica
-              </li>
-              <li>pretrpljeni i budući duševni bolovi zbog naruženosti je uslovljena stepenom izmene spoljašnosti oštećenog lica i kod suda utvrđuje se veštačenjem</li>
-              <li>pretrpljeni i budući duševni bolovi zbog smrti bliskog lica, kao vid štete ograničen je stepenom srodstva i po pravilu sud ga utvrđuje na osnovu slobodne ocene, bez veštačenja</li>
-              <li>
-                pretrpljeni i budući duševni bolovi zbog teškog invaliditeta bliskog lica, uslovljena je stepenom srodstva i stepenom invalidnosti bliskog lica. Vezana je za umanjenu opštu životnu
-                aktivnost oštećenog lica.
-              </li>
-            </ul>
+          </p>
+
+          <ul>
+            <li>
+              pretrpljeni i budući fizički bolovi obično se definiše kao zaštitini mehanizam ljudskog tela, koji se manifestuje refleksnim reagovanjem u slučaju povrede nekog tkiva. Dokazuje se pred
+              sudom, veštačenjem posredstvom veštaka medicinske struke
+            </li>
+            <li>
+              pretrpljeni i budući strah je najneprijatniji ljudski doživljaj, uslovljen saznanjem o neposrednoj ugrožavajućoj opasnosti. Po pravilu, lako je dokaziv i kod suda se dokazuje veštačenjem
+            </li>
+            <li>
+              pretrpljeni i budući duševni bolovi zbog umanjenja opšte životne aktivnosti je vrsta nematerijalne štete koja nastaje kao posledica povrede tela.Visina i procenat umanjenja opšte životne
+              aktivnosti pretežno zavise od sposobnosti veštaka da ovu naknadu personalizuje u skladu sa stanjem oštećenog lica
+            </li>
+            <li>pretrpljeni i budući duševni bolovi zbog naruženosti je uslovljena stepenom izmene spoljašnosti oštećenog lica i kod suda utvrđuje se veštačenjem</li>
+            <li>pretrpljeni i budući duševni bolovi zbog smrti bliskog lica, kao vid štete ograničen je stepenom srodstva i po pravilu sud ga utvrđuje na osnovu slobodne ocene, bez veštačenja</li>
+            <li>
+              pretrpljeni i budući duševni bolovi zbog teškog invaliditeta bliskog lica, uslovljena je stepenom srodstva i stepenom invalidnosti bliskog lica. Vezana je za umanjenu opštu životnu
+              aktivnost oštećenog lica.
+            </li>
+          </ul>
+
+          <p className={classes.text}>
             <br />
             Naplata nematerijalne štete je moguća, ali i najteže dokaziva i naplativa.
             <br />

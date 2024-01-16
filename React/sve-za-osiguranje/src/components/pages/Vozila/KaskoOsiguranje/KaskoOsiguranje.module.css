@@ -14,11 +14,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-block: 90px;
+  padding-top: 50px;
+  padding-bottom: 90px;
 }
-
 .main .info1 .title {
-  font-size: 50px;
+  font-size: var(--typography2-font-size);
   font-family: var(--primary-ff);
   font-weight: 700;
   color: var(--primary-color);
@@ -35,21 +35,25 @@
 }
 
 .main .info1 .content .content-small-title {
-  font-size: 25px;
+  font-size: var(--typography3-font-size);
   font-family: var(--primary-ff);
   font-weight: 700;
   color: var(--secondary-color);
 }
 
 .main .info1 .content .content-title {
-  font-size: 60px;
+  font-size: var(--typography1-font-size);
   font-family: var(--primary-ff);
   font-weight: 700;
   color: var(--primary-color);
 }
 
+.main .info1 .content .content-title span {
+  color: var(--secondary-color);
+}
+
 .main .info1 .content .content-text {
-  font-size: 25px;
+  font-size: var(--typography3-font-size);
   font-family: var(--primary-ff);
   opacity: 0.7;
   letter-spacing: 1.3px;
@@ -66,7 +70,7 @@
 
 .main .info1 .image img {
   width: 85%;
-  border-radius: 45px;
+  border-radius: 20px;
 }
 
 /* info2 */
@@ -92,20 +96,20 @@
 
 .main .info2 .content .content-title {
   font-family: var(--primary-ff);
-  font-size: 40px;
+  font-size: var(--typography4-font-size);
   font-weight: 600;
   color: var(--primary-color);
 }
 
 .main .info2 .content .content-title i {
-  font-size: 50px;
+  font-size: var(--typography4-font-size);
   margin-right: 10px;
   color: var(--secondary-color);
 }
 
 .main .info2 .content .content-text {
   font-family: var(--primary-ff);
-  font-size: 25px;
+  font-size: var(--typography3-font-size);
   opacity: 0.7;
   letter-spacing: 1.5px;
   line-height: 40px;
@@ -118,11 +122,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-block: 90px;
+  padding-top: 90px;
 }
 
 .main .info3 .title {
-  font-size: 50px;
+  font-size: var(--typography2-font-size);
   font-family: var(--primary-ff);
   font-weight: 700;
   color: var(--primary-color);
@@ -139,21 +143,21 @@
 }
 
 .main .info3 .content .content-small-title {
-  font-size: 25px;
+  font-size: var(--typography3-font-size);
   font-family: var(--primary-ff);
   font-weight: 700;
   color: var(--secondary-color);
 }
 
 .main .info3 .content .content-title {
-  font-size: 60px;
+  font-size: var(--typography1-font-size);
   font-family: var(--primary-ff);
   font-weight: 700;
   color: var(--primary-color);
 }
 
 .main .info3 .content .content-text {
-  font-size: 25px;
+  font-size: var(--typography3-font-size);
   font-family: var(--primary-ff);
   opacity: 0.7;
   letter-spacing: 1.3px;
@@ -170,7 +174,7 @@
 
 .main .info3 .image img {
   width: 85%;
-  border-radius: 45px;
+  border-radius: 20px;
 }
 
 /* info4 */
@@ -185,7 +189,7 @@
 }
 
 .main .info4 .text {
-  font-size: 25px;
+  font-size: var(--typography3-font-size);
   font-family: var(--primary-ff);
   opacity: 0.7;
   letter-spacing: 1.3px;
@@ -194,7 +198,7 @@
 
 .main .info4 ol,
 .main .info4 ul {
-  font-size: 25px;
+  font-size: var(--typography3-font-size);
   font-family: var(--primary-ff);
   opacity: 0.7;
   letter-spacing: 1.3px;
@@ -203,7 +207,7 @@
 }
 
 .main .info4 .title {
-  font-size: 40px;
+  font-size: var(--typography4-font-size);
   font-family: var(--primary-ff);
   font-weight: 700;
   color: var(--primary-color);

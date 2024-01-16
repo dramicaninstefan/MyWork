@@ -11,7 +11,7 @@ const NaplataStete = () => {
 
   return (
     <Fragment>
-      <Header />
+      <Header backgroundColor="--hero-color" backgroundColorScroll="--white-color" />
       <main className={classes.main}>
         <div className={classes.hero}>
           <div className={classes.content}>
@@ -42,7 +42,7 @@ const NaplataStete = () => {
             prouzrokovala saobraćajna nezgoda.
           </p>
 
-          <h2 className={classes.title}>KAKO NAPLATITI ŠTETU OD UDESA OD OSIGURAVAJUĆE KUĆE</h2>
+          <h2 className={classes.title}>Kako naplatiti štetu od udesa od osiguravajuće kuće</h2>
 
           <p className={classes.text}>
             Često osiguravajuće kuće ne priznaju štete koje su načinili njihovi klijenti, ističu doprinos šteti oštećenog, ili jednostavno pokušavaju da umanje svoju obavezu.

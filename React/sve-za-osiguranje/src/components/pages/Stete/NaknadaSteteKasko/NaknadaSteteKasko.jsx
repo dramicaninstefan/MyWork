@@ -11,7 +11,7 @@ const NaknadaSteteKasko = () => {
 
   return (
     <Fragment>
-      <Header />
+      <Header backgroundColor="--hero-color" backgroundColorScroll="--white-color" />
       <main className={classes.main}>
         <div className={classes.hero}>
           <div className={classes.content}>
