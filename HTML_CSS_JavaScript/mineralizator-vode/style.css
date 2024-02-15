@@ -1,0 +1,46 @@
+body {
+  color: #fff;
+}
+
+.wrapper {
+  background-image: url('./backbround2.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.ribbon-2 {
+  --f: 10px; /* control the folded part*/
+  --r: 15px; /* control the ribbon shape */
+  --t: 10px; /* the top offset */
+
+  position: absolute;
+  inset: var(--t) calc(-1 * var(--f)) auto auto;
+  padding: 0 10px var(--f) calc(10px + var(--r));
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--f)), calc(100% - var(--f)) 100%, calc(100% - var(--f)) calc(100% - var(--f)), 0 calc(100% - var(--f)), var(--r) calc(50% - var(--f) / 2));
+  background: #bd1550;
+  box-shadow: 0 calc(-1 * var(--f)) 0 inset #0005;
+  font-size: 25px;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: url('./slika.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 20px;
+}
+
+.image {
+  max-width: 80%;
+}
+
+@media (max-width: 1200px) {
+  .image {
+    width: 100%;
+  }
+}
