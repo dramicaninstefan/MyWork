@@ -44,3 +44,21 @@ body {
     width: 100%;
   }
 }
+
+@media (max-width: 800px) {
+  .image {
+    width: 100%;
+  }
+  .ribbon-2 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .image {
+    width: 100%;
+  }
+  .ribbon-2 {
+    font-size: 15px;
+  }
+}
