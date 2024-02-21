@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "min": "minelizator-za-vodu",
+    "miner": "minelizator-za-vodu",
+    "mi": "minelizator-za-vodu",
+    "m": "minelizator-za-vodu"
+  },
+  "targets": {},
+  "etags": {},
+  "hosting": {
+    "site": "mineralizator-za-vodu",
+    "public": "public"
+  }
+}
