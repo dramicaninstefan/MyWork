@@ -12,13 +12,13 @@ const ContactForm = () => {
               Vaš lični <br /> konsultant
             </h1>
             <h2 className={classes.link}>
-              <i className="fa-solid fa-location-dot"></i>Kancelarija
+              <i className="fa-solid fa-phone"></i>Telefon
             </h2>
             <a href="https://maps.app.goo.gl/KbuoyivndrgjJfGZ8" target="_blank" rel="noreferrer" className={classes.adress}>
-              Omladinskih brigada 88, Novi Beograd
+              +381 608060001
             </a>
             <h2 className={classes.link}>
-              <i className="fa-solid fa-envelope"></i>Kontakt
+              <i className="fa-solid fa-envelope"></i>Email
             </h2>
             <a href="mailto: svezaosiguranje@gmail.com" className={classes.email}>
               svezaosiguranje@gmail.com

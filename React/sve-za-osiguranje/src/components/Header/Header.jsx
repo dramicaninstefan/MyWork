@@ -1,11 +1,58 @@
-import React, { Fragment, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { Fragment, useEffect, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 import classes from './Header.module.css';
 
 import logo from '../../assets/szo-logo-@2x.png';
 
 const Header = (props) => {
+  const location = useLocation();
+
+  // set active color of vehicles dropdown
+  const [vehiclesLocation, setVehiclesLocation] = useState(false);
+
+  const locationVehicles = () => {
+    setVehiclesLocation(true);
+  };
+
+  useEffect(() => {
+    if (location.pathname === '/kasko-osiguranje-vozila' || location.pathname === '/autoodgovornost' || location.pathname === '/pomoc-na-putu' || location.pathname === '/registracija-vozila') {
+      locationVehicles();
+    }
+  }, [location.pathname]);
+
+  // set active color of health dropdown
+  const [healthLocation, setHealthLocation] = useState(false);
+
+  const locationHealth = () => {
+    setHealthLocation(true);
+  };
+
+  useEffect(() => {
+    if (location.pathname === '/zivotno-osiguranje' || location.pathname === '/dobrovoljno-zdravstveno-osiguranje' || location.pathname === '/osiguranje-od-nezgode') {
+      locationHealth();
+    }
+  }, [location.pathname]);
+
+  // set active color of damage dropdown
+  const [damageLocation, setDamageLocation] = useState(false);
+
+  const locationDamage = () => {
+    setDamageLocation(true);
+  };
+
+  useEffect(() => {
+    if (
+      location.pathname === '/prijava-i-naknada-stete' ||
+      location.pathname === '/naplata-naknada-stete-na-vozilu' ||
+      location.pathname === '/naknada-stete-kasko-osiguranje' ||
+      location.pathname === '/osiguranje-putnika-u-javnom-prevozu' ||
+      location.pathname === '/naknada-stete-za-fizicki-i-dusevni-bol'
+    ) {
+      locationDamage();
+    }
+  }, [location.pathname]);
+
   // show vehicles dropdown
   const [vehicles, setVehicles] = useState(false);
 
@@ -138,7 +185,9 @@ const Header = (props) => {
                 Početna
               </NavLink>
               <div onMouseEnter={showVehiclesDropdown} onMouseLeave={hideVehiclesDropdown} className={classes.vehicles}>
-                Vozila <i style={vehicles ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
+                <p style={vehiclesLocation ? { color: 'var(--secondary-color)' } : undefined}>
+                  Vozila <i style={vehicles ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
+                </p>
                 <ul className={vehicles ? `${classes['dropdown-vehicle']} ${classes.active}` : classes['dropdown-vehicle']}>
                   <li>
                     <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kasko-osiguranje-vozila" end>
@@ -166,7 +215,10 @@ const Header = (props) => {
                 Domaćinstvo
               </NavLink>
               <div onMouseEnter={showHealthDropdown} onMouseLeave={hideHealthDropdown} className={classes.health}>
-                Životno i zdravstveno <i style={health ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
+                <p style={healthLocation ? { color: 'var(--secondary-color)' } : undefined}>
+                  Životno i zdravstveno <i style={health ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
+                </p>
+
                 <ul className={health ? `${classes['dropdown-health']} ${classes.active}` : classes['dropdown-health']}>
                   <li>
                     <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/zivotno-osiguranje" end>
@@ -190,7 +242,10 @@ const Header = (props) => {
                 Putno
               </NavLink>
               <div onMouseEnter={showDamageDropdown} onMouseLeave={hideDamageDropdown} className={classes.damage}>
-                Naplata štete <i style={damage ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
+                <p style={damageLocation ? { color: 'var(--secondary-color)' } : undefined}>
+                  Naplata štete <i style={damage ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
+                </p>
+
                 <ul className={damage ? `${classes['dropdown-damage']} ${classes.active}` : classes['dropdown-damage']}>
                   <li>
                     <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/prijava-i-naknada-stete" end>
@@ -247,7 +302,7 @@ const Header = (props) => {
           </li>
           <li>
             <div onClick={showVehiclesDropdownMobile}>
-              <p>
+              <p style={vehiclesLocation ? { color: 'var(--secondary-color)' } : undefined}>
                 Vozila <i style={vehiclesMobile ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
               </p>
               <ul className={vehiclesMobile ? `${classes['dropdown-vehicle']} ${classes.active}` : classes['dropdown-vehicle']}>
@@ -281,7 +336,7 @@ const Header = (props) => {
           </li>
           <li>
             <div onClick={showHealthDropdownMobile}>
-              <p>
+              <p style={healthLocation ? { color: 'var(--secondary-color)' } : undefined}>
                 Životno i zdravstveno <i style={healthMobile ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
               </p>
               <ul className={healthMobile ? `${classes['dropdown-health']} ${classes.active}` : classes['dropdown-health']}>
@@ -311,7 +366,7 @@ const Header = (props) => {
           </li>
           <li>
             <div onClick={showDamageDropdownMobile}>
-              <p>
+              <p style={damageLocation ? { color: 'var(--secondary-color)' } : undefined}>
                 Naplata štete <i style={damageMobile ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
               </p>
               <ul className={damageMobile ? `${classes['dropdown-damage']} ${classes.active}` : classes['dropdown-damage']}>
