@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../Header/Header';
@@ -15,21 +15,12 @@ import slika4 from '../../assets/putno3-600x600.jpg';
 import CallUs from '../UI/CallUs';
 
 const Home = () => {
-  const [callUs, setCallUs] = useState(false);
-  const showCallUs = () => {
-    if (window.scrollY >= 550) {
-      setCallUs(true);
-    } else {
-      setCallUs(false);
-    }
-  };
-
-  window.addEventListener('scroll', showCallUs);
+  window.scrollTo(0, 0);
 
   return (
     <Fragment>
-      <div style={{ overflow: 'hidden' }}>
-        <Header backgroundColor="--hero-color" backgroundColorScroll="--white-color" />
+      <Header backgroundColor="--hero-color" backgroundColorScroll="--white-color" />
+      <div style={{ overflowX: 'hidden' }}>
         <section className={classes.hero}>
           <div className={classes['hero-content']}>
             <h1 className={classes['hero-content-title']}>Sve za osiguranje</h1>
@@ -195,11 +186,10 @@ const Home = () => {
 
           <ContactForm />
 
-          {callUs ? <CallUs /> : null}
+          <CallUs />
         </main>
-
-        <Footer />
       </div>
+      <Footer />
     </Fragment>
   );
 };
