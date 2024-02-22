@@ -254,8 +254,8 @@
   .contact-form {
     width: 100%;
     margin: auto;
-    margin-top: 60px;
-    padding-bottom: 120px;
+    margin-top: 0px;
+    padding-bottom: 20px;
   }
 
   .contact-form .content {
@@ -324,8 +324,8 @@
   .contact-form {
     width: 100%;
     margin: auto;
-    margin-top: 60px;
-    padding-bottom: 120px;
+    margin-top: 0px;
+    padding-bottom: 0px;
   }
 
   .contact-form .content {
@@ -333,7 +333,7 @@
     display: flex;
     flex-direction: column;
     padding: 80px 20px;
-    border-radius: 0px;
+    border-radius: 20px;
   }
 
   .contact-form .content .info {
