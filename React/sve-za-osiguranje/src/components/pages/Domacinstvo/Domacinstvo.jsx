@@ -30,9 +30,9 @@ const Domacinstvo = () => {
           </div>
         </div>
 
-        <div className={classes.info4}>
+        <div className={classes.info2}>
           <p className={classes.text}>
-            movina, bilo da je privatna (kuće, stanovi), poslovna (poslovni prostor, zalihe, oprema), izloženi su velikom broju rizika.
+            Imovina, bilo da je privatna (kuće, stanovi), poslovna (poslovni prostor, zalihe, oprema), izloženi su velikom broju rizika.
             <br />
             Ukoliko bi nešto od pobrojanih bilo ugroženo, može da izazove ozbiljne direktne ili indirektne finansijske gubitke i ugroziti opstanak porodice/firme.
             <br />
@@ -47,22 +47,22 @@ const Domacinstvo = () => {
           </p>
 
           <ul>
-            <li>požar,</li>
-            <li>udar groma,</li>
-            <li>eksplozija,</li>
-            <li>oluja,</li>
-            <li>grad,</li>
-            <li>poplava i bujica,</li>
-            <li>izlivanje vode iz instalacija,</li>
-            <li>provalna krađa i razbojništov,</li>
-            <li>lom stakala,</li>
-            <li>lom mašina,</li>
-            <li>računara,</li>
-            <li>pokretne tehnike,</li>
-            <li>objekata u izgradnji/montaži,</li>
-            <li>robe u transportu,</li>
+            <li>pozar</li>
+            <li>udar groma</li>
+            <li>eksplozija</li>
+            <li>oluja</li>
+            <li>grad</li>
+            <li>poplava i bujica</li>
+            <li>izlivanje vode iz instalacija</li>
+            <li>provalna krađa i razbojništov</li>
+            <li>lom stakala</li>
+            <li>lom mašina</li>
+            <li>računara</li>
+            <li>pokretne tehnike</li>
+            <li>objekata u izgradnji/montaži</li>
+            <li>robe u transportu</li>
             <li>prekida rada usled požara (šomaž) i</li>
-            <li>drugi nepredviđeni događaji.</li>
+            <li>drugi nepredviđeni događaji</li>
           </ul>
 
           <p className={classes.text}>

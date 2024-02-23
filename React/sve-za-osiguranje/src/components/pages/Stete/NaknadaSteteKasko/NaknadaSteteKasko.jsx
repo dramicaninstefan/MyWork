@@ -15,9 +15,9 @@ const NaknadaSteteKasko = () => {
       <main className={classes.main}>
         <div className={classes.hero}>
           <div className={classes.content}>
-            <h2 className={classes['small-title']}>NAKNADA ŠTETE ZA FIZIČKI I DUŠEVNI BOL</h2>
+            <h2 className={classes['small-title']}>NAKNADA ŠTETE – KASKO OSIGURANJE</h2>
             <h1 className={classes['title']}>
-              NAKNADA ŠTETE ZA FIZIČKI <br /> I DUŠEVNI BOL<span>.</span>
+              NAKNADA ŠTETE KASKO OSIGURANJE<span>.</span>
             </h1>
           </div>
         </div>

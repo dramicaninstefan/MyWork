@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 /* info1 */
@@ -535,7 +536,7 @@
 
 @media (max-width: 700px) {
   .main .info1 {
-    width: 100vw;
+    width: 85vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -549,7 +550,7 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    padding: 40px;
+    padding: 0px;
     gap: 25px;
   }
 
@@ -637,7 +638,7 @@
   /* info3 */
 
   .main .info3 {
-    width: 100vw;
+    width: 85vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -658,7 +659,7 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    padding: 40px;
+    padding: 30px 0px;
     gap: 25px;
   }
 
@@ -700,12 +701,12 @@
   /* info4 */
 
   .main .info4 {
-    width: 80vw;
+    width: 85vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-block: 40px;
+    padding-block: 0px;
   }
 
   .main .info4 .text {
