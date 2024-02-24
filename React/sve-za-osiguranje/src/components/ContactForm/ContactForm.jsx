@@ -28,19 +28,20 @@ const ContactForm = () => {
             <div className={classes['form-client-data']}>
               <div className={classes.inputs}>
                 <label htmlFor="firstName">Ime *</label>
-                <input type="text" id="firstName" placeholder="Ime Prezime*" />
+                <input type="text" id="firstName" placeholder="Ime Prezime*" required />
               </div>
               <div className={classes.inputs}>
                 <label htmlFor="number">Telefon *</label>
-                <input type="text" id="number" placeholder="(123)-456-7890*" />
+                <input type="text" id="number" placeholder="(123)-456-7890*" required />
               </div>
               <div className={classes.inputs}>
-                <label htmlFor="email">Email *</label>
+                <label htmlFor="email">Email</label>
                 <input type="text" id="email" placeholder="ime@gmail.com" />
               </div>
               <div className={classes.inputs}>
                 <label htmlFor="type">Zainteresovan sam za *</label>
                 <select name="" id="type">
+                  <option>Izaberi:</option>
                   <option value="Polisa za Kasko osiguranje">Polisa za Kasko osiguranje</option>
                   <option value="Polisa za Životno Osiguranje">Polisa za Životno Osiguranje</option>
                   <option value="Polisa za Putno osiguranje">Polisa za Putno osiguranje</option>
@@ -52,7 +53,7 @@ const ContactForm = () => {
               </div>
               <div className={classes.inputs}>
                 <label htmlFor="message">Kako možemo da Vam pomognemo? *</label>
-                <textarea name="message" id="message" placeholder="Treba mi pomoc oko..."></textarea>
+                <textarea name="message" id="message" placeholder="Treba mi pomoc oko..." required></textarea>
               </div>
               <button className={classes.btn}>Pošaljite upit</button>
             </div>

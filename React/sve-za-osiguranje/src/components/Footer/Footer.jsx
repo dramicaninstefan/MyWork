@@ -7,22 +7,22 @@ const Footer = () => {
     <Fragment>
       <div className={classes.container}>
         <div className={classes.social}>
-          <a href="viber://chat/?number=%2B381608060001" target="_blank" rel="noreferrer">
+          <a href="viber://chat/?number=%2B381638489439" rel="noreferrer">
             <div className={classes.viber}>
               <i className="fa-brands fa-viber"></i>
             </div>
           </a>
-          <a href="https://wa.me/+381608060001" target="_blank" rel="noreferrer">
+          <a href="https://wa.me/+381638489439" rel="noreferrer">
             <div className={classes.whatsapp}>
               <i className="fa-brands fa-whatsapp"></i>
             </div>
           </a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+          <a href="https://www.instagram.com/sve_za_osiguranje?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer">
             <div className={classes.instagram}>
               <i className="fa-brands fa-instagram"></i>
             </div>
           </a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+          <a href="https://www.facebook.com/profile.php?id=61556129409531&mibextid=ZbWKwL" target="_blank" rel="noreferrer">
             <div className={classes.facebook}>
               <i className="fa-brands fa-facebook-f"></i>
             </div>
