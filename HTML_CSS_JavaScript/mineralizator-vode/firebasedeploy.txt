@@ -1,0 +1,3 @@
+firebase use --add
+
+firebase deploy
