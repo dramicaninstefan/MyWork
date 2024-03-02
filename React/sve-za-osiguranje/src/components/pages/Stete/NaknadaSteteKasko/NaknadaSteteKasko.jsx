@@ -3,6 +3,8 @@ import { Fragment } from 'react';
 import Header from '../../../Header/Header';
 import Footer from '../../../Footer/Footer';
 import ContactForm from '../../../ContactForm/ContactForm';
+import CallUs from '../../../UI/CallUs';
+import ViberUs from '../../../UI/ViberUs';
 
 import classes from './NaknadaSteteKasko.module.css';
 
@@ -82,6 +84,9 @@ const NaknadaSteteKasko = () => {
 
         <div id="contact-form"></div>
         <ContactForm />
+
+        <ViberUs />
+        <CallUs />
       </main>
 
       <Footer />

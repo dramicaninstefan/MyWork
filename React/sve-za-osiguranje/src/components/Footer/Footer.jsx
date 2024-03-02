@@ -27,6 +27,11 @@ const Footer = () => {
               <i className="fa-brands fa-facebook-f"></i>
             </div>
           </a>
+          <a href="https://www.tiktok.com/@svezaosiguranje?is_from_webapp=1&sender_device=pc" target="_blank" rel="noreferrer">
+            <div className={classes.tiktok}>
+              <i className="fa-brands fa-tiktok"></i>
+            </div>
+          </a>
         </div>
         <div className={classes.text}>
           <p>Naš savet je prema Vama u potpunosti BESPLATAN i bez skrivenih troškova.</p>

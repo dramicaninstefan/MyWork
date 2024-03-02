@@ -5,6 +5,9 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import ContactForm from '../ContactForm/ContactForm';
 
+import CallUs from '../UI/CallUs';
+import ViberUs from '../UI/ViberUs';
+
 import classes from './Home.module.css';
 
 import heroImage from '../../assets/hero-women-accountant.jpg';
@@ -12,7 +15,6 @@ import slika1 from '../../assets/slika1-800x800.jpg';
 import slika2 from '../../assets/about-who-we-are.jpg';
 import slika3 from '../../assets/slika3-400x400.jpg';
 import slika4 from '../../assets/putno3-600x600.jpg';
-import CallUs from '../UI/CallUs';
 
 const Home = () => {
   window.scrollTo(0, 0);
@@ -186,6 +188,7 @@ const Home = () => {
 
           <ContactForm />
 
+          <ViberUs />
           <CallUs />
         </main>
       </div>

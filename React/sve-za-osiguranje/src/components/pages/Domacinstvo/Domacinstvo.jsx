@@ -3,6 +3,8 @@ import { Fragment } from 'react';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import ContactForm from '../../ContactForm/ContactForm';
+import CallUs from '../../UI/CallUs';
+import ViberUs from '../../UI/ViberUs';
 
 import classes from './Domacinstvo.module.css';
 
@@ -143,6 +145,9 @@ const Domacinstvo = () => {
 
         <div id="contact-form"></div>
         <ContactForm />
+
+        <CallUs />
+        <ViberUs />
       </main>
 
       <Footer />

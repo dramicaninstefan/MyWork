@@ -1,15 +1,15 @@
 import React, { Fragment, useState } from 'react';
 
-import classes from './CallUs.module.css';
+import classes from './ViberUs.module.css';
 
-const CallUs = () => {
+const ViberUs = () => {
   const [isOver, setIsOver] = useState(false);
 
   return (
     <Fragment>
-      <a href="tel:+381608060001" className={classes.callUsBtn}>
+      <a href="viber://chat/?number=%2B381638489439" className={classes.viberUsBtn}>
         <div className={classes.circle}>
-          <i className="fa-solid fa-phone"></i>
+          <i className="fa-brands fa-viber"></i>
         </div>
         <div className={classes.box} style={{ width: isOver ? '220px' : '0px' }}>
           <h1 className={classes['box-title']} style={{ opacity: isOver ? '1' : '0' }}>
@@ -21,4 +21,4 @@ const CallUs = () => {
   );
 };
 
-export default CallUs;
+export default ViberUs;

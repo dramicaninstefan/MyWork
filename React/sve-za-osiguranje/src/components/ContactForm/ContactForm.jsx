@@ -14,7 +14,7 @@ const ContactForm = () => {
             <h2 className={classes.link}>
               <i className="fa-solid fa-phone"></i>Telefon
             </h2>
-            <a href="https://maps.app.goo.gl/KbuoyivndrgjJfGZ8" target="_blank" rel="noreferrer" className={classes.adress}>
+            <a href="https://wa.me/+381638489439" target="_blank" rel="noreferrer" className={classes.adress}>
               +381 608060001
             </a>
             <h2 className={classes.link}>
@@ -35,20 +35,21 @@ const ContactForm = () => {
                 <input type="text" id="number" placeholder="(123)-456-7890*" required />
               </div>
               <div className={classes.inputs}>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Email (Opciono)</label>
                 <input type="text" id="email" placeholder="ime@gmail.com" />
               </div>
               <div className={classes.inputs}>
                 <label htmlFor="type">Zainteresovan sam za *</label>
                 <select name="" id="type">
                   <option>Izaberi:</option>
-                  <option value="Polisa za Kasko osiguranje">Polisa za Kasko osiguranje</option>
-                  <option value="Polisa za Životno Osiguranje">Polisa za Životno Osiguranje</option>
-                  <option value="Polisa za Putno osiguranje">Polisa za Putno osiguranje</option>
-                  <option value="Polisa za Osiguranje imovine">Polisa za Osiguranje imovine</option>
-                  <option value="Polisa za Dobrovoljno Zdravstveno Osiguranje">Polisa za Dobrovoljno Zdravstveno Osiguranje</option>
-                  <option value="Polisa za Osiguranje od nezgode">Polisa za Osiguranje od nezgode</option>
-                  <option value="Polisa za Osiguranje od odgovornosti">Polisa za Osiguranje od odgovornosti</option>
+                  <option value="Polisa za Kasko osiguranje">Kasko osiguranje</option>
+                  <option value="Polisa za Kasko osiguranje">Naplata štete</option>
+                  <option value="Polisa za Životno Osiguranje">Životno Osiguranje</option>
+                  <option value="Polisa za Putno osiguranje">Putno osiguranje</option>
+                  <option value="Polisa za Osiguranje imovine">Osiguranje imovine</option>
+                  <option value="Polisa za Dobrovoljno Zdravstveno Osiguranje">Dobrovoljno Zdravstveno Osiguranje</option>
+                  <option value="Polisa za Osiguranje od nezgode">Osiguranje od nezgode</option>
+                  <option value="Polisa za Osiguranje od odgovornosti">Osiguranje od odgovornosti</option>
                 </select>
               </div>
               <div className={classes.inputs}>
