@@ -165,7 +165,7 @@ const Header = (props) => {
                 <a href="tel:+381608060001">+381 608060001</a>
               </div>
               <div className={classes['header-info-social']}>
-                <a href="https://facebook.com/" target="_blank" rel="noreferrer">
+                {/* <a href="https://facebook.com/" target="_blank" rel="noreferrer">
                   <i className="fa-brands fa-square-facebook"></i>
                 </a>
                 <a href="https://instagram.com/" target="_blank" rel="noreferrer">
@@ -176,7 +176,7 @@ const Header = (props) => {
                 </a>
                 <a href="https://wa.me/+381608060001" target="_blank" rel="noreferrer">
                   <i className="fa-brands fa-whatsapp"></i>
-                </a>
+                </a> */}
               </div>
             </div>
 

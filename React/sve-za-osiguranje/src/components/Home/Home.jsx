@@ -7,6 +7,8 @@ import ContactForm from '../ContactForm/ContactForm';
 
 import CallUs from '../UI/CallUs';
 import ViberUs from '../UI/ViberUs';
+import SocialIcons from '../UI/SocialIcons';
+import ToTop from '../UI/ToTop';
 
 import classes from './Home.module.css';
 
@@ -22,6 +24,7 @@ const Home = () => {
   return (
     <Fragment>
       <Header backgroundColor="--hero-color" backgroundColorScroll="--white-color" />
+
       <div style={{ overflowX: 'hidden' }}>
         <section className={classes.hero}>
           <div className={classes['hero-content']}>
@@ -188,8 +191,12 @@ const Home = () => {
 
           <ContactForm />
 
+          <SocialIcons />
+
           <ViberUs />
           <CallUs />
+
+          <ToTop />
         </main>
       </div>
       <Footer />

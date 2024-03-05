@@ -1,0 +1,42 @@
+/* <reset-style> ============================ */
+a {
+  text-decoration: none;
+}
+/* <main-style> ============================ */
+.scroll-up {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 1000;
+  width: 45px;
+  height: 45px;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.scroll-up.active {
+  opacity: 1;
+}
+
+.scroll-up:hover {
+  transform: translateY(-0.25rem);
+}
+
+/* Show scroll-up */
+._show-scroll {
+  bottom: 3rem;
+}
+
+@media (max-width: 1199.98px) {
+  .scroll-up {
+    right: 1rem;
+  }
+}

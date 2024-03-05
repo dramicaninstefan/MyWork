@@ -1,0 +1,46 @@
+.social {
+  position: fixed;
+  top: 20%;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1508;
+}
+
+.icons {
+  margin-block: 3px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  /* filter: grayscale(100%); */
+  transition: all 0.3s ease;
+}
+
+.viber {
+  color: #fff;
+  background-color: #8f5db7;
+}
+
+.whatsup {
+  color: #fff;
+  background-color: #25d366;
+}
+
+.icons:hover {
+  filter: grayscale(0);
+  transform: rotate(-10deg);
+}
+
+@media only screen and (max-width: 1350px) {
+  .social {
+    display: none;
+  }
+
+  .icons {
+    width: 35px;
+  }
+}

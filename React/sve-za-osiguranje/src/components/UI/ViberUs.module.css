@@ -8,7 +8,7 @@
   position: fixed;
   right: 1rem;
   bottom: 7rem;
-  background-color: #7360f2;
+  background-color: #8f5db7;
   width: 70px;
   height: 70px;
   display: flex;
@@ -74,7 +74,7 @@
   font-size: 25px;
 }
 
-@media (max-width: 1250px) and (max-height: 1170px) {
+@media (max-width: 1350px) and (max-height: 1170px) {
   .viberUsBtn {
     display: block;
   }

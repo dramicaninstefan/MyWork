@@ -3,8 +3,11 @@ import { Fragment } from 'react';
 import Header from '../../../Header/Header';
 import Footer from '../../../Footer/Footer';
 import ContactForm from '../../../ContactForm/ContactForm';
+
 import CallUs from '../../../UI/CallUs';
 import ViberUs from '../../../UI/ViberUs';
+import SocialIcons from '../../../UI/SocialIcons';
+import ToTop from '../../../UI/ToTop';
 
 import classes from './NaknadaSteteZaFizickuIDusevnuBol.module.css';
 
@@ -64,8 +67,11 @@ const NaknadaSteteZaFizickuIDusevnuBol = () => {
         <div id="contact-form"></div>
         <ContactForm />
 
+        <SocialIcons />
+
         <ViberUs />
         <CallUs />
+        <ToTop />
       </main>
 
       <Footer />
