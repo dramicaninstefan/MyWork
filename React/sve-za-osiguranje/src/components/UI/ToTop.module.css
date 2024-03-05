@@ -35,8 +35,8 @@ a {
   bottom: 3rem;
 }
 
-@media (max-width: 1199.98px) {
+@media (max-width: 1350px) and (max-height: 1170px) {
   .scroll-up {
-    right: 1rem;
+    display: none;
   }
 }
