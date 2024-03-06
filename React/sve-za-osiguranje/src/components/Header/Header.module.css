@@ -119,6 +119,7 @@
 .container .header-content .header-links .damage {
   font-size: 20px;
   height: 100%;
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;

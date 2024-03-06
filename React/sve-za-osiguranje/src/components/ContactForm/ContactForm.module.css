@@ -32,16 +32,46 @@
 
 .contact-form .content .form {
   width: 55%;
-  height: 800px;
+  height: 900px;
   background-color: #fff;
   color: #000;
-  padding: 20px;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
 }
 
+.contact-form .content .form .success {
+  width: 90%;
+  height: 20px;
+  font-family: var(--primary-ff);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+  padding: 20px 20px;
+  margin: auto;
+  border-radius: 30px;
+  color: #fff;
+}
+
+.contact-form .content .form .error {
+  width: 90%;
+  height: 20px;
+  font-family: var(--primary-ff);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  padding: 20px 20px;
+  margin: auto;
+  border-radius: 30px;
+  color: #fff;
+}
+
 .contact-form .content .form .form-client-data {
+  padding: 20px;
   display: flex;
   flex-direction: column;
 }

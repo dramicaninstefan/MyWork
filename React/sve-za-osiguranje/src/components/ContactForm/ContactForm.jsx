@@ -7,6 +7,9 @@ const ContactForm = () => {
   const submitBtn = useRef();
   const form = useRef();
 
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const [email, setEmail] = useState('');
@@ -30,10 +33,19 @@ const ContactForm = () => {
       })
       .then(
         (response) => {
-          alert('SUCCESS!');
+          setSuccess(true);
+          setName('');
+          setNumber('');
+          setEmail('');
+          setSelect('');
+          setMessage('');
+
+          setTimeout(() => {
+            setSuccess(false);
+          }, 3000);
         },
         (err) => {
-          alert('FAILED...');
+          setError(true);
         }
       );
   }
@@ -61,15 +73,18 @@ const ContactForm = () => {
           </div>
           <form ref={form} className={classes.form} action="https://formsubmit.co/gamer95.g@email.com" method="POST">
             <div className={classes['form-client-data']}>
+              {success ? <div className={classes.success}>Uspesno ste poslali podatke!</div> : null}
+              {error ? <div className={classes.error}>Došlo je do greške!</div> : null}
               <div className={classes.inputs}>
                 <label htmlFor="firstName">Ime *</label>
                 <input
                   type="text"
                   id="firstName"
-                  placeholder="Ime Prezime*"
+                  placeholder="Ime*"
                   onChange={(e) => {
                     setName(e.target.value);
                   }}
+                  value={name}
                   required
                 />
               </div>
@@ -82,6 +97,7 @@ const ContactForm = () => {
                   onChange={(e) => {
                     setNumber(e.target.value);
                   }}
+                  value={number}
                   required
                 />
               </div>
@@ -94,6 +110,7 @@ const ContactForm = () => {
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
+                  value={email}
                 />
               </div>
               <div className={classes.inputs}>
@@ -104,6 +121,7 @@ const ContactForm = () => {
                   onChange={(e) => {
                     setSelect(e.target.value);
                   }}
+                  value={select}
                 >
                   <option>Izaberi:</option>
                   <option value="Kasko osiguranje">Kasko osiguranje</option>
@@ -126,6 +144,7 @@ const ContactForm = () => {
                   onChange={(e) => {
                     setMessage(e.target.value);
                   }}
+                  value={message}
                 ></textarea>
               </div>
               <button ref={submitBtn} className={classes.btn} onClick={sendEmail}>
