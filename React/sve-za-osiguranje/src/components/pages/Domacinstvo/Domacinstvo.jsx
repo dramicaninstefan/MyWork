@@ -80,10 +80,10 @@ const Domacinstvo = () => {
           <br />
         </div>
 
-        {/* <div className={classes.info3}>
+        <div className={classes.info3}>
           <h2 className={classes.title}>Najčešća pitanja vezana za osiguranje imovine</h2>
           <FAQ />
-        </div> */}
+        </div>
 
         <div className={classes.info4}>
           <h2 className={classes.title}>Polisa za Osiguranje od odgovornosti</h2>
