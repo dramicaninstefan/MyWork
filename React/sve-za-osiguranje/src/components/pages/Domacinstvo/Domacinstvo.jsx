@@ -6,8 +6,10 @@ import ContactForm from '../../ContactForm/ContactForm';
 
 import CallUs from '../../UI/CallUs';
 import ViberUs from '../../UI/ViberUs';
+import WhatsApp from '../../UI/WhatsApp';
 import SocialIcons from '../../UI/SocialIcons';
 import ToTop from '../../UI/ToTop';
+import FAQ from '../../UI/FAQ';
 
 import classes from './Domacinstvo.module.css';
 
@@ -78,9 +80,10 @@ const Domacinstvo = () => {
           <br />
         </div>
 
-        <div className={classes.info3}>
-          <h2 className={classes.title}>Q&A</h2>
-        </div>
+        {/* <div className={classes.info3}>
+          <h2 className={classes.title}>Najčešća pitanja vezana za osiguranje imovine</h2>
+          <FAQ />
+        </div> */}
 
         <div className={classes.info4}>
           <h2 className={classes.title}>Polisa za Osiguranje od odgovornosti</h2>
@@ -151,8 +154,9 @@ const Domacinstvo = () => {
 
         <SocialIcons />
 
-        <CallUs />
+        <WhatsApp />
         <ViberUs />
+        <CallUs />
         <ToTop />
       </main>
 

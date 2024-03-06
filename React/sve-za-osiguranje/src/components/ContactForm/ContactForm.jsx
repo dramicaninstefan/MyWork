@@ -49,7 +49,7 @@ const ContactForm = () => {
             <h2 className={classes.link}>
               <i className="fa-solid fa-phone"></i>Telefon
             </h2>
-            <a href="https://wa.me/+381638489439" target="_blank" rel="noreferrer" className={classes.adress}>
+            <a href="tel:+381608060001" target="_blank" rel="noreferrer" className={classes.adress}>
               +381 608060001
             </a>
             <h2 className={classes.link}>

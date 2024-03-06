@@ -6,6 +6,7 @@ import ContactForm from '../../../ContactForm/ContactForm';
 
 import CallUs from '../../../UI/CallUs';
 import ViberUs from '../../../UI/ViberUs';
+import WhatsApp from '../../../UI/WhatsApp';
 import SocialIcons from '../../../UI/SocialIcons';
 import ToTop from '../../../UI/ToTop';
 
@@ -78,6 +79,7 @@ const Autoodgovornost = () => {
 
         <SocialIcons />
 
+        <WhatsApp />
         <ViberUs />
         <CallUs />
         <ToTop />
