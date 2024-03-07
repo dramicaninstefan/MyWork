@@ -642,7 +642,7 @@
   }
 
   .container .header-logo img {
-    display: none;
+    width: 100%;
   }
 
   .hamburgerMenu {
