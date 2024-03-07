@@ -1072,11 +1072,11 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 40px;
   }
 
   .main .info7 .info-title {
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
     line-height: 56px;
     font-family: var(--primary-ff);
