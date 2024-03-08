@@ -7,8 +7,9 @@ const ContactForm = () => {
   const submitBtn = useRef();
   const form = useRef();
 
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+  const [successMsg, setSuccessMsg] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(false);
+  const [alertMsg, setAlertMsg] = useState(false);
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -27,27 +28,35 @@ const ContactForm = () => {
   function sendEmail(e) {
     e.preventDefault();
 
-    emailjs
-      .send('service_0ee562d', 'template_l23rpm9', templateParams, {
-        publicKey: '_TykGN5dKmnTuxu5y',
-      })
-      .then(
-        (response) => {
-          setSuccess(true);
-          setName('');
-          setNumber('');
-          setEmail('');
-          setSelect('');
-          setMessage('');
+    if (name !== '' && number !== '' && select !== '' && message !== '') {
+      emailjs
+        .send('service_0ee562d', 'template_l23rpm9', templateParams, {
+          publicKey: '_TykGN5dKmnTuxu5y',
+        })
+        .then(
+          (response) => {
+            setSuccessMsg(true);
+            setName('');
+            setNumber('');
+            setEmail('');
+            setSelect('');
+            setMessage('');
 
-          setTimeout(() => {
-            setSuccess(false);
-          }, 3000);
-        },
-        (err) => {
-          setError(true);
-        }
-      );
+            setTimeout(() => {
+              setSuccessMsg(false);
+            }, 3000);
+          },
+          (err) => {
+            setErrorMsg(true);
+          }
+        );
+    } else {
+      setAlertMsg(true);
+
+      setTimeout(() => {
+        setAlertMsg(false);
+      }, 3000);
+    }
   }
 
   return (
@@ -73,8 +82,6 @@ const ContactForm = () => {
           </div>
           <form ref={form} className={classes.form} action="https://formsubmit.co/gamer95.g@email.com" method="POST">
             <div className={classes['form-client-data']}>
-              {success ? <div className={classes.success}>Uspesno ste poslali podatke!</div> : null}
-              {error ? <div className={classes.error}>Došlo je do greške!</div> : null}
               <div className={classes.inputs}>
                 <label htmlFor="firstName">Ime *</label>
                 <input
@@ -123,7 +130,7 @@ const ContactForm = () => {
                   }}
                   value={select}
                 >
-                  <option>Izaberi:</option>
+                  <option value={''}>Izaberi:</option>
                   <option value="Kasko osiguranje">Kasko osiguranje</option>
                   <option value="Naplata štete">Naplata štete</option>
                   <option value="Životno Osiguranje">Životno Osiguranje</option>
@@ -150,6 +157,10 @@ const ContactForm = () => {
               <button ref={submitBtn} className={classes.btn} onClick={sendEmail}>
                 Pošaljite upit
               </button>
+
+              {successMsg ? <div className={classes.success}>Uspesno ste poslali podatke!</div> : null}
+              {errorMsg ? <div className={classes.error}>Došlo je do greške!</div> : null}
+              {alertMsg ? <div className={classes.alert}>Molim Vas unesite obavezna polja! *</div> : null}
             </div>
           </form>
         </div>

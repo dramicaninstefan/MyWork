@@ -53,6 +53,7 @@
   margin: auto;
   border-radius: 30px;
   color: #fff;
+  margin-top: 30px;
 }
 
 .contact-form .content .form .error {
@@ -68,6 +69,23 @@
   margin: auto;
   border-radius: 30px;
   color: #fff;
+  margin-top: 30px;
+}
+
+.contact-form .content .form .alert {
+  width: 90%;
+  height: 20px;
+  font-family: var(--primary-ff);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffc100;
+  padding: 20px 20px;
+  margin: auto;
+  border-radius: 30px;
+  color: black;
+  margin-top: 30px;
 }
 
 .contact-form .content .form .form-client-data {
