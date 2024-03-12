@@ -16,7 +16,10 @@ const Header = (props) => {
   };
 
   useEffect(() => {
-    if (location.pathname === '/kasko-osiguranje-vozila' || location.pathname === '/autoodgovornost' || location.pathname === '/pomoc-na-putu' || location.pathname === '/registracija-vozila') {
+    // if (location.pathname === '/kasko-osiguranje-vozila' || location.pathname === '/autoodgovornost' || location.pathname === '/pomoc-na-putu' || location.pathname === '/registracija-vozila') {
+    //   locationVehicles();
+    // }
+    if (location.pathname === '/autoodgovornost' || location.pathname === '/pomoc-na-putu' || location.pathname === '/registracija-vozila') {
       locationVehicles();
     }
   }, [location.pathname]);
@@ -35,23 +38,23 @@ const Header = (props) => {
   }, [location.pathname]);
 
   // set active color of damage dropdown
-  const [damageLocation, setDamageLocation] = useState(false);
+  // const [damageLocation, setDamageLocation] = useState(false);
 
-  const locationDamage = () => {
-    setDamageLocation(true);
-  };
+  // const locationDamage = () => {
+  //   setDamageLocation(true);
+  // };
 
-  useEffect(() => {
-    if (
-      location.pathname === '/prijava-i-naknada-stete' ||
-      location.pathname === '/naplata-naknada-stete-na-vozilu' ||
-      location.pathname === '/naknada-stete-kasko-osiguranje' ||
-      location.pathname === '/osiguranje-putnika-u-javnom-prevozu' ||
-      location.pathname === '/naknada-stete-za-fizicki-i-dusevni-bol'
-    ) {
-      locationDamage();
-    }
-  }, [location.pathname]);
+  // useEffect(() => {
+  //   if (
+  //     location.pathname === '/prijava-i-naknada-stete' ||
+  //     location.pathname === '/naplata-naknada-stete-na-vozilu' ||
+  //     location.pathname === '/naknada-stete-kasko-osiguranje' ||
+  //     location.pathname === '/osiguranje-putnika-u-javnom-prevozu' ||
+  //     location.pathname === '/naknada-stete-za-fizicki-i-dusevni-bol'
+  //   ) {
+  //     locationDamage();
+  //   }
+  // }, [location.pathname]);
 
   // show vehicles dropdown
   const [vehicles, setVehicles] = useState(false);
@@ -69,7 +72,7 @@ const Header = (props) => {
 
   const showVehiclesDropdownMobile = () => {
     setVehiclesMobile((current) => !current);
-    setDamageMobile(false);
+    // setDamageMobile(false);
     setHealthMobile(false);
   };
 
@@ -90,28 +93,28 @@ const Header = (props) => {
   const showHealthDropdownMobile = () => {
     setVehiclesMobile(false);
     setHealthMobile((current) => !current);
-    setDamageMobile(false);
+    // setDamageMobile(false);
   };
 
-  // show damage dropdown
-  const [damage, setDamage] = useState(false);
+  // // show damage dropdown
+  // const [damage, setDamage] = useState(false);
 
-  const showDamageDropdown = () => {
-    setDamage(true);
-  };
+  // const showDamageDropdown = () => {
+  //   setDamage(true);
+  // };
 
-  const hideDamageDropdown = () => {
-    setDamage(false);
-  };
+  // const hideDamageDropdown = () => {
+  //   setDamage(false);
+  // };
 
   // show damage mobile dropdown
-  const [damageMobile, setDamageMobile] = useState(false);
+  // const [damageMobile, setDamageMobile] = useState(false);
 
-  const showDamageDropdownMobile = () => {
-    setVehiclesMobile(false);
-    setHealthMobile(false);
-    setDamageMobile((current) => !current);
-  };
+  // const showDamageDropdownMobile = () => {
+  //   setVehiclesMobile(false);
+  //   setHealthMobile(false);
+  //   setDamageMobile((current) => !current);
+  // };
 
   // change color of header on scroll
   const [color, setColor] = useState(false);
@@ -132,7 +135,7 @@ const Header = (props) => {
   const handleMenuNav = () => {
     setOpenMobileNav((current) => !current);
     setVehiclesMobile(false);
-    setDamageMobile(false);
+    // setDamageMobile(false);
     setHealthMobile(false);
     window.scrollTo(0, 0);
   };
@@ -142,7 +145,7 @@ const Header = (props) => {
   const handleCloseMenuNav = () => {
     setOpenMobileNav(false);
     setVehiclesMobile(false);
-    setDamageMobile(false);
+    // setDamageMobile(false);
     setHealthMobile(false);
   };
 
@@ -184,16 +187,56 @@ const Header = (props) => {
               <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/" end>
                 Početna
               </NavLink>
+              <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kasko-osiguranje-vozila" end>
+                Kasko
+              </NavLink>
+              <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naplata-naknada-stete" end>
+                Naplata štete
+              </NavLink>
+              {/* <div onMouseEnter={showDamageDropdown} onMouseLeave={hideDamageDropdown} className={classes.damage}>
+                <p style={damageLocation ? { color: 'var(--secondary-color)' } : undefined}>
+                  Naplata štete <i style={damage ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
+                </p>
+
+                <ul className={damage ? `${classes['dropdown-damage']} ${classes.active}` : classes['dropdown-damage']}>
+                  <li>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/prijava-i-naknada-stete" end>
+                      Prijava i naknada štete
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naplata-naknada-stete-na-vozilu" end>
+                      Naplata štete na vozilu
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naknada-stete-kasko-osiguranje" end>
+                      Naknada stete kasko <br /> osiguranja
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/osiguranje-putnika-u-javnom-prevozu" end>
+                      Osiguranje putnika u <br />
+                      javnom prevozu
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naknada-stete-za-fizicki-i-dusevni-bol" end>
+                      Naknada štete za fizičku <br /> i duševnu bol
+                    </NavLink>
+                  </li>
+                </ul>
+              </div> */}
               <div onMouseEnter={showVehiclesDropdown} onMouseLeave={hideVehiclesDropdown} className={classes.vehicles}>
                 <p style={vehiclesLocation ? { color: 'var(--secondary-color)' } : undefined}>
                   Vozila <i style={vehicles ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
                 </p>
                 <ul className={vehicles ? `${classes['dropdown-vehicle']} ${classes.active}` : classes['dropdown-vehicle']}>
-                  <li>
+                  {/* <li>
                     <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kasko-osiguranje-vozila" end>
                       Kasko osiguranje vozila
                     </NavLink>
-                  </li>
+                  </li> */}
                   <li>
                     <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/autoodgovornost" end>
                       Autoodgovornost
@@ -241,40 +284,7 @@ const Header = (props) => {
               <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/putno-osiguranje" end>
                 Putno
               </NavLink>
-              <div onMouseEnter={showDamageDropdown} onMouseLeave={hideDamageDropdown} className={classes.damage}>
-                <p style={damageLocation ? { color: 'var(--secondary-color)' } : undefined}>
-                  Naplata štete <i style={damage ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
-                </p>
 
-                <ul className={damage ? `${classes['dropdown-damage']} ${classes.active}` : classes['dropdown-damage']}>
-                  <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/prijava-i-naknada-stete" end>
-                      Prijava i naknada štete
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naplata-naknada-stete-na-vozilu" end>
-                      Naplata štete na vozilu
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naknada-stete-kasko-osiguranje" end>
-                      Naknada stete kasko <br /> osiguranja
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/osiguranje-putnika-u-javnom-prevozu" end>
-                      Osiguranje putnika u <br />
-                      javnom prevozu
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naknada-stete-za-fizicki-i-dusevni-bol" end>
-                      Naknada štete za fizičku <br /> i duševnu bol
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
               <a className={classes.contact} href="#contact-form">
                 Kontakt
               </a>
@@ -301,16 +311,56 @@ const Header = (props) => {
             </NavLink>
           </li>
           <li>
+            <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kasko-osiguranje-vozila" end>
+              Kasko
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naplata-naknada-stete" end>
+              Naplata štete
+            </NavLink>
+          </li>
+          {/* <li>
+            <div onClick={showDamageDropdownMobile}>
+              <p style={damageLocation ? { color: 'var(--secondary-color)' } : undefined}>
+                Naplata štete <i style={damageMobile ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
+              </p>
+              <ul className={damageMobile ? `${classes['dropdown-damage']} ${classes.active}` : classes['dropdown-damage']}>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/prijava-i-naknada-stete" end>
+                    Prijava i naknada štete
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naplata-naknada-stete-na-vozilu" end>
+                    Naplata štete na vozilu
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naknada-stete-kasko-osiguranje" end>
+                    Naknada stete kasko <br /> osiguranja
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/osiguranje-putnika-u-javnom-prevozu" end>
+                    Osiguranje putnika u <br />
+                    javnom prevozu
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naknada-stete-za-fizicki-i-dusevni-bol" end>
+                    Naknada štete za fizičku <br /> i duševnu bol
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </li> */}
+          <li>
             <div onClick={showVehiclesDropdownMobile}>
               <p style={vehiclesLocation ? { color: 'var(--secondary-color)' } : undefined}>
                 Vozila <i style={vehiclesMobile ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
               </p>
               <ul className={vehiclesMobile ? `${classes['dropdown-vehicle']} ${classes.active}` : classes['dropdown-vehicle']}>
-                <li>
-                  <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kasko-osiguranje-vozila" end>
-                    Kasko osiguranje vozila
-                  </NavLink>
-                </li>
                 <li>
                   <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/autoodgovornost" end>
                     Autoodgovornost
@@ -364,41 +414,7 @@ const Header = (props) => {
               Putno
             </NavLink>
           </li>
-          <li>
-            <div onClick={showDamageDropdownMobile}>
-              <p style={damageLocation ? { color: 'var(--secondary-color)' } : undefined}>
-                Naplata štete <i style={damageMobile ? { transform: 'rotate(0deg)' } : { transform: 'rotate(-90deg)' }} className="fa-solid fa-angle-down"></i>
-              </p>
-              <ul className={damageMobile ? `${classes['dropdown-damage']} ${classes.active}` : classes['dropdown-damage']}>
-                <li>
-                  <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/prijava-i-naknada-stete" end>
-                    Prijava i naknada štete
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naplata-naknada-stete-na-vozilu" end>
-                    Naplata štete na vozilu
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naknada-stete-kasko-osiguranje" end>
-                    Naknada stete kasko <br /> osiguranja
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/osiguranje-putnika-u-javnom-prevozu" end>
-                    Osiguranje putnika u <br />
-                    javnom prevozu
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naknada-stete-za-fizicki-i-dusevni-bol" end>
-                    Naknada štete za fizičku <br /> i duševnu bol
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
-          </li>
+
           <li onClick={handleCloseMenuNav}>
             <a href="#contact-form">Kontakt</a>
           </li>

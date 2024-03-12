@@ -30,11 +30,18 @@ const Home = () => {
         <section className={classes.hero}>
           <div className={classes['hero-content']}>
             <h1 className={classes['hero-content-title']}>Sve za osiguranje</h1>
-            <p className={classes['hero-content-text']}>
+            {/* <p className={classes['hero-content-text']}>
               Sve POLISE i ŠTETE u osiguranju, kod svih osiguravajućih kuća.
               <br />
               <br />
               Uporedite cene osiguranja kod svih osiguravajućih kuća, naplatite štetu iz osiguranja.
+            </p> */}
+            <p className={classes['hero-content-text']}>
+              <b>11 ponuda</b> za osiguranje, bez “sitnih slova”!
+              <br />
+              <b>Potpuno besplatne ponude</b>, jer nas plaća osiguravajuća kuća kojoj donesemo posao.
+              <br />
+              <b>Uporedite cene</b> i dogovorite za sebe <b>polisu</b> osiguranja.
             </p>
             <a className={classes['hero-content-contact']} href="#contact-form">
               Kontaktirajte nas odmah

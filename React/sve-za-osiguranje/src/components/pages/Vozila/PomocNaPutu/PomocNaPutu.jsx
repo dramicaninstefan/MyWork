@@ -62,7 +62,7 @@ const PomocNaPutu = () => {
 
         <div className={classes.info3}>
           <div className={classes['content']}>
-            <h2 className={classes['content-small-title']}>Auto osiguranje</h2>
+            {/* <h2 className={classes['content-small-title']}>Auto osiguranje</h2> */}
             <h1 className={classes['content-title']}>Šta dobijate paketom Komfort?</h1>
             <p className={classes['content-text']}>
               Asistenstske kuće su vam dostupne putem info linije koja radi 24/7 i organizuju vam pomoć adekvatnu situaciji u kojoj ste se našli. Najpre, postoji mogućnost da će uz pomoć stručnjaka

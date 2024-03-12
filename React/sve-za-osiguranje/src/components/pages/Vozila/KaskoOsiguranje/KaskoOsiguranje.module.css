@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
   padding-top: 50px;
-  padding-bottom: 90px;
+  padding-bottom: 50px;
 }
 .main .info1 .title {
   font-size: var(--typography2-font-size);
@@ -186,7 +186,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-block: 90px;
+  padding-block: 30px;
 }
 
 .main .info4 .text {

@@ -16,11 +16,13 @@ import OsiguranjeOdNezgode from './components/pages/ZivotnoIZdravstveno/Osiguran
 
 import Putno from './components/pages/Putno/Putno';
 
-import NaknadaSteteKasko from './components/pages/Stete/NaknadaSteteKasko/NaknadaSteteKasko';
-import NaknadaSteteZaFizickuIDusevnuBol from './components/pages/Stete/NaknadaSteteZaFizickuIDusevnuBol/NaknadaSteteZaFizickuIDusevnuBol';
-import NaplataSteteNaVozilu from './components/pages/Stete/NaplataSteteNaVozilu/NaplataStete';
-import OsiguranjePutnikaUJavnomPrevozu from './components/pages/Stete/OsiguranjePutnikaUJavnomPrevozu/OsiguranjePutnikaUJavnomPrevozu';
-import PrijavaINaknadaStete from './components/pages/Stete/PrijavaINaknadaStete/PrijavaINaknadaStete';
+import NaplataStete from './components/pages/NaplataStete/NaplataStete';
+
+// import NaknadaSteteKasko from './components/pages/Stete/NaknadaSteteKasko/NaknadaSteteKasko';
+// import NaknadaSteteZaFizickuIDusevnuBol from './components/pages/Stete/NaknadaSteteZaFizickuIDusevnuBol/NaknadaSteteZaFizickuIDusevnuBol';
+// import NaplataSteteNaVozilu from './components/pages/Stete/NaplataSteteNaVozilu/NaplataStete';
+// import OsiguranjePutnikaUJavnomPrevozu from './components/pages/Stete/OsiguranjePutnikaUJavnomPrevozu/OsiguranjePutnikaUJavnomPrevozu';
+// import PrijavaINaknadaStete from './components/pages/Stete/PrijavaINaknadaStete/PrijavaINaknadaStete';
 
 import RootLayout from './components/routes/RootLayout';
 import ErrorPage from './components/routes/ErrorPage';
@@ -50,11 +52,13 @@ function App() {
 
         { path: '/putno-osiguranje', element: <Putno /> },
 
-        { path: '/prijava-i-naknada-stete', element: <PrijavaINaknadaStete /> },
-        { path: '/naplata-naknada-stete-na-vozilu', element: <NaplataSteteNaVozilu /> },
-        { path: '/naknada-stete-kasko-osiguranje', element: <NaknadaSteteKasko /> },
-        { path: '/osiguranje-putnika-u-javnom-prevozu', element: <OsiguranjePutnikaUJavnomPrevozu /> },
-        { path: '/naknada-stete-za-fizicki-i-dusevni-bol', element: <NaknadaSteteZaFizickuIDusevnuBol /> },
+        { path: '/naplata-naknada-stete', element: <NaplataStete /> },
+
+        // { path: '/prijava-i-naknada-stete', element: <PrijavaINaknadaStete /> },
+        // { path: '/naplata-naknada-stete-na-vozilu', element: <NaplataSteteNaVozilu /> },
+        // { path: '/naknada-stete-kasko-osiguranje', element: <NaknadaSteteKasko /> },
+        // { path: '/osiguranje-putnika-u-javnom-prevozu', element: <OsiguranjePutnikaUJavnomPrevozu /> },
+        // { path: '/naknada-stete-za-fizicki-i-dusevni-bol', element: <NaknadaSteteZaFizickuIDusevnuBol /> },
       ],
     },
   ]);
