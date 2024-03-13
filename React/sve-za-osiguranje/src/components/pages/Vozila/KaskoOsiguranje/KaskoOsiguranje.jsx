@@ -38,8 +38,6 @@ const KaskoOsiguranje = () => {
         </div>
 
         <div className={classes.info4}>
-          <h2 className={classes.title}> Nekoliko razloga zašto biste mogli dogovoriti kasko osiguranje preko nas:</h2>
-          <br />
           <p className={classes.text}>
             Da bi ste dobili preko 20 ponuda, od 11 osiguravajućih kuća, <b>potrebno je sledeće</b>:
             <br />
