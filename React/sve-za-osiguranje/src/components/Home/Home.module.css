@@ -659,8 +659,18 @@
 }
 
 @media (max-width: 1702px) {
-  .hero .hero-content .hero-content-contact {
-    flex-direction: column;
+  .hero .hero-content .hero-content-contact .social .icons {
+    margin-block: 40px;
+    margin-inline: 5px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    /* filter: grayscale(100%); */
+    transition: all 0.3s ease;
   }
 }
 
