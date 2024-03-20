@@ -14,6 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 70px 0px;
   background-color: var(--hero-color);
 }
 
@@ -27,7 +28,7 @@
   color: var(--primary-color);
   font-weight: 700;
   font-size: var(--typography6-font-size);
-  padding-top: 90px;
+  padding-top: 0px;
   padding-bottom: 90px;
 }
 
@@ -39,7 +40,151 @@
   font-family: var(--primary-ff);
   opacity: 0.7;
   font-size: var(--typography3-font-size);
-  padding-bottom: 90px;
+  padding-bottom: 50px;
+}
+
+/* hero-content-contact */
+
+.main .hero .content .contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* hero-content-contact-btn */
+
+.main .hero .content .contact .contact-btn {
+  background-color: var(--secondary-color);
+  color: #fff;
+  font-family: var(--primary-ff);
+  padding: 15px 30px;
+  font-size: var(--typography3-font-size);
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  border-radius: 20px;
+  border: 3px solid var(--secondary-color);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.main .hero .content .contact .contact-btn:hover {
+  background-color: #fff;
+  border: 3px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+/* social */
+
+.main .hero .content .contact .social {
+  display: flex;
+  z-index: 990;
+}
+
+.main .hero .content .contact .social .icons {
+  margin-block: 40px;
+  margin-inline: 5px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  /* filter: grayscale(100%); */
+  transition: all 0.3s ease;
+}
+
+.main .hero .content .contact .social .email {
+  color: #fff;
+  background-color: #0489c9;
+}
+
+.main .hero .content .contact .social .viber {
+  color: #fff;
+  background-color: #8f5db7;
+}
+
+.main .hero .content .contact .social .whatsup {
+  color: #fff;
+  background-color: #25d366;
+}
+
+.main .hero .content .contact .social .icons:hover {
+  filter: grayscale(0);
+  transform: rotate(-10deg);
+}
+
+@media only screen and (max-width: 1350px) {
+  .main .hero .content .contact .social {
+    display: none;
+  }
+
+  .main .hero .content .contact .social .icons {
+    width: 50px;
+    height: 50px;
+    font-size: 21px;
+  }
+}
+
+/* social-mobile */
+
+.social-mobile {
+  display: none;
+  z-index: 990;
+}
+
+.icons {
+  margin-block: 40px;
+  margin-inline: 5px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  /* filter: grayscale(100%); */
+  transition: all 0.3s ease;
+}
+
+.call {
+  color: #fff;
+  background-color: var(--secondary-color);
+}
+
+.viber {
+  color: #fff;
+  background-color: #8f5db7;
+}
+
+.whatsup {
+  color: #fff;
+  background-color: #25d366;
+}
+
+.email {
+  color: #fff;
+  background-color: #0489c9;
+}
+
+.icons:hover {
+  filter: grayscale(0);
+  transform: rotate(-10deg);
+}
+
+@media only screen and (max-width: 1350px) {
+  .social-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icons {
+    width: 50px;
+    height: 50px;
+    font-size: 21px;
+  }
 }
 
 /* info1 */
@@ -249,6 +394,31 @@
     line-height: 30px;
   }
 
+  /* contact */
+
+  .main .hero .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main .hero .content .contact .contact-btn {
+    margin: auto;
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-family: var(--primary-ff);
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    border-radius: 20px;
+    border: 3px solid var(--secondary-color);
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
   /* info1 */
 
   .main .info1 {
@@ -402,5 +572,19 @@
     font-weight: 700;
     color: var(--primary-color);
     margin-block: 30px;
+  }
+}
+
+@media (max-width: 365px) {
+  .main .hero .content .contact .contact-btn {
+    padding: 10px 15px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    border-radius: 20px;
+    border: 3px solid var(--secondary-color);
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
   }
 }

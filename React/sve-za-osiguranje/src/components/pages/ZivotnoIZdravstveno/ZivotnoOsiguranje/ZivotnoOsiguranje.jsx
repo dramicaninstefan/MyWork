@@ -24,10 +24,8 @@ const ZivotnoOsiguranje = () => {
       <main className={classes.main}>
         <div className={classes.info1}>
           <div className={classes['content']}>
-            <h2 className={classes['content-small-title']}>Životno osiguranje</h2>
-            <h1 className={classes['content-title']}>
-              Polisa za Životno Osiguranje<span>.</span>
-            </h1>
+            {/* <h2 className={classes['content-small-title']}>Životno osiguranje</h2> */}
+            <h1 className={classes['content-title']}>Polisa za Životno Osiguranje</h1>
             <p className={classes['content-text']}>Polisa životnog osiguranja je štednja sa osiguranjem!</p>
           </div>
           <div className={classes['image']}>

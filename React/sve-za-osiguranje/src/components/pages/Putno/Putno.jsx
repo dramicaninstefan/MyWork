@@ -24,10 +24,8 @@ const Putno = () => {
       <main className={classes.main}>
         <div className={classes.info1}>
           <div className={classes['content']}>
-            <h2 className={classes['content-small-title']}>Putno osiguranje</h2>
-            <h1 className={classes['content-title']}>
-              Polisa za Putno osiguranje<span>.</span>
-            </h1>
+            {/* <h2 className={classes['content-small-title']}>Putno osiguranje</h2> */}
+            <h1 className={classes['content-title']}>Polisa za Putno osiguranje</h1>
             <p className={classes['content-text']}>
               Krenuli ste na put u inostranstvo, zašto bi ste dozvoli nepredviđenim situacijama da Vam pokvare ugođaj, zaštite se polisom putno zdravstvenog osiguranja pre početka putovanja.
             </p>

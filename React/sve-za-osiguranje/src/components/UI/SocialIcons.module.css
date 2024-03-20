@@ -30,6 +30,11 @@
   background-color: #25d366;
 }
 
+.email {
+  color: #fff;
+  background-color: #0489c9;
+}
+
 .icons:hover {
   filter: grayscale(0);
   transform: rotate(-10deg);
@@ -38,9 +43,5 @@
 @media only screen and (max-width: 1350px) {
   .social {
     display: none;
-  }
-
-  .icons {
-    width: 35px;
   }
 }

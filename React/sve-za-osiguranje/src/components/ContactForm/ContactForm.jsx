@@ -68,13 +68,17 @@ const ContactForm = () => {
               Vaš lični <br /> konsultant
             </h1>
             <h2 className={classes.link}>
-              <i className="fa-solid fa-phone"></i>Telefon
+              <a href="tel:+381608060001">
+                <i className="fa-solid fa-phone"></i>Telefon
+              </a>
             </h2>
             <a href="tel:+381608060001" target="_blank" rel="noreferrer" className={classes.adress}>
               +381 608060001
             </a>
             <h2 className={classes.link}>
-              <i className="fa-solid fa-envelope"></i>Email
+              <a href="mailto: svezaosiguranje@gmail.com">
+                <i className="fa-solid fa-envelope"></i>Email
+              </a>
             </h2>
             <a href="mailto: svezaosiguranje@gmail.com" className={classes.email}>
               svezaosiguranje@gmail.com

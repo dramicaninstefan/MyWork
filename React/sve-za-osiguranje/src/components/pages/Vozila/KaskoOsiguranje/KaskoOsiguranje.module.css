@@ -204,7 +204,7 @@
   opacity: 0.7;
   letter-spacing: 1.3px;
   line-height: 40px;
-  margin-left: 50px;
+  margin-left: 60px;
 }
 
 .main .info4 .title {
@@ -212,7 +212,7 @@
   font-family: var(--primary-ff);
   font-weight: 700;
   color: var(--primary-color);
-  margin-block: 50px;
+  margin-block: 30px;
 }
 
 @media (max-width: 1350px) {
@@ -732,6 +732,6 @@
     font-family: var(--primary-ff);
     font-weight: 700;
     color: var(--primary-color);
-    margin-block: 30px;
+    margin-block: 20px;
   }
 }

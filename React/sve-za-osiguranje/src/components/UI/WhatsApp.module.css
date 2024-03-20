@@ -7,14 +7,14 @@
 .circle {
   position: fixed;
   right: 1rem;
-  bottom: 10.5rem;
+  bottom: 9.5rem;
   background-color: #25d366;
-  width: 58px;
-  height: 58px;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 27px;
+  font-size: 25px;
   color: var(--secondary-color);
   border-radius: 50%;
   z-index: 200;

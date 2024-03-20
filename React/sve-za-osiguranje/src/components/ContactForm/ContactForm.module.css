@@ -30,6 +30,10 @@
   flex-direction: column;
 }
 
+.contact-form .content .info a {
+  color: #fff;
+}
+
 .contact-form .content .form {
   width: 55%;
   height: 900px;
@@ -371,6 +375,32 @@
     margin-right: 15px;
     font-size: 23px;
     color: var(--secondary-color);
+  }
+
+  .contact-form .content .form {
+    height: 680px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-form .content .form .form-client-data .inputs label {
+    font-size: 18px;
+  }
+
+  .contact-form .content .form .form-client-data .inputs input,
+  .contact-form .content .form .form-client-data .inputs select,
+  .contact-form .content .form .form-client-data .inputs textarea {
+    margin-top: 10px;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .contact-form .content .form .form-client-data .inputs textarea {
+    height: 100px;
   }
 }
 

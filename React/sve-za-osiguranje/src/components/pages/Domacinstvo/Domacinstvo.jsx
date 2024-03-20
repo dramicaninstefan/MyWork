@@ -24,10 +24,8 @@ const Domacinstvo = () => {
       <main className={classes.main}>
         <div className={classes.info1}>
           <div className={classes['content']}>
-            <h2 className={classes['content-small-title']}>Osiguranje imovine</h2>
-            <h1 className={classes['content-title']}>
-              Polisa za Osiguranje imovine<span>.</span>
-            </h1>
+            {/* <h2 className={classes['content-small-title']}>Osiguranje imovine</h2> */}
+            <h1 className={classes['content-title']}>Polisa za Osiguranje imovine</h1>
             <p className={classes['content-text']}>
               Sigurnost imovine je jedna od osnovnih ljudskih potreba, što predstavlja ekonomsku nužnost i odlika je brige o svojoj sigurnosti, kako privatno, tako i poslovno.
             </p>

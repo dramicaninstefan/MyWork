@@ -23,10 +23,8 @@ const RegistracijaVozila = () => {
       <main className={classes.main}>
         <div className={classes.info1}>
           <div className={classes['content']}>
-            <h2 className={classes['content-small-title']}>Registracija vozila</h2>
-            <h1 className={classes['content-title']}>
-              Komplet registracija vozila<span>.</span>
-            </h1>
+            {/* <h2 className={classes['content-small-title']}>Registracija vozila</h2> */}
+            <h1 className={classes['content-title']}>Komplet registracija vozila</h1>
             <p className={classes['content-text']}>U mogućnosti smo da Vam organizujemo komplet registraciju za Vaše vozilo/vozila, najbliže Vašem mestu stanovanja. Kontaktirajte nas.</p>
           </div>
           <div className={classes['image']}>

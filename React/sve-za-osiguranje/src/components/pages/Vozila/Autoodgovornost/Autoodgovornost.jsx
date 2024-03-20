@@ -23,10 +23,8 @@ const Autoodgovornost = () => {
       <main className={classes.main}>
         <div className={classes.info1}>
           <div className={classes['content']}>
-            <h2 className={classes['content-small-title']}>Autoodgovornost</h2>
-            <h1 className={classes['content-title']}>
-              Autoodgovornost<span>.</span>
-            </h1>
+            {/* <h2 className={classes['content-small-title']}>Autoodgovornost</h2> */}
+            <h1 className={classes['content-title']}>Autoodgovornost</h1>
             <p className={classes['content-text']}>Osiguranje od autoodgovornosti je Zakonom obavezno osiguranje. Vozila koja učestvuju u saobraćaju moraju imati polisu autoodgovornosti.</p>
           </div>
           <div className={classes['image']}>

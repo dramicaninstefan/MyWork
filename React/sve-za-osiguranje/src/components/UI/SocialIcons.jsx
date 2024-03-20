@@ -11,6 +11,9 @@ const SocialIcons = () => {
         <a href="https://wa.me/+381638489439" target="_blank" rel="noreferrer" className={`${classes.icons} ${classes.whatsup}`}>
           <i className="fa-brands fa-whatsapp"></i>
         </a>
+        <a href="mailto: svezaosiguranje@gmail.com" rel="noreferrer" className={`${classes.icons} ${classes.email}`}>
+          <i className="fa-solid fa-envelope"></i>
+        </a>
       </div>
     </Fragment>
   );

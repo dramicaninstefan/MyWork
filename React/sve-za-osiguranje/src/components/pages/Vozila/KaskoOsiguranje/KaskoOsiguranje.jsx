@@ -24,12 +24,19 @@ const KaskoOsiguranje = () => {
       <main className={classes.main}>
         <div className={classes.info1}>
           <div className={classes['content']}>
-            <h2 className={classes['content-small-title']}>Kasko osiguranje vozila</h2>
-            <h1 className={classes['content-title']}>
-              Kasko osiguranje<span>.</span>{' '}
-            </h1>
+            {/* <h2 className={classes['content-small-title']}>Kasko osiguranje vozila</h2> */}
+            <h1 className={classes['content-title']}>Kasko osiguranje</h1>
             <p className={classes['content-text']}>
-              Šta je kasko osiguranje vozila i zašto da <br /> odaberete ovo osiguranje za svoje vozilo?
+              Kasko osiguranje je najsigurniji način da zaštite vaše vozilo, usled saobraćajnih nezgoda, krađe, požara i mnogo drugih rizika koje pokriva kasko polisa. Vaše vozilo je osigurano non
+              stop, i tokom vožnje i na parkingu, svuda. Ako nemate vremena da se bavite ugovaranjem osiguranja, ili pak niste sigurni u svoje znanje na temu kasko osiguranja, na pravom ste mestu, gde
+              Vam višedecenijski profesionalni savetnik može pomoći. Pomoćićemo Vam da odabereta najbolju ponudu za Vas, vaše vozilo, sa maksimalni popustima koji se primenjuju u osiguravajućoj kući.
+              <br />
+              <br />
+              <b>Preko 25 ponuda</b> za kasko osiguranje, od <b>11 osiguravajućih kuća</b>, i to bez “sitnih slova”!
+              <br />
+              <b>Potpuno besplatne ponude</b>, jer nas plaća osiguravajuća kuća kojoj donesemo posao.
+              <br />
+              <b>Uporedite cene</b> i dogovorite za sebe <b>polisu</b> kasko osiguranja.
             </p>
           </div>
           <div className={classes['image']}>
@@ -38,8 +45,11 @@ const KaskoOsiguranje = () => {
         </div>
 
         <div className={classes.info4}>
+          <h2 className={classes.title}>
+            Da bi ste dobili preko 25 ponuda, od 11 osiguravajućih kuća, <b>potrebno je sledeće</b>:
+          </h2>
+          <br />
           <p className={classes.text}>
-            Da bi ste dobili preko 20 ponuda, od 11 osiguravajućih kuća, <b>potrebno je sledeće</b>:
             <br />
             1. <b>Podaci o vozilu</b> – zbog određivanja kataloške vrednosti vozila –pokrića polise,
             <br />
@@ -51,7 +61,7 @@ const KaskoOsiguranje = () => {
             <b>Ako Vam se i desi šteta</b>, na Vašoj smo strani! Mi ćemo Vam sve organizovati, da što bolje prođete u realizaciji naplate!
             <br />
             <br />
-            Možemo Vam obezbediti preko 20 ponuda za kasko osiguranje, od 11 osiguravajućih kuća, i to bez “sitnih slova”, sa adekvatnim pokrićem za slučaj štete!
+            Možemo Vam obezbediti preko 25 ponuda za kasko osiguranje, od 11 osiguravajućih kuća, i to bez “sitnih slova”, sa adekvatnim pokrićem za slučaj štete!
             <br />
             <br />
             Potpuno BESPLATNE su ponude, jer nas plaća osiguravajuća kuća kojoj donesemo posao. Cena-premija je minimum ista kao da ste išli direktno u osiguravajuće kuće, a obično je i niža…, samo
@@ -61,7 +71,7 @@ const KaskoOsiguranje = () => {
           <br />
         </div>
 
-        <div className={classes.info2}>
+        {/* <div className={classes.info2}>
           <div className={classes.content}>
             <h3 className={classes['content-title']}>
               <i className="fa-solid fa-shield"></i> Kasko osiguranje
@@ -72,7 +82,7 @@ const KaskoOsiguranje = () => {
               Vam višedecenijski profesionalni savetnik može pomoći. Pomoćićemo Vam da odabereta najbolju ponudu za Vas, vaše vozilo, sa maksimalni popustima koji se primenjuju u osiguravajućoj kući.
             </p>
           </div>
-        </div>
+        </div> */}
 
         <div className={classes.info4}>
           <h2 className={classes.title}> Nekoliko razloga zašto biste mogli dogovoriti kasko osiguranje preko nas:</h2>
@@ -182,12 +192,10 @@ const KaskoOsiguranje = () => {
           <h2 className={classes.title}>Česta pitanja vezano za kasko osiguranje</h2>
 
           <p className={classes.text}>
-            Zašto bih kasko osigurao vozilo, kada se ne bojim krađe, jer imam određene oblike zaštite na vozilu? U redu, krađa je vrlo verovatno da se neće desiti, zbog postojanja oblika zaštite.
-            Treba uzeti u obzir da je tehnologija napredovala u sferi oblika zaštite, ali i u sferi prevazilaženja tih istih oblika zaštite. Svakako, bez obzira na to što ste pažljiv vozač, u
-            saobraćaju je mnogo nepažljivih, bahatih i drugih vozača, koji Vam mogu napraviti štetu na vozilu.
-          </p>
-
-          <p className={classes.text}>
+            <b>Zašto bih kasko osigurao vozilo, kada se ne bojim krađe, jer imam određene oblike zaštite na vozilu?</b>
+            <br />
+            U redu, krađa je vrlo verovatno da se neće desiti, zbog postojanja oblika zaštite. Treba uzeti u obzir da je tehnologija napredovala u sferi oblika zaštite, ali i u sferi prevazilaženja
+            tih istih oblika zaštite. Svakako, bez obzira na to što ste pažljiv vozač, u saobraćaju je mnogo nepažljivih, bahatih i drugih vozača, koji Vam mogu napraviti štetu na vozilu
             <br />
             <br />
             <b>

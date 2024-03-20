@@ -23,10 +23,8 @@ const PomocNaPutu = () => {
       <main className={classes.main}>
         <div className={classes.info1}>
           <div className={classes['content']}>
-            <h2 className={classes['content-small-title']}>Pomoć na putu</h2>
-            <h1 className={classes['content-title']}>
-              Pomoć na putu<span>.</span>
-            </h1>
+            {/* <h2 className={classes['content-small-title']}>Pomoć na putu</h2> */}
+            <h1 className={classes['content-title']}>Pomoć na putu</h1>
             <p className={classes['content-text']}>
               Krenuli ste na put, sami ili sa porodicom, kupili ste i putno osiguranja, sipali ste gorivo i krećete. Jako bitna stvar za putovanje, jer se nezgode-kvarovi dešavaju na putu, je pomoć na
               putu. Predlažemo Vam, jer je to najjeftinija varijanta za slučaj kvara i slično, da ugovorite i pomoć na putu. Mi ćemo Vam sve organizovati.

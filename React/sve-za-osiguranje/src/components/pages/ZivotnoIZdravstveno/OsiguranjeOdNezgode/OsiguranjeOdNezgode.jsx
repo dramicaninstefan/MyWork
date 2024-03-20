@@ -23,10 +23,8 @@ const OsiguranjeOdNezgode = () => {
       <main className={classes.main}>
         <div className={classes.info1}>
           <div className={classes['content']}>
-            <h2 className={classes['content-small-title']}>Osiguranje od nezgode</h2>
-            <h1 className={classes['content-title']}>
-              Polisa za Osiguranje od nezgode<span>.</span>
-            </h1>
+            {/* <h2 className={classes['content-small-title']}>Osiguranje od nezgode</h2> */}
+            <h1 className={classes['content-title']}>Polisa za Osiguranje od nezgode</h1>
             <p className={classes['content-text']}>
               Osiguranje od nezgode služi za ublaživanje negativnih posledica nezgode, koja je nepredvidiva, koja može da prouzrokuje i velike finansijske troškove.
             </p>

@@ -21,9 +21,7 @@ const NaplataStete = () => {
       <main className={classes.main}>
         <div className={classes.hero}>
           <div className={classes.content}>
-            <h1 className={classes['title']}>
-              NAKNADA ŠTETE OD OSIGURANJA<span>.</span>
-            </h1>
+            <h1 className={classes['title']}>NAKNADA ŠTETE OD OSIGURANJA</h1>
             <p className={classes.text}>
               Mi smo garant u sigurnoj NAPLATI ŠTETE OD OSIGURANJA
               <br />
@@ -39,6 +37,36 @@ const NaplataStete = () => {
               <br />
               Najbolje je da nas kontaktirate i dogovorimo detalje.
             </p>
+            <div className={classes['contact']}>
+              <a className={classes['contact-btn']} href="#contact-form">
+                Kontaktirajte nas odmah
+              </a>
+              <div className={classes['social']}>
+                <a href="viber://chat/?number=%2B381638489439" target="_blank" rel="noreferrer" className={`${classes.icons} ${classes.viber}`}>
+                  <i className="fa-brands fa-viber"></i>
+                </a>
+                <a href="https://wa.me/+381638489439" target="_blank" rel="noreferrer" className={`${classes.icons} ${classes.whatsup}`}>
+                  <i className="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="mailto: svezaosiguranje@gmail.com" rel="noreferrer" className={`${classes.icons} ${classes.email}`}>
+                  <i className="fa-solid fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+            <div className={classes['social-mobile']}>
+              <a href="tel:+381608060001" target="_blank" rel="noreferrer" className={`${classes.icons} ${classes.call}`}>
+                <i className="fa-solid fa-phone"></i>
+              </a>
+              <a href="viber://chat/?number=%2B381638489439" target="_blank" rel="noreferrer" className={`${classes.icons} ${classes.viber}`}>
+                <i className="fa-brands fa-viber"></i>
+              </a>
+              <a href="https://wa.me/+381638489439" target="_blank" rel="noreferrer" className={`${classes.icons} ${classes.whatsup}`}>
+                <i className="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="mailto: svezaosiguranje@gmail.com" rel="noreferrer" className={`${classes.icons} ${classes.email}`}>
+                <i className="fa-solid fa-envelope"></i>
+              </a>
+            </div>
           </div>
         </div>
 

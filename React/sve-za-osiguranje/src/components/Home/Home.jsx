@@ -43,9 +43,36 @@ const Home = () => {
               <br />
               <b>Uporedite cene</b> i dogovorite za sebe <b>polisu</b> osiguranja.
             </p>
-            <a className={classes['hero-content-contact']} href="#contact-form">
-              Kontaktirajte nas odmah
-            </a>
+            <div className={classes['hero-content-contact']}>
+              <a className={classes['hero-content-contact-btn']} href="#contact-form">
+                Kontaktirajte nas odmah
+              </a>
+              <div className={classes['social']}>
+                <a href="viber://chat/?number=%2B381638489439" target="_blank" rel="noreferrer" className={`${classes.icons} ${classes.viber}`}>
+                  <i className="fa-brands fa-viber"></i>
+                </a>
+                <a href="https://wa.me/+381638489439" target="_blank" rel="noreferrer" className={`${classes.icons} ${classes.whatsup}`}>
+                  <i className="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="mailto: svezaosiguranje@gmail.com" rel="noreferrer" className={`${classes.icons} ${classes.email}`}>
+                  <i className="fa-solid fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+            <div className={classes['social-mobile']}>
+              <a href="tel:+381608060001" target="_blank" rel="noreferrer" className={`${classes.icons} ${classes.call}`}>
+                <i className="fa-solid fa-phone"></i>
+              </a>
+              <a href="viber://chat/?number=%2B381638489439" target="_blank" rel="noreferrer" className={`${classes.icons} ${classes.viber}`}>
+                <i className="fa-brands fa-viber"></i>
+              </a>
+              <a href="https://wa.me/+381638489439" target="_blank" rel="noreferrer" className={`${classes.icons} ${classes.whatsup}`}>
+                <i className="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="mailto: svezaosiguranje@gmail.com" rel="noreferrer" className={`${classes.icons} ${classes.email}`}>
+                <i className="fa-solid fa-envelope"></i>
+              </a>
+            </div>
           </div>
           <div className={classes['hero-image']}>
             <img src={heroImage} alt="heroImage" />
@@ -62,6 +89,17 @@ const Home = () => {
               <a className={classes['contact']} href="#contact-form">
                 Kontaktirajte nas odmah
               </a>
+              <div className={classes['social']}>
+                <a href="viber://chat/?number=%2B381638489439" target="_blank" rel="noreferrer" className={`${classes.icons} ${classes.viber}`}>
+                  <i className="fa-brands fa-viber"></i>
+                </a>
+                <a href="https://wa.me/+381638489439" target="_blank" rel="noreferrer" className={`${classes.icons} ${classes.whatsup}`}>
+                  <i className="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="mailto: svezaosiguranje@gmail.com" rel="noreferrer" className={`${classes.icons} ${classes.email}`}>
+                  <i className="fa-solid fa-envelope"></i>
+                </a>
+              </div>
             </div>
           </div>
           <div className={classes.info2}>

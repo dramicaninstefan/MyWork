@@ -24,10 +24,8 @@ const DobrovoljnoZdravstvenoOsiguranje = () => {
       <main className={classes.main}>
         <div className={classes.info1}>
           <div className={classes['content']}>
-            <h2 className={classes['content-small-title']}>Dobrovoljno zdravstveno osiguranje</h2>
-            <h1 className={classes['content-title']}>
-              Dobrovoljno zdravstveno osiguranje<span>.</span>
-            </h1>
+            {/* <h2 className={classes['content-small-title']}>Dobrovoljno zdravstveno osiguranje</h2> */}
+            <h1 className={classes['content-title']}>Dobrovoljno zdravstveno osiguranje</h1>
           </div>
           <div className={classes['image']}>
             <img src={slika1} alt="slika1" />
