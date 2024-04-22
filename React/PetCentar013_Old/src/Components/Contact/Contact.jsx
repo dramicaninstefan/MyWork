@@ -1,42 +1,43 @@
-import React, { Fragment, useState, useRef } from 'react'
-import emailjs from 'emailjs-com'
+import { Fragment, useState, useRef } from 'react';
+import emailjs from 'emailjs-com';
 
-import Main from '../UI/Main'
-import TabTitle from '../general/TabTitle'
-import TopButton from '../UI/TopButton'
+import Main from '../UI/Main';
+import TabTitle from '../general/TabTitle';
 
-import classes from './Contact.module.css'
+import TopButton from '../UI/TopButton';
+import CallUs from '../UI/CallUs';
 
-import contact2 from '../../assets/contact2.jpg'
-import CallUs from '../UI/CallUs'
+import classes from './Contact.module.css';
+
+import contact2 from '../../assets/contact2.jpg';
 
 const Contact = () => {
-  TabTitle('Pet | Kontakt')
-  window.scrollTo(0, 0)
+  TabTitle('Pet | Kontakt');
+  window.scrollTo(0, 0);
 
-  const submitBtn = useRef()
-  const form = useRef()
+  const submitBtn = useRef();
+  const form = useRef();
 
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [number, setNumber] = useState('')
-  const [message, setMessage] = useState('')
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [number, setNumber] = useState('');
+  const [message, setMessage] = useState('');
 
   function sendEmail(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     emailjs.sendForm('service_90anb7y', 'template_9yiiwdf', form.current, '_TykGN5dKmnTuxu5y').then(
       (result) => {
-        setName('')
-        setEmail('')
-        setNumber('')
-        setMessage('')
-        alert('Podaci su poslati!')
+        setName('');
+        setEmail('');
+        setNumber('');
+        setMessage('');
+        alert('Podaci su poslati!');
       },
       (error) => {
-        console.log(error.text)
+        console.log(error.text);
       }
-    )
+    );
   }
 
   return (
@@ -55,7 +56,7 @@ const Contact = () => {
                 type="text"
                 placeholder="Ime i prezime *"
                 onChange={(e) => {
-                  setName(e.target.value)
+                  setName(e.target.value);
                 }}
                 value={name}
                 required
@@ -66,7 +67,7 @@ const Contact = () => {
                 type="email"
                 placeholder="Email *"
                 onChange={(e) => {
-                  setEmail(e.target.value)
+                  setEmail(e.target.value);
                 }}
                 required
                 value={email}
@@ -77,7 +78,7 @@ const Contact = () => {
                 type="text"
                 placeholder="Broj telefona *"
                 onChange={(e) => {
-                  setNumber(e.target.value)
+                  setNumber(e.target.value);
                 }}
                 required
                 value={number}
@@ -88,7 +89,7 @@ const Contact = () => {
                 placeholder="Poruka *"
                 style={{ resize: 'none' }}
                 onChange={(e) => {
-                  setMessage(e.target.value)
+                  setMessage(e.target.value);
                 }}
                 required
                 value={message}
@@ -103,7 +104,7 @@ const Contact = () => {
         {/* <TopButton /> */}
       </Main>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
