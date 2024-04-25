@@ -143,6 +143,14 @@ h6,
   max-height: 70px;
 }
 
+.languageBtn .languageLink {
+  padding-left: 15px;
+}
+
+.languageBtn img {
+  width: 35px;
+}
+
 #main {
   margin-top: 80px;
 }
