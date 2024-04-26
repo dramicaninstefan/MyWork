@@ -151,6 +151,16 @@ h6,
   width: 35px;
 }
 
+@media (max-width: 991px) {
+  .languageBtn .languageLink {
+    margin-left: 10px;
+  }
+
+  .languageBtn img {
+    width: 25px;
+  }
+}
+
 #main {
   margin-top: 80px;
 }
