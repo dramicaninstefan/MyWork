@@ -165,7 +165,9 @@ const Header = (props) => {
               <div className={classes['header-info-news']}></div>
 
               <div className={classes['header-info-number']}>
-                <a href="tel:+381608060001">+381 608060001</a>
+                <a href="tel:+381608060001">
+                  <i className="fa-solid fa-phone"></i>+381 608060001
+                </a>
               </div>
               <div className={classes['header-info-social']}>
                 {/* <a href="https://facebook.com/" target="_blank" rel="noreferrer">
