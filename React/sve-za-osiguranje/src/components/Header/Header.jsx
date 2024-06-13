@@ -190,7 +190,7 @@ const Header = (props) => {
                 Početna
               </NavLink>
               <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kasko-osiguranje-vozila" end>
-                Kasko
+                Kasko osiguranje
               </NavLink>
               <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/naplata-naknada-stete" end>
                 Naplata štete
@@ -236,7 +236,7 @@ const Header = (props) => {
                 <ul className={vehicles ? `${classes['dropdown-vehicle']} ${classes.active}` : classes['dropdown-vehicle']}>
                   {/* <li>
                     <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kasko-osiguranje-vozila" end>
-                      Kasko osiguranje vozila
+                      Kasko osiguranje osiguranje vozila
                     </NavLink>
                   </li> */}
                   <li>
@@ -314,7 +314,7 @@ const Header = (props) => {
           </li>
           <li>
             <NavLink className={({ isActive }) => (isActive ? classes.active : undefined)} to="/kasko-osiguranje-vozila" end>
-              Kasko
+              Kasko osiguranje
             </NavLink>
           </li>
           <li>
