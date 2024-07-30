@@ -45,7 +45,13 @@ const Footer = () => {
             <i className="fa-solid fa-phone"></i>+381 608060001
           </a>
         </div>
-        <div className={classes.copyright}>&copy; Copyright {new Date().getFullYear()}</div>
+        <div className={classes['footer-copyright-policy']}>
+          <div className={classes.policy}>
+            <a href="/politika-privatnosti">Politika privatnosti</a>
+          </div>
+          <div style={{ color: '#f5f5f5f5' }}>|</div>
+          <div className={classes.copyright}>&copy; Copyright {new Date().getFullYear()}</div>
+        </div>
       </div>
     </Fragment>
   );

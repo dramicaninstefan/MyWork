@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.container p {
+  font-family: var(--primary-ff);
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 1.3px;
+  line-height: 31px;
+  width: 80%;
+  margin-block: 100px;
+}
+
+.container p b {
+  font-size: 21px;
+  color: var(--primary-color);
+}
+
+.container p ul {
+  margin-left: 50px;
+}
+
+.container p ul li {
+  padding-block: 8px;
+}
+
+@media (max-width: 669px) {
+  .container p {
+    font-size: 14px;
+    width: 90%;
+  }
+
+  .container p b {
+    font-size: 16px;
+  }
+}

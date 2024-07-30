@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
 
 import classes from './ErrorPage.module.css';
+import Footer from '../Footer/Footer';
 
 const ErrorPage = () => {
   return (

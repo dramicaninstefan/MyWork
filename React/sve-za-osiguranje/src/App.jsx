@@ -18,6 +18,8 @@ import Putno from './components/pages/Putno/Putno';
 
 import NaplataStete from './components/pages/NaplataStete/NaplataStete';
 
+import PolitikaPrivatnosti from './components/routes/PolitikaPrivatnosti';
+
 // import NaknadaSteteKasko from './components/pages/Stete/NaknadaSteteKasko/NaknadaSteteKasko';
 // import NaknadaSteteZaFizickuIDusevnuBol from './components/pages/Stete/NaknadaSteteZaFizickuIDusevnuBol/NaknadaSteteZaFizickuIDusevnuBol';
 // import NaplataSteteNaVozilu from './components/pages/Stete/NaplataSteteNaVozilu/NaplataStete';
@@ -53,6 +55,8 @@ function App() {
         { path: '/putno-osiguranje', element: <Putno /> },
 
         { path: '/naplata-naknada-stete', element: <NaplataStete /> },
+
+        { path: '/politika-privatnosti', element: <PolitikaPrivatnosti /> },
 
         // { path: '/prijava-i-naknada-stete', element: <PrijavaINaknadaStete /> },
         // { path: '/naplata-naknada-stete-na-vozilu', element: <NaplataSteteNaVozilu /> },
