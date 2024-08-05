@@ -3,10 +3,12 @@
     "min": "minelizator-za-vodu",
     "miner": "minelizator-za-vodu",
     "mi": "minelizator-za-vodu",
-    "m": "minelizator-za-vodu"
+    "m": "minelizator-za-vodu",
+    "mine": "minelizator-za-vodu"
   },
   "targets": {},
   "etags": {},
+  "dataconnectEmulatorConfig": {},
   "hosting": {
     "site": "mineralizator-za-vodu",
     "public": "public"

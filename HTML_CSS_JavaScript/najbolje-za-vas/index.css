@@ -3,196 +3,301 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-
-
-
-
-
-
-.navbar-background{
-    background-color: #ccdbfd;
-}	
+.navbar-background {
+  background-color: #ccdbfd;
+}
 
 .navbar-border {
-	/* border-top: 1px #949494 solid; */
-	padding-top: 0.6em;
+  /* border-top: 1px #949494 solid; */
+  padding-top: 0.6em;
 }
 
 .text-link {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
-.text-link:hover{
-    color: rgb(0, 47, 255);
+.text-link:hover {
+  color: rgb(0, 47, 255);
 }
 
 .disabled:hover {
-	color: black; 
-	text-decoration: none;
-	
+  color: black;
+  text-decoration: none;
 }
 
-.shadow-1{
-	background-color: #fff;
-	box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.36);
-  }
+.shadow-1 {
+  background-color: #fff;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.36);
+}
 
-.shadow-2{
-	background-color: #ccdbfd;
-	box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.36);
-} 
- 
+.shadow-2 {
+  background-color: #ccdbfd;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.36);
+}
 
-  
 main {
-	position: relative;
-	z-index: 1;
-	background: white;
-	box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.36);
-}  
+  position: relative;
+  z-index: 1;
+  background: white;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.36);
+}
 
 footer {
-	position: sticky;
-	bottom: 0;
+  position: sticky;
+  bottom: 0;
 }
 
 .logo {
-	
-	font-family: 'Lobster Two', cursive;
-	
+  font-family: 'Lobster Two', cursive;
 }
 
 .offcanvas-color {
-	background-color: #4ecdc4;
+  background-color: #4ecdc4;
 }
 
-.grow { 
-	transition: all .2s ease-in-out; 
-}
-	
-.grow:hover { 
-	transform: scale(1.05); 
+.grow {
+  transition: all 0.2s ease-in-out;
 }
 
-.grow-1 { 
-	transition: all .2s ease-in-out; 
+.grow:hover {
+  transform: scale(1.05);
 }
-	
-.grow-1:hover { 
-	transform: scale(1.03); 
+
+.grow-1 {
+  transition: all 0.2s ease-in-out;
+}
+
+.grow-1:hover {
+  transform: scale(1.03);
 }
 
 .bd-placeholder-img {
-	background-image: url();
+  background-image: url();
 }
 
 .Carousel-1 {
-	background-image: url("Photo/Projekti/Cist\ Vazduh.jpg"); /* The image used */
-	background-color: #cccccc; /* Used if the image is unavailable */
-	height: 500px; /* You must set a specified height */
-	background-position: center; /* Center the image */
-	background-repeat: no-repeat; /* Do not repeat the image */
-	background-size: cover; /* Resize the background image to cover the entire container */
+  background-image: url('Photo/Projekti/Cist\ Vazduh.jpg'); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .Carousel-2 {
-	background-image: url("Photo/Projekti/Preciscena\ Voda.jpg"); /* The image used */
-	background-color: #cccccc; /* Used if the image is unavailable */
-	height: 500px; /* You must set a specified height */
-	background-position: center; /* Center the image */
-	background-repeat: no-repeat; /* Do not repeat the image */
-	background-size: cover; /* Resize the background image to cover the entire container */
+  background-image: url('Photo/Projekti/Preciscena\ Voda.jpg'); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .Carousel-3 {
-	background-image: url("Photo/Projekti/Kuvanje\ na\ zdrav\ nacim.jpg"); /* The image used */
-	background-color: #cccccc; /* Used if the image is unavailable */
-	height: 500px; /* You must set a specified height */
-	background-position: center; /* Center the image */
-	background-repeat: no-repeat; /* Do not repeat the image */
-	background-size: cover; /* Resize the background image to cover the entire container */
+  background-image: url('Photo/Projekti/Kuvanje\ na\ zdrav\ nacim.jpg'); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .Carousel-4 {
-	background-image: url("Photo/Projekti/Bioptron.jpg"); /* The image used */
-	background-color: #cccccc; /* Used if the image is unavailable */
-	height: 500px; /* You must set a specified height */
-	background-position: center; /* Center the image */
-	background-repeat: no-repeat; /* Do not repeat the image */
-	background-size: cover; /* Resize the background image to cover the entire container */
+  background-image: url('Photo/Projekti/Bioptron.jpg'); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .Carousel-5 {
-	background-image: url("Photo/Projekti/cist\ dom\ pozadina.jpg"); /* The image used */
-	background-color: #cccccc; /* Used if the image is unavailable */
-	height: 500px; /* You must set a specified height */
-	background-position: center; /* Center the image */
-	background-repeat: no-repeat; /* Do not repeat the image */
-	background-size: cover; /* Resize the background image to cover the entire container */
+  background-image: url('Photo/Projekti/cist\ dom\ pozadina.jpg'); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 body {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: lighter;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
 }
 
 .transparent {
-	background-color: black;
-	opacity: .2;
-	height: 100%;
-	width: 50%;
+  background-color: black;
+  opacity: 0.2;
+  height: 100%;
+  width: 50%;
 }
 
 .title-image-1 {
-	position: absolute;
-	margin-left: 1365px;
-	margin-top: 245px;
-	text-align: end;
-	
-	
+  position: absolute;
+  margin-left: 1365px;
+  margin-top: 245px;
+  text-align: end;
+}
+
+.container-policy {
+  width: 100%;
+  font-family: var(--primary-ff);
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 1.3px;
+  line-height: 31px;
+  width: 80%;
+  margin-block: 100px;
+}
+
+.container-policy b {
+  font-weight: bold;
+  font-size: 21px;
+  color: var(--primary-color);
+}
+
+.container-policy ul {
+  margin-left: 50px;
+  list-style: disc;
+}
+
+.container-policy ul li {
+  padding-block: 8px;
+}
+
+@media (max-width: 669px) {
+  .container-policy {
+    font-size: 14px;
+    width: 90%;
+  }
+
+  .container-policy b {
+    font-size: 16px;
+  }
 }
