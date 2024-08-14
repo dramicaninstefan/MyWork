@@ -37,11 +37,16 @@ const Home = () => {
               Uporedite cene osiguranja kod svih osiguravajućih kuća, naplatite štetu iz osiguranja.
             </p> */}
             <p className={classes['hero-content-text']}>
-              <b>11 ponuda</b> za osiguranje, bez “sitnih slova”!
+              <b>
+                <i class="fa-solid fa-greater-than"></i> 15
+              </b>{' '}
+              ponuda za osiguranje, bez "sitnih slova"!
               <br />
-              <b>Potpuno besplatne ponude</b>, jer nas plaća osiguravajuća kuća kojoj donesemo posao.
+              <b>BESPLATNE PONUDE,</b> jer nas plaća osiguravajuća kuća kojoj donesemo posao
               <br />
-              <b>Uporedite cene</b> i dogovorite za sebe <b>polisu</b> osiguranja.
+              <b>UPOREDITE CENE</b> i dogovorite za sebe <b>polisu</b> osiguranja za sebe!.
+              <br />
+              <b>NAPLATITE ŠTETU </b> od osiguranja - NAJBOLJA NAPLATA!.
             </p>
             <div className={classes['hero-content-contact']}>
               <a className={classes['hero-content-contact-btn']} href="#contact-form">
