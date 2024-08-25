@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2024-08-13T14:32:06.0292649Z"
+    },
+    "identityapp1": {
+      "restored": true,
+      "restoreTime": "2024-08-13T14:19:21.1800595Z"
+    }
+  },
+  "parameters": {}
+}

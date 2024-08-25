@@ -1,0 +1,92 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model IEnumerable<Projekat_Teretana.Models.BO.TreninziBO>
+@using Projekat_Teretana.Models.BO
+
+@{
+    ViewBag.Title = "Treninzi";
+}
+
+<div id="content">
+    <h2>Treninzi</h2>
+
+    <div class="form-group">
+        @Html.ActionLink("Kreiraj novi trening", "Create", "Treninzi")
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="list-group py-2">
+                @foreach (var treninzi in Model)
+                {
+                    <a class="list-group-item" onclick='OnListItemClick(this, @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(treninzi) as String))'>
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">Početak treninga</th>
+                                    <th width="20%">Kraj treninga</th>
+                                    <th width="20%">Član</th>
+                                    <th width="20%">Trener</th>
+                                    <th width="20%">Obriši</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@treninzi.PocetakTreninga h</td>
+                                    <td>@treninzi.KrajTreninga h</td>
+                                    <td>@treninzi.Clan</td>
+                                    <td>@treninzi.Trener</td>
+                                    <td>
+                                        <input type="checkbox" name="deleteTrening" value="@treninzi.Id" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </a>
+                }
+            </div>
+
+        </div>
+
+        <div class="col-md-4" id="detaljiTreninga" style="visibility:hidden">
+            <h3 class="control-lable">Detalji treniga:</h3>
+            <p id="detaljiTreningaText"></p>
+            <input id="editButton" type="button" class="btn btn-warning" value="Ažuriraj" />
+            <input id="deleteButton" type="button" class="btn btn-danger" value="Obriši" onclick="DeleteItem()" />
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    function OnListItemClick(htmlItem, treninzi) {
+        $('a.list-group-item.active').removeClass('active');
+        $(htmlItem).addClass('active');
+        document.getElementById('detaljiTreninga').style.visibility = "visible";
+        document.getElementById('detaljiTreningaText').innerHTML = "<b>Početak traninga:</b> " + treninzi.PocetakTreninga + "<br><b>Kraj treninga:</b> " + treninzi.KrajTreninga + "<br><b>Član:</b> " + treninzi.Clan + "<br><b>Trener:</b> " + treninzi.Trener;
+        
+    }
+
+    function DeleteItem() {
+        var items = [];
+        $("input[name='deleteTrening']:checked").each(function () {
+            items.push($(this).val());
+        });
+
+
+        $.ajax({
+            url: '@Url.Action("deleteTreninzi", "Treninzi")',
+            type: "POST",
+            data: { treninzi: items },
+            success: function (data) {
+                $('#content').html(data);
+            }
+        });
+
+    }
+</script>

@@ -1,0 +1,900 @@
+/* Utility css */
+.brojac {
+    font-weight: bold;
+    margin-right: 0.5rem;
+    background-color: yellow; /* Žuta pozadina */
+    border-radius: 50%; /* Krug */
+    display: inline-block; /* Da bi krug bio primenjen */
+    width: 2rem; /* Postavi širinu prema potrebi */
+    height: 2rem; /* Postavi visinu prema potrebi */
+    text-align: center; /* Poravnanje teksta u centru po horizontalnoj osi */
+    line-height: 2rem; /* Poravnanje teksta u centru po vertikalnoj osi */
+}
+.poruka{
+    background: #f9f9f9;
+    display: grid;
+    place-items: center;
+}
+.poruka > #hvala{
+    font-size:40px;
+    font-weight: bold;
+}
+.poruka > p{
+    text-align:center;
+}
+
+.Info-uspeh{
+    font-weight: bold;
+    padding-top: 1rem;
+}
+.Info-greska{
+    color: red;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+.Info-con{
+    color: red;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+.seperator-red{    /* div seperator anon*/
+    border-left: 2px solid red;
+}
+.seperator-green{   /* div seperator ulogovan korisnik */
+    border-left: 2px solid green;
+}
+.nav-boja{
+    background-color: #f6bd60;
+}
+
+.dodaj-font
+{
+    font-family: 'Montserrat Black', sans-serif;
+}
+.logo{
+    width: 4%;
+    min-width: 50px;
+}
+
+.greska{
+    color: red;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+.uspeh{
+    color: #097969;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+.forbidden{
+    background-image: url('../img/nemapristup.png');
+    display: grid;
+    place-items: center;
+    height:90vh;
+}
+
+.forbidden > p{
+    font-size:60px;
+    font-weight: bold;
+    text-align:center;
+}
+.bold{
+    font-weight: bold;
+}
+/* Kraj utility-a */
+/** CSS ZA FOOTER **/
+#footer{
+    position: fixed;
+    bottom: 0;
+}
+.footer {
+    display: flex;
+    height: 30px;
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.footer-item-left{
+    margin: auto;
+    margin-left: 20px;
+}
+
+.footer-item-right{
+    float: right;
+    margin: auto;
+    margin-right: 20px;
+}
+/** KRAJ CSSA ZA FOOTER**/
+/** CSS ZA REGISTER **/
+.reg-form{
+    display: grid;
+    grid-template-rows: auto;
+    place-items: center;
+    border: solid 5px #fff;
+    width: 80%;
+    padding: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    max-width: 700px;
+    --webkit-box-shadow: -6px 10px 19px 0px rgba(0,0,0,0.5);
+    box-shadow: -6px 11px 19px 0px rgba(0,0,0,0.5);
+    border-radius:.25rem;
+}
+.reg-form > input{
+    text-align: center;
+    width: 90%;
+}
+.reg-buttons{
+    text-align: center;
+}
+.reg-center{
+    display: grid;
+    min-height: 90vh;
+    place-items:center;
+
+}
+
+/** KRAJ CSSA ZA REGISTER**/
+/** CSS ZA LOGIN  **/
+
+.login-form{
+      display: grid;
+    grid-template-rows: auto;
+    place-items: center;
+    border: solid 5px #fff;
+    width: 80%;
+    padding: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    max-width: 700px;
+    --webkit-box-shadow: -6px 10px 19px 0px rgba(0,0,0,0.5);
+    box-shadow: -6px 11px 19px 0px rgba(0,0,0,0.5);
+    border-radius:.25rem;
+}
+.login-form > input{
+    text-align: center;
+}
+.login-form > strong{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.login-form > p{
+    text-align: center;
+}
+.login-cent{
+    display: grid;
+    min-height: 90vh;
+    place-items: center;
+
+}
+.btn-login{
+    align-self: center;
+    width: 50%;
+}
+/** KRAJ CSSA ZA LOGIN**/
+/** CSS ZA POCETNU STRANU**/
+.fullpage{
+    min-height: 90vh;
+}
+.wrapper.fullpage {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-boja {
+    background-color: #f06c64; /* Narandžasta boja */
+}
+
+.wrapper > .kategorije {  /** kategorija **/
+    background: #8ecae6;
+    padding: 1rem;
+}
+
+.wrapper > .proizvodiPrikaz {  /** prikaz **/
+    background: #8ecae6;
+    padding: 1rem;
+    margin-right: 3px;
+}
+
+
+/** CSS za dinamicki prikaz proizvoda na Pocetnoj strani **/
+.proizvodiPrikaz{
+    display: grid;
+    background-image: url('../img/backgroundslika.jpg');
+    grid-template-columns: repeat(auto-fit, minmax(300px, 32%));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 400px));
+    gap: 1em 1em;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.proizvod-slika{
+    width: 100%;
+    transition: transform 0.4s ease;
+    transform-origin: 50% 50%;
+}
+
+.proizvod{
+    -webkit-box-shadow: -6px 10px 19px 0px rgba(0,0,0,0.35);
+    box-shadow: -6px 11px 19px 0px rgba(0,0,0,0.35);
+    background-color: #fff;
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:200px auto auto;
+    overflow: hidden;
+}
+
+.proizvod > img{
+    height: 200px;
+    
+}
+.proizvod-body{
+    padding: 20px;
+    height:100px;
+    
+}
+proizvod-body > p{
+    max-height: 20px;
+}
+.proizvod-footer{
+    padding:20px;
+}
+.proizvod-opis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.kolicina-input{
+    margin-top: 0.3em;
+    min-width: 0;
+    max-width: 100%;
+}
+/** KRAJ PROIZVOD CSS-a**/
+/** KRAJ Pocetna CSS-a**/
+
+/** CSS ZA KATEGORIJE **/
+
+.pola-bordera {   /* Plava - Bela */
+    border-bottom:1px solid black;
+    position: relative;
+}
+.pola-bordera:after {
+    padding:0;
+    margin:0;
+    display:block;
+    content: "";
+    width:50%;
+    height:1.1px;
+    background-color:white;
+    position: absolute;
+    right:0;
+    bottom:-1px;
+}
+.bordera-pola {   /*Bela - Plava */
+    border-bottom:1px solid white;
+    position: relative;
+}
+.bordera-pola:after {
+    padding:0;
+    margin:0;
+    display:block;
+    content: "";
+    width:50%;
+    height:1.1px;
+    background-color:black;
+    position: absolute;
+    right:0;
+    top:-1px;
+}
+.celi-border{
+    border-top:1px solid black;
+    position: relative;
+}
+.kategorije{
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.program{
+    font-weight: bold;
+    padding-top: 2rem;
+    color : #bc3f21;
+}
+
+.kategorije > h5{
+    padding-top: 1rem;
+    color : #bc3f21;
+}
+.kategorije > a{
+    color: #023047;
+    font-size: 20px;
+    text-decoration: none;
+}
+.kategorije > a:hover{
+    color: #f6bd60;
+
+}
+
+/* KRAJ CSSA ZA KATEGORIJE */
+/* CSS ZA PROFIL */
+
+.profil{
+    display: grid;
+    grid-template-columns:1fr 3fr;
+    min-height: 89vh;
+    gap: 2px;
+
+}
+.profil-linkovi{
+    display: flex;
+    flex-direction: column;
+    background-color: #8ecae6;
+    padding-top: 2rem;
+}
+.profil-linkovi > h2{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.profil-link:hover{
+    color:#f6bd60;
+}
+.profil-link{
+    color: #023047;
+    font-weight: bold;
+    text-decoration: none;
+}
+.profil-linkovi > img{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    place-content: center;
+}
+.profil-prikaz {
+    display: grid;
+    place-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 900px; /* Prilagodite ovu vrednost prema vašim preferencijama */
+    margin: 0 auto; /* Centrirajte div na stranici */
+    padding: 20px; /* Dodajte unutrašnji razmak po potrebi */
+    
+}
+.forma-prikaz{
+    display: grid;
+    grid-template-rows: auto;
+    place-items: center;
+    border: solid 2px #fff;
+    width: 80%;
+    padding: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    --webkit-box-shadow: -6px 10px 19px 0px rgba(0,0,0,0.5);
+    box-shadow: -6px 11px 19px 0px rgba(0,0,0,0.5);
+}
+.forma-prikaz > input{
+    width: 100%;
+    border-radius: 0.3rem;
+    text-align: center;
+}
+.input-prikaz{
+    background-color: #D3D3D3;
+}
+
+/* KRAJ CCSSA ZA PROFIL */
+/* CSS ZA FORMU BRISANJA */
+.brisanje{
+    
+    display: grid;
+    place-items: center;
+}
+.form-brisanje{
+    display: grid;
+    grid-template-rows: auto;
+    place-items: center;
+    border: solid 2px #fff;
+    width: 80%;
+    padding: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+.form-brisanje > #hvala{
+    font-size:40px;
+    font-weight: bold;
+    text-align:center;
+}
+.Del-greska{
+    color: #bc3f21;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+.form-brisanje > input{
+    text-align: center;
+    margin: 1rem;
+    width: 60%;
+}
+/* KRAJ FORME ZA BRISANJE */
+
+/* CSS ZA KORPU */
+/*.korpa-prikaz{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 130px;
+    background-color: #219ebc;
+    padding: 1rem;
+    padding-top: 0;
+    text-align:center;
+    background-image: url('../img/cart.jpg');
+
+}
+.prazna-korpa{
+    display: grid;
+    background-color: #219ebc;
+    padding: 1rem;
+    place-items: center;
+}
+.prazna-korpa > p{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+.korpa-prikaz > h3{
+    padding: 3rem;
+}
+.stavke-prikaz{
+    grid-row: 2 / span 3;
+    gap:0.5rem;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-auto-rows: 150px;
+    overflow: auto;
+    height: 60vh;
+    width:100%;
+    place-items: center;
+
+
+}
+.korpa-stavka{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    background-color: #D3D3D3;
+    border: solid 2px #fff;
+    width: 100%;
+    padding: 1.5rem;
+    place-items: center;
+}
+
+.stavka-total{
+    display: grid;
+    place-items:center;
+    font-weight: bold;
+}
+
+.btn-stavka{
+    width: 12rem;
+}
+.total{
+    display: inline-grid;
+    text-align: left;
+}
+.total > p{
+    font-size: 20px;
+}
+.btn-korpa{
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+    max-height: 3rem;
+    text-align: end;
+}
+.poeni-korpa{
+    width: 12rem;
+    max-height: 3rem;
+}
+.stavka-buttons > a:nth-child(odd){
+    margin-bottom: 1rem;
+}
+.korpa-footer{
+    display: inline-flex;
+    font-weight: bold;
+    font-size: 2rem;
+    padding-top: 1rem;
+    height: max-content;
+    justify-content: space-between;
+}
+.korpa-footer > input{
+    margin-top: 1rem;
+}*/
+/* KRAJ CSSA ZA KORPU */
+
+/* CSS ZA ISTORIJU */
+
+.istorija-prikaz{
+    background-color: #ffff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 32%));
+    grid-template-rows: repeat(auto-fit, minmax(24.375rem, 24.375rem));
+    gap: 1rem 1rem;
+    justify-content: space-evenly;
+    overflow: auto;
+    padding: 1rem;
+}
+
+/* Stil za individualne narudzbine */
+
+.narudzbina{
+    -webkit-box-shadow: -6px 10px 19px 0px rgba(0,0,0,0.35);
+    box-shadow: -6px 11px 19px 0px rgba(0,0,0,0.35);
+    background-color:  #ffffcc;
+    border-radius: 0.5rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    min-height: 390px;
+    max-height: 400px;
+    padding: 1rem;
+}
+
+.narudzbina-stavke{
+    overflow:auto;
+    max-height: 100%;
+}
+
+.narudzbina-stavka{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 2rem;
+    padding-top:1rem;
+    width: 100%;
+
+    border-bottom: solid 2px #023047;
+}
+.narudzbina-stavka >p:nth-child(2){
+    text-align: end;
+}
+.narudzbina-footer{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr;
+    padding-top: 1rem;
+}
+.narudzbina-footer > div > p{
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-top: 1rem;
+}
+.narudzbina-footer > a{
+    display:grid;
+    place-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Kraj Stila za individualne narudzbine */
+/* KRAJ CSSA ZA ISTORIJU */
+
+/* CSS ZA ADMIN PANEL */
+.administracija{
+    
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap:2px;
+    
+}
+.administracija-linkovi{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #8ecae6;
+    
+}
+.administracija-link{
+    margin: 1rem;
+    color: #023047;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: none;
+}
+.administracija-link:hover{
+    color: #f6bd60;
+}
+.administracija-rola{
+    color: #bc3f21;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-bottom: 0;
+
+}
+.panel{
+    background-color: cyan;
+}
+.naslov{
+    margin: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    border-bottom: solid 2px white;
+}
+/* CSS ZA UPRAVLJANJE NARUDZBAMA */
+
+.prikaz-neostvarenih{
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 32%));
+    grid-template-rows: repeat(auto-fit, minmax(24.375rem, 24.375rem));
+    gap: 1rem 1rem;
+    justify-content: space-evenly;
+    overflow: auto;
+    padding: 1rem;
+}
+
+.btn-narudzbina{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-narudzbina > a{
+    margin: 2px;
+}
+/* KRAJ ZA UPRAVLJANJE NARUDZBAMA */
+/* CSS ZA UPRAVLJANJE PROIZVODIMA I KATEGORIJAMA */
+
+.edit-ponude{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.1fr 0.9fr;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.lista-naslov{
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 3fr 0.7fr 0.8fr 1.2fr;
+    gap:1rem;
+}
+.lista{
+    display: grid;
+    height: 27rem;
+    width: 100%;
+    grid-template-rows: repeat(auto-fit, minmax(4rem,4rem));
+    grid-template-columns: 1fr;
+    overflow: auto;
+    gap: 0.2rem;
+}
+.lista-stavka{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 3fr 0.7fr 0.8fr 1.2fr;
+    gap:1rem;
+    height: 4rem;
+    padding-left: 0.5rem;
+    background-color: #f06c64;
+}
+.lista-stavka > p{
+    margin: auto;
+    margin-left: 0;
+}
+.lista-stavka > select{
+   height: 2rem;
+   margin-top: 1rem;
+}
+
+.lista-btn{
+    margin: auto;
+}
+/* Donji dio ponude */
+.ponuda-dole{
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+}
+.nov-proizvod{
+    -webkit-box-shadow: -6px 10px 19px 0px rgba(0,0,0,0.35);
+    box-shadow: -6px 11px 19px 0px rgba(0,0,0,0.35);
+    background-color: #fff;
+    border-radius: 0.5rem;
+    display: grid;
+    padding: 1rem;
+
+
+}
+.nov-proizvod > form{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(2rem, 4rem));
+    gap:1rem;
+    margin-top: 0;
+}
+.nov-proizvod > p{
+    text-align: center;
+}
+
+.nov-proizvod > form > div{
+    display: grid;
+}
+.nov-proizvod > form > div:nth-child(6){
+    grid-template-columns: 4fr 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+.prikaz-kategorija{
+    display: grid;
+    grid-template-rows: 1fr 8fr;
+    border: solid 2px #fff;
+    margin-right: 1rem;
+}
+
+.prikaz-kategorija > p{
+    display: grid;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: solid 2px #fff;
+    place-content: center;
+    height: 100%;
+}
+
+.prikaz-kategorija > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.slatke-kategorije{
+    display: grid;
+    grid-template-rows: 1fr 1fr 6fr;
+    border-left: solid 2px #fff;
+    padding: 1rem;
+    padding-left: 2rem;
+}
+
+.slane-kategorije{
+    display: grid;
+    grid-template-rows: 1fr 1fr 6fr;
+    padding: 1rem;
+    padding-left: 2rem;
+    
+}
+.slane-kategorije > p{
+    text-align: center;
+    font-weight: bold;
+}
+.slatke-kategorije > p{
+    text-align: center;
+    font-weight: bold;
+}
+.kategorije-lista{
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(2rem,3rem));
+    width: 100%;
+    max-height: 17rem;
+    gap: 1rem;
+    overflow: auto;
+}
+.kat-stavka{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1.5fr;
+    margin: auto 0;
+}
+.kat-stavka > select{
+    margin: 0 1rem;
+}
+
+/* KRAJ PROIZ/KAT */
+
+/* CSS ZA KORISNIKE */
+.edit-korisnika{
+    padding: 2rem;
+}
+
+.lista-korisnika{
+    display: grid;
+    height: 30rem;
+    width: 100%;
+    grid-template-rows: repeat(auto-fit, minmax(4rem,4rem));
+    grid-template-columns: 1fr;
+    overflow: auto;
+    gap: 0.2rem;
+}
+.header-korisnika{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.3fr;
+    padding-left: 0.5rem;
+}
+.header-korisnika > p{
+    font-weight: bold;
+}
+.korisnik-stavka{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.7fr 1fr 1fr 1.3fr;
+    gap:1rem;
+    height: 4rem;
+    padding-left: 0.5rem;
+    background-color: #f06c64;
+}
+.korisnik-stavka > p{
+    margin: auto;
+    margin-left: 0;
+}
+.korisnik-stavka > div{
+    margin: auto;
+    margin-left: 0;
+}
+.korisnik-stavka > select{
+   height: 2rem;
+   margin-top: 1rem;
+}
+.korisnik-stavka > input{
+    width: 100%;
+    height: 2rem;
+    margin: auto;
+    text-align: center;
+}
+
+.btn-dodaj{
+   width: 50% !important;
+  
+}
+/*KRAJ CCS-A ZA KORISNIKE */
+
+/* CSS ZA IZVESTAJE */
+.izvestaj{
+    display: grid;
+    grid-template-rows: 0.5fr 3fr 1fr;
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.naslov-izvestaja{
+    display: grid;
+    place-content: center;
+}
+
+.naslov-izvestaja > span{
+    font-size: 30px;
+}
+
+.telo-izvestaja{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 0 4rem;
+}
+
+.telo-izvestaja > div{
+    border: solid 2px #fff;
+    padding: 2rem;
+}
+.footer-izvestaja{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.izvestaj-totali{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 4rem;
+    text-align: center;
+}
+
+.izvestaji-btn{
+    display: grid;
+    place-items: center;
+}
+.btn-pdf{
+    width: 5rem;
+    height: 2rem;
+}
+
+/* KRAJ CSS ZA IZVESTAJE */
+/* KRAJ CSSA ZA ADMIN PANEL */

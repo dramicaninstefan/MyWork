@@ -1,0 +1,89 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model IEnumerable<Projekat_Teretana.Models.BO.RacuniBO>
+@using Projekat_Teretana.Models.BO
+
+@{
+    ViewBag.Title = "Računi";
+}
+
+<div id="content">
+    <h2>Računi</h2>
+
+    <div class="form-group">
+        @Html.ActionLink("Kreiraj novi račun", "Create", "Racuni")
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="list-group py-2">
+                @foreach (var racuni in Model)
+                {
+                    <a class="list-group-item" onclick='OnListItemClick(this, @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(racuni) as String))'>
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th width="25%">Član</th>
+                                    <th width="25%">Cena</th>
+                                    <th width="25%">Datum</th>
+                                    <th width="25%">Obriši</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@racuni.Clan</td>
+                                    <td>@racuni.Cena</td>
+                                    <td>@racuni.Datum</td>
+                                    <td>
+                                        <input type="checkbox" name="deleteRacun" value="@racuni.Id" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </a>
+                }
+            </div>
+
+        </div>
+
+        <div class="col-md-4" id="detaljiRacun" style="visibility:hidden">
+            <h3 class="control-lable">Datalji računa:</h3>
+            <p id="detaljiRacunText"></p>
+            <input id="editButton" type="button" class="btn btn-warning" value="Ažuriraj" />
+            <input id="deleteButton" type="button" class="btn btn-danger" value="Obriši" onclick="DeleteItem()" />
+        </div>
+    </div>
+</div>
+
+<script>
+    function OnListItemClick(htmlItem, racuni) {
+        $('a.list-group-item.active').removeClass('active');
+        $(htmlItem).addClass('active');
+        document.getElementById('detaljiRacun').style.visibility = "visible";
+        document.getElementById('detaljiRacunText').innerHTML = "<b>Član:</b> " + racuni.Clan + "<br><b>Cena:</b> " + racuni.Cena + "<br><b>Datum:</b> " + racuni.Datum;
+    }
+
+
+    function DeleteItem() {
+        var items = [];
+        $("input[name='deleteRacun']:checked").each(function () {
+            items.push($(this).val());
+        });
+
+
+        $.ajax({
+            url: '@Url.Action("DeleteRacuni", "Racuni")',
+            type: "POST",
+            data: { racuni: items },
+            success: function (data) {
+                $('#content').html(data);
+            }
+        });
+
+
+    }
+</script>

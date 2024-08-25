@@ -1,0 +1,91 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model IEnumerable<Projekat_Teretana.Models.BO.ClanarineBO>
+@using Projekat_Teretana.Models.BO
+
+@{
+    ViewBag.Title = "Članarine";
+}
+<div id="content">
+
+    <h2>Članarine</h2>
+
+    <div class="form-group">
+        @Html.ActionLink("Kreiraj novu članarinu", "Create", "Clanarine")
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="list-group py-2">
+                @foreach (var clanarina in Model)
+                {
+                    <a class="list-group-item" onclick='OnListItemClick(this, @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(clanarina) as String))'>
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th width="25%">Naziv</th>
+                                    <th width="25%">Trajanje</th>
+                                    <th width="25%">Cena</th>
+                                    <th width="25%">Obriši</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@clanarina.Naziv</td>
+                                    <td>@clanarina.Trajanje</td>
+                                    <td>@clanarina.Cena</td>
+                                    <td>
+                                        <input type="checkbox" name="deleteClanarinu" value="@clanarina.Id" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </a>
+                }
+            </div>
+
+        </div>
+
+        <div class="col-md-4" id="detaljiClanarina" style="visibility:hidden">
+            <h3 class="control-lable">Detalji članarine:</h3>
+            <p id="detaljiClanarinaText"></p>
+            <input id="editButton" type="button" class="btn btn-warning" value="Ažuriraj" />
+            <input id="deleteButton" type="button" class="btn btn-danger" value="Obriši" onclick="DeleteItem()" />
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function OnListItemClick(htmlItem, clanarine) {
+        $('a.list-group-item.active').removeClass('active');
+        @*$(htmlItem).addClass('active');*@
+        document.getElementById('detaljiClanarina').style.visibility = "visible";
+        document.getElementById('detaljiClanarinaText').innerHTML = "<b>Naziv:</b> " + clanarine.Naziv + "<br><b>Trajanje:</b> " + clanarine.Trajanje + "<br><b>Cena:</b> " + clanarine.Cena;
+    }
+
+    function DeleteItem() {
+        var items = [];
+        $("input[name='deleteClanarinu']:checked").each(function () {
+            items.push($(this).val());
+        });
+
+
+        $.ajax({
+            url: '@Url.Action("DeleteClanarine", "Clanarine")',
+            type: "POST",
+            data: { clanarine: items },
+            success: function (data) {
+                $('#content').html(data);
+            }
+        });
+
+
+    }
+
+
+</script>
