@@ -10,11 +10,12 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-ProjekatTeretana-b76a5ca2-a769-40b5-bb1e-bde04d46e030")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjekatTeretana")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b8d312ddecdafe387057258f0b63fa08c2be7dd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+849d9ac163340c535dc3ae7edb72488041b471ce")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjekatTeretana")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjekatTeretana")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
