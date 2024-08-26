@@ -1,4 +1,4 @@
-const db = require("../config/db");
+const db = require('../config/db');
 
 class Post {
   constructor(title, body) {
@@ -22,7 +22,7 @@ class Post {
   }
 
   static findAll() {
-    let sql = "SELECT * FROM posts;";
+    let sql = 'SELECT * FROM posts;';
 
     return db.execute(sql);
   }
