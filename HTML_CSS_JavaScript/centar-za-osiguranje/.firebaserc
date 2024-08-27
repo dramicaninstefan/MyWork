@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "centar-za-osiguran",
+    "centar": "centar-za-osiguran"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
