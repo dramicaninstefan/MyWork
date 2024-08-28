@@ -2,9 +2,25 @@
 (function () {
   'use strict';
 
-  if (window.location.pathname === '/kasko-osiguranje-vozila') {
-    console.log('kasko');
+  function setHeaderColor() {
+    const selectHeader = document.getElementById('header');
+    if (
+      window.location.pathname === '/kasko-osiguranje-vozila' ||
+      window.location.pathname === '/autoodgovornost' ||
+      window.location.pathname === '/pomoc-na-putu' ||
+      window.location.pathname === '/registracija-vozila' ||
+      window.location.pathname === '/osiguranje-domacinstva' ||
+      window.location.pathname === '/zivotno-osiguranje' ||
+      window.location.pathname === '/dobrovoljno-zdravstveno-osiguranje' ||
+      window.location.pathname === '/osiguranje-od-nezgode' ||
+      window.location.pathname === '/putno-osiguranje' ||
+      window.location.pathname === '/naplata-naknada-stete' ||
+      window.location.pathname === '/politika-privatnosti'
+    ) {
+      selectHeader.style.backgroundColor = '#17283b';
+    }
   }
+  window.addEventListener('load', setHeaderColor);
 
   /**
    * Apply .scrolled class to the body as the page is scrolled down
@@ -105,13 +121,30 @@
     selector: '.glightbox',
   });
 
+  const config = {
+    loop: true,
+    speed: 600,
+    autoplay: {
+      delay: 5000,
+    },
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  };
+
   /**
    * Init swiper sliders
    */
   function initSwiper() {
     document.querySelectorAll('.init-swiper').forEach(function (swiperElement) {
-      let config = JSON.parse(swiperElement.querySelector('.swiper-config').innerHTML.trim());
-
       if (swiperElement.classList.contains('swiper-tab')) {
         initSwiperWithCustomPagination(swiperElement, config);
       } else {
@@ -120,7 +153,11 @@
     });
   }
 
-  window.addEventListener('load', initSwiper);
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      initSwiper();
+    }, 2000);
+  });
 
   /**
    * Init isotope layout and filters

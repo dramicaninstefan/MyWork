@@ -10,10 +10,10 @@ const Hero = () => {
 
         <div className="container">
           <div className="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-            <div className="col-xl-6 col-lg-8">
+            <div className="col-xl-8 col-lg-8">
               <h2>
-                Centar za osiguranje
-                {/* <!-- <span>.</span> --> */}
+                Centar za polise i štete
+                {/* <span>.</span> */}
               </h2>
               <p>Vaš lični konsultant za osiguranje</p>
             </div>
@@ -24,7 +24,7 @@ const Hero = () => {
               <div className="icon-box">
                 <i className="fa-solid fa-file-circle-check pb-3"></i>
                 <h3>
-                  <a href="">
+                  <a>
                     <b>Preko 25 </b> ponuda <br /> za osiguranje, bez "sitnih slova"!
                   </a>
                 </h3>
@@ -34,7 +34,7 @@ const Hero = () => {
               <div className="icon-box">
                 <i className="fa-solid fa-handshake pb-3"></i>
                 <h3>
-                  <a href="">
+                  <a>
                     <b>BESPLATNE PONUDE,</b> jer nas plaća osiguravajuća kuća kojoj donesemo posao.
                   </a>
                 </h3>
@@ -44,7 +44,7 @@ const Hero = () => {
               <div className="icon-box">
                 <i className="fa-solid fa-magnifying-glass pb-3"></i>
                 <h3>
-                  <a href="">
+                  <a>
                     <b>UPOREDITE CENE</b> <br /> i dogovorite za sebe <b>polisu</b> osiguranja za sebe!
                   </a>
                 </h3>
@@ -54,7 +54,7 @@ const Hero = () => {
               <div className="icon-box">
                 <i className="fa-solid fa-comments-dollar pb-3"></i>
                 <h3>
-                  <a href="">
+                  <a>
                     <b>NAPLATITE ŠTETU </b> <br /> od osiguranja - NAJBOLJA NAPLATA!
                   </a>
                 </h3>

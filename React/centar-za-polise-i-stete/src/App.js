@@ -21,7 +21,7 @@ function App() {
       errorElement: <ErrorPage />,
       children: [
         { path: '/', element: <HomePage /> },
-        { path: '/kasko-osiguranje-vozila', element: <ErrorPage /> },
+        { path: '/kasko-osiguranje-vozila', element: <HomePage /> },
         { path: '/autoodgovornost', element: <ErrorPage /> },
         { path: '/pomoc-na-putu', element: <ErrorPage /> },
         { path: '/registracija-vozila', element: <ErrorPage /> },
