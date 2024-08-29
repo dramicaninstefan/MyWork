@@ -60,21 +60,24 @@ const Header = () => {
                 <a href="mailto:contact@example.com">office@centarzapoliseistete.rs</a>
               </i>
               <i class="bi bi-phone d-flex align-items-center ms-4">
-                <span>+1 5589 55488 55</span>
+                <span>+381 608060001</span>
               </i>
             </div>
             <div class="social-links d-none d-md-flex align-items-center">
-              <a href="#" class="twitter">
-                <i class="bi bi-twitter-x"></i>
+              <a href="viber://chat/?number=%2B381638489439" class="viber">
+                <i class="fa-brands fa-viber"></i>
               </a>
-              <a href="#" class="facebook">
-                <i class="bi bi-facebook"></i>
+              <a href="https://wa.me/+381638489439" class="whatsup">
+                <i class="fa-brands fa-whatsapp"></i>
               </a>
-              <a href="#" class="instagram">
-                <i class="bi bi-instagram"></i>
+              <a href="https://www.instagram.com/sve_za_osiguranje?utm_source=ig_web_button_share_sheet" class="instagram">
+                <i class="fa-brands fa-instagram"></i>
               </a>
-              <a href="#" class="linkedin">
-                <i class="bi bi-linkedin"></i>
+              <a href="https://www.facebook.com/profile.php?id=61556129409531&mibextid=ZbWKwL" class="facebook">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="https://www.tiktok.com/@svezaosiguranje?is_from_webapp=1&sender_device=pc" class="tiktok">
+                <i class="fa-brands fa-tiktok"></i>
               </a>
             </div>
           </div>
