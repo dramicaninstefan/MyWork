@@ -9,7 +9,7 @@ import icon2 from '../../../assets/img/icon/icon-03-primary.png';
 const AboutUs = () => {
   return (
     <Fragment>
-      <div className="container-xxl " style={{ paddingBottom: `130px`, paddingTop: `50px` }}>
+      <div className="container-xxl " style={{ paddingBottom: `50px`, paddingTop: `50px` }} data-aos="fade-up">
         <div className="container">
           <div className="row g-5">
             <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">

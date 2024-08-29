@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import './Footer.css';
 
 import logo from '../../../assets/img/logo/logo.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -11,36 +12,42 @@ const Footer = () => {
         <div className="container py-5">
           <div className="row g-5">
             <div className="col-lg-4 col-md-6">
-              <img src={logo} alt="" />
+              <img src={logo} alt="" style={{ maxWidth: `200px` }} />
               <p>Naš savet je prema Vama u potpunosti BESPLATAN i bez skrivenih troškova.</p>
-              <div className="d-flex pt-2">
-                <a className="btn btn-square me-1" href="/">
-                  <i className="fab fa-viber"></i>
+              <div className="social-links d-flex pt-2">
+                <a href="viber://chat/?number=%2B381638489439">
+                  <i class="fa-brands fa-viber"></i>
                 </a>
-                <a className="btn btn-square me-1" href="/">
-                  <i className="fab fa-whatsapp"></i>
+                <a href="https://wa.me/+381638489439">
+                  <i class="fa-brands fa-whatsapp"></i>
                 </a>
-                <a className="btn btn-square me-1" href="/">
-                  <i className="fab fa-instagram"></i>
+                <a href="https://www.instagram.com/sve_za_osiguranje?utm_source=ig_web_button_share_sheet">
+                  <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a className="btn btn-square me-1" href="/">
-                  <i className="fab fa-facebook-f"></i>
+                <a href="https://www.facebook.com/profile.php?id=61556129409531&mibextid=ZbWKwL">
+                  <i class="fa-brands fa-facebook"></i>
                 </a>
-                <a className="btn btn-square me-0" href="/">
-                  <i className="fab fa-tiktok"></i>
+                <a href="https://www.tiktok.com/@svezaosiguranje?is_from_webapp=1&sender_device=pc">
+                  <i class="fa-brands fa-tiktok"></i>
                 </a>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
               <h5 className="text-light mb-4">Kontaktirajte nas</h5>
               <p>
-                <i className="fa fa-map-marker-alt me-3"></i>Žarka Zrenjanina 36, Starčevo, Srbija
+                <a href="https://maps.app.goo.gl/psgXqSZYUTjFQPPr6" className="btn btn-link">
+                  <i className="fa fa-map-marker-alt me-3"></i>Žarka Zrenjanina 36, Starčevo, Srbija
+                </a>
               </p>
               <p>
-                <i className="fa fa-phone-alt me-3"></i>+381 608060001
+                <a href="tel:+381608060001" className="btn btn-link">
+                  <i className="fa fa-phone-alt me-3"></i>+381 608060001
+                </a>
               </p>
               <p>
-                <i className="fa fa-envelope me-3"></i>office@centarzapoliseistete.rs
+                <a href="mailto: svezaosiguranje@gmail.com" className="btn btn-link">
+                  <i className="fa fa-envelope me-3"></i>office@centarzapoliseistete.rs
+                </a>
               </p>
             </div>
             <div className="col-lg-4 col-md-6">
@@ -67,7 +74,7 @@ const Footer = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                &copy; <a href="#">Centar za polise i stete</a>, All Right Reserved.
+                &copy; <Link>Centar za polise i stete</Link>, All Right Reserved.
               </div>
             </div>
           </div>

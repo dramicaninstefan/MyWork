@@ -1,7 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import './Header.css';
-import InfiniteLooper from '../../UI/InfiniteLooper/InfiniteLooper';
 
 import logo from '../../../assets/img/logo/logo.png';
 
@@ -52,15 +51,16 @@ const Header = () => {
   return (
     <Fragment>
       <header className={pahtname ? `header pathname d-flex flex-column align-items-center fixed-top` : `header ${isScrolled ? `isScrolled` : ``} d-flex flex-column align-items-center fixed-top`}>
-        {/* <InfiniteLooper /> */}
         <div class="topbar d-flex align-items-center">
           <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
               <i class="bi bi-envelope d-flex align-items-center">
-                <a href="mailto:contact@example.com">office@centarzapoliseistete.rs</a>
+                <a href="mailto:office@centarzapoliseistete.rs">office@centarzapoliseistete.rs</a>
               </i>
               <i class="bi bi-phone d-flex align-items-center ms-4">
-                <span>+381 608060001</span>
+                <a href="tel:+381608060001">
+                  <span>+381 608060001</span>
+                </a>
               </i>
             </div>
             <div class="social-links d-none d-md-flex align-items-center">
@@ -121,17 +121,10 @@ const Header = () => {
                     Putno osiguranje
                   </NavLink>
                 </li>
-                <li className="nav-item">
-                  <button
-                    class="btn-getstarted"
-                    onClick={() => {
-                      window.scrollTo(0, 3740);
-                    }}
-                  >
-                    Pošalji upit
-                  </button>
-                </li>
               </ul>
+              <a class="btn-getstarted" href="#contact">
+                Pošalji upit
+              </a>
             </div>
           </div>
         </nav>

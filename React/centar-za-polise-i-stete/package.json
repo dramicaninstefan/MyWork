@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^3.0.0-beta.6",
     "centar-za-polise-i-stete": "file:",
+    "firebase": "^10.13.1",
     "jquery": "^3.7.1",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",

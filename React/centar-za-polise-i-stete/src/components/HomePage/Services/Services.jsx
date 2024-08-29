@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Services.css';
 
@@ -24,9 +25,9 @@ const Services = () => {
                   </h4>
                 </div>
                 <p className="mb-4">Kasko osiguranje štiti vaše vozilo od štete uzrokovane nezgodama, krađom, vandalizmom i drugim rizicima, nadopunjujući osnovno osiguranje.</p>
-                <a className="btn btn-light px-3" href="/kasko-osiguranje-vozila">
+                <Link className="btn px-3" to="/kasko-osiguranje-vozila">
                   Detaljnije
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -40,9 +41,9 @@ const Services = () => {
                   </h4>
                 </div>
                 <p className="mb-4">Naplata štete uključuje prijavu štete, detaljnu procenu i isplatu troškova popravke ili zamene oštećenog vozila, u skladu sa polisom.</p>
-                <a className="btn px-3" href="/naplata-naknada-stete">
+                <Link className="btn px-3" to="/naplata-naknada-stete">
                   Detaljnije
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -56,9 +57,9 @@ const Services = () => {
                   </h4>
                 </div>
                 <p className="mb-4">Putno osiguranje pokriva troškove medicinske pomoći, otkazivanja putovanja, gubitka prtljaga i druge rizike tokom putovanja.</p>
-                <a className="btn px-3" href="/putno-osiguranje">
+                <Link className="btn px-3" to="/putno-osiguranje">
                   Detaljnije
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -72,9 +73,9 @@ const Services = () => {
                   </h4>
                 </div>
                 <p className="mb-4">Pomoć na putu uključuje vuču vozila, popravke na licu mesta i organizaciju alternativnog prevoza ili smeštaja tokom putovanja.</p>
-                <a className="btn px-3" href="/pomoc-na-putu">
+                <Link className="btn px-3" to="/pomoc-na-putu">
                   Detaljnije
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -88,9 +89,9 @@ const Services = () => {
                   </h4>
                 </div>
                 <p className="mb-4">Životno osiguranje obezbeđuje finansijsku pomoć porodici u slučaju smrti, pokrivajući troškove, dugove i pružajući dugoročnu sigurnost.</p>
-                <a className="btn px-3" href="/zivotno-osiguranje">
+                <Link className="btn px-3" to="/zivotno-osiguranje">
                   Detaljnije
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -104,9 +105,9 @@ const Services = () => {
                   </h4>
                 </div>
                 <p className="mb-4">Osiguranje domaćinstva štiti vaš dom od požara, poplava, krađe i drugih rizika, pokrivajući troškove popravke i odgovornosti.</p>
-                <a className="btn px-3 " href="/osiguranje-domacinstva">
+                <Link className="btn px-3" to="/osiguranje-domacinstva">
                   Detaljnije
-                </a>
+                </Link>
               </div>
             </div>
           </div>

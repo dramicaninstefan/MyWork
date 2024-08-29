@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 import bgImage from '../../../assets/img/hero-bg.jpg';
@@ -26,9 +26,9 @@ const Hero = () => {
               <div className="icon-box">
                 <i className="fa-solid fa-file-circle-check pb-3"></i>
                 <h3>
-                  <a href="">
+                  <Link>
                     <b>Preko 25 </b> ponuda <br /> za osiguranje, bez "sitnih slova"!
-                  </a>
+                  </Link>
                 </h3>
               </div>
             </div>
@@ -36,9 +36,9 @@ const Hero = () => {
               <div className="icon-box">
                 <i className="fa-solid fa-handshake pb-3"></i>
                 <h3>
-                  <a href="">
+                  <Link>
                     <b>BESPLATNE PONUDE,</b> jer nas plaća osiguravajuća kuća kojoj donesemo posao.
-                  </a>
+                  </Link>
                 </h3>
               </div>
             </div>
@@ -46,9 +46,9 @@ const Hero = () => {
               <div className="icon-box">
                 <i className="fa-solid fa-magnifying-glass pb-3"></i>
                 <h3>
-                  <a href="">
+                  <Link>
                     <b>UPOREDITE CENE</b> <br /> i dogovorite za sebe <b>polisu</b> osiguranja za sebe!
-                  </a>
+                  </Link>
                 </h3>
               </div>
             </div>
@@ -56,9 +56,9 @@ const Hero = () => {
               <div className="icon-box">
                 <i className="fa-solid fa-comments-dollar pb-3"></i>
                 <h3>
-                  <a href="">
+                  <Link>
                     <b>NAPLATITE ŠTETU </b> <br /> od osiguranja - NAJBOLJA NAPLATA!
-                  </a>
+                  </Link>
                 </h3>
               </div>
             </div>

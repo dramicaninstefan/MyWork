@@ -16,6 +16,7 @@
 @media (max-width: 1000px) {
   .header {
     background-color: var(--heading-color);
+    padding-inline: 20px;
   }
 }
 

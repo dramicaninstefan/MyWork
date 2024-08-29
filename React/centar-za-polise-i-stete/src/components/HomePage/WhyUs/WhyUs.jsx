@@ -1,6 +1,7 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 
 import './WhyUs.css';
+import { Link } from 'react-router-dom';
 
 const WhyUs = () => {
   return (
@@ -15,7 +16,7 @@ const WhyUs = () => {
             <div className="col-lg-12 d-flex align-items-center">
               <ul className="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
                 <li className="nav-item">
-                  <a className="nav-link active show">
+                  <Link className="nav-link active show">
                     <i className="fa-solid fa-piggy-bank"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">Uštedećete vreme</h4> --> */}
@@ -24,10 +25,10 @@ const WhyUs = () => {
                         vaš novac.
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active show">
+                  <Link className="nav-link active show">
                     <i className="fa-regular fa-clock"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">Uštedećete vreme</h4> --> */}
@@ -35,19 +36,19 @@ const WhyUs = () => {
                         <b>Uštedećete vreme</b> - na tržištu osiguranja posluje preko deset osiguravajućih kuća. Odlaskom u sve osiguavajuće kuće, izgubićete vreme. A vreme je novac.
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active show">
+                  <Link className="nav-link active show">
                     <i className="fa-solid fa-info"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">BESPLATAN SAVET</h4> --> */}
                       <p>Bićete adekvatno obeštećeni kod štetnog događaja, jer ćete imati adkevatno pokriće na polisi i imaćete nas kao savetnika za prijavu i naplatu štete.</p>
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active show">
+                  <Link className="nav-link active show">
                     <i className="fa-solid fa-handshake-simple"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">BESPLATAN SAVET</h4> --> */}
@@ -55,10 +56,10 @@ const WhyUs = () => {
                         <b>BESPLATAN SAVET</b> - potpuno besplatno, bez ikakvih skrivenih troškova je naša pomoć <b>MI ZASTUPAMO VAS I VAŠE INTERESE KOD OSIGURAVAJUĆIH KUĆA!</b>
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active show">
+                  <Link className="nav-link active show">
                     <i className="fa-solid fa-list-check"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">Bez sitnih slova polisa</h4> --> */}
@@ -67,10 +68,10 @@ const WhyUs = () => {
                         (najbitnije je dobro pročitati Isključenja na polisi!)
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active show">
+                  <Link className="nav-link active show">
                     <i className="fa-solid fa-circle-exclamation"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">Štete</h4> --> */}
@@ -78,7 +79,7 @@ const WhyUs = () => {
                         <b>Štete</b> - Ako imate štetu, mi ćemo Vam pomoći da taj događaj prevaziđete što lakše. U našem timu imamo i advokate, procenitelje šteta, sudske veštake…
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

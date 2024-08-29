@@ -87,6 +87,7 @@
 
 .hero .icon-box h3 a {
   color: #fff;
+  cursor: default;
   transition: ease-in-out 0.3s;
 }
 
