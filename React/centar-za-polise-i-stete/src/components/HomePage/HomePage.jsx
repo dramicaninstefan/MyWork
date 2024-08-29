@@ -10,17 +10,18 @@ import Swiper from '../UI/Swiper/Swiper.jsx';
 import InfiniteLooper from '../UI/InfiniteLooper/InfiniteLooper.jsx';
 
 const HomePage = () => {
+  window.scrollTo(0, 0);
   return (
     <Fragment>
       <main className="main">
         <Hero />
-        <InfiniteLooper />
         <AboutUs />
         <Counter />
         <WhyUs />
         <Services />
         <ContactForm />
         <Swiper />
+        <InfiniteLooper />
       </main>
     </Fragment>
   );

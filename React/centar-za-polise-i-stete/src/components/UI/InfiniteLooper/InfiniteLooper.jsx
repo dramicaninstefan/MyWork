@@ -2,6 +2,18 @@ import React, { Fragment } from 'react';
 
 import './InfiniteLooper.css';
 
+import logo1 from '../../../assets/img/logo/ams-logo.png';
+import logo2 from '../../../assets/img/logo/ddor-logo.png';
+import logo3 from '../../../assets/img/logo/dunav-logo.png';
+import logo4 from '../../../assets/img/logo/generali-logo.png';
+import logo5 from '../../../assets/img/logo/globus-logo.png';
+import logo6 from '../../../assets/img/logo/grawe-logo.png';
+import logo7 from '../../../assets/img/logo/milenijum-logo.png';
+import logo8 from '../../../assets/img/logo/sava-logo.png';
+import logo9 from '../../../assets/img/logo/triglav-logo.png';
+import logo10 from '../../../assets/img/logo/uniqa-logo.png';
+import logo11 from '../../../assets/img/logo/wiener-logo.png';
+
 const InfiniteLooper = () => {
   return (
     <Fragment>
@@ -36,82 +48,77 @@ const InfiniteLooper = () => {
         </div>
       </section> */}
 
-      <section className="container slide-option">
+      <section className="wrapper slide-option">
         <div id="infinite" className="highway-slider">
-          <div className="container highway-barrier">
+          <div className="wrapper highway-barrier">
             <ul className="highway-lane">
               <li className="highway-car">
-                <span className="fab fa-angular"></span>
+                <img src={logo1} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-js"></span>
+                <img src={logo2} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-node"></span>
+                <img src={logo3} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-html5"></span>
+                <img src={logo4} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-less"></span>
+                <img src={logo5} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-gulp"></span>
+                <img src={logo6} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-stack-overflow"></span>
+                <img src={logo7} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-codepen"></span>
+                <img src={logo8} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-aws"></span>
+                <img src={logo9} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-gitlab"></span>
+                <img src={logo10} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-chrome"></span>
-              </li>
-              <li className="highway-car">
-                <span className="fab fa-google"></span>
+                <img src={logo11} alt="" />
               </li>
 
+              {/*  */}
               <li className="highway-car">
-                <span className="fab fa-angular"></span>
+                <img src={logo1} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-js"></span>
+                <img src={logo2} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-node"></span>
+                <img src={logo3} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-html5"></span>
+                <img src={logo4} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-less"></span>
+                <img src={logo5} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-gulp"></span>
+                <img src={logo6} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-stack-overflow"></span>
+                <img src={logo7} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-codepen"></span>
+                <img src={logo8} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-aws"></span>
+                <img src={logo9} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-gitlab"></span>
+                <img src={logo10} alt="" />
               </li>
               <li className="highway-car">
-                <span className="fab fa-chrome"></span>
-              </li>
-              <li className="highway-car">
-                <span className="fab fa-google"></span>
+                <img src={logo11} alt="" />
               </li>
             </ul>
           </div>

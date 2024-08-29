@@ -2,7 +2,7 @@ section {
   display: flex;
   flex-flow: column;
   align-items: center;
-  div.container {
+  div.wrapper {
     transition: all 0.3s ease;
     h1 {
       margin: 15px 0 0 0;
@@ -16,7 +16,7 @@ section {
   }
 }
 section.slide-option {
-  margin: 0 0 50px 0;
+  /* margin: 0 0 50px 0; */
   .no-marg {
     margin: 0 0 0 0;
   }
@@ -42,6 +42,13 @@ div.highway-slider {
       background: #fff;
       color: #343434;
     }
+  }
+  img {
+    display: block;
+    max-width: 150px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
   }
 }
 
@@ -72,7 +79,7 @@ div.highway-slider {
 }
 #infinite div.highway-barrier {
   background: #fff;
-  box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 0.3); */
   &::before,
   &::after {
     content: ' ';

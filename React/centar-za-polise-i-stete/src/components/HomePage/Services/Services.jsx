@@ -5,7 +5,7 @@ import './Services.css';
 const Services = () => {
   return (
     <Fragment>
-      <div className="container-xxl py-5">
+      <div className="container-xxl py-5" data-aos="fade-up">
         <div className="container">
           <div className="section-title text-center mx-auto" style={{ maxWidth: `800px` }}>
             <h2 style={{ fontWeight: `bold` }} className=" display-6 mb-5">

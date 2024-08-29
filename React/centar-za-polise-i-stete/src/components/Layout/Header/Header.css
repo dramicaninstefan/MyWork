@@ -1,0 +1,123 @@
+.header {
+  color: #fff;
+  width: 100vw;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+.header.pathname {
+  background-color: var(--heading-color);
+}
+
+.header.isScrolled {
+  background-color: var(--heading-color);
+}
+
+@media (max-width: 1000px) {
+  .header {
+    background-color: var(--heading-color);
+  }
+}
+
+.header .topbar {
+  background-color: transparent;
+  height: 40px;
+  width: 100%;
+  padding: 0;
+  font-size: 17px;
+  transition: all 0.5s;
+}
+
+.header .topbar .contact-info i {
+  font-style: normal;
+  color: var(--accent-color);
+}
+
+.header .topbar .contact-info i a,
+.header .topbar .contact-info i span {
+  padding-left: 5px;
+  color: #fff;
+}
+
+@media (max-width: 575px) {
+  .header .topbar .contact-info i a,
+  .header .topbar .contact-info i span {
+    font-size: 13px;
+  }
+}
+
+.header .topbar .contact-info i a {
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.header .topbar .contact-info i a:hover {
+  color: var(--contrast-color);
+  text-decoration: underline;
+}
+
+.header .topbar .social-links a {
+  color: color-mix(in srgb, var(--accent-color), transparent 40%);
+  line-height: 0;
+  transition: 0.3s;
+  margin-left: 20px;
+}
+
+.header .topbar .social-links a:hover {
+  color: var(--accent-color);
+}
+
+/* Navbar */
+
+.header .navbar {
+  width: 100%;
+  background-color: transparent;
+}
+
+.header .navbar div a {
+  color: #fff;
+}
+
+.header .navbar div .logo img {
+  max-width: 200px;
+}
+
+.header .navbar div .collapse .navbar-nav .nav-item .nav-link {
+  color: #fff;
+  font-size: 17px;
+}
+
+.header .navbar div .collapse .navbar-nav .nav-item .nav-link.active {
+  color: var(--accent-color);
+}
+
+.header .btn-getstarted,
+.header .btn-getstarted:focus {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 17px;
+  padding: 8px 25px;
+  margin: 0 0 0 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+@media (max-width: 1200px) {
+  .header .btn-getstarted {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 15px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header .btn-getstarted {
+    display: none;
+  }
+}

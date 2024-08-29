@@ -1,11 +1,9 @@
 import React, { Fragment } from 'react';
 
-import classes from './PolitikaPrivatnosti.module.css';
-
 const PolitikaPrivatnosti = () => {
   return (
     <Fragment>
-      <main className={classes.container}>
+      <main className="container" style={{ marginTop: `150px` }}>
         <p>
           <b>Politika privatnosti</b>
           <br />
@@ -286,15 +284,12 @@ const PolitikaPrivatnosti = () => {
           <ul>
             <li>
               Putem imejla:{' '}
-              <a href="mailto:svezaosiguranje@gmail.com" target="_blank" rel="noreferrer" className={classes.email}>
+              <a href="mailto:svezaosiguranje@gmail.com" target="_blank" rel="noreferrer">
                 office@centarzapoliseistete.com
               </a>
             </li>
             <li>
-              Putem broja telefona:{' '}
-              <a href="tel:+381608060001" className={classes.phone}>
-                +381 608060001
-              </a>
+              Putem broja telefona: <a href="tel:+381608060001">+381 608060001</a>
             </li>
           </ul>
         </p>

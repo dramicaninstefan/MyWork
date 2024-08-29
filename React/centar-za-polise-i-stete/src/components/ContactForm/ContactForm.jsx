@@ -5,10 +5,11 @@ import './Contact.css';
 const ContactForm = () => {
   return (
     <Fragment>
+      <div id="contact"></div>
       <div className="container-fluid appointment my-5 py-5 wow fadeIn" data-wow-delay="0.1s">
         <div className="container py-5">
           <div className="row g-5">
-            <div className="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+            <div className="col-lg-6 wow fadeIn" data-aos="fade-right">
               <h1 style={{ fontWeight: `bold` }} className="display-6 text-white mb-5">
                 Vaš lični konsultant
               </h1>
@@ -29,26 +30,26 @@ const ContactForm = () => {
                 office@centarzapoliseistete.rs
               </a>
             </div>
-            <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+            <div className="col-lg-6 wow fadeIn" data-aos="fade-left" data-wow-delay="0.5s">
               <div className="bg-white rounded p-5">
                 <form>
                   <div className="row g-3">
                     <div className="col-sm-6">
                       <div className="form-floating">
                         <input type="text" className="form-control" id="gname" />
-                        <label for="gname">Ime *</label>
+                        <label htmlFor="gname">Ime *</label>
                       </div>
                     </div>
                     <div className="col-sm-6">
                       <div className="form-floating">
                         <input type="text" className="form-control" id="cname" />
-                        <label for="cname">Broj telefona *</label>
+                        <label htmlFor="cname">Broj telefona *</label>
                       </div>
                     </div>
                     <div className="col-sm-6">
                       <div className="form-floating">
                         <input type="email" className="form-control" id="gmail" />
-                        <label for="gmail">Email (Opciono)</label>
+                        <label htmlFor="gmail">Email (Opciono)</label>
                       </div>
                     </div>
                     <div className="col-sm-6">
@@ -64,13 +65,13 @@ const ContactForm = () => {
                           <option value="Osiguranje od nezgode">Osiguranje od nezgode</option>
                           <option value="Osiguranje od odgovornosti">Osiguranje od odgovornosti</option>
                         </select>
-                        <label for="gmail">Zainteresovan sam za: *</label>
+                        <label htmlFor="gmail">Zainteresovan sam za: *</label>
                       </div>
                     </div>
                     <div className="col-12">
                       <div className="form-floating">
                         <textarea className="form-control" id="message" style={{ height: `180px` }}></textarea>
-                        <label for="message">Kako možemo da Vam pomognemo? *</label>
+                        <label htmlFor="message">Kako možemo da Vam pomognemo? *</label>
                       </div>
                     </div>
                     <div className="col-12">

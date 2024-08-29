@@ -1,5 +1,7 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import './App.css';
 
@@ -9,7 +11,24 @@ import RootLayout from './components/routes/RootLayout';
 import ErrorPage from './components/routes/ErrorPage';
 import PolitikaPrivatnosti from './components/routes/PolitikaPrivatnosti';
 
+import Preloader from './components/UI/Preloader/Preloader.jsx';
+
 function App() {
+  // Implement AOS for bootstrap animations
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+  // Preloader
+  const [screenLoading, setScreenLoading] = useState(false);
+
+  useEffect(() => {
+    setScreenLoading(true);
+    setTimeout(() => {
+      setScreenLoading(false);
+    }, 800);
+  }, []);
+
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   };
@@ -41,11 +60,7 @@ function App() {
     },
   ]);
 
-  return (
-    <Fragment>
-      <RouterProvider router={router} />
-    </Fragment>
-  );
+  return <Fragment>{screenLoading ? <Preloader /> : <RouterProvider router={router} />}</Fragment>;
 }
 
 export default App;
