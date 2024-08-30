@@ -16,19 +16,19 @@ const Footer = () => {
               <p>Naš savet je prema Vama u potpunosti BESPLATAN i bez skrivenih troškova.</p>
               <div className="social-links d-flex pt-2">
                 <a href="viber://chat/?number=%2B381638489439">
-                  <i class="fa-brands fa-viber"></i>
+                  <i className="fa-brands fa-viber"></i>
                 </a>
                 <a href="https://wa.me/+381638489439">
-                  <i class="fa-brands fa-whatsapp"></i>
+                  <i className="fa-brands fa-whatsapp"></i>
                 </a>
                 <a href="https://www.instagram.com/sve_za_osiguranje?utm_source=ig_web_button_share_sheet">
-                  <i class="fa-brands fa-instagram"></i>
+                  <i className="fa-brands fa-instagram"></i>
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=61556129409531&mibextid=ZbWKwL">
-                  <i class="fa-brands fa-facebook"></i>
+                  <i className="fa-brands fa-facebook"></i>
                 </a>
                 <a href="https://www.tiktok.com/@svezaosiguranje?is_from_webapp=1&sender_device=pc">
-                  <i class="fa-brands fa-tiktok"></i>
+                  <i className="fa-brands fa-tiktok"></i>
                 </a>
               </div>
             </div>

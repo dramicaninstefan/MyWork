@@ -22,7 +22,7 @@ const Hero = () => {
           </div>
 
           <div className="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
-            <div className="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div className="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
               <div className="icon-box">
                 <i className="fa-solid fa-file-circle-check pb-3"></i>
                 <h3>
@@ -32,7 +32,7 @@ const Hero = () => {
                 </h3>
               </div>
             </div>
-            <div className="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div className="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
               <div className="icon-box">
                 <i className="fa-solid fa-handshake pb-3"></i>
                 <h3>
@@ -42,7 +42,7 @@ const Hero = () => {
                 </h3>
               </div>
             </div>
-            <div className="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div className="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
               <div className="icon-box">
                 <i className="fa-solid fa-magnifying-glass pb-3"></i>
                 <h3>
@@ -52,7 +52,7 @@ const Hero = () => {
                 </h3>
               </div>
             </div>
-            <div className="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div className="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
               <div className="icon-box">
                 <i className="fa-solid fa-comments-dollar pb-3"></i>
                 <h3>

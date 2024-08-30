@@ -7,16 +7,16 @@ import image from '../../../assets/img/why-us-bg.jpg';
 const Swiper = () => {
   return (
     <Fragment>
-      <div class="container" data-aos="fade-up">
+      <div className="container" data-aos="fade-up">
         <div className="row">
           <div className="col-xl-5 col-md-12 order-md-1">
             <img src={image} alt="" />
           </div>
 
-          <div id="demo" class="carousel slide col-xl-7 col-md-12 order-md-2" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="carousel-caption">
+          <div id="demo" className="carousel slide col-xl-7 col-md-12 order-md-2" data-ride="carousel">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <div className="carousel-caption">
                   <div className="item">
                     <h3 className="mb-3">Odaberite najbolje ponude za osiguranje, rešite štetu koju imate.</h3>
                     <h4 className="mb-4">Centar za osiguranje.</h4>
@@ -32,8 +32,8 @@ const Swiper = () => {
                   </div>
                 </div>
               </div>
-              <div class="carousel-item">
-                <div class="carousel-caption">
+              <div className="carousel-item">
+                <div className="carousel-caption">
                   <div className="item">
                     <h3 className="mb-3">Zašto je osiguranje potrebno?</h3>
                     <h4 className="mb-4">Centar za osiguranje.</h4>
@@ -48,8 +48,8 @@ const Swiper = () => {
                   </div>
                 </div>
               </div>
-              <div class="carousel-item">
-                <div class="carousel-caption">
+              <div className="carousel-item">
+                <div className="carousel-caption">
                   <div className="item">
                     <h3 className="mb-3">Šta će se desiti ako nemate osiguranje?</h3>
                     <h4 className="mb-4">Centar za osiguranje</h4>
@@ -65,11 +65,11 @@ const Swiper = () => {
                 </div>
               </div>
             </div>
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-              <i class="fas fa-arrow-left"></i>
+            <a className="carousel-control-prev" href="#demo" data-slide="prev">
+              <i className="fas fa-arrow-left"></i>
             </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-              <i class="fas fa-arrow-right"></i>
+            <a className="carousel-control-next" href="#demo" data-slide="next">
+              <i className="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>

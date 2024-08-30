@@ -6,14 +6,14 @@ import './Services.css';
 const Services = () => {
   return (
     <Fragment>
-      <div className="container-xxl py-5" data-aos="fade-up">
+      <div className="container-xxl py-5">
         <div className="container">
-          <div className="section-title text-center mx-auto" style={{ maxWidth: `800px` }}>
+          <div className="section-title text-center mx-auto" style={{ maxWidth: `800px` }} data-aos="fade-up">
             <h2 style={{ fontWeight: `bold` }} className=" display-6 mb-5">
               Pružamo profesionalne usluge osiguranja.
             </h2>
           </div>
-          <div className="row g-4 justify-content-center">
+          <div className="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
               <div className="service-item rounded h-100 p-5">
                 <div className="d-flex align-items-center ms-n5 mb-4">

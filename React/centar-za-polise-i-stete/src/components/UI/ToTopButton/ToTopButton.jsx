@@ -34,7 +34,7 @@ const ToTopButton = () => {
         className={isScrolled ? `scroll-top active d-flex align-items-center justify-content-center` : `scroll-top d-flex align-items-center justify-content-center`}
         onClick={handleBtnClick}
       >
-        <i class="bi bi-arrow-up-short"></i>
+        <i className="bi bi-arrow-up-short"></i>
       </button>
     </Fragment>
   );

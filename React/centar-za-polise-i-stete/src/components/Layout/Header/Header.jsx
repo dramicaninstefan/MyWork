@@ -51,40 +51,40 @@ const Header = () => {
   return (
     <Fragment>
       <header className={pahtname ? `header pathname d-flex flex-column align-items-center fixed-top` : `header ${isScrolled ? `isScrolled` : ``} d-flex flex-column align-items-center fixed-top`}>
-        <div class="topbar d-flex align-items-center">
-          <div class="container d-flex justify-content-center justify-content-md-between">
-            <div class="contact-info d-flex align-items-center">
-              <i class="bi bi-envelope d-flex align-items-center">
+        <div className="topbar d-flex align-items-center">
+          <div className="container d-flex justify-content-center justify-content-md-between">
+            <div className="contact-info d-flex align-items-center">
+              <i className="bi bi-envelope d-flex align-items-center">
                 <a href="mailto:office@centarzapoliseistete.rs">office@centarzapoliseistete.rs</a>
               </i>
-              <i class="bi bi-phone d-flex align-items-center ms-4">
+              <i className="bi bi-phone d-flex align-items-center ms-4">
                 <a href="tel:+381608060001">
                   <span>+381 608060001</span>
                 </a>
               </i>
             </div>
-            <div class="social-links d-none d-md-flex align-items-center">
-              <a href="viber://chat/?number=%2B381638489439" class="viber">
-                <i class="fa-brands fa-viber"></i>
+            <div className="social-links d-none d-md-flex align-items-center">
+              <a href="viber://chat/?number=%2B381638489439" className="viber">
+                <i className="fa-brands fa-viber"></i>
               </a>
-              <a href="https://wa.me/+381638489439" class="whatsup">
-                <i class="fa-brands fa-whatsapp"></i>
+              <a href="https://wa.me/+381638489439" className="whatsup">
+                <i className="fa-brands fa-whatsapp"></i>
               </a>
-              <a href="https://www.instagram.com/sve_za_osiguranje?utm_source=ig_web_button_share_sheet" class="instagram">
-                <i class="fa-brands fa-instagram"></i>
+              <a href="https://www.instagram.com/sve_za_osiguranje?utm_source=ig_web_button_share_sheet" className="instagram">
+                <i className="fa-brands fa-instagram"></i>
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61556129409531&mibextid=ZbWKwL" class="facebook">
-                <i class="fa-brands fa-facebook"></i>
+              <a href="https://www.facebook.com/profile.php?id=61556129409531&mibextid=ZbWKwL" className="facebook">
+                <i className="fa-brands fa-facebook"></i>
               </a>
-              <a href="https://www.tiktok.com/@svezaosiguranje?is_from_webapp=1&sender_device=pc" class="tiktok">
-                <i class="fa-brands fa-tiktok"></i>
+              <a href="https://www.tiktok.com/@svezaosiguranje?is_from_webapp=1&sender_device=pc" className="tiktok">
+                <i className="fa-brands fa-tiktok"></i>
               </a>
             </div>
           </div>
         </div>
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container">
-            <Link className="logo" to="/" end>
+            <Link className="logo" to="/">
               <img src={logo} alt="" />
             </Link>
             <button
@@ -97,7 +97,7 @@ const Header = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <i class="fa-solid fa-bars" style={{ color: `#fff` }}></i>
+              <i className="fa-solid fa-bars" style={{ color: `#fff` }}></i>
             </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav ms-auto">
@@ -122,7 +122,7 @@ const Header = () => {
                   </NavLink>
                 </li>
               </ul>
-              <a class="btn-getstarted" href="#contact">
+              <a className="btn-getstarted" href="#contact">
                 Pošalji upit
               </a>
             </div>
