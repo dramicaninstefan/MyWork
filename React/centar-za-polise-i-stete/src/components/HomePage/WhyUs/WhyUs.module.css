@@ -59,7 +59,3 @@
   background: color-mix(in srgb, var(--accent-color), transparent 96%);
   color: var(--default-color);
 }
-
-.features .tab-pane img {
-  border-radius: 15px;
-}

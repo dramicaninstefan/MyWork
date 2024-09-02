@@ -1,16 +1,17 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import './Hero.css';
+
+import classes from './Hero.module.css';
 
 import bgImage from '../../../assets/img/hero-bg.jpg';
 
 const Hero = () => {
   return (
     <Fragment>
-      <section id="hero" className="hero section dark-background">
+      <section id="hero" className={`${classes.hero} section dark-background`}>
         <img src={bgImage} alt="" data-aos="fade-in" />
 
-        <div className="container">
+        <div className={`${classes.container} container`}>
           <div className="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
             <div className="col-xl-6 col-lg-8">
               <h2>
@@ -23,7 +24,7 @@ const Hero = () => {
 
           <div className="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div className="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
-              <div className="icon-box">
+              <div className={classes['icon-box']}>
                 <i className="fa-solid fa-file-circle-check pb-3"></i>
                 <h3>
                   <Link>
@@ -33,7 +34,7 @@ const Hero = () => {
               </div>
             </div>
             <div className="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
-              <div className="icon-box">
+              <div className={classes['icon-box']}>
                 <i className="fa-solid fa-handshake pb-3"></i>
                 <h3>
                   <Link>
@@ -43,7 +44,7 @@ const Hero = () => {
               </div>
             </div>
             <div className="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
-              <div className="icon-box">
+              <div className={classes['icon-box']}>
                 <i className="fa-solid fa-magnifying-glass pb-3"></i>
                 <h3>
                   <Link>
@@ -53,7 +54,7 @@ const Hero = () => {
               </div>
             </div>
             <div className="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
-              <div className="icon-box">
+              <div className={classes['icon-box']}>
                 <i className="fa-solid fa-comments-dollar pb-3"></i>
                 <h3>
                   <Link>

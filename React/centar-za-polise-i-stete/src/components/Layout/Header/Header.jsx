@@ -31,7 +31,7 @@ const Header = () => {
   const [pahtname, setPathname] = useState(false);
   useEffect(() => {
     if (
-      location.pathname === '/kasko-osiguranje-vozila' ||
+      // location.pathname === '/kasko-osiguranje-vozila' ||
       location.pathname === '/autoodgovornost' ||
       location.pathname === '/pomoc-na-putu' ||
       location.pathname === '/registracija-vozila' ||
@@ -40,7 +40,8 @@ const Header = () => {
       location.pathname === '/zivotno-osiguranje' ||
       location.pathname === '/dobrovoljno-zdravstveno-osiguranje' ||
       location.pathname === '/osiguranje-od-nezgode' ||
-      location.pathname === '/osiguranje-domacinstva'
+      location.pathname === '/osiguranje-domacinstva' ||
+      location.pathname === '/politika-privatnosti'
     ) {
       setPathname(true);
     } else {
@@ -53,9 +54,11 @@ const Header = () => {
       <header className={pahtname ? `header pathname d-flex flex-column align-items-center fixed-top` : `header ${isScrolled ? `isScrolled` : ``} d-flex flex-column align-items-center fixed-top`}>
         <div className="topbar d-flex align-items-center">
           <div className="container d-flex justify-content-center justify-content-md-between">
-            <div className="contact-info d-flex align-items-center">
+            <div className="contact-info">
               <i className="bi bi-envelope d-flex align-items-center">
-                <a href="mailto:office@centarzapoliseistete.rs">office@centarzapoliseistete.rs</a>
+                <a href="mailto:office@centarzapoliseistete.rs" target="_blank" rel="noreferrer">
+                  office@centarzapoliseistete.rs
+                </a>
               </i>
               <i className="bi bi-phone d-flex align-items-center ms-4">
                 <a href="tel:+381608060001">
@@ -64,19 +67,19 @@ const Header = () => {
               </i>
             </div>
             <div className="social-links d-none d-md-flex align-items-center">
-              <a href="viber://chat/?number=%2B381638489439" className="viber">
+              <a href="viber://chat/?number=%2B381638489439" className="viber" target="_blank" rel="noreferrer">
                 <i className="fa-brands fa-viber"></i>
               </a>
-              <a href="https://wa.me/+381638489439" className="whatsup">
+              <a href="https://wa.me/+381638489439" className="whatsup" target="_blank" rel="noreferrer">
                 <i className="fa-brands fa-whatsapp"></i>
               </a>
-              <a href="https://www.instagram.com/sve_za_osiguranje?utm_source=ig_web_button_share_sheet" className="instagram">
+              <a href="https://www.instagram.com/sve_za_osiguranje?utm_source=ig_web_button_share_sheet" className="instagram" target="_blank" rel="noreferrer">
                 <i className="fa-brands fa-instagram"></i>
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61556129409531&mibextid=ZbWKwL" className="facebook">
+              <a href="https://www.facebook.com/profile.php?id=61556129409531&mibextid=ZbWKwL" className="facebook" target="_blank" rel="noreferrer">
                 <i className="fa-brands fa-facebook"></i>
               </a>
-              <a href="https://www.tiktok.com/@svezaosiguranje?is_from_webapp=1&sender_device=pc" className="tiktok">
+              <a href="https://www.tiktok.com/@svezaosiguranje?is_from_webapp=1&sender_device=pc" className="tiktok" target="_blank" rel="noreferrer">
                 <i className="fa-brands fa-tiktok"></i>
               </a>
             </div>
@@ -101,7 +104,7 @@ const Header = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav ms-auto">
-                <li className="nav-item active">
+                <li className="nav-item">
                   <NavLink className={({ isActive }) => (isActive ? `nav-link active` : `nav-link`)} to="/" end>
                     Početna
                   </NavLink>

@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 
-import './ToTopButton.css';
+import classes from './ToTopButton.module.css';
 
 const ToTopButton = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +31,9 @@ const ToTopButton = () => {
     <Fragment>
       <button
         id="scroll-top"
-        className={isScrolled ? `scroll-top active d-flex align-items-center justify-content-center` : `scroll-top d-flex align-items-center justify-content-center`}
+        className={
+          isScrolled ? `${classes['scroll-top']} ${classes.active} d-flex align-items-center justify-content-center` : `${classes['scroll-top']} d-flex align-items-center justify-content-center`
+        }
         onClick={handleBtnClick}
       >
         <i className="bi bi-arrow-up-short"></i>

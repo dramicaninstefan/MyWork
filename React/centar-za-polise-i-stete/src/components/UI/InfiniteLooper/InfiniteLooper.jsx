@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import './InfiniteLooper.css';
+import classes from './InfiniteLooper.module.css';
 
 import logo1 from '../../../assets/img/logo/ams-logo.png';
 import logo2 from '../../../assets/img/logo/ddor-logo.png';
@@ -17,8 +17,8 @@ import logo11 from '../../../assets/img/logo/wiener-logo.png';
 const InfiniteLooper = () => {
   return (
     <Fragment>
-      <div className="logos">
-        <div className="logo-slide">
+      <div className={classes.logos}>
+        <div className={classes['logo-slide']}>
           <img src={logo1} alt="" />
           <img src={logo2} alt="" />
           <img src={logo3} alt="" />
@@ -43,7 +43,7 @@ const InfiniteLooper = () => {
           <img src={logo10} alt="" />
           <img src={logo11} alt="" />
         </div>
-        <div className="logo-slide">
+        <div className={classes['logo-slide']}>
           <img src={logo1} alt="" />
           <img src={logo2} alt="" />
           <img src={logo3} alt="" />
@@ -68,7 +68,7 @@ const InfiniteLooper = () => {
           <img src={logo10} alt="" />
           <img src={logo11} alt="" />
         </div>
-        <div className="logo-slide">
+        <div className={classes['logo-slide']}>
           <img src={logo1} alt="" />
           <img src={logo2} alt="" />
           <img src={logo3} alt="" />

@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 
-import './Contact.css';
+import classes from './ContactForm.module.css';
 
 const ContactForm = () => {
   return (
     <Fragment>
       <div id="contact"></div>
-      <div className="container-fluid appointment my-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+      <div className={`container-fluid ${classes.contact} my-5 py-5 wow fadeIn`} data-wow-delay="0.1s">
         <div className="container py-5">
           <div className="row g-5">
             <div className="col-lg-6 wow fadeIn" data-aos="fade-right">
@@ -26,7 +26,7 @@ const ContactForm = () => {
                   <i className="fa-solid fa-envelope" style={{ fontSize: `25px`, marginRight: `10px`, transform: `translateY(-1px)`, color: `var(--accent-color)` }}></i>Email
                 </a>
               </h2>
-              <a href="mailto: svezaosiguranje@gmail.com" style={{ color: `#fff`, fontSize: `22px` }}>
+              <a href="mailto: svezaosiguranje@gmail.com" style={{ color: `#fff`, fontSize: `22px` }} target="_blank" rel="noreferrer">
                 office@centarzapoliseistete.rs
               </a>
             </div>

@@ -15,19 +15,19 @@ const Footer = () => {
               <img src={logo} alt="" style={{ maxWidth: `200px` }} />
               <p>Naš savet je prema Vama u potpunosti BESPLATAN i bez skrivenih troškova.</p>
               <div className="social-links d-flex pt-2">
-                <a href="viber://chat/?number=%2B381638489439">
+                <a href="viber://chat/?number=%2B381638489439" target="_blank" rel="noreferrer">
                   <i className="fa-brands fa-viber"></i>
                 </a>
-                <a href="https://wa.me/+381638489439">
+                <a href="https://wa.me/+381638489439" target="_blank" rel="noreferrer">
                   <i className="fa-brands fa-whatsapp"></i>
                 </a>
-                <a href="https://www.instagram.com/sve_za_osiguranje?utm_source=ig_web_button_share_sheet">
+                <a href="https://www.instagram.com/sve_za_osiguranje?utm_source=ig_web_button_share_sheet" target="_blank" rel="noreferrer">
                   <i className="fa-brands fa-instagram"></i>
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=61556129409531&mibextid=ZbWKwL">
+                <a href="https://www.facebook.com/profile.php?id=61556129409531&mibextid=ZbWKwL" target="_blank" rel="noreferrer">
                   <i className="fa-brands fa-facebook"></i>
                 </a>
-                <a href="https://www.tiktok.com/@svezaosiguranje?is_from_webapp=1&sender_device=pc">
+                <a href="https://www.tiktok.com/@svezaosiguranje?is_from_webapp=1&sender_device=pc" target="_blank" rel="noreferrer">
                   <i className="fa-brands fa-tiktok"></i>
                 </a>
               </div>
@@ -35,7 +35,7 @@ const Footer = () => {
             <div className="col-lg-4 col-md-6">
               <h5 className="text-light mb-4">Kontaktirajte nas</h5>
               <p>
-                <a href="https://maps.app.goo.gl/psgXqSZYUTjFQPPr6" className="btn btn-link">
+                <a href="https://maps.app.goo.gl/psgXqSZYUTjFQPPr6" className="btn btn-link" target="_blank" rel="noreferrer">
                   <i className="fa fa-map-marker-alt me-3"></i>Žarka Zrenjanina 36, Starčevo, Srbija
                 </a>
               </p>
@@ -45,7 +45,7 @@ const Footer = () => {
                 </a>
               </p>
               <p>
-                <a href="mailto: svezaosiguranje@gmail.com" className="btn btn-link">
+                <a href="mailto: svezaosiguranje@gmail.com" className="btn btn-link" target="_blank" rel="noreferrer">
                   <i className="fa fa-envelope me-3"></i>office@centarzapoliseistete.rs
                 </a>
               </p>

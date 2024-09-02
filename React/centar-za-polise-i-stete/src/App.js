@@ -7,6 +7,21 @@ import './App.css';
 
 import HomePage from './components/HomePage/HomePage';
 
+import KaskoOsiguranje from './components/pages/Vozila/KaskoOsiguranje/KaskoOsiguranje';
+import Autoodgovornost from './components/pages/Vozila/Autoodgovornost/Autoodgovornost';
+import PomocNaPutu from './components/pages/Vozila/PomocNaPutu/PomocNaPutu';
+import RegistracijaVozila from './components/pages/Vozila/RegistracijaVozila/RegistracijaVozila';
+
+import Domacinstvo from './components/pages/Domacinstvo/Domacinstvo';
+
+import ZivotnoOsiguranje from './components/pages/ZivotnoIZdravstveno/ZivotnoOsiguranje/ZivotnoOsiguranje';
+import DobrovoljnoZdravstvenoOsiguranje from './components/pages/ZivotnoIZdravstveno/DobrovoljnoZdravstvenoOsiguranje/DobrovoljnoZdravstvenoOsiguranje';
+import OsiguranjeOdNezgode from './components/pages/ZivotnoIZdravstveno/OsiguranjeOdNezgode/OsiguranjeOdNezgode';
+
+import Putno from './components/pages/Putno/Putno';
+
+import NaplataStete from './components/pages/NaplataStete/NaplataStete';
+
 import RootLayout from './components/routes/RootLayout';
 import ErrorPage from './components/routes/ErrorPage';
 import PolitikaPrivatnosti from './components/routes/PolitikaPrivatnosti';
@@ -26,7 +41,7 @@ function App() {
     setScreenLoading(true);
     setTimeout(() => {
       setScreenLoading(false);
-    }, 800);
+    }, 500);
   }, []);
 
   window.onbeforeunload = function () {
@@ -40,20 +55,20 @@ function App() {
       errorElement: <ErrorPage />,
       children: [
         { path: '/', element: <HomePage /> },
-        { path: '/kasko-osiguranje-vozila', element: <HomePage /> },
-        { path: '/autoodgovornost', element: <ErrorPage /> },
-        { path: '/pomoc-na-putu', element: <ErrorPage /> },
-        { path: '/registracija-vozila', element: <ErrorPage /> },
+        { path: '/kasko-osiguranje-vozila', element: <KaskoOsiguranje /> },
+        { path: '/autoodgovornost', element: <Autoodgovornost /> },
+        { path: '/pomoc-na-putu', element: <PomocNaPutu /> },
+        { path: '/registracija-vozila', element: <RegistracijaVozila /> },
 
-        { path: '/osiguranje-domacinstva', element: <ErrorPage /> },
+        { path: '/osiguranje-domacinstva', element: <Domacinstvo /> },
 
-        { path: '/zivotno-osiguranje', element: <ErrorPage /> },
-        { path: '/dobrovoljno-zdravstveno-osiguranje', element: <ErrorPage /> },
-        { path: '/osiguranje-od-nezgode', element: <ErrorPage /> },
+        { path: '/zivotno-osiguranje', element: <ZivotnoOsiguranje /> },
+        { path: '/dobrovoljno-zdravstveno-osiguranje', element: <DobrovoljnoZdravstvenoOsiguranje /> },
+        { path: '/osiguranje-od-nezgode', element: <OsiguranjeOdNezgode /> },
 
-        { path: '/putno-osiguranje', element: <ErrorPage /> },
+        { path: '/putno-osiguranje', element: <Putno /> },
 
-        { path: '/naplata-naknada-stete', element: <ErrorPage /> },
+        { path: '/naplata-naknada-stete', element: <NaplataStete /> },
 
         { path: '/politika-privatnosti', element: <PolitikaPrivatnosti /> },
       ],

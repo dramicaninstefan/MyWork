@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 
-import './WhyUs.css';
+import classes from './WhyUs.module.css';
 import { Link } from 'react-router-dom';
 
 const WhyUs = () => {
   return (
     <Fragment>
-      <section id="features" className="features section">
+      <section id="features" className={`${classes.features} section`}>
         <div className="container section-title" data-aos="fade-up">
           <h2>Zašto da Vas mi savetujemo kako i gde da osigurate kasko za Vaše vozilo?</h2>
         </div>
@@ -14,9 +14,9 @@ const WhyUs = () => {
         <div className="container">
           <div className="row justify-content-between">
             <div className="col-lg-12 d-flex align-items-center">
-              <ul className="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
-                <li className="nav-item">
-                  <Link className="nav-link active show">
+              <ul className={`${classes['nav-tabs']} nav nav-tabs`} data-aos="fade-up" data-aos-delay="100">
+                <li className={classes['nav-item']}>
+                  <Link className={`${classes['nav-link']} active show`}>
                     <i className="fa-solid fa-piggy-bank"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">Uštedećete vreme</h4> --> */}
@@ -27,8 +27,8 @@ const WhyUs = () => {
                     </div>
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link active show">
+                <li className={classes['nav-item']}>
+                  <Link className={`${classes['nav-link']} active show`}>
                     <i className="fa-regular fa-clock"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">Uštedećete vreme</h4> --> */}
@@ -38,8 +38,8 @@ const WhyUs = () => {
                     </div>
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link active show">
+                <li className={classes['nav-item']}>
+                  <Link className={`${classes['nav-link']} active show`}>
                     <i className="fa-solid fa-info"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">BESPLATAN SAVET</h4> --> */}
@@ -47,8 +47,8 @@ const WhyUs = () => {
                     </div>
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link active show">
+                <li className={classes['nav-item']}>
+                  <Link className={`${classes['nav-link']} active show`}>
                     <i className="fa-solid fa-handshake-simple"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">BESPLATAN SAVET</h4> --> */}
@@ -58,8 +58,8 @@ const WhyUs = () => {
                     </div>
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link active show">
+                <li className={classes['nav-item']}>
+                  <Link className={`${classes['nav-link']} active show`}>
                     <i className="fa-solid fa-list-check"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">Bez sitnih slova polisa</h4> --> */}
@@ -70,8 +70,8 @@ const WhyUs = () => {
                     </div>
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link active show">
+                <li className={classes['nav-item']}>
+                  <Link className={`${classes['nav-link']} active show`}>
                     <i className="fa-solid fa-circle-exclamation"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">Štete</h4> --> */}

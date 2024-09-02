@@ -29,6 +29,12 @@
   transition: all 0.5s;
 }
 
+.header .topbar .contact-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .header .topbar .contact-info i {
   font-style: normal;
   color: var(--accent-color);
@@ -40,7 +46,19 @@
   color: #fff;
 }
 
+@media (max-width: 765px) {
+  .header .topbar .contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 @media (max-width: 575px) {
+  .header .topbar .contact-info {
+    display: flex;
+    justify-content: space-between;
+  }
   .header .topbar .contact-info i a,
   .header .topbar .contact-info i span {
     font-size: 13px;
@@ -86,6 +104,11 @@
 .header .navbar div .collapse .navbar-nav .nav-item .nav-link {
   color: #fff;
   font-size: 17px;
+  transition: all 0.5s;
+}
+
+.header .navbar div .collapse .navbar-nav .nav-item .nav-link:hover {
+  color: var(--accent-color);
 }
 
 .header .navbar div .collapse .navbar-nav .nav-item .nav-link.active {

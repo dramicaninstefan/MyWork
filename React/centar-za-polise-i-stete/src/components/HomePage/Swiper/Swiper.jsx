@@ -1,23 +1,23 @@
 import React, { Fragment } from 'react';
 
-import './Swiper.css';
+import classes from './Swiper.module.css';
 
 import image from '../../../assets/img/why-us-bg.jpg';
 
 const Swiper = () => {
   return (
     <Fragment>
-      <div className="container" data-aos="fade-up">
-        <div className="row">
+      <div className={`${classes.container} container`} data-aos="fade-up">
+        <div className={`${classes.row} row`}>
           <div className="col-xl-5 col-md-12 order-md-1">
             <img src={image} alt="" />
           </div>
 
-          <div id="demo" className="carousel slide col-xl-7 col-md-12 order-md-2" data-ride="carousel">
+          <div id="demo" className={`${classes.demo} carousel slide col-xl-7 col-md-12 order-md-2`} data-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <div className="carousel-caption">
-                  <div className="item">
+                <div className={`${classes['carousel-caption']}`}>
+                  <div className={`${classes.item}`}>
                     <h3 className="mb-3">Odaberite najbolje ponude za osiguranje, rešite štetu koju imate.</h3>
                     <h4 className="mb-4">Centar za osiguranje.</h4>
                     <p>
@@ -33,8 +33,8 @@ const Swiper = () => {
                 </div>
               </div>
               <div className="carousel-item">
-                <div className="carousel-caption">
-                  <div className="item">
+                <div className={`${classes['carousel-caption']}`}>
+                  <div className={`${classes.item}`}>
                     <h3 className="mb-3">Zašto je osiguranje potrebno?</h3>
                     <h4 className="mb-4">Centar za osiguranje.</h4>
                     <p>
@@ -49,8 +49,8 @@ const Swiper = () => {
                 </div>
               </div>
               <div className="carousel-item">
-                <div className="carousel-caption">
-                  <div className="item">
+                <div className={`${classes['carousel-caption']}`}>
+                  <div className={`${classes.item}`}>
                     <h3 className="mb-3">Šta će se desiti ako nemate osiguranje?</h3>
                     <h4 className="mb-4">Centar za osiguranje</h4>
                     <p>
@@ -65,10 +65,10 @@ const Swiper = () => {
                 </div>
               </div>
             </div>
-            <a className="carousel-control-prev" href="#demo" data-slide="prev">
+            <a className={`${classes['carousel-control-prev']} carousel-control-prev`} href="#demo" data-slide="prev">
               <i className="fas fa-arrow-left"></i>
             </a>
-            <a className="carousel-control-next" href="#demo" data-slide="next">
+            <a className={`${classes['carousel-control-next']} carousel-control-next`} href="#demo" data-slide="next">
               <i className="fas fa-arrow-right"></i>
             </a>
           </div>
