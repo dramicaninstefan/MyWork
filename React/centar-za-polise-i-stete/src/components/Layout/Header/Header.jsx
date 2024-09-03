@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+
 import './Header.css';
 
 import logo from '../../../assets/img/logo/logo.png';
@@ -44,6 +45,9 @@ const Header = () => {
       location.pathname === '/politika-privatnosti'
     ) {
       setPathname(true);
+      document.querySelector('collapse').forEach((faqItem) => {
+        console.log(faqItem);
+      });
     } else {
       setPathname(false);
     }
@@ -52,7 +56,7 @@ const Header = () => {
   return (
     <Fragment>
       <header className={pahtname ? `header pathname d-flex flex-column align-items-center fixed-top` : `header ${isScrolled ? `isScrolled` : ``} d-flex flex-column align-items-center fixed-top`}>
-        <div className="topbar d-flex align-items-center">
+        <div className="topbar">
           <div className="container d-flex justify-content-center justify-content-md-between">
             <div className="contact-info">
               <i className="bi bi-envelope d-flex align-items-center">

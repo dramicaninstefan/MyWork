@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 import classes from './Features.model.css';
 
-import kasko1 from '../../../../../assets/img/kasko1.jpg';
+// import kasko1 from '../../../../../assets/img/kasko1.jpg';
 
 const Features = () => {
   return (

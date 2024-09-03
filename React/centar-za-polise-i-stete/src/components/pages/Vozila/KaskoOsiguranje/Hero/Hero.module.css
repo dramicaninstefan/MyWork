@@ -128,3 +128,17 @@
   background-color: transparent;
   border: 3px solid var(--accent-color);
 }
+
+@media (max-width: 500px) {
+  .info-box .info-box-content .btn1 {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  .info-box .info-box-content .btn2 {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+  }
+}

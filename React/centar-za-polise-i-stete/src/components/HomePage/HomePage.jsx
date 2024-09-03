@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment } from 'react';
 
 import Hero from './Hero/Hero.jsx';
 import AboutUs from './AboutUs/AboutUs.jsx';
@@ -11,9 +11,7 @@ import InfiniteLooper from '../UI/InfiniteLooper/InfiniteLooper.jsx';
 // import Team from './Team/Team.jsx';
 
 const HomePage = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  window.scrollTo(0, 0);
   return (
     <Fragment>
       <main className="main">

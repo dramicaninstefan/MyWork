@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 
 import Hero from './Hero/Hero';
 
@@ -10,13 +10,17 @@ import ContactForm from '../../../UI/ContactForm/ContactForm';
 // import image from '../../../../assets/img/kasko-counter-bg.jpg';
 
 const KaskoOsiguranje = () => {
+  window.scrollTo(0, 0);
+
   return (
     <Fragment>
-      <Hero />
-      <Features />
-      <ContactForm />
-      {/* <Counter image={image} /> */}
-      <FAQ />
+      <main className="main">
+        <Hero />
+        <Features />
+        <ContactForm />
+        {/* <Counter image={image} /> */}
+        <FAQ />
+      </main>
     </Fragment>
   );
 };

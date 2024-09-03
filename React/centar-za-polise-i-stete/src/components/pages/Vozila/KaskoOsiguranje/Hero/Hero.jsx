@@ -42,8 +42,8 @@ const Hero = () => {
                   </ul>
                 </div>
                 <div className={`${classes['info-box-content']} col-xl-6 align-self-center d-flex flex-md-column py-3`}>
-                  <button className={`${classes.btn1} btn  align-self-center`}>Prijava štete</button>
-                  <button className={`${classes.btn2} btn align-self-center`}>Info ponude</button>
+                  {/* <button className={`${classes.btn1} btn  align-self-center`}>Prijava štete</button> */}
+                  <button className={`${classes.btn2} btn align-self-center`}>Potražite ponude</button>
                 </div>
               </div>
             </div>
