@@ -2,9 +2,10 @@ import React, { Fragment } from 'react';
 
 import classes from './Team.module.css';
 
-import team1 from '../../../assets/img/team/team-1.jpg';
-import team2 from '../../../assets/img/team/team-2.jpg';
+import team1 from '../../../assets/img/team/team-1.jpeg';
+import team2 from '../../../assets/img/team/team-2.jpeg';
 import team3 from '../../../assets/img/team/team-3.jpg';
+import { Link } from 'react-router-dom';
 
 const Team = () => {
   return (
@@ -20,18 +21,18 @@ const Team = () => {
               <div className={classes['member-img']}>
                 <img src={team1} className="img-fluid" alt="" />
                 <div className={classes.social}>
-                  <a href="#">
+                  <Link href="#">
                     <i className="bi bi-twitter-x"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link href="#">
                     <i className="bi bi-facebook"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link href="#">
                     <i className="bi bi-instagram"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link href="#">
                     <i className="bi bi-linkedin"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className={`${classes['member-info']} text-center`}>
@@ -45,18 +46,18 @@ const Team = () => {
               <div className={classes['member-img']}>
                 <img src={team2} className="img-fluid" alt="" />
                 <div className={classes.social}>
-                  <a href="#">
+                  <Link href="#">
                     <i className="bi bi-twitter-x"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link href="#">
                     <i className="bi bi-facebook"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link href="#">
                     <i className="bi bi-instagram"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link href="#">
                     <i className="bi bi-linkedin"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className={`${classes['member-info']} text-center`}>
@@ -70,18 +71,18 @@ const Team = () => {
               <div className={classes['member-img']}>
                 <img src={team3} className="img-fluid" alt="" />
                 <div className={classes.social}>
-                  <a href="#">
+                  <Link href="#">
                     <i className="bi bi-twitter-x"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link href="#">
                     <i className="bi bi-facebook"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link href="#">
                     <i className="bi bi-instagram"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link href="#">
                     <i className="bi bi-linkedin"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className={`${classes['member-info']} text-center`}>

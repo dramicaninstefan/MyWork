@@ -8,7 +8,45 @@ import logo from '../../../assets/img/logo/logo.png';
 const Header = () => {
   const location = useLocation(); // location.pathName
   const [isScrolled, setIsScrolled] = useState(false); // isScrolled
+  const [isDropdown, setIsDropdown] = useState(false); // isDropdown
   const [scrollPosition, setScrollPosition] = useState(0); // scrollPosition
+  const [pahtname, setPathname] = useState(false); //pathname
+
+  useEffect(() => {
+    // Change header bg color on different endpoints
+    if (
+      // location.pathname === '/kasko-osiguranje-vozila' ||
+      // location.pathname === '/autoodgovornost' ||
+      // location.pathname === '/pomoc-na-putu' ||
+      // location.pathname === '/registracija-vozila' ||
+      // location.pathname === '/naplata-naknada-stete' ||
+      // location.pathname === '/putno-osiguranje' ||
+      // location.pathname === '/zivotno-osiguranje' ||
+      // location.pathname === '/dobrovoljno-zdravstveno-osiguranje' ||
+      // location.pathname === '/osiguranje-od-nezgode' ||
+      // location.pathname === '/osiguranje-domacinstva' ||
+      location.pathname === '/politika-privatnosti'
+    ) {
+      setPathname(true);
+    } else {
+      setPathname(false);
+    }
+
+    // Add active class to dropdown
+    if (
+      location.pathname === '/autoodgovornost' ||
+      location.pathname === '/pomoc-na-putu' ||
+      location.pathname === '/registracija-vozila' ||
+      location.pathname === '/zivotno-osiguranje' ||
+      location.pathname === '/dobrovoljno-zdravstveno-osiguranje' ||
+      location.pathname === '/osiguranje-od-nezgode' ||
+      location.pathname === '/osiguranje-domacinstva'
+    ) {
+      setIsDropdown(true);
+    } else {
+      setIsDropdown(false);
+    }
+  }, [location.pathname]);
 
   // Change header bg color on scroll
   const handleScroll = () => {
@@ -27,31 +65,6 @@ const Header = () => {
   useEffect(() => {
     scrollPosition > 100 ? setIsScrolled(true) : setIsScrolled(false);
   }, [scrollPosition]);
-
-  // Change header bg color on different endpoints
-  const [pahtname, setPathname] = useState(false);
-  useEffect(() => {
-    if (
-      // location.pathname === '/kasko-osiguranje-vozila' ||
-      location.pathname === '/autoodgovornost' ||
-      location.pathname === '/pomoc-na-putu' ||
-      location.pathname === '/registracija-vozila' ||
-      location.pathname === '/naplata-naknada-stete' ||
-      location.pathname === '/putno-osiguranje' ||
-      location.pathname === '/zivotno-osiguranje' ||
-      location.pathname === '/dobrovoljno-zdravstveno-osiguranje' ||
-      location.pathname === '/osiguranje-od-nezgode' ||
-      location.pathname === '/osiguranje-domacinstva' ||
-      location.pathname === '/politika-privatnosti'
-    ) {
-      setPathname(true);
-      document.querySelector('collapse').forEach((faqItem) => {
-        console.log(faqItem);
-      });
-    } else {
-      setPathname(false);
-    }
-  }, [location.pathname]);
 
   return (
     <Fragment>
@@ -128,10 +141,60 @@ const Header = () => {
                     Putno osiguranje
                   </NavLink>
                 </li>
+                <li className="nav-item dropdown">
+                  <Link
+                    className={isDropdown ? `nav-link active dropdown-toggle` : `nav-link dropdown-toggle`}
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Ostale ponude
+                  </Link>
+                  <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <NavLink className={({ isActive }) => (isActive ? `dropdown-item active` : `dropdown-item`)} to="/autoodgovornost" end>
+                      Autoodgovornost
+                    </NavLink>
+                    <NavLink className={({ isActive }) => (isActive ? `dropdown-item active` : `dropdown-item`)} to="/pomoc-na-putu" end>
+                      Pomoć na putu
+                    </NavLink>
+                    <NavLink className={({ isActive }) => (isActive ? `dropdown-item active` : `dropdown-item`)} to="/registracija-vozila" end>
+                      Registracija vozila
+                    </NavLink>
+
+                    <div className="dropdown-divider"></div>
+
+                    <NavLink className={({ isActive }) => (isActive ? `dropdown-item active` : `dropdown-item`)} to="/zivotno-osiguranje" end>
+                      Životno Osiguranje
+                    </NavLink>
+                    <NavLink className={({ isActive }) => (isActive ? `dropdown-item active` : `dropdown-item`)} to="/dobrovoljno-zdravstveno-osiguranje" end>
+                      Dobrovoljno zdravstveno
+                      <br /> osiguranje
+                    </NavLink>
+                    <NavLink className={({ isActive }) => (isActive ? `dropdown-item active` : `dropdown-item`)} to="/osiguranje-od-nezgode" end>
+                      Osiguranje od nezgode
+                    </NavLink>
+
+                    <div className="dropdown-divider"></div>
+
+                    <NavLink className={({ isActive }) => (isActive ? `dropdown-item active` : `dropdown-item`)} to="/osiguranje-domacinstva" end>
+                      Domaćinstvo
+                    </NavLink>
+                  </div>
+                </li>
               </ul>
-              <a className="btn-getstarted" href="#contact">
+              <Link
+                onClick={(e) => {
+                  e.preventDefault();
+                  const y = document.getElementById('contact').offsetTop;
+                  window.scrollTo({ top: y - 180, behavior: 'smooth' });
+                }}
+                className="btn-getstarted"
+              >
                 Pošalji upit
-              </a>
+              </Link>
             </div>
           </div>
         </nav>

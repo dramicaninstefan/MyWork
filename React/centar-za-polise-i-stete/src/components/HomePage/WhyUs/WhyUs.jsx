@@ -8,7 +8,7 @@ const WhyUs = () => {
     <Fragment>
       <section id="features" className={`${classes.features} section`}>
         <div className="container section-title" data-aos="fade-up">
-          <h2>Zašto da Vas mi savetujemo kako i gde da osigurate kasko za Vaše vozilo?</h2>
+          <h2>Zašto da Vas mi savetujemo kako i gde da uradite osiguranje, kako da naplatite štetu?</h2>
         </div>
 
         <div className="container">
@@ -17,12 +17,23 @@ const WhyUs = () => {
               <ul className={`${classes['nav-tabs']} nav nav-tabs`} data-aos="fade-up" data-aos-delay="100">
                 <li className={classes['nav-item']}>
                   <Link className={`${classes['nav-link']} active show`}>
+                    <i className="fa-solid fa-handshake-simple"></i>
+                    <div>
+                      {/* <!-- <h4 className="d-none d-lg-block">BESPLATAN SAVET</h4> --> */}
+                      <p>
+                        <b>BESPLATAN SAVET</b> - potpuno besplatno, bez ikakvih skrivenih troškova je naša pomoć <b>MI ZASTUPAMO VAS I VAŠE INTERESE KOD OSIGURAVAJUĆIH KUĆA!</b>
+                      </p>
+                    </div>
+                  </Link>
+                </li>
+                <li className={classes['nav-item']}>
+                  <Link className={`${classes['nav-link']} active show`}>
                     <i className="fa-solid fa-piggy-bank"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">Uštedećete vreme</h4> --> */}
                       <p>
-                        <b>Uštedećete novac</b> - jer znamo kako da najrentabilnije osigurate svoje vozilo. Pronađemo polisu koja odgovara vašim potrebama i budžetu, osiguravajući najbolju vrednost za
-                        vaš novac.
+                        <b>Uštedećete novac</b> – jer znamo kako, kod koje osiguravajuće kuće i na najbolji način da uradite osiguranje. Pronaćićemo polisu koja odgovara Vašem budžetu i Vašim
+                        potrebama, obezbeđujući najbolju vrednost za Vaš novac.
                       </p>
                     </div>
                   </Link>
@@ -43,17 +54,8 @@ const WhyUs = () => {
                     <i className="fa-solid fa-info"></i>
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">BESPLATAN SAVET</h4> --> */}
-                      <p>Bićete adekvatno obeštećeni kod štetnog događaja, jer ćete imati adkevatno pokriće na polisi i imaćete nas kao savetnika za prijavu i naplatu štete.</p>
-                    </div>
-                  </Link>
-                </li>
-                <li className={classes['nav-item']}>
-                  <Link className={`${classes['nav-link']} active show`}>
-                    <i className="fa-solid fa-handshake-simple"></i>
-                    <div>
-                      {/* <!-- <h4 className="d-none d-lg-block">BESPLATAN SAVET</h4> --> */}
                       <p>
-                        <b>BESPLATAN SAVET</b> - potpuno besplatno, bez ikakvih skrivenih troškova je naša pomoć <b>MI ZASTUPAMO VAS I VAŠE INTERESE KOD OSIGURAVAJUĆIH KUĆA!</b>
+                        <b>Bićete adekvatno obeštećeni kod štetnog događaja</b>, jer ćete imati adkevatno pokriće na polisi i imaćete nas kao savetnika za prijavu i naplatu štete.
                       </p>
                     </div>
                   </Link>

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import classes from './AboutUs.module.css';
+// import classes from './AboutUs.module.css';
 
 import aboutImg from '../../../assets/img/about.jpg';
 import icon1 from '../../../assets/img/icon/icon-04-primary.png';
@@ -29,7 +29,7 @@ const AboutUs = () => {
                 <h1 style={{ fontWeight: `bold` }} className="display-6 mb-4">
                   Tu smo da vam pomognemo u istraživanju osiguranja.
                 </h1>
-                <p className="fs-5 text-primary mb-3">POTPUNO BESPLATNA USLUGA</p>
+                <p className="fs-5 text-primary mb-3">POTPUNO BESPLATNA USLUGA za polise.</p>
                 <div className="row g-4 mb-4">
                   <div className="col-sm-6">
                     <div className="d-flex align-items-center">
@@ -49,7 +49,7 @@ const AboutUs = () => {
                   </div>
                 </div>
                 <p className="mb-4">
-                  Putem našeg portala ćete dobiti korisne savete o osiguranju, ponude za osiguranje, pomoć pri šteti, razno vezano za osiguranje (polise, sve osiguravajuće kuće, štete)
+                  Putem našeg portala ćete dobiti korisne savete o osiguranju, ponude za osiguranje, pomoć pri naplati šteti, razno vezano za osiguranje (polise, sve osiguravajuće kuće, štete)
                 </p>
                 <div className="border-top mt-4 pt-4 d-flex align-items-center">
                   <div className="d-flex flex-column align-items-center">

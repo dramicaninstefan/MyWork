@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="row g-5">
             <div className="col-lg-4 col-md-6">
               <img src={logo} alt="" style={{ maxWidth: `200px` }} />
-              <p>Naš savet je prema Vama u potpunosti BESPLATAN i bez skrivenih troškova.</p>
+              <p>Naš savet je prema Vama u potpunosti BESPLATAN za polise i bez skrivenih troškova.</p>
               <div className="social-links d-flex pt-2">
                 <a href="viber://chat/?number=%2B381638489439" target="_blank" rel="noreferrer">
                   <i className="fa-brands fa-viber"></i>
@@ -34,11 +34,11 @@ const Footer = () => {
             </div>
             <div className="col-lg-4 col-md-6">
               <h5 className="text-light mb-4">Kontaktirajte nas</h5>
-              <p>
+              {/* <p>
                 <a href="https://maps.app.goo.gl/psgXqSZYUTjFQPPr6" className="btn btn-link" target="_blank" rel="noreferrer">
                   <i className="fa fa-map-marker-alt me-3"></i>Žarka Zrenjanina 36, Starčevo, Srbija
                 </a>
-              </p>
+              </p> */}
               <p>
                 <a href="tel:+381608060001" className="btn btn-link">
                   <i className="fa fa-phone-alt me-3"></i>+381 608060001

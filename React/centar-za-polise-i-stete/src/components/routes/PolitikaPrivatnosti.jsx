@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 
 const PolitikaPrivatnosti = () => {
+  window.scrollTo(0, 0);
+
   return (
     <Fragment>
       <main className="container" style={{ marginTop: `150px` }}>

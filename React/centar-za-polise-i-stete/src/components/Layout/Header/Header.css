@@ -134,6 +134,7 @@
 .header .btn-getstarted:focus {
   color: var(--contrast-color);
   background: var(--accent-color);
+  border-color: var(--accent-color);
   font-size: 17px;
   padding: 8px 25px;
   margin: 0 0 0 30px;
@@ -158,5 +159,22 @@
 @media (max-width: 1200px) {
   .header .btn-getstarted {
     display: none;
+  }
+}
+
+.header .nav-item .dropdown-menu .dropdown-item {
+  color: #111;
+}
+
+.dropdown-item.active {
+  font-weight: bold;
+  background-color: #eee;
+  color: #fff;
+}
+
+@media (min-width: 1200px) {
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
   }
 }

@@ -5,8 +5,7 @@ import classes from './ContactForm.module.css';
 const ContactForm = () => {
   return (
     <Fragment>
-      <div id="contact"></div>
-      <div className={`container-fluid ${classes.contact} my-5 py-5 wow fadeIn`} data-wow-delay="0.1s">
+      <div className={`container-fluid ${classes.contact} my-5 py-5 wow fadeIn`} data-wow-delay="0.1s" id="contact">
         <div className="container py-5">
           <div className="row g-5">
             <div className="col-lg-6 wow fadeIn" data-aos="fade-right">
@@ -54,7 +53,7 @@ const ContactForm = () => {
                     </div>
                     <div className="col-sm-6">
                       <div className="form-floating">
-                        <select className="form-control" name="" id="">
+                        <select className="form-control" name="" id="select">
                           <option value=""></option>
                           <option value="Kasko osiguranje">Kasko osiguranje</option>
                           <option value="Naplata štete">Naplata štete</option>
@@ -65,7 +64,7 @@ const ContactForm = () => {
                           <option value="Osiguranje od nezgode">Osiguranje od nezgode</option>
                           <option value="Osiguranje od odgovornosti">Osiguranje od odgovornosti</option>
                         </select>
-                        <label htmlFor="gmail">Zainteresovan sam za: *</label>
+                        <label htmlFor="select">Zainteresovan sam za: *</label>
                       </div>
                     </div>
                     <div className="col-12">

@@ -10,7 +10,7 @@ const Services = () => {
         <div className="container">
           <div className="text-center mx-auto" style={{ maxWidth: `800px` }} data-aos="fade-up">
             <h2 style={{ fontWeight: `bold` }} className=" display-6 mb-5">
-              Pružamo profesionalne usluge osiguranja.
+              Pružamo profesionalnu uslugu vezanu za osiguranje!
             </h2>
           </div>
           <div className="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -24,7 +24,15 @@ const Services = () => {
                     Kasko osiguranje
                   </h4>
                 </div>
-                <p className="mb-4">Kasko osiguranje štiti vaše vozilo od štete uzrokovane nezgodama, krađom, vandalizmom i drugim rizicima, nadopunjujući osnovno osiguranje.</p>
+                <p className="mb-4" style={{ minHeight: `120px` }}>
+                  Kasko osiguranje štiti vaše vozilo od:
+                  <br />
+                  UDARA - neko ili nešto da udari u Vaš auto
+                  <br />
+                  SUDARA – dase sudarite Vašom krivicom, a niste u saobraćajnom prekršaju
+                  <br />
+                  KRAĐA – da Vam ukradu auto
+                </p>
                 <Link className={`${classes.btn} btn px-3`} to="/kasko-osiguranje-vozila">
                   Detaljnije
                 </Link>
@@ -40,7 +48,9 @@ const Services = () => {
                     Naplata štete
                   </h4>
                 </div>
-                <p className="mb-4">Naplata štete uključuje prijavu štete, detaljnu procenu i isplatu troškova popravke ili zamene oštećenog vozila, u skladu sa polisom.</p>
+                <p className="mb-4" style={{ minHeight: `120px` }}>
+                  Naplata štete uključuje prijavu štete, detaljnu procenu i isplatu troškova za nezgodu koju ste imali (materijalnu i nematerijanu štetu).
+                </p>
                 <Link className={`${classes.btn} btn px-3`} to="/naplata-naknada-stete">
                   Detaljnije
                 </Link>
@@ -56,7 +66,9 @@ const Services = () => {
                     Putno osiguranje
                   </h4>
                 </div>
-                <p className="mb-4">Putno osiguranje pokriva troškove medicinske pomoći, otkazivanja putovanja, gubitka prtljaga i druge rizike tokom putovanja.</p>
+                <p className="mb-4" style={{ minHeight: `120px` }}>
+                  Putno osiguranje pokriva troškove medicinske pomoći, otkazivanja putovanja, gubitka prtljaga i druge rizike tokom putovanja.
+                </p>
                 <Link className={`${classes.btn} btn px-3`} to="/putno-osiguranje">
                   Detaljnije
                 </Link>
@@ -72,7 +84,9 @@ const Services = () => {
                     Pomoć na putu
                   </h4>
                 </div>
-                <p className="mb-4">Pomoć na putu uključuje vuču vozila, popravke na licu mesta i organizaciju alternativnog prevoza ili smeštaja tokom putovanja.</p>
+                <p className="mb-4" style={{ minHeight: `120px` }}>
+                  Pomoć na putu uključuje vuču vozila, popravke na licu mesta i organizaciju alternativnog prevoza ili smeštaja tokom putovanja.
+                </p>
                 <Link className={`${classes.btn} btn px-3`} to="/pomoc-na-putu">
                   Detaljnije
                 </Link>
@@ -88,7 +102,9 @@ const Services = () => {
                     Životno osiguranje
                   </h4>
                 </div>
-                <p className="mb-4">Životno osiguranje obezbeđuje finansijsku pomoć porodici u slučaju smrti, pokrivajući troškove, dugove i pružajući dugoročnu sigurnost.</p>
+                <p className="mb-4" style={{ minHeight: `120px` }}>
+                  Životno osiguranje obezbeđuje finansijsku pomoć porodici u slučaju smrti, pokrivajući troškove, dugove i pružajući dugoročnu sigurnost.
+                </p>
                 <Link className={`${classes.btn} btn px-3`} to="/zivotno-osiguranje">
                   Detaljnije
                 </Link>
@@ -104,7 +120,9 @@ const Services = () => {
                     Domaćinstvo
                   </h4>
                 </div>
-                <p className="mb-4">Osiguranje domaćinstva štiti vaš dom od požara, poplava, krađe i drugih rizika, pokrivajući troškove popravke i odgovornosti.</p>
+                <p className="mb-4" style={{ minHeight: `120px` }}>
+                  Osiguranje domaćinstva štiti vaš dom od požara, poplava, krađe i drugih rizika, pokrivajući troškove popravke i odgovornosti.
+                </p>
                 <Link className={`${classes.btn} btn px-3`} to="/osiguranje-domacinstva">
                   Detaljnije
                 </Link>

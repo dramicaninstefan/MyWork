@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import classes from './Features.model.css';
+import classes from './Features.module.css';
 
 // import kasko1 from '../../../../../assets/img/kasko1.jpg';
 
@@ -10,10 +10,11 @@ const Features = () => {
       <section id="about" className={`${classes.kasko} section`}>
         <div className="container">
           <div className="row gy-4">
-            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 `} data-aos="fade-up" data-aos-delay="200">
-              <h3>Šta je kasko osiguranje vozila i da li vam je potrebno?</h3>
-              <p className="">
-                Obavezno osiguranje od autoodgovornosti nas štiti od posledica tuđih grešaka, ali šta je sa krađom, štetama na parkingu ili tokom vožnje kada krivca nema, ili smo to ponekad i mi sami?
+            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 mb-4`} data-aos="fade-up" data-aos-delay="200">
+              <h2 className="pb-4">Šta je kasko osiguranje i da li vam je potrebno?</h2>
+              <p>
+                Obavezno osiguranje od autoodgovornosti nas štiti od posledica tuđih grešaka. Ali, šta je štetama na parkingu kada ne znamo krivca, ili štetama tokom vožnje kada smo mi krivi, sa
+                krađom,?
                 <br />
                 <br />
                 U takvim situacijama, kasko osiguranje pruža zaštitu od svih rizika koji mogu ugroziti vaše vozilo. Budući da osiguranje nije nešto što možete nabaviti nakon što se šteta dogodi, važno
@@ -29,41 +30,91 @@ const Features = () => {
                 odluku o izboru osiguranja i osigurati se od mnogobrojnih rizika.
               </p>
             </div>
-          </div>
-          <div className="row gy-4 pt-5" data-aos="fade-up">
-            <div className={`${classes.content} col-lg-12 order-1 order-lg-2 `}>
-              <h3>Šta pokriva kasko osiguranje vozila?</h3>
-              <p className="">Kasko osiguranje predstavlja osiguranje vozila kao i njihove dodatne opreme (ukoliko se to posebno ugovori) od osiguranih opasnosti – rizika kao što su:</p>
-              <ul style={{ listStyle: `none`, padding: `0` }}>
-                <li>
-                  <i className="bi bi-check" style={{ color: `var(--accent-color)`, fontSize: `25px` }}></i> saobraćajne nezgode
-                </li>
-                <li>
-                  <i className="bi bi-check" style={{ color: `var(--accent-color)`, fontSize: `25px` }}></i> požar
-                </li>
-                <li>
-                  <i className="bi bi-check" style={{ color: `var(--accent-color)`, fontSize: `25px` }}></i> grad, kiša, oluja
-                </li>
-                <li>
-                  <i className="bi bi-check" style={{ color: `var(--accent-color)`, fontSize: `25px` }}></i> štete usled manifestacija i demontracija
-                </li>
-                <li>
-                  <i className="bi bi-check" style={{ color: `var(--accent-color)`, fontSize: `25px` }}></i> krađa vozila
-                </li>
-                <li>
-                  <i className="bi bi-check" style={{ color: `var(--accent-color)`, fontSize: `25px` }}></i> ostali rizici definisani u uslovima osiguranja
-                </li>
-              </ul>
+            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 mb-4`} data-aos="fade-up" data-aos-delay="200">
+              <h2 className="pb-4">Šta pokriva kasko osiguranje?</h2>
+              <p>Kasko osiguranje predstavlja osiguranje vozila kao i njihove dodatne opreme (ukoliko se to posebno ugovori) od osiguranih opasnosti – rizika kao što su:</p>
+              <ol>
+                <li>UDAR – neko ili nešto da udari u Vaš autu</li>
+                <li>SUDAR – da se sudarite Vašom krivicom, a niste u saobraćajnom prekršaju</li>
+                <li>KRAĐA – da Vam ukradu auto</li>
+              </ol>
               <p>
-                Pokrivena su delimična oštećenja, kao i potpuno uništenje vozila prilkom kog dolazi do tzv. “totalne štete”.
+                Pokrivena su delimična oštećenja, kao i potpuno uništenje vozila prilikom kog dolazi do tzv. “totalne štete”.
                 <br />
                 <br />
-                U skladu sa vašim potrebama i mogućnostima možete odabrati delimično ili full kasko, a uz to i dopunsko osiguranje za vaše vozilo.
+                U skladu sa vašim potrebama i mogućnostima možete odabrati osnovno ili potpuno kasko, ili samo delimično osiguranje za vaše vozilo.
                 <br />
                 <br />
-                Za delimično kasko osiguranje uglavnom se odlučuju vlasnici starijih vozila, dok je potpuno i dopunsko osiguranje izbor vlasnika novijih vozila. Osim navedenih rizika, dopunsko
-                osiguranje obuhvata i troškove vuče, posebnu opremu vozila, troškove iznajmljivanja zamenskog vozila i druge usluge definisane ugovorom.
+                Za delimično kasko osiguranje uglavnom se odlučuju vlasnici starijih vozila, dok je osnovno i potpuno kasko osiguranje, izbor vlasnika novijih vozila.
               </p>
+            </div>
+            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 mb-4`} id="osnovno" data-aos="fade-up" data-aos-delay="200">
+              <h2 className="pb-4">Osnovno kasko osiguranje podrazumeva sledeće rizike:</h2>
+              <ol>
+                <li>
+                  Saobraćajne rizike
+                  <ol>
+                    <li>Saobraćajne nezgode (udar, sudar, prevrnuće, iskliznuče, survavanje i slično)</li>
+                    <li>Pada ili udara nekog predmeta</li>
+                  </ol>
+                </li>
+                <li>
+                  Požarne rizike
+                  <ol>
+                    <li>Požar</li>
+                    <li>Termičko ili hemijsko delovanje spolja</li>
+                    <li>Eksplozije</li>
+                  </ol>
+                </li>
+                <li>
+                  Grupa prirodnih rizika
+                  <ol>
+                    <li>Grom</li>
+                    <li>Oluja</li>
+                    <li>Grad (tuča)</li>
+                    <li>Poplava, bujica i visoka voda</li>
+                  </ol>
+                </li>
+                <li>
+                  Grupa rizika vandalizma
+                  <ol>
+                    <li>Demonstracije</li>
+                    <li>Manifestacije</li>
+                    <li>Zlonamerni postupci ili obest trećih lica</li>
+                  </ol>
+                </li>
+                <li>
+                  Grupa ostalih rizika
+                  <ol>
+                    <li>Pad letilice</li>
+                    <li>Oštećenje tapacirunga u vozilu</li>
+                    <li>Namerno prouzrokovane štete na vozilu, u cilju sprečavanja veće štete</li>
+                    <li>Neposredne štete na vozilu od divljači i domaćih životinja</li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 mb-4`} id="delimicno" data-aos="fade-up" data-aos-delay="200">
+              <h2 className="pb-4">Delimično kasko osiguranje</h2>
+              <ol>
+                <li>Lom i oštećenje stakala</li>
+                <li>Troškovi vuče ili prevoza putničkog vozila do mesta prebivališta</li>
+                <li>Lom i oštećenje farova na vozilu</li>
+                <li>Drugo</li>
+              </ol>
+            </div>
+            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 `} id="dopunsko" data-aos="fade-up" data-aos-delay="200">
+              <h2 className="pb-4">Dopunska osiguranja</h2>
+              <ol>
+                <li>
+                  Dopunski rizik krađe - podrazumeva oduzimanje tuđeg vozila u celini ili dela vozila u cilju pribavljanja protivpravne imovinske koristi za sebe ili drugog, učinjeno na način kako je
+                  propisano krivičnim delima krađe, teške krađe, razbojničke krađe i razbojništva
+                </li>
+                <li>
+                  Dopusnki rizik utaje - podrazumeva se prisvajanje predmeta osiguranja koje je dato u finansijski lizing, operativni lizing (dugoročni zakup) ili je iznajmljeno radi vožnje od strane
+                  subjekta registrovanog za iznajmljivanje (rent a car), u nameri da se prisvajanjem iznajmljenog predmeta osiguranja sebi ili drugom pribavi protivpravna imovinska korist.
+                </li>
+              </ol>
             </div>
           </div>
         </div>
