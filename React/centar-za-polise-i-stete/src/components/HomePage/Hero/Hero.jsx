@@ -63,7 +63,7 @@ const Hero = ({ handleClick }) => {
               </div>
             </div>
           </div>
-          <div className="col-12 text-center" style={{ marginTop: `100px` }} data-aos="fade-up" data-aos-delay="500">
+          <div className="col-12 text-center" style={{ marginTop: `70px` }} data-aos="fade-up" data-aos-delay="500">
             <button
               className={classes.button}
               onClick={() => {
