@@ -1,0 +1,7 @@
+.stete-form label span {
+  color: red;
+}
+
+.stete-form textarea::placeholder {
+  font-size: 15px;
+}

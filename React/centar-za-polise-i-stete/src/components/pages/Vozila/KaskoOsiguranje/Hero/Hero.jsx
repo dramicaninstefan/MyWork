@@ -63,7 +63,7 @@ const Hero = () => {
                         <h4>
                           Osnovno kasko <br /> osiguranje
                         </h4>
-                        <p style={{ minHeight: '150px' }}>Saobraćajne rizike, požarne rizike, grupa prirodnih rizika, grupa rizika vandalizma, grupa ostalih rizika.</p>
+                        <p style={{ minHeight: '120px' }}>Saobraćajne rizike, požarne rizike, grupa prirodnih rizika, grupa rizika vandalizma, grupa ostalih rizika.</p>
                         <Link
                           onClick={(e) => {
                             e.preventDefault();
@@ -83,7 +83,7 @@ const Hero = () => {
                         <h4>
                           Delimično kasko <br /> osiguranje
                         </h4>
-                        <p style={{ minHeight: '150px' }}>Lom i oštećenje stakala, troškovi vuče ili prevoza putničkog vozila do mesta prebivališta, lom i oštećenje farova na vozilu, drugo</p>
+                        <p style={{ minHeight: '120px' }}>Lom i oštećenje stakala, troškovi vuče ili prevoza putničkog vozila do mesta prebivališta, lom i oštećenje farova na vozilu, drugo</p>
                         <Link
                           onClick={(e) => {
                             e.preventDefault();
@@ -101,7 +101,7 @@ const Hero = () => {
                       <div className={classes['icon-box']} data-aos="zoom-out" data-aos-delay="400">
                         {/* <i className="bi bi-gem"></i> */}
                         <h4>Dopunska osiguranja</h4>
-                        <p style={{ minHeight: '150px' }}>Dopunski rizik krađe i dopusnki rizik utaje</p>
+                        <p style={{ minHeight: '120px' }}>Dopunski rizik krađe i dopusnki rizik utaje</p>
                         <Link
                           onClick={(e) => {
                             e.preventDefault();

@@ -40,7 +40,7 @@ const Hero = () => {
                   </ul>
                   <div className="text-center">
                     <a href="#contact" className={classes['more-btn']}>
-                      <span style={{ fontWeight: `bold` }}>Potraži ponude</span> <i className="bi bi-chevron-right"></i>
+                      <span style={{ fontWeight: `bold` }}>Prijavi štetu</span> <i className="bi bi-chevron-right"></i>
                     </a>
                   </div>
                 </div>

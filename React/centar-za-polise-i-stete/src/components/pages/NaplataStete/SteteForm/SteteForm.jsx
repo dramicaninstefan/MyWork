@@ -1,17 +1,19 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-import classes from './KaskoForm.module.css';
+import classes from './SteteForm.module.css';
 
-const KaskoForm = () => {
+import country_list from '../../../../assets/arrays/country_list';
+
+const SteteForm = () => {
   return (
     <Fragment>
       <div className={` container`} id="contact">
-        <div className={`${classes['kasko-form-wrapper']} rounded`}>
-          <div className={`${classes['kasko-form']}`}>
+        <div className={`${classes['stete-form-wrapper']} rounded`}>
+          <div className={`${classes['stete-form']}`}>
             <form className="row">
               <div className="col-12 section-title">
-                <h2 style={{ fontWeight: `bold` }}>Molimo Vas da popunite formu u nastavku i mi ćemo Vas kontaktirati u najkraćem roku.</h2>
+                <h2 style={{ fontWeight: `bold` }}>U cilju što detaljnije prijave štete i boljeg uvida u Vaš slučaj, popunite podatke u formi ispod.</h2>
                 <h4>
                   Ukoliko imate pitanja ili vam je potreban savet, možete nas kontaktirati na broj
                   <br />
@@ -21,9 +23,9 @@ const KaskoForm = () => {
               <div className="col-12 rounded" style={{ backgroundColor: `#f1f1f1f1`, paddingBlock: `30px` }}>
                 <div className="section-title pb-5">
                   <h3>
-                    Podaci o vlasniku
+                    Kontakt podaci
                     <br />
-                    <small style={{ fontSize: `20px` }}>(potrebni su jer osiguravajuća kuća provera svakog klijenta u svojoj bazi, da li je naplaćivao štete ili ne)</small>
+                    {/* <small style={{ fontSize: `20px` }}>(potrebni su jer osiguravajuća kuća provera svakog klijenta u svojoj bazi, da li je naplaćivao štete ili ne)</small> */}
                   </h3>
                 </div>
                 <div className="row col-12">
@@ -33,17 +35,23 @@ const KaskoForm = () => {
                     </label>
                     <input type="text" className="form-control" id="InputFirstLastName" required />
                   </div>
-                  <div className="form-group col-xl-4 col-md-12">
+                  {/* <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputAddress">
                       Ulica i broj <span>*</span>
                     </label>
                     <input type="text" className="form-control" id="InputAddress" required />
+                  </div> */}
+                  <div className="form-group col-xl-4 col-md-12">
+                    <label htmlFor="InputPrebivaliste">
+                      Opština prebivališta: <span>*</span>
+                    </label>
+                    <input type="text" className="form-control" id="InputPrebivaliste" required />
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputCity">
-                      Mesto <span>*</span>
+                    <label htmlFor="InputNumber">
+                      Telefon <span>*</span>
                     </label>
-                    <input type="text" className="form-control" id="InputCity" required />
+                    <input type="text" className="form-control" id="InputNumber" required />
                   </div>
                 </div>
                 <div className="row col-12">
@@ -53,12 +61,12 @@ const KaskoForm = () => {
                     </label>
                     <input type="text" className="form-control" id="InputJMBG" required />
                   </div> */}
-                  <div className="form-group col-xl-4 col-md-12">
+                  {/* <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputNumber">
                       Telefon <span>*</span>
                     </label>
                     <input type="text" className="form-control" id="InputNumber" required />
-                  </div>
+                  </div> */}
                   <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputEmail1">
                       Email <span>(opciono)</span>
@@ -71,49 +79,76 @@ const KaskoForm = () => {
               <div className="col-12">
                 <div className="section-title py-5">
                   <h3>
-                    Podaci o vozilu
+                    Podaci o nezgodi (nesreći)
                     <br />
-                    <small style={{ fontSize: `20px` }}>(potrebni su radi određivanja kataloške vrednosti vozila, zbog pokrića za slučaj štete)</small>
+                    {/* <small style={{ fontSize: `20px` }}>(potrebni su radi određivanja kataloške vrednosti vozila, zbog pokrića za slučaj štete)</small> */}
                   </h3>
                 </div>
                 <div className="row col-12">
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputMark">
-                      Marka vozila <span>*</span>
+                    <label htmlFor="InputDate">
+                      Datum nezgode: <span>*</span>
                     </label>
-                    <input type="text" className="form-control" id="InputMark" required />
+                    <input type="date" className="form-control" id="InputDate" required />
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputType">
-                      Tip vozila <span>*</span>
+                    <label htmlFor="InputCountry">
+                      Država: <span>*</span>
                     </label>
-                    <input type="text" className="form-control" id="InputType" required />
+                    <select className="form-control" id="InputCountry" required>
+                      <option value="">Izaberite zemlju u kojoj se desila nezgoda.</option>
+                      {country_list?.map((item) => {
+                        return <option value={item.name}>{item.name}</option>;
+                      })}
+                    </select>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputPower">
-                      Snaga motora (kW) <span>*</span>
+                    <label htmlFor="InputAfter">
+                      Posle nezgode: <span>*</span>
                     </label>
-                    <input type="text" className="form-control" id="InputPower" required />
+                    <select className="form-control" id="InputAfter" required>
+                      <option value="">Morate izabrati šta ste uradili posle nezgode</option>
+                      <option value="MUP je izašao na lice mesta">MUP je izašao na lice mesta</option>
+                      <option value="Popunjen je EU izveštaj">Popunjen je EU izveštaj</option>
+                      <option value="Ništa od navedenog">Ništa od navedenog</option>
+                    </select>
                   </div>
                 </div>
                 <div className="row col-12">
                   <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputZapremina">
-                      Zapremina motora (cm3) <span>*</span>
+                      Bilo je povređenih? <span>*</span>
                     </label>
-                    <input type="text" className="form-control" id="InputZapremina" required />
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="InputRadioDa" required />
+                      <label class="form-check-label" for="InputRadioDa">
+                        Da
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="InputRadioNe" required />
+                      <label class="form-check-label" for="InputRadioNe">
+                        Ne
+                      </label>
+                    </div>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputYear">
-                      Godina proizvodnje vozila <span>*</span>
+                    <label htmlFor="InputPower">
+                      Mesto nezgode: <span>*</span>
                     </label>
-                    <input type="text" className="form-control" id="InputYear" required />
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Upisati mesto u kome se nesreća desila - grad, opštinu..." required></textarea>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputPayment">
-                      Tržišna vrednost (€) <span>*</span>
+                    <label htmlFor="InputPower">
+                      Vaše napomene:
+                      {/* <span>*</span> */}
                     </label>
-                    <input type="text" className="form-control" id="InputPayment" required />
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                      placeholder="Ukoliko smatrate da postoji još neka bitna informacija napišite je. Unos nije obavezan."
+                    ></textarea>
                   </div>
                 </div>
                 <div className="col-12 py-5">
@@ -140,4 +175,4 @@ const KaskoForm = () => {
   );
 };
 
-export default KaskoForm;
+export default SteteForm;

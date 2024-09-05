@@ -10,8 +10,8 @@ const FAQ = (props) => {
       <section id="faq" className="faq section">
         <div className="container">
           <div className="row gy-4">
-            <div className="col-lg-4" data-aos="fade-right" data-aos-delay="100">
-              <div className="content px-xl-5">
+            <div className="col-lg-3" data-aos="fade-right" data-aos-delay="100">
+              <div className="content ">
                 <h3>
                   <span>Često postavljana </span>
                   <strong>pitanja</strong>
@@ -20,7 +20,7 @@ const FAQ = (props) => {
               </div>
             </div>
 
-            <div className="accordion col-lg-8" id="accordionExample" data-aos="fade-left" data-aos-delay="300">
+            <div className="accordion col-lg-9" id="accordionExample" data-aos="fade-left" data-aos-delay="300">
               {data.map((item) => {
                 return (
                   <div key={item.id} className="accordion-item">

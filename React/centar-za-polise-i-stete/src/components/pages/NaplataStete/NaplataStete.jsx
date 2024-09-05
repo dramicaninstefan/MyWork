@@ -3,10 +3,10 @@ import { Fragment } from 'react';
 import Hero from './Hero/Hero';
 import Features from './Features/Features';
 import FAQ from '../../UI/FAQ/FAQ';
-import ContactForm from '../../UI/ContactForm/ContactForm';
-// import Counter from '../../UI/Counter/Counter';
+import SteteForm from './SteteForm/SteteForm';
+import Counter from '../../UI/Counter/Counter';
 
-// import image from '../../../assets/img/kasko-counter-bg.jpg';
+import image from '../../../assets/img/stete-c-bg.jpg';
 
 const faq = [
   {
@@ -55,9 +55,9 @@ const NaplataStete = () => {
       <main className="main">
         <Hero />
         <Features />
-        <ContactForm />
-        {/* <Counter image={image} /> */}
+        <Counter image={image} />
         <FAQ data={faq} />
+        <SteteForm />
       </main>
     </Fragment>
   );
