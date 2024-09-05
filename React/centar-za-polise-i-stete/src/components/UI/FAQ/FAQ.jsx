@@ -23,7 +23,7 @@ const FAQ = (props) => {
             <div className="accordion col-lg-9" id="accordionExample" data-aos="fade-left" data-aos-delay="300">
               {data.map((item) => {
                 return (
-                  <div key={item.id} className="accordion-item">
+                  <div key={item.id} className="accordion-item p-1" style={{ margin: `10px 0px` }}>
                     <h2 className="accordion-header" id={`heading` + item.id}>
                       <button
                         className={`accordion-button ${item.collapsed}`}

@@ -196,7 +196,6 @@ var country_list = [
   { name: 'Sejšeli', code: 'SC' },
   { name: 'Sijera Leone', code: 'SL' },
   { name: 'Singapur', code: 'SG' },
-  { name: 'Slovenija', code: 'SI' },
   { name: 'Slovačka', code: 'SK' },
   { name: 'Slovenija', code: 'SI' },
   { name: 'Solomonska Ostrva', code: 'SB' },

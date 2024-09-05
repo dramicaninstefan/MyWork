@@ -68,10 +68,10 @@ const SteteForm = () => {
                     <input type="text" className="form-control" id="InputNumber" required />
                   </div> */}
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputEmail1">
+                    <label htmlFor="InputEmail">
                       Email <span>(opciono)</span>
                     </label>
-                    <input type="email" className="form-control" id="InputEmail1" aria-describedby="emailHelp" />
+                    <input type="email" className="form-control" id="InputEmail" aria-describedby="emailHelp" />
                   </div>
                 </div>
               </div>
@@ -98,7 +98,11 @@ const SteteForm = () => {
                     <select className="form-control" id="InputCountry" required>
                       <option value="">Izaberite zemlju u kojoj se desila nezgoda.</option>
                       {country_list?.map((item) => {
-                        return <option value={item.name}>{item.name}</option>;
+                        return (
+                          <option key={item.code} value={item.name}>
+                            {item.name}
+                          </option>
+                        );
                       })}
                     </select>
                   </div>
@@ -116,39 +120,34 @@ const SteteForm = () => {
                 </div>
                 <div className="row col-12">
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputZapremina">
+                    <label htmlFor="InputRadioNe">
                       Bilo je povređenih? <span>*</span>
                     </label>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="InputRadioDa" required />
-                      <label class="form-check-label" for="InputRadioDa">
+                    <div className="form-check">
+                      <input className="form-check-input" type="radio" name="flexRadioDefault" id="InputRadioDa" required />
+                      <label className="form-check-label" htmlFor="InputRadioDa">
                         Da
                       </label>
                     </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="InputRadioNe" required />
-                      <label class="form-check-label" for="InputRadioNe">
+                    <div className="form-check">
+                      <input className="form-check-input" type="radio" name="flexRadioDefault" id="InputRadioNe" required />
+                      <label className="form-check-label" htmlFor="InputRadioNe">
                         Ne
                       </label>
                     </div>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputPower">
+                    <label htmlFor="InputNezgode">
                       Mesto nezgode: <span>*</span>
                     </label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Upisati mesto u kome se nesreća desila - grad, opštinu..." required></textarea>
+                    <textarea className="form-control" id="InputNezgode" rows="3" placeholder="Upisati mesto u kome se nesreća desila - grad, opštinu..." required></textarea>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputPower">
+                    <label htmlFor="InputNapomene">
                       Vaše napomene:
                       {/* <span>*</span> */}
                     </label>
-                    <textarea
-                      class="form-control"
-                      id="exampleFormControlTextarea1"
-                      rows="3"
-                      placeholder="Ukoliko smatrate da postoji još neka bitna informacija napišite je. Unos nije obavezan."
-                    ></textarea>
+                    <textarea className="form-control" id="InputNapomene" rows="3" placeholder="Ukoliko smatrate da postoji još neka bitna informacija napišite je. Unos nije obavezan."></textarea>
                   </div>
                 </div>
                 <div className="col-12 py-5">

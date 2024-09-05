@@ -5,7 +5,7 @@ import classes from './Hero.module.css';
 
 import bgImage from '../../../assets/img/hero-bg.jpg';
 
-const Hero = () => {
+const Hero = ({ handleClick }) => {
   return (
     <Fragment>
       <section id="hero" className={`${classes.hero} section dark-background`}>
@@ -13,7 +13,7 @@ const Hero = () => {
 
         <div className={`${classes.container} container`}>
           <div className="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-            <div className="col-xl-6 col-lg-8">
+            <div className="col-xl-8 col-lg-8">
               <h2>
                 Centar za polise i štete
                 {/* <!-- <span>.</span> --> */}
@@ -21,7 +21,6 @@ const Hero = () => {
               <p>Vaš lični konsultant za osiguranje</p>
             </div>
           </div>
-
           <div className="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div className="col-xl-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
               <div className={classes['icon-box']}>
@@ -63,6 +62,19 @@ const Hero = () => {
                 </h3>
               </div>
             </div>
+          </div>
+          <div className="col-12 text-center" style={{ marginTop: `100px` }} data-aos="fade-up" data-aos-delay="500">
+            <button
+              className={classes.button}
+              onClick={() => {
+                handleClick();
+              }}
+            >
+              <span className={classes['button_lg']}>
+                <span className={classes['button_sl']}></span>
+                <span className={classes['button_text']}> Zašto je bolje zaključiti osiguranje preko zastupnika, nego direktno preko osiguravajuće kuće?</span>
+              </span>
+            </button>
           </div>
         </div>
       </section>
