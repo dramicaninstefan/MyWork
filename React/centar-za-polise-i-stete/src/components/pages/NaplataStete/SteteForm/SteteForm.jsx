@@ -7,15 +7,8 @@ import zemlje_list from '../../../../assets/arrays/zemlje_list';
 import prebivaliste_list from '../../../../assets/arrays/prebivaliste_list';
 
 const SteteForm = () => {
-  // Get today date
-  const disableDates = () => {
-    var today = new Date();
-    var dd = today.getDate() + 1;
-    var mm = today.getMonth() + 1;
-    var yyyy = today.getFullYear();
-
-    return yyyy + '-' + mm + '-' + dd;
-  };
+  // Get today date to disable future dates in date input
+  var today = new Date().toISOString().split('T')[0];
 
   return (
     <Fragment>
@@ -109,7 +102,7 @@ const SteteForm = () => {
                     <label htmlFor="InputDate">
                       Datum nezgode: <span>*</span>
                     </label>
-                    <input type="date" className="form-control" id="InputDate" max={disableDates} required />
+                    <input type="date" className="form-control" id="InputDate" max={today} required />
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
                     <div className="d-flex">
