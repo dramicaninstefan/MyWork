@@ -9,7 +9,7 @@ import ContactForm from '../UI/ContactForm/ContactForm.jsx';
 import Swiper from './Swiper/Swiper.jsx';
 import InfiniteLooper from '../UI/InfiniteLooper/InfiniteLooper.jsx';
 import Modal from './Modal/Modal.jsx';
-// import Team from './Team/Team.jsx';
+import Team from './Team/Team.jsx';
 
 const HomePage = () => {
   window.scrollTo(0, 0);
@@ -30,7 +30,7 @@ const HomePage = () => {
         <Services />
         <ContactForm />
         <Swiper />
-        {/* <Team /> */}
+        <Team />
         {isClicked ? <Modal handleClick={handleIsClicked} /> : ``}
       </main>
     </Fragment>

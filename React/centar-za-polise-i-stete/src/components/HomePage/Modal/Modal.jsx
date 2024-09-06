@@ -15,7 +15,7 @@ const Modal = ({ handleClick }) => {
         <div className={classes.modal}>
           <div className={classes.container} data-aos="fade-down">
             <div className={classes.nav}>
-              <h4>Zašto je bolje zaključiti osiguranje preko zastupnika, nego direktno preko osiguravajuće kuće?</h4>
+              <h3>Zašto je bolje zaključiti osiguranje preko zastupnika, nego direktno preko osiguravajuće kuće?</h3>
             </div>
             <div className={classes.list}>
               <div className={classes.num}>
@@ -55,7 +55,7 @@ const Modal = ({ handleClick }) => {
               <div className={`${classes.num} d-flex align-content-center justify-content-center pt-3`}>
                 <div
                   className={classes.button}
-                  data-tooltip="Zatvori"
+                  // data-tooltip="Zatvori"
                   onClick={(e) => {
                     handleClick();
                   }}

@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import classes from './Hero.module.css';
 
 import bgImage from '../../../../assets/img/stete-hero-bg.jpg';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -13,7 +14,7 @@ const Hero = () => {
         <div className={`${classes.container} container`}>
           <div className="row justify-content-start text-left" data-aos="fade-up" data-aos-delay="100">
             <div className="col-xl-8 col-lg-8 pt-5">
-              <h2>Kasko osiguranje</h2>
+              <h2>Naplata i naknada štete</h2>
             </div>
 
             <div className={`${classes.content} row gy-4`} style={{ margin: `auto` }}>
@@ -39,9 +40,16 @@ const Hero = () => {
                     </li>
                   </ul>
                   <div className="text-center">
-                    <a href="#contact" className={classes['more-btn']}>
+                    <Link
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const y = document.getElementById('contact').offsetTop;
+                        window.scrollTo({ top: y - 180, behavior: 'smooth' });
+                      }}
+                      className={classes['more-btn']}
+                    >
                       <span style={{ fontWeight: `bold` }}>Prijavi štetu</span> <i className="bi bi-chevron-right"></i>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

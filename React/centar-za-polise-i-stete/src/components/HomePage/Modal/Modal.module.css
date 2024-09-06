@@ -44,6 +44,11 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
 }
+
+.nav h3 {
+  font-weight: bold;
+}
+
 /* 
 .nav:before,
 .nav:after {
@@ -80,7 +85,7 @@
 .list .num h3 {
   position: relative;
   color: #3d3d3d;
-  font-size: 16px;
+  font-size: 1rem;
   transition: 0.25s;
 }
 
@@ -124,7 +129,7 @@
   font-family: 'Arial';
   transition: background 0.3s;
 }
-
+/* 
 .button::before {
   position: absolute;
   content: attr(data-tooltip);
@@ -155,7 +160,7 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
-}
+} */
 
 .text {
   display: flex;

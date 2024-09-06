@@ -17,7 +17,7 @@ const AboutUs = () => {
                 <img className="position-absolute w-100 h-100" src={aboutImg} alt="" style={{ objectFit: `cover` }} />
                 <div className="position-absolute top-0 start-0 bg-white rounded pe-3 pb-3" style={{ width: `200px`, height: '200px' }}>
                   <div className="d-flex flex-column justify-content-center text-center rounded h-100 p-3" style={{ backgroundColor: `#56b8e6` }}>
-                    <h1 className="text-white mb-0">25</h1>
+                    <h1 className="text-white mb-0">30</h1>
                     <h2 className="text-white">Godina</h2>
                     <h5 className="text-white mb-0">Iskustva</h5>
                   </div>

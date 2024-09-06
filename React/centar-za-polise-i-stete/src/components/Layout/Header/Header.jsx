@@ -63,7 +63,7 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    scrollPosition > 100 ? setIsScrolled(true) : setIsScrolled(false);
+    scrollPosition > 80 ? setIsScrolled(true) : setIsScrolled(false);
   }, [scrollPosition]);
 
   return (
