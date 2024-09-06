@@ -10,6 +10,7 @@
     "firebase": "^10.5.2",
     "framer-motion": "^10.16.4",
     "leaflet": "^1.9.4",
+    "paws": "file:",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.1",
