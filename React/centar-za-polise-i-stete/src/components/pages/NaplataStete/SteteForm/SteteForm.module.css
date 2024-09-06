@@ -80,3 +80,70 @@
     border-right: transparent 18px solid;
   }
 }
+
+/* Tooltip container */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  margin-inline: 10px;
+  padding-top: 7px;
+}
+
+/* Icon styling */
+.icon {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Tooltip styling */
+.tooltip {
+  visibility: hidden;
+  width: 300px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  bottom: 125%; /* Position above the icon */
+  left: 50%;
+  margin-left: -150px; /* Center the tooltip */
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+  transform: translateY(10px);
+}
+
+/* Tooltip Arrow */
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  animation: all 0.6s ease;
+}
+
+.tooltip-container .icon i {
+  color: rgba(0, 0, 0, 0.8);
+}

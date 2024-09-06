@@ -3,9 +3,20 @@ import { Link } from 'react-router-dom';
 
 import classes from './SteteForm.module.css';
 
-import country_list from '../../../../assets/arrays/country_list';
+import zemlje_list from '../../../../assets/arrays/zemlje_list';
+import prebivaliste_list from '../../../../assets/arrays/prebivaliste_list';
 
 const SteteForm = () => {
+  // Get today date
+  const disableDates = () => {
+    var today = new Date();
+    var dd = today.getDate() + 1;
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+
+    return yyyy + '-' + mm + '-' + dd;
+  };
+
   return (
     <Fragment>
       <div className={` container`} id="contact">
@@ -45,7 +56,16 @@ const SteteForm = () => {
                     <label htmlFor="InputPrebivaliste">
                       Opština prebivališta: <span>*</span>
                     </label>
-                    <input type="text" className="form-control" id="InputPrebivaliste" required />
+                    <select className="form-control form-select" id="InputPrebivaliste" required>
+                      <option value="">Izaberite</option>
+                      {prebivaliste_list?.map((item) => {
+                        return (
+                          <option key={item.id} value={item.name}>
+                            {item.name}
+                          </option>
+                        );
+                      })}
+                    </select>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputNumber">
@@ -89,15 +109,26 @@ const SteteForm = () => {
                     <label htmlFor="InputDate">
                       Datum nezgode: <span>*</span>
                     </label>
-                    <input type="date" className="form-control" id="InputDate" required />
+                    <input type="date" className="form-control" id="InputDate" max={disableDates} required />
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputCountry">
-                      Država: <span>*</span>
-                    </label>
-                    <select className="form-control" id="InputCountry" required>
-                      <option value="">Izaberite zemlju u kojoj se desila nezgoda.</option>
-                      {country_list?.map((item) => {
+                    <div className="d-flex">
+                      <label htmlFor="InputCountry">
+                        Država: <span>*</span>
+                      </label>
+                      <div className={classes['tooltip-container']}>
+                        <div className={classes.icon}>
+                          <i className="fa-solid fa-circle-info"></i>
+                        </div>
+                        <div className={classes.tooltip}>
+                          <p>Izaberite zemlju u kojoj se desila nezgoda.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <select className="form-control form-select" id="InputCountry" required>
+                      <option value="">Izaberite</option>
+                      {zemlje_list?.map((item) => {
                         return (
                           <option key={item.code} value={item.name}>
                             {item.name}
@@ -107,11 +138,23 @@ const SteteForm = () => {
                     </select>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputAfter">
-                      Posle nezgode: <span>*</span>
-                    </label>
-                    <select className="form-control" id="InputAfter" required>
-                      <option value="">Morate izabrati šta ste uradili posle nezgode</option>
+                    <div className="d-flex">
+                      <label htmlFor="InputAfter">
+                        Posle nezgode: <span>*</span>
+                      </label>
+
+                      <div className={classes['tooltip-container']}>
+                        <div className={classes.icon}>
+                          <i className="fa-solid fa-circle-info"></i>
+                        </div>
+                        <div className={classes.tooltip}>
+                          <p>Morate izabrati šta ste uradili posle nezgode</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <select className="form-control form-select" id="InputAfter" required>
+                      <option value="">Izaberite</option>
                       <option value="MUP je izašao na lice mesta">MUP je izašao na lice mesta</option>
                       <option value="Popunjen je EU izveštaj">Popunjen je EU izveštaj</option>
                       <option value="Ništa od navedenog">Ništa od navedenog</option>
@@ -137,17 +180,40 @@ const SteteForm = () => {
                     </div>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputNezgode">
-                      Mesto nezgode: <span>*</span>
-                    </label>
-                    <textarea className="form-control" id="InputNezgode" rows="3" placeholder="Upisati mesto u kome se nesreća desila - grad, opštinu..." required></textarea>
+                    <div className="d-flex">
+                      <label htmlFor="InputNezgode">
+                        Mesto nezgode: <span>*</span>
+                      </label>
+
+                      <div className={classes['tooltip-container']}>
+                        <div className={classes.icon}>
+                          <i className="fa-solid fa-circle-info"></i>
+                        </div>
+                        <div className={classes.tooltip}>
+                          <p>Upisati mesto u kome se nesreća desila - grad, opštinu...</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <textarea className="form-control" id="InputNezgode" rows="3" required></textarea>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputNapomene">
-                      Vaše napomene:
-                      {/* <span>*</span> */}
-                    </label>
-                    <textarea className="form-control" id="InputNapomene" rows="3" placeholder="Ukoliko smatrate da postoji još neka bitna informacija napišite je. Unos nije obavezan."></textarea>
+                    <div className="d-flex">
+                      <label htmlFor="InputNapomene">
+                        Vaše napomene:
+                        {/* <span>*</span> */}
+                      </label>
+
+                      <div className={classes['tooltip-container']}>
+                        <div className={classes.icon}>
+                          <i className="fa-solid fa-circle-info"></i>
+                        </div>
+                        <div className={classes.tooltip}>
+                          <p>Ukoliko smatrate da postoji još neka bitna informacija napišite je. Unos nije obavezan.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <textarea className="form-control" id="InputNapomene" rows="3"></textarea>
                   </div>
                 </div>
                 <div className="col-12 py-5">
