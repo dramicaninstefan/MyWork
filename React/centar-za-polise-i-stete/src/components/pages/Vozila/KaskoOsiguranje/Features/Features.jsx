@@ -10,7 +10,7 @@ const Features = () => {
       <section id="about" className={`${classes.kasko} section`}>
         <div className="container">
           <div className="row gy-4">
-            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 mb-4`} data-aos="fade-up" data-aos-delay="200">
+            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 mb-4`} data-aos="fade-up">
               <h2 className="pb-4">Šta je kasko osiguranje i da li vam je potrebno?</h2>
               <p>
                 Obavezno osiguranje od autoodgovornosti nas štiti od posledica tuđih grešaka. Ali, šta je štetama na parkingu kada ne znamo krivca, ili štetama tokom vožnje kada smo mi krivi, sa
@@ -30,7 +30,7 @@ const Features = () => {
                 odluku o izboru osiguranja i osigurati se od mnogobrojnih rizika.
               </p>
             </div>
-            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 mb-4`} data-aos="fade-up" data-aos-delay="200">
+            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 mb-4`}>
               <h2 className="pb-4">Šta pokriva kasko osiguranje?</h2>
               <p>Kasko osiguranje predstavlja osiguranje vozila kao i njihove dodatne opreme (ukoliko se to posebno ugovori) od osiguranih opasnosti – rizika kao što su:</p>
               <ol>
@@ -48,7 +48,7 @@ const Features = () => {
                 Za delimično kasko osiguranje uglavnom se odlučuju vlasnici starijih vozila, dok je osnovno i potpuno kasko osiguranje, izbor vlasnika novijih vozila.
               </p>
             </div>
-            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 mb-4`} id="osnovno" data-aos="fade-up" data-aos-delay="200">
+            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 mb-4`} id="osnovno">
               <h2 className="pb-4">Osnovno kasko osiguranje podrazumeva sledeće rizike:</h2>
               <ol>
                 <li>
@@ -94,7 +94,7 @@ const Features = () => {
                 </li>
               </ol>
             </div>
-            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 mb-4`} id="delimicno" data-aos="fade-up" data-aos-delay="200">
+            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 mb-4`} id="delimicno">
               <h2 className="pb-4">Delimično kasko osiguranje</h2>
               <ol>
                 <li>Lom i oštećenje stakala</li>
@@ -103,7 +103,7 @@ const Features = () => {
                 <li>Drugo</li>
               </ol>
             </div>
-            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 `} id="dopunsko" data-aos="fade-up" data-aos-delay="200">
+            <div className={`${classes.content} col-lg-12 order-1 order-lg-1 `} id="dopunsko">
               <h2 className="pb-4">Dopunska osiguranja</h2>
               <ol>
                 <li>

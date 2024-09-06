@@ -96,7 +96,7 @@
 
 .hero .content .why-box .more-btn {
   color: #fff;
-  background: color-mix(in srgb, var(--accent-color), transparent 0%);
+  background: #56b8e6;
   display: inline-block;
   padding: 15px 30px;
   border-radius: 50px;
@@ -115,7 +115,7 @@
 .hero .content .icon-box {
   text-align: center;
   border-radius: 10px;
-  background: color-mix(in srgb, var(--surface-color), transparent 20%);
+  background: var(--surface-color);
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 40px 30px;
   width: 100%;
@@ -165,7 +165,7 @@
 .hero .content .icon-box .more-btn {
   color: #fff;
   font-size: 15px;
-  background: color-mix(in srgb, var(--accent-color), transparent 0%);
+  background: #56b8e6;
   display: inline-block;
   padding: 10px 20px;
   border-radius: 50px;

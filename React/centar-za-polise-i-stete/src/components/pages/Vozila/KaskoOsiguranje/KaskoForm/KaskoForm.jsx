@@ -128,7 +128,8 @@ const KaskoForm = () => {
               </div>
 
               <div className="col-12 ">
-                <button type="submit" className="btn btn-primary col-xl-2 col-md-12">
+                <button type="submit" className={`${classes.bt} col-xl-2 col-md-12`} id="bt">
+                  <span className={classes.msg} id="msg"></span>
                   Pošalji zahtev
                 </button>
               </div>

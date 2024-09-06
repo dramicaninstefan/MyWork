@@ -162,8 +162,9 @@ const SteteForm = () => {
               </div>
 
               <div className="col-12 ">
-                <button type="submit" className="btn btn-primary col-xl-2 col-md-12">
-                  Pošalji zahtev
+                <button type="submit" className={classes.bt} id="bt">
+                  <span className={classes.msg} id="msg"></span>
+                  Pošalji upit
                 </button>
               </div>
             </form>

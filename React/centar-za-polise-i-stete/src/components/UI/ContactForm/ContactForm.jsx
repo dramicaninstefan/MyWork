@@ -74,7 +74,8 @@ const ContactForm = () => {
                       </div>
                     </div>
                     <div className="col-12">
-                      <button className="btn btn-primary py-3 px-5" type="submit">
+                      <button type="submit" className={classes.bt} id="bt">
+                        <span className={classes.msg} id="msg"></span>
                         Pošalji upit
                       </button>
                     </div>

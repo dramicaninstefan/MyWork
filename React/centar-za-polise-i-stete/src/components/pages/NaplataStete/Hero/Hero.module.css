@@ -96,7 +96,7 @@
 
 .hero .content .why-box .more-btn {
   color: #fff;
-  background: color-mix(in srgb, var(--accent-color), transparent 0%);
+  background: #56b8e6;
   display: inline-block;
   padding: 15px 30px;
   border-radius: 50px;

@@ -5,13 +5,18 @@ import classes from './Modal.module.css';
 const Modal = ({ handleClick }) => {
   return (
     <Fragment>
-      <div className={classes.backdrop}>
+      <div className={classes.wrapper}>
+        <div
+          className={classes.backdrop}
+          onClick={(e) => {
+            handleClick();
+          }}
+        ></div>
         <div className={classes.modal}>
-          <div className={classes.container}>
+          <div className={classes.container} data-aos="fade-down">
             <div className={classes.nav}>
               <h4>Zašto je bolje zaključiti osiguranje preko zastupnika, nego direktno preko osiguravajuće kuće?</h4>
             </div>
-
             <div className={classes.list}>
               <div className={classes.num}>
                 <h3>Zastupnik zastupa Vaše interese.</h3>
@@ -47,15 +52,21 @@ const Modal = ({ handleClick }) => {
                 </h3>
               </div>
 
-              <div className={`${classes.num} d-flex align-content-center justify-content-center pt-5`}>
-                <button
-                  className="btn btn-dark"
+              <div className={`${classes.num} d-flex align-content-center justify-content-center pt-3`}>
+                <div
+                  className={classes.button}
+                  data-tooltip="Zatvori"
                   onClick={(e) => {
                     handleClick();
                   }}
                 >
-                  Zatvori
-                </button>
+                  <div className={classes['button-wrapper']}>
+                    <div className={classes.text}>Zatvori</div>
+                    <span className={classes.icon}>
+                      <i class="fa-solid fa-xmark"></i>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
