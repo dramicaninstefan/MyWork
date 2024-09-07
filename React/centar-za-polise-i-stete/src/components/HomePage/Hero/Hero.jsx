@@ -72,7 +72,12 @@ const Hero = ({ handleClick }) => {
             >
               <span className={classes['button_lg']}>
                 <span className={classes['button_sl']}></span>
-                <span className={classes['button_text']}> Zašto je bolje zaključiti osiguranje preko zastupnika, nego direktno preko osiguravajuće kuće?</span>
+                <span className={classes['button_text']}>
+                  {' '}
+                  Zašto je bolje zaključiti osiguranje preko zastupnika, nego direktno preko osiguravajuće kuće?
+                  <br />
+                  Detaljnije
+                </span>
               </span>
             </button>
           </div>

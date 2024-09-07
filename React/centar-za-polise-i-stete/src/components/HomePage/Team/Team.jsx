@@ -4,7 +4,7 @@ import classes from './Team.module.css';
 
 import team1 from '../../../assets/img/team/team-1.jpeg';
 import team2 from '../../../assets/img/team/team-2.jpeg';
-import team3 from '../../../assets/img/team/team-3.jpg';
+import team3 from '../../../assets/img/team/team-2.jpeg';
 import { Link } from 'react-router-dom';
 
 const Team = () => {
