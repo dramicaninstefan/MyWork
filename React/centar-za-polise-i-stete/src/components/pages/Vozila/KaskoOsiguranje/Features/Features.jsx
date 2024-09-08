@@ -7,7 +7,7 @@ import classes from './Features.module.css';
 const Features = () => {
   return (
     <Fragment>
-      <section id="about" className={`${classes.kasko} section`}>
+      <section className={`${classes.kasko} section`}>
         <div className="container">
           <div className="row gy-4">
             <div className={`${classes.content} col-lg-12 order-1 order-lg-1 mb-4`} data-aos="fade-up">

@@ -63,7 +63,7 @@ const Modal = ({ handleClick }) => {
                   <div className={classes['button-wrapper']}>
                     <div className={classes.text}>Zatvori</div>
                     <span className={classes.icon}>
-                      <i class="fa-solid fa-xmark"></i>
+                      <i className="fa-solid fa-xmark"></i>
                     </span>
                   </div>
                 </div>

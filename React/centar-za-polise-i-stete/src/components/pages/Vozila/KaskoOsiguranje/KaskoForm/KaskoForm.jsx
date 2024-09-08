@@ -6,7 +6,7 @@ import classes from './KaskoForm.module.css';
 const KaskoForm = () => {
   return (
     <Fragment>
-      <div className={` container`} id="contact">
+      <div className={` container`} id="contact" data-aos="fade-up">
         <div className={`${classes['kasko-form-wrapper']} rounded`}>
           <div className={`${classes['kasko-form']}`}>
             <form className="row">
@@ -118,7 +118,13 @@ const KaskoForm = () => {
                 </div>
                 <div className="col-12 py-5">
                   <div className="form-group form-check ">
-                    <input type="checkbox" style={{ width: '20px', height: `20px`, border: `2px solid var(--accent-color)` }} className="form-check-input" id="InputSaglasan" required />
+                    <input
+                      type="checkbox"
+                      style={{ width: '20px', height: `20px`, border: `2px solid var(--accent-color)`, cursor: `pointer` }}
+                      className="form-check-input"
+                      id="InputSaglasan"
+                      required
+                    />
                     <label className="form-check-label ml-2" htmlFor="InputSaglasan">
                       Saglasan/-na sam da Centar za polise i štete sa mnom kontaktira, šalje mi korisne informacije, ponude i obaveštenja o proizvodima i uslugama osiguranja.
                       <Link to="/politika-privatnosti"> Politici privatnosti.</Link>

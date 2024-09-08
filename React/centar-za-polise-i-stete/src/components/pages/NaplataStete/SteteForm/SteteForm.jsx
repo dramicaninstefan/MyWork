@@ -12,7 +12,7 @@ const SteteForm = () => {
 
   return (
     <Fragment>
-      <div className={` container`} id="contact">
+      <div className={` container`} id="contact" data-aos="fade-up">
         <div className={`${classes['stete-form-wrapper']} rounded`}>
           <div className={`${classes['stete-form']}`}>
             <form className="row">
@@ -123,7 +123,7 @@ const SteteForm = () => {
                       <option value="">Izaberite</option>
                       {zemlje_list?.map((item) => {
                         return (
-                          <option key={item.code} value={item.name}>
+                          <option key={item.id} value={item.name}>
                             {item.name}
                           </option>
                         );
@@ -211,7 +211,13 @@ const SteteForm = () => {
                 </div>
                 <div className="col-12 py-5">
                   <div className="form-group form-check ">
-                    <input type="checkbox" style={{ width: '20px', height: `20px`, border: `2px solid var(--accent-color)` }} className="form-check-input" id="InputSaglasan" required />
+                    <input
+                      type="checkbox"
+                      style={{ width: '20px', height: `20px`, border: `2px solid var(--accent-color)`, cursor: `pointer` }}
+                      className="form-check-input"
+                      id="InputSaglasan"
+                      required
+                    />
                     <label className="form-check-label ml-2" htmlFor="InputSaglasan">
                       Saglasan/-na sam da Centar za polise i štete sa mnom kontaktira, šalje mi korisne informacije, ponude i obaveštenja o proizvodima i uslugama osiguranja.
                       <Link to="/politika-privatnosti"> Politici privatnosti.</Link>

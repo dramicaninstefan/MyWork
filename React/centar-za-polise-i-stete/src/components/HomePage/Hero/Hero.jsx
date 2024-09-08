@@ -76,7 +76,8 @@ const Hero = ({ handleClick }) => {
                   {' '}
                   Zašto je bolje zaključiti osiguranje preko zastupnika, nego direktno preko osiguravajuće kuće?
                   <br />
-                  Detaljnije
+                  <br />
+                  Detaljnije . . .
                 </span>
               </span>
             </button>
