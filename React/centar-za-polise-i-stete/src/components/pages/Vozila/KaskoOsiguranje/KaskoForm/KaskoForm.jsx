@@ -11,9 +11,11 @@ const KaskoForm = () => {
           <div className={`${classes['kasko-form']}`}>
             <form className="row">
               <div className="col-12 section-title">
-                <h2 style={{ fontWeight: `bold` }}>Molimo Vas da popunite formu u nastavku i mi ćemo Vas kontaktirati u najkraćem roku.</h2>
+                <h2 style={{ fontWeight: `bold` }}>
+                  Za dobijanje kasko ponuda direktno od osiguravajućih kuća <br /> (bez sitnih slova), molimo vas da popunite formu u nastavku, a mi ćemo Vas kontaktirati u najkraćem roku.
+                </h2>
                 <h4>
-                  Ukoliko imate pitanja ili vam je potreban savet, možete nas kontaktirati na broj
+                  Ukoliko imate pitanja ili Vam je potreban savet, možete nas kontaktirati na broj
                   <br />
                   <a href="tel:+381608060001">+381 608060001</a>
                 </h4>

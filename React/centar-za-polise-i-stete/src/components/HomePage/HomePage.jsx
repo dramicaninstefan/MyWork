@@ -8,7 +8,7 @@ import Services from './Services/Services.jsx';
 import ContactForm from '../UI/ContactForm/ContactForm.jsx';
 import Swiper from './Swiper/Swiper.jsx';
 import InfiniteLooper from '../UI/InfiniteLooper/InfiniteLooper.jsx';
-import Modal from './Modal/Modal.jsx';
+import Modal from '../UI/Modal/Modal.jsx';
 import Team from './Team/Team.jsx';
 
 const HomePage = () => {

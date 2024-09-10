@@ -1,10 +1,11 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 
 import Hero from './Hero/Hero';
 import Features from './Features/Features';
 import FAQ from '../../UI/FAQ/FAQ';
 import SteteForm from './SteteForm/SteteForm';
 import Counter from '../../UI/Counter/Counter';
+import InfiniteLooper from '../../UI/InfiniteLooper/InfiniteLooper';
 
 import image from '../../../assets/img/stete-c-bg.jpg';
 
@@ -48,7 +49,9 @@ const faq = [
 ];
 
 const NaplataStete = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    document.body.scrollTo(0, 0);
+  }, []);
 
   return (
     <Fragment>
@@ -58,6 +61,7 @@ const NaplataStete = () => {
         <Counter image={image} />
         <FAQ data={faq} />
         <SteteForm />
+        <InfiniteLooper />
       </main>
     </Fragment>
   );

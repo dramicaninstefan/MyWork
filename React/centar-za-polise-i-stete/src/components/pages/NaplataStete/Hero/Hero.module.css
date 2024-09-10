@@ -146,6 +146,27 @@
   width: 100%;
 }
 
+.hero .content .icon-box .more-btn {
+  color: #fff;
+  font-size: 15px;
+  background: #56b8e6;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all ease-in-out 0.4s;
+}
+
+.hero .content .icon-box .more-btn i {
+  font-size: 14px;
+  color: #fff;
+}
+
+.hero .content .icon-box .more-btn:hover {
+  background: var(--surface-color);
+  color: #fff;
+}
+
 .hero .content .icon-box i {
   font-size: 40px;
   color: var(--accent-color);

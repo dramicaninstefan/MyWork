@@ -35,13 +35,13 @@ const ContactForm = () => {
                   <div className="row g-3">
                     <div className="col-sm-6">
                       <div className="form-floating">
-                        <input type="text" className="form-control" id="gname" />
+                        <input type="text" className="form-control" id="gname" required />
                         <label htmlFor="gname">Ime *</label>
                       </div>
                     </div>
                     <div className="col-sm-6">
                       <div className="form-floating">
-                        <input type="text" className="form-control" id="cname" />
+                        <input type="text" className="form-control" id="cname" required />
                         <label htmlFor="cname">Broj telefona *</label>
                       </div>
                     </div>
@@ -53,7 +53,7 @@ const ContactForm = () => {
                     </div>
                     <div className="col-sm-6">
                       <div className="form-floating">
-                        <select className="form-control" name="" id="select">
+                        <select className="form-control" name="" id="select" required>
                           <option value=""></option>
                           <option value="Kasko osiguranje">Kasko osiguranje</option>
                           <option value="Naplata štete">Naplata štete</option>

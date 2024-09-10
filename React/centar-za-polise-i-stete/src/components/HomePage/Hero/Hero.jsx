@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import classes from './Hero.module.css';
 
 import bgImage from '../../../assets/img/hero-bg.jpg';
+import ModalButton from '../../UI/Modal/ModalButton/ModalButton';
 
 const Hero = ({ handleClick }) => {
   return (
@@ -47,7 +48,7 @@ const Hero = ({ handleClick }) => {
                 <i className="fa-solid fa-magnifying-glass pb-3"></i>
                 <h3>
                   <Link>
-                    <b>UPOREDITE CENE</b> <br /> i dogovorite za sebe <b>polisu</b> osiguranja za sebe!
+                    <b>UPOREDITE CENE</b> <br /> i dogovorite <b>polisu</b> osiguranja za sebe!
                   </Link>
                 </h3>
               </div>
@@ -63,25 +64,7 @@ const Hero = ({ handleClick }) => {
               </div>
             </div>
           </div>
-          <div className="col-12 text-center" style={{ marginTop: `70px` }} data-aos="fade-up" data-aos-delay="500">
-            <button
-              className={classes.button}
-              onClick={() => {
-                handleClick();
-              }}
-            >
-              <span className={classes['button_lg']}>
-                <span className={classes['button_sl']}></span>
-                <span className={classes['button_text']}>
-                  {' '}
-                  Zašto je bolje zaključiti osiguranje preko zastupnika, nego direktno preko osiguravajuće kuće?
-                  <br />
-                  <br />
-                  Detaljnije . . .
-                </span>
-              </span>
-            </button>
-          </div>
+          <ModalButton handleClick={handleClick} />
         </div>
       </section>
     </Fragment>

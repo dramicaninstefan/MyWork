@@ -14,7 +14,7 @@ const Features = () => {
               <h2 className="pb-4">Šta je kasko osiguranje i da li vam je potrebno?</h2>
               <p>
                 Obavezno osiguranje od autoodgovornosti nas štiti od posledica tuđih grešaka. Ali, šta je štetama na parkingu kada ne znamo krivca, ili štetama tokom vožnje kada smo mi krivi, sa
-                krađom,?
+                krađom?
                 <br />
                 <br />
                 U takvim situacijama, kasko osiguranje pruža zaštitu od svih rizika koji mogu ugroziti vaše vozilo. Budući da osiguranje nije nešto što možete nabaviti nakon što se šteta dogodi, važno

@@ -226,7 +226,7 @@ const SteteForm = () => {
                 </div>
               </div>
 
-              <div className="col-12 ">
+              <div className="col-12 pb-5">
                 <button type="submit" className={classes.bt} id="bt">
                   <span className={classes.msg} id="msg"></span>
                   Pošalji upit
