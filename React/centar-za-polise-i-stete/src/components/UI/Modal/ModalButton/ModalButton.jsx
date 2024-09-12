@@ -18,7 +18,7 @@ const ModalButton = ({ handleClick }) => {
             <br />
             <br />
             <small style={{ fontWeight: `bold`, textTransform: `none` }}>
-              Saznajte viŠe <i className="fa-solid fa-caret-right"></i>
+              Saznajte više <i className="fa-solid fa-caret-right"></i>
             </small>
           </span>
         </span>

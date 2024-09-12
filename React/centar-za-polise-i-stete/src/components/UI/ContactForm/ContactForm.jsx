@@ -34,26 +34,35 @@ const ContactForm = () => {
                 <form>
                   <div className="row g-3">
                     <div className="col-sm-6">
-                      <div className="form-floating">
+                      <div className="">
+                        <label htmlFor="gname">
+                          Ime <span className="text-danger">*</span>
+                        </label>
                         <input type="text" className="form-control" id="gname" required />
-                        <label htmlFor="gname">Ime *</label>
                       </div>
                     </div>
                     <div className="col-sm-6">
-                      <div className="form-floating">
+                      <div className="">
+                        <label htmlFor="cname">
+                          Broj telefona <span className="text-danger">*</span>
+                        </label>
                         <input type="text" className="form-control" id="cname" required />
-                        <label htmlFor="cname">Broj telefona *</label>
                       </div>
                     </div>
                     <div className="col-sm-6">
-                      <div className="form-floating">
+                      <div className="">
+                        <label htmlFor="gmail">
+                          Email <span className="text-danger">(Opciono)</span>
+                        </label>
                         <input type="email" className="form-control" id="gmail" />
-                        <label htmlFor="gmail">Email (Opciono)</label>
                       </div>
                     </div>
                     <div className="col-sm-6">
-                      <div className="form-floating">
-                        <select className="form-control" name="" id="select" required>
+                      <div className="">
+                        <label htmlFor="select">
+                          Zainteresovan sam za: <span className="text-danger">*</span>
+                        </label>
+                        <select className="form-control form-select" name="" id="select" required>
                           <option value=""></option>
                           <option value="Kasko osiguranje">Kasko osiguranje</option>
                           <option value="Naplata štete">Naplata štete</option>
@@ -64,13 +73,14 @@ const ContactForm = () => {
                           <option value="Osiguranje od nezgode">Osiguranje od nezgode</option>
                           <option value="Osiguranje od odgovornosti">Osiguranje od odgovornosti</option>
                         </select>
-                        <label htmlFor="select">Zainteresovan sam za: *</label>
                       </div>
                     </div>
                     <div className="col-12">
-                      <div className="form-floating">
+                      <div className="">
+                        <label htmlFor="message" style={{ textWrap: `wrap` }}>
+                          Kako možemo da Vam pomognemo? <span className="text-danger">*</span>
+                        </label>
                         <textarea className="form-control" id="message" style={{ height: `180px` }}></textarea>
-                        <label htmlFor="message">Kako možemo da Vam pomognemo? *</label>
                       </div>
                     </div>
                     <div className="col-12">
