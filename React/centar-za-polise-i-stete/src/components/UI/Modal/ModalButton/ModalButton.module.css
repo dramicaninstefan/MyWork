@@ -1,4 +1,3 @@
-/* From Uiverse.io by mrhyddenn */
 .button {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -62,32 +61,14 @@
   display: block;
   padding: 10px 20px;
   color: #fff;
-  background-color: #1b2f45;
+  background-color: var(--accent-color);
   overflow: hidden;
   box-shadow: inset 0px 0px 0px 1px transparent;
+  transition: all 0.2s;
 }
 
-.button_lg::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2px;
-  height: 2px;
-  background-color: #1b2f45;
-}
-
-.button_lg::after {
-  content: '';
-  display: block;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 4px;
-  height: 4px;
-  background-color: #1b2f45;
-  transition: all 1s ease;
+.button:hover {
+  transform: scale(1.01);
 }
 
 .button_sl {
@@ -97,13 +78,14 @@
   bottom: -1px;
   left: -8px;
   width: 0;
-  background-color: var(--accent-color);
   transform: skew(-15deg);
   transition: all 0.2s ease;
 }
 
 .button_text {
   position: relative;
+  text-transform: none;
+  font-size: 23px;
 }
 
 .button:hover {
