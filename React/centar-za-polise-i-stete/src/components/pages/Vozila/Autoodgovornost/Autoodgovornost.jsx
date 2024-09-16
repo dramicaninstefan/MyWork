@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment } from 'react';
 
 import classes from './Autoodgovornost.module.css';
 
@@ -33,9 +33,7 @@ const faq = [
 ];
 
 const Autoodgovornost = () => {
-  useEffect(() => {
-    document.body.scrollTo(0, 0);
-  }, []);
+  window.scrollTo(0, 0);
 
   return (
     <Fragment>

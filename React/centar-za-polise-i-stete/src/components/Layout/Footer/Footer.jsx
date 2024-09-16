@@ -41,7 +41,7 @@ const Footer = () => {
               </p> */}
               <p>
                 <a href="tel:+381608060001" className="btn btn-link">
-                  <i className="fa fa-phone-alt me-3"></i>+381 608060001
+                  <i className="fa fa-phone-alt me-3"></i>+381 60 80 60 001
                 </a>
               </p>
               <p>

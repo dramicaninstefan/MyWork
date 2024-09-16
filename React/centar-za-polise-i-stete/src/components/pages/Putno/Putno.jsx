@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment } from 'react';
 
 import classes from './Putno.module.css';
 
@@ -35,9 +35,7 @@ const faq = [
 ];
 
 const Putno = () => {
-  useEffect(() => {
-    document.body.scrollTo(0, 0);
-  }, []);
+  window.scrollTo(0, 0);
 
   return (
     <Fragment>

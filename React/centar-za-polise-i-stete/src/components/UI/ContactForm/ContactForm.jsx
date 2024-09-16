@@ -18,7 +18,7 @@ const ContactForm = () => {
                 </a>
               </h2>
               <a href="tel:+381608060001" style={{ color: `#fff`, fontSize: `22px` }} target="_blank" rel="noreferrer">
-                +381 608060001
+                +381 60 80 60 001
               </a>
               <h2 style={{ marginBlock: `20px` }}>
                 <a href="mailto: svezaosiguranje@gmail.com" style={{ color: `#fff` }}>
@@ -72,6 +72,7 @@ const ContactForm = () => {
                           <option value="Dobrovoljno Zdravstveno Osiguranje">Dobrovoljno Zdravstveno Osiguranje</option>
                           <option value="Osiguranje od nezgode">Osiguranje od nezgode</option>
                           <option value="Osiguranje od odgovornosti">Osiguranje od odgovornosti</option>
+                          <option value="Ostalo">Ostalo</option>
                         </select>
                       </div>
                     </div>

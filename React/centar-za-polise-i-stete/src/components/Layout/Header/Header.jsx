@@ -79,7 +79,7 @@ const Header = () => {
               </i>
               <i className="bi bi-phone d-flex align-items-center ms-4">
                 <a href="tel:+381608060001">
-                  <span>+381 608060001</span>
+                  <span>+381 60 80 60 001</span>
                 </a>
               </i>
             </div>
