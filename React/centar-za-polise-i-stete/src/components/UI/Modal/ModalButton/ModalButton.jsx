@@ -2,6 +2,8 @@ import React from 'react';
 
 import classes from './ModalButton.module.css';
 
+import click from '../../../../assets/img/icon/click1.gif';
+
 const ModalButton = ({ handleClick }) => {
   return (
     <div className="col-12 text-center" style={{ marginTop: `70px` }} data-aos="fade-up" data-aos-delay="500">
@@ -11,6 +13,7 @@ const ModalButton = ({ handleClick }) => {
           handleClick();
         }}
       >
+        <img src={click} alt="" className={classes.clickIcon} />
         <span className={classes['button_lg']}>
           <span className={classes['button_sl']}></span>
           <span className={classes['button_text']}>

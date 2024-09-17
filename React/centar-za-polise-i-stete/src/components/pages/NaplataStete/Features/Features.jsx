@@ -126,16 +126,16 @@ const Features = () => {
                 <b>Vozač mora biti kriv za izazvanu saobraćajnu nezgodu.</b>
                 <br />
                 <br />U sledećim slučajevima, osiguravajuća kuća će ući u postupak priznanja štete od strane svog klijenta, po osnovu osiguranja od autoodgovornosti:
-                <ul>
-                  <li>ako vozač nije koristio motorno vozilo u skladu sa njegovom namenom;</li>
-                  <li>ako vozač nije imao vozačku dozvolu za upravljanje motornim vozilom određene kategorije;</li>
-                  <li>ako je vozaču oduzeta vozačka dozvola ili je isključen iz saobraćaja;</li>
-                  <li>ako je vozač upravljao motornim vozilom pod uticajem alkohola, opojnih droga, odnosno zabranjenih lekova ili drugih psihoaktivnih supstanci;</li>
-                  <li>ako je vozač štetu prouzrokovao sa namerom;</li>
-                  <li>ako je šteta nastala zbog toga što je motorno vozilo bilo tehnički neispravno, a ta je okolnost vozaču vozila bila poznata;</li>
-                  <li>ako je vozač posle saobraćajne nezgode napustio mesto događaja.</li>
-                </ul>
               </p>
+              <ul>
+                <li>ako vozač nije koristio motorno vozilo u skladu sa njegovom namenom;</li>
+                <li>ako vozač nije imao vozačku dozvolu za upravljanje motornim vozilom određene kategorije;</li>
+                <li>ako je vozaču oduzeta vozačka dozvola ili je isključen iz saobraćaja;</li>
+                <li>ako je vozač upravljao motornim vozilom pod uticajem alkohola, opojnih droga, odnosno zabranjenih lekova ili drugih psihoaktivnih supstanci;</li>
+                <li>ako je vozač štetu prouzrokovao sa namerom;</li>
+                <li>ako je šteta nastala zbog toga što je motorno vozilo bilo tehnički neispravno, a ta je okolnost vozaču vozila bila poznata;</li>
+                <li>ako je vozač posle saobraćajne nezgode napustio mesto događaja.</li>
+              </ul>
             </div>
 
             <div className={`${classes.content} col-lg-12 order-1 order-lg-1  pt-5 mb-4`} id="stete1">
@@ -208,8 +208,8 @@ const Features = () => {
               </p>
             </div>
             <div className={`${classes.content} col-lg-12 order-1 order-lg-1 pt-5 mb-4`} id="stete3">
+              <h3 className="pb-4">NAPLATA ŠTETE NA VOZILU OD LEDENICA:</h3>
               <p>
-                <h3 className="pb-4">NAPLATA ŠTETE NA VOZILU OD LEDENICA:</h3>
                 Većina građana kojima je na automobil pao sneg sa krova zgrade, led, ledenice, ili se prelomila i pala neka grana drveta kraj koga je bio parkirano vozilo, ne uspe da nadoknadi
                 pričinjenu štetu, a ima prvo na naknadu štete. Obično je to iz razloga neznanja građana. A neretko i “bezobrazluk” osiguravajućih kuća ili vlasnika objekta.
                 <br />
@@ -226,19 +226,25 @@ const Features = () => {
                 <br />– Za slučaj da je vozilo oštećeno ispred poslovnog objekta štetu nadoknađuje vlasnik tog objekta
                 <br />
                 <br />
-                <h3 className="pb-4">NAKNADA ŠTETE OD PADA DRVETA NA AUTO – ZELENILO BEOGRAD</h3>
+              </p>
+              <h3 className="pb-4">NAKNADA ŠTETE OD PADA DRVETA NA AUTO – ZELENILO BEOGRAD</h3>
+              <p>
                 Ukoliko je pala grana sa drveta koje je u nadležnosti javnog komunalnog preduzeća, onda je neophodno da građani pozovu policiju da prijave slučaj, kako bi kasnije ostvarili pravo na
                 naknadu štete. Ovakve štete se naknađuju od javnog komunalnog preduzeća koje održava drvored.
                 <br />U ovim slučajevima, obratite se nama da Vam pomognemo oko naplate materijalne, pa i nematerijalne štete.
                 <br />
                 <br />
-                <h3 className="pb-4">NAKNADA ŠTETE OD RUPE NA PUTU</h3>
+              </p>
+              <h3 className="pb-4">NAKNADA ŠTETE OD RUPE NA PUTU</h3>
+              <p>
                 Ukoliko ste priliokom vožnje upali u rupu, oštetili vozilo, moguće je naplatiti štetu za ovakve situacije.
                 <br />
                 <br />U ovim slučajevima, obratite se nama da Vam pomognemo oko naplate materijalne, pa i nematerijalne štete.
                 <br />
                 <br />
-                <h3 className="pb-4">NAKNADA ŠTETE U SLUČAJU OŠTEĆENJA VOZILA NA PARKINGU</h3>
+              </p>
+              <h3 className="pb-4">NAKNADA ŠTETE U SLUČAJU OŠTEĆENJA VOZILA NA PARKINGU</h3>
+              <p>
                 Šta uraditi u slučaju da ste ostavili automobil na parkingu, a kada ste se vratili zatekli ste ulubljeno vozilo? Počinilac se, naravno, izgubio, napustio mesto nezgode, a šteta nije
                 mala. Pitanje je: da li je moguće u ovakvim slučajevima naplatiti štetu i kome se obratiti kako biste ostvarili svoja prava?
                 <br />
@@ -253,7 +259,9 @@ const Features = () => {
                 inače isplaćuje materijalne štete (nastale na stvarima) i nematerijalne (za povrede ljudi) koje napravi neosigurano vozilo.
                 <br />
                 <br />
-                <h3 className="pb-4">NAKNADA ŠTETE ZBOG UJEDA PSA</h3>
+              </p>
+              <h3 className="pb-4">NAKNADA ŠTETE ZBOG UJEDA PSA</h3>
+              <p>
                 Psi lutalice su, na žalost, postali svakodnevica. Svakodnevno se surećemo sa jednim ili neretno i čoporom pasa. A čopor pasa je najopasniji, jer im je u instinktu da deluju kao čopor,
                 da napadaju “plen” – ljude. Neretko ti psi su bezopasni, ako ih se ne uplašimo i ne počnemo da bežimo. Međutim, teško je biti pribran u situacijama kada zalaje čopor pasa. U takvim
                 situacijama, ujed pasa ne neminovan, minimu.

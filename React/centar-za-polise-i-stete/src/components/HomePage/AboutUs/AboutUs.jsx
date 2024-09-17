@@ -54,7 +54,7 @@ const AboutUs = () => {
                 <div className="border-top mt-4 pt-4 d-flex align-items-center">
                   <div className="d-flex flex-column align-items-center">
                     <h5 style={{ fontWeight: `bold` }} className="mb-2">
-                      <a href="tel:+381608060001">Pozovite nas: +381 608060001</a>
+                      <a href="tel:+381608060001">Pozovite nas: +381 60 80 60 001</a>
                     </h5>
                     {/* <!-- <div className="social-links d-flex justify-content-center align-items-center">
                     <div className="m-2 d-flex justify-content-center align-items-center"

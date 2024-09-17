@@ -10,7 +10,7 @@ const Hero = ({ handleClick }) => {
   return (
     <Fragment>
       <section id="hero" className={`${classes.hero} section dark-background`}>
-        <img src={bgImage} alt="" data-aos="fade-in" />
+        <img src={bgImage} className={classes.bgImage} alt="" data-aos="fade-in" />
 
         <div className={`${classes.container} container`}>
           <div className="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">

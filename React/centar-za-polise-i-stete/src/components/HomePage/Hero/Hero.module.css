@@ -11,7 +11,7 @@
   justify-content: center;
 }
 
-.hero img {
+.hero .bgImage {
   position: absolute;
   inset: 0;
   display: block;

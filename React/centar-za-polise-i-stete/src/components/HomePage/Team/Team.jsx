@@ -39,9 +39,8 @@ const Team = () => {
                 </div>
               </div>
               <div className={`${classes['member-info']} text-center`}>
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-                <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
+                <h4>Goran Dramićanin, dipl.inž.</h4>
+                <span>Savetnik za osiguranja - Direktor</span>
               </div>
             </div>
 
@@ -64,9 +63,8 @@ const Team = () => {
                 </div>
               </div>
               <div className={`${classes['member-info']} text-center`}>
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-                <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores exercitationem ut</p>
+                <h4>Mirjana Jokić, Ekon.</h4>
+                <span>Office asistent</span>
               </div>
             </div>
 
@@ -89,9 +87,8 @@ const Team = () => {
                 </div>
               </div>
               <div className={`${classes['member-info']} text-center`}>
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-                <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque sed facilis at qui</p>
+                <h4>Željko Simić, dipl.inž</h4>
+                <span>Savetnik za osiguranje vozila</span>
               </div>
             </div>
 
@@ -114,9 +111,8 @@ const Team = () => {
                 </div>
               </div>
               <div className={`${classes['member-info']} text-center`}>
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-                <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque sed facilis at qui</p>
+                <h4>Srđan Petrović, dipl. inž.</h4>
+                <span>Savetnik za imovinska osiguranja</span>
               </div>
             </div>
 
@@ -139,9 +135,8 @@ const Team = () => {
                 </div>
               </div>
               <div className={`${classes['member-info']} text-center`}>
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-                <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque sed facilis at qui</p>
+                <h4>Stanislava Minić, master menadž.</h4>
+                <span>Savetnik za životna osiguranja</span>
               </div>
             </div>
 
@@ -164,9 +159,8 @@ const Team = () => {
                 </div>
               </div>
               <div className={`${classes['member-info']} text-center`}>
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-                <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque sed facilis at qui</p>
+                <h4>Borivoje Marković, dipl.prav.</h4>
+                <span>Diplomirani pravnik</span>
               </div>
             </div>
           </div>

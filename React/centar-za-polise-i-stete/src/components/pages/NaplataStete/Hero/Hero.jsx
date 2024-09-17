@@ -60,7 +60,7 @@ const Hero = () => {
                     </li>
                     <li>
                       <i className="bi bi-check" style={{ color: `var(--accent-color)`, fontSize: `25px`, transform: `translateY(-5px)` }}></i>
-                      <p>MogućA online naplata</p>
+                      <p>Moguća online naplata</p>
                     </li>
                   </ul>
                   <div className="text-center">

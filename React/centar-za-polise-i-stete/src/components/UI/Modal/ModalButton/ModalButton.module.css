@@ -2,17 +2,42 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+  position: relative;
   border: none;
   background: none;
   color: #0f1923;
   cursor: pointer;
-  position: relative;
   padding: 8px;
   margin-bottom: 20px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 16px;
   transition: all 0.15s ease;
+  position: relative;
+}
+
+.button:hover {
+  transform: scale(1.01);
+}
+
+@keyframes clickMove {
+  0% {
+    transform: translateY(25px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.clickIcon {
+  position: absolute;
+  bottom: -5px;
+  right: 38%;
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+  animation: 3s clickMove infinite;
 }
 
 .button::before,
@@ -67,21 +92,6 @@
   transition: all 0.2s;
 }
 
-.button:hover {
-  transform: scale(1.01);
-}
-
-.button_sl {
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: -1px;
-  left: -8px;
-  width: 0;
-  transform: skew(-15deg);
-  transition: all 0.2s ease;
-}
-
 .button_text {
   position: relative;
   text-transform: none;
@@ -90,10 +100,6 @@
 
 .button:hover {
   color: #0f1923;
-}
-
-.button:hover .button_sl {
-  width: calc(100% + 15px);
 }
 
 .button:hover .button_lg::after {

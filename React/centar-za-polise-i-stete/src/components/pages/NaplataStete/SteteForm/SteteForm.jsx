@@ -21,7 +21,7 @@ const SteteForm = () => {
                 <h4>
                   Ukoliko imate pitanja ili vam je potreban savet, možete nas kontaktirati na broj
                   <br />
-                  <a href="tel:+381608060001">+381 608060001</a>
+                  <a href="tel:+381608060001">+381 60 80 60 001</a>
                 </h4>
               </div>
               <div className="col-12 rounded" style={{ backgroundColor: `#f1f1f1f1`, paddingBlock: `30px` }}>
