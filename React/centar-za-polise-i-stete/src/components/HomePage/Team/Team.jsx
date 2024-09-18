@@ -160,7 +160,7 @@ const Team = () => {
               </div>
               <div className={`${classes['member-info']} text-center`}>
                 <h4>Borivoje Marković, dipl.prav.</h4>
-                <span>Diplomirani pravnik</span>
+                <span>Advokat</span>
               </div>
             </div>
           </div>
