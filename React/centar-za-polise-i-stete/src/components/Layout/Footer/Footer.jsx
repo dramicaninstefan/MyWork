@@ -52,21 +52,21 @@ const Footer = () => {
             </div>
             <div className="col-lg-4 col-md-6">
               <h5 className="text-light mb-4">Linkovi</h5>
-              <a className="btn btn-link" href="/">
+              <Link className="btn btn-link" to="/">
                 Početna
-              </a>
-              <a className="btn btn-link" href="/kasko-osiguranje-vozila">
+              </Link>
+              <Link className="btn btn-link" to="/kasko-osiguranje-vozila">
                 Kasko osiguranje
-              </a>
-              <a className="btn btn-link" href="/naplata-naknada-stete">
+              </Link>
+              <Link className="btn btn-link" to="/naplata-naknada-stete">
                 Naplata štete
-              </a>
-              <a className="btn btn-link" href="/putno-osiguranje">
+              </Link>
+              <Link className="btn btn-link" to="/putno-osiguranje">
                 Putno osiguranje
-              </a>
-              <a className="btn btn-link" href="/politika-privatnosti">
+              </Link>
+              <Link className="btn btn-link" to="/politika-privatnosti">
                 Politika privatnosti
-              </a>
+              </Link>
             </div>
           </div>
         </div>

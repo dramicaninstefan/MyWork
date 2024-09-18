@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 import classes from './Team.module.css';
 
-import team1 from '../../../assets/img/team/team-1.png';
-import team2 from '../../../assets/img/team/team-2.png';
-import team3 from '../../../assets/img/team/team-3.png';
-import team4 from '../../../assets/img/team/team-4.png';
-import team5 from '../../../assets/img/team/team-5.png';
-import team6 from '../../../assets/img/team/team-6.png';
+import team1 from '../../../../assets/img/team/team-1.png';
+import team2 from '../../../../assets/img/team/team-2.png';
+import team3 from '../../../../assets/img/team/team-3.png';
+import team4 from '../../../../assets/img/team/team-4.png';
+import team5 from '../../../../assets/img/team/team-5.png';
+import team6 from '../../../../assets/img/team/team-6.png';
 
 const Team = () => {
   return (

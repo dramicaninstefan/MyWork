@@ -6,7 +6,7 @@ import click from '../../../../assets/img/icon/click1.gif';
 
 const ModalButton = ({ handleClick }) => {
   return (
-    <div className="col-12 text-center" style={{ marginTop: `70px` }} data-aos="fade-up" data-aos-delay="500">
+    <div className="col-12 text-center" style={{ marginTop: `70px` }} data-aos="fade-up" data-aos-delay="200">
       <button
         className={classes.button}
         onClick={() => {

@@ -7,6 +7,8 @@ import './App.css';
 
 import HomePage from './components/HomePage/HomePage';
 
+import KoSmoMi from './components/pages/AboutUsPage/AboutUsPage.jsx';
+
 import KaskoOsiguranje from './components/pages/Vozila/KaskoOsiguranje/KaskoOsiguranje';
 import Autoodgovornost from './components/pages/Vozila/Autoodgovornost/Autoodgovornost';
 import PomocNaPutu from './components/pages/Vozila/PomocNaPutu/PomocNaPutu';
@@ -55,6 +57,7 @@ function App() {
       errorElement: <ErrorPage />,
       children: [
         { path: '/', element: <HomePage /> },
+        { path: '/ko-smo-mi', element: <KoSmoMi /> },
         { path: '/kasko-osiguranje-vozila', element: <KaskoOsiguranje /> },
         { path: '/autoodgovornost', element: <Autoodgovornost /> },
         { path: '/pomoc-na-putu', element: <PomocNaPutu /> },
