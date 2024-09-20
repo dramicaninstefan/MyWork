@@ -40,6 +40,14 @@
   animation: 3s clickMove infinite;
 }
 
+@media (max-width: 600px) {
+  .clickIcon {
+    position: absolute;
+    bottom: -5px;
+    right: 10%;
+  }
+}
+
 .button::before,
 .button::after {
   content: '';

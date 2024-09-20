@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 
 import './Header.css';
@@ -11,6 +11,20 @@ const Header = () => {
   const [isDropdown, setIsDropdown] = useState(false); // isDropdown
   const [scrollPosition, setScrollPosition] = useState(0); // scrollPosition
   const [pahtname, setPathname] = useState(false); //pathname
+
+  // Close navbar on scroll
+  const closeNavbar = () => {
+    const navbarShow = document.getElementById('navbarResponsive');
+    navbarShow.classList.remove('show');
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', closeNavbar, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', closeNavbar);
+    };
+  }, []);
 
   useEffect(() => {
     // Change header bg color on different endpoints
@@ -110,6 +124,7 @@ const Header = () => {
             <button
               style={{ border: `2px solid #fff` }}
               className="navbar-toggler"
+              id="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarResponsive"
