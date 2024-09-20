@@ -36,7 +36,7 @@
   right: 38%;
   width: 60px;
   height: 60px;
-  z-index: 1000;
+  z-index: 500;
   animation: 3s clickMove infinite;
 }
 
