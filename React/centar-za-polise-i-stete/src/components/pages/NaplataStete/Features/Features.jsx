@@ -23,7 +23,9 @@ const Features = () => {
             <div className="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style={{ visibility: 'visible', animationDelay: '0.1s', animationName: 'fadeInUp' }}>
               <div className="container pb-5">
                 <div className="section-title text-center position-relative pb-3 mb-5 mx-auto" style={{ maxWidth: '800px' }}>
-                  <h5 className="fw-bold text-primary text-uppercase">Zašto odabrati nas</h5>
+                  <h5 className="fw-bold text-uppercase" style={{ color: `var(--accent-color)` }}>
+                    Zašto odabrati nas
+                  </h5>
                   <h2 className="mb-0">Ceo postupak naplate štete mi vodimo</h2>
                   <p className="pt-2">Dovoljno je da nam se javite i mi preuzimamo postupak naplate (od dokumentacije, procene štete, komunikaciju za osiguravajućom kućom i drugo)</p>
                 </div>
@@ -31,14 +33,17 @@ const Features = () => {
                   <div className="col-lg-4">
                     <div className="row g-5">
                       <div className="col-12 wow zoomIn" data-wow-delay="0.1s" style={{ visibility: 'visible', animationDelay: '0.1s', animationName: 'zoomIn' }}>
-                        <div className="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
+                        <div
+                          className="rounded d-flex align-items-center justify-content-center mb-3"
+                          style={{ width: '60px', height: '60px', color: `var(--accent-color)`, backgroundColor: `var(--accent-color)` }}
+                        >
                           <i style={{ color: `var(--accent-color)` }} className="fa fa-cubes text-white"></i>
                         </div>
                         <h4>Isplata naknade štete na Vaš tekući račun</h4>
                         <p className="mb-0">Isplata celokupne naknade ide na Vaš tekući račun</p>
                       </div>
                       <div className="col-12 wow zoomIn" data-wow-delay="0.1s" style={{ visibility: 'visible', animationDelay: '0.1s', animationName: 'zoomIn' }}>
-                        <div className="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
+                        <div className="rounded d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px', backgroundColor: `var(--accent-color)` }}>
                           <i style={{ color: `var(--accent-color)` }} className="fa fa-award text-white"></i>
                         </div>
                         <h4>Naplate štete sa originalnim delovima</h4>
@@ -60,14 +65,14 @@ const Features = () => {
                   <div className="col-lg-4">
                     <div className="row g-5">
                       <div className="col-12 wow zoomIn" data-wow-delay="0.1s" style={{ visibility: 'visible', animationDelay: '0.1s', animationName: 'zoomIn' }}>
-                        <div className="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
+                        <div className="rounded d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px', backgroundColor: `var(--accent-color)` }}>
                           <i style={{ color: `var(--accent-color)` }} className="fa fa-users-cog text-white"></i>
                         </div>
                         <h4>Bez troškova sa Vaše strane</h4>
                         <p className="mb-0">Celokupni postupak vodimo bez troškova sa Vaše strane!</p>
                       </div>
                       <div className="col-12 wow zoomIn" data-wow-delay="0.1s" style={{ visibility: 'visible', animationDelay: '0.1s', animationName: 'zoomIn' }}>
-                        <div className="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
+                        <div className="rounded d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px', backgroundColor: `var(--accent-color)` }}>
                           <i style={{ color: `var(--accent-color)` }} className="fa fa-phone-alt text-white"></i>
                         </div>
                         <h4>Dolazimo po dogovoru na željenu adresu.</h4>

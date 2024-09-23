@@ -3,7 +3,8 @@ import { Fragment } from 'react';
 import Hero from './Hero/Hero';
 import Features from './Features/Features';
 import FAQ from '../../UI/FAQ/FAQ';
-import SteteForm from './SteteForm/SteteForm';
+// import SteteForm from './SteteForm/SteteForm';
+import ContactForm from '../../UI/ContactForm/ContactForm';
 import Counter from '../../UI/Counter/Counter';
 import InfiniteLooper from '../../UI/InfiniteLooper/InfiniteLooper';
 
@@ -117,7 +118,8 @@ const NaplataStete = () => {
         <Features />
         <Counter image={image} />
         <FAQ data={faq} />
-        <SteteForm />
+        <ContactForm />
+        {/* <SteteForm /> */}
         <InfiniteLooper />
       </main>
     </Fragment>

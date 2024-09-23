@@ -12,7 +12,7 @@ const Hero = ({ handleClick }) => {
         <div className={`${classes.container} container`}>
           <div className="row justify-content-start text-left" data-aos="fade-up" data-aos-delay="100">
             <div className="col-xl-8 col-lg-8 pt-5">
-              <h2>Ko smo mi?</h2>
+              <h2>Naš tim</h2>
             </div>
           </div>
         </div>

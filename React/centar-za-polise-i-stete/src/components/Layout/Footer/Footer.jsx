@@ -52,8 +52,8 @@ const Footer = () => {
             </div>
             <div className="col-lg-4 col-md-6">
               <h5 className="text-light mb-4">Linkovi</h5>
-              <Link className="btn btn-link" to="/">
-                Početna
+              <Link className="btn btn-link" to="/ko-smo-mi">
+                Naš tim
               </Link>
               <Link className="btn btn-link" to="/kasko-osiguranje-vozila">
                 Kasko osiguranje

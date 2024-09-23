@@ -137,11 +137,6 @@ const Header = () => {
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                  <NavLink className={({ isActive }) => (isActive ? `nav-link active` : `nav-link`)} to="/ko-smo-mi" end>
-                    Ko smo mi?
-                  </NavLink>
-                </li>
-                <li className="nav-item">
                   <NavLink className={({ isActive }) => (isActive ? `nav-link active` : `nav-link`)} to="/kasko-osiguranje-vozila" end>
                     Kasko osiguranje
                   </NavLink>
@@ -154,6 +149,11 @@ const Header = () => {
                 <li className="nav-item">
                   <NavLink className={({ isActive }) => (isActive ? `nav-link active` : `nav-link`)} to="/putno-osiguranje" end>
                     Putno osiguranje
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className={({ isActive }) => (isActive ? `nav-link active` : `nav-link`)} to="/ko-smo-mi" end>
+                    Naš tim
                   </NavLink>
                 </li>
                 <li className="nav-item dropdown">

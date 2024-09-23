@@ -1,8 +1,64 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 import classes from './ContactForm.module.css';
 
 const ContactForm = () => {
+  const submitBtn = useRef();
+  const form = useRef();
+
+  const [successMsg, setSuccessMsg] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(false);
+  const [alertMsg, setAlertMsg] = useState(false);
+
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
+  const [email, setEmail] = useState('');
+  const [select, setSelect] = useState('');
+  const [message, setMessage] = useState('');
+
+  const templateParams = {
+    user_name: name,
+    user_number: number,
+    user_email: email,
+    user_option: select,
+    message: message,
+  };
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    if (name !== '' && number !== '' && select !== '' && message !== '') {
+      emailjs
+        .send('service_0ee562d', 'template_l23rpm9', templateParams, {
+          publicKey: '_TykGN5dKmnTuxu5y',
+        })
+        .then(
+          (response) => {
+            setSuccessMsg(true);
+            setName('');
+            setNumber('');
+            setEmail('');
+            setSelect('');
+            setMessage('');
+
+            setTimeout(() => {
+              setSuccessMsg(false);
+            }, 3000);
+          },
+          (err) => {
+            setErrorMsg(true);
+          }
+        );
+    } else {
+      setAlertMsg(true);
+
+      setTimeout(() => {
+        setAlertMsg(false);
+      }, 3000);
+    }
+  }
+
   return (
     <Fragment>
       <div className={`container-fluid ${classes.contact} my-5 py-5 wow fadeIn`} data-wow-delay="0.1s" id="contact">
@@ -31,14 +87,23 @@ const ContactForm = () => {
             </div>
             <div className="col-lg-6 wow fadeIn" data-aos="fade-left" data-wow-delay="0.5s">
               <div className="bg-white rounded p-5">
-                <form>
+                <form ref={form} className={classes.form} action="https://formsubmit.co/gamer95.g@email.com" method="POST">
                   <div className="row g-3">
                     <div className="col-sm-6">
                       <div className="">
                         <label htmlFor="gname">
                           Ime <span className="text-danger">*</span>
                         </label>
-                        <input type="text" className="form-control" id="gname" required />
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="gname"
+                          onChange={(e) => {
+                            setName(e.target.value);
+                          }}
+                          value={name}
+                          required
+                        />
                       </div>
                     </div>
                     <div className="col-sm-6">
@@ -46,7 +111,16 @@ const ContactForm = () => {
                         <label htmlFor="cname">
                           Broj telefona <span className="text-danger">*</span>
                         </label>
-                        <input type="text" className="form-control" id="cname" required />
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="cname"
+                          onChange={(e) => {
+                            setNumber(e.target.value);
+                          }}
+                          value={number}
+                          required
+                        />
                       </div>
                     </div>
                     <div className="col-sm-6">
@@ -54,7 +128,15 @@ const ContactForm = () => {
                         <label htmlFor="gmail">
                           Email <span className="text-danger">(Opciono)</span>
                         </label>
-                        <input type="email" className="form-control" id="gmail" />
+                        <input
+                          type="email"
+                          className="form-control"
+                          id="gmail"
+                          onChange={(e) => {
+                            setEmail(e.target.value);
+                          }}
+                          value={email}
+                        />
                       </div>
                     </div>
                     <div className="col-sm-6">
@@ -62,7 +144,16 @@ const ContactForm = () => {
                         <label htmlFor="select">
                           Zainteresovan sam za: <span className="text-danger">*</span>
                         </label>
-                        <select className="form-control form-select" name="" id="select" required>
+                        <select
+                          className="form-control form-select"
+                          name=""
+                          id="select"
+                          onChange={(e) => {
+                            setSelect(e.target.value);
+                          }}
+                          value={select}
+                          required
+                        >
                           <option value=""></option>
                           <option value="Kasko osiguranje">Kasko osiguranje</option>
                           <option value="Naplata štete">Naplata štete</option>
@@ -81,15 +172,27 @@ const ContactForm = () => {
                         <label htmlFor="message" style={{ textWrap: `wrap` }}>
                           Kako možemo da Vam pomognemo? <span className="text-danger">*</span>
                         </label>
-                        <textarea className="form-control" id="message" style={{ height: `180px` }}></textarea>
+                        <textarea
+                          className="form-control"
+                          id="message"
+                          style={{ height: `180px` }}
+                          onChange={(e) => {
+                            setMessage(e.target.value);
+                          }}
+                          value={message}
+                        ></textarea>
                       </div>
                     </div>
                     <div className="col-12">
-                      <button type="submit" className={classes.bt} id="bt">
+                      <button ref={submitBtn} onClick={sendEmail} className={classes.bt} id="bt">
                         <span className={classes.msg} id="msg"></span>
                         Pošalji upit
                       </button>
                     </div>
+
+                    {successMsg ? <div className={classes.success}>Uspesno ste poslali podatke!</div> : null}
+                    {errorMsg ? <div className={classes.error}>Došlo je do greške!</div> : null}
+                    {alertMsg ? <div className={classes.alert}>Molim Vas popunite obavezna polja! *</div> : null}
                   </div>
                 </form>
               </div>
