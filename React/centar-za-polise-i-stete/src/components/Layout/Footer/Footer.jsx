@@ -1,11 +1,22 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 import './Footer.css';
 
 import logo from '../../../assets/img/logo/logo.png';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const location = useLocation(); // location.pathName
+  const [pahtname, setPathname] = useState(false); //pathname
+
+  useEffect(() => {
+    if (location.pathname === '/naplata-naknada-stete') {
+      setPathname(true);
+    } else {
+      setPathname(false);
+    }
+  }, [location.pathname]);
+
   return (
     <Fragment>
       <div className="container-fluid footer mt-5 pt-4 wow fadeIn" data-wow-delay="0.1s">
@@ -13,7 +24,7 @@ const Footer = () => {
           <div className="row g-5">
             <div className="col-lg-4 col-md-6">
               <img src={logo} alt="" style={{ maxWidth: `200px` }} />
-              <p>Naš savet je prema Vama u potpunosti BESPLATAN za polise i bez skrivenih troškova.</p>
+              {pahtname ? undefined : <p>Naš savet je prema Vama u potpunosti BESPLATAN za polise i bez skrivenih troškova.</p>}
               <div className="social-links d-flex pt-2">
                 <a href="viber://chat/?number=%2B381638489439" target="_blank" rel="noreferrer">
                   <i className="fa-brands fa-viber"></i>

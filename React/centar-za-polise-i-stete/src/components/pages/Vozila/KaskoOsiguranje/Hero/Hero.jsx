@@ -56,7 +56,7 @@ const Hero = ({ handleClick }) => {
                 <div className="d-flex flex-column justify-content-center">
                   <div className="row gy-4">
                     <div className="col-xl-4 d-flex align-items-stretch">
-                      <div className={classes['icon-box']} data-aos="zoom-out" data-aos-delay="300">
+                      <div className={classes['icon-box-hero']} data-aos="zoom-out" data-aos-delay="300">
                         {/* <i className="bi bi-clipboard-data"></i> */}
                         <h4>
                           Osnovno kasko <br /> osiguranje
@@ -76,7 +76,7 @@ const Hero = ({ handleClick }) => {
                     </div>
 
                     <div className="col-xl-4 d-flex align-items-stretch">
-                      <div className={classes['icon-box']} data-aos="zoom-out" data-aos-delay="500">
+                      <div className={classes['icon-box-hero']} data-aos="zoom-out" data-aos-delay="500">
                         {/* <i className="bi bi-inboxes"></i> */}
                         <h4>
                           Delimično kasko <br /> osiguranje
@@ -96,7 +96,7 @@ const Hero = ({ handleClick }) => {
                     </div>
 
                     <div className="col-xl-4 d-flex align-items-stretch">
-                      <div className={classes['icon-box']} data-aos="zoom-out" data-aos-delay="400">
+                      <div className={classes['icon-box-hero']} data-aos="zoom-out" data-aos-delay="400">
                         {/* <i className="bi bi-gem"></i> */}
                         <h4>Dopunska osiguranja</h4>
                         <p style={{ minHeight: '140px' }}>Dopunski rizik krađe i dopusnki rizik utaje</p>

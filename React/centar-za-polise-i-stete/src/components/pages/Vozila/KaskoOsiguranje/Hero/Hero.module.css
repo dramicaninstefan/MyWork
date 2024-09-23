@@ -112,7 +112,7 @@
   color: #fff;
 }
 
-.hero .content .icon-box {
+.hero .content .icon-box-hero {
   text-align: center;
   border-radius: 10px;
   background: var(--surface-color);
@@ -121,23 +121,23 @@
   width: 100%;
 }
 
-.hero .content .icon-box i {
+.hero .content .icon-box-hero i {
   font-size: 40px;
   color: var(--accent-color);
 }
 
-.hero .content .icon-box h4 {
+.hero .content .icon-box-hero h4 {
   font-size: 20px;
   font-weight: 700;
   margin: 10px 0 20px 0;
 }
 
-.hero .content .icon-box p {
+.hero .content .icon-box-hero p {
   font-size: 15px;
   color: color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
-.hero .content .icon-box {
+.hero .content .icon-box-hero {
   text-align: center;
   border-radius: 10px;
   background: color-mix(in srgb, var(--surface-color), transparent 20%);
@@ -146,23 +146,23 @@
   width: 100%;
 }
 
-.hero .content .icon-box i {
+.hero .content .icon-box-hero i {
   font-size: 40px;
   color: var(--accent-color);
 }
 
-.hero .content .icon-box h4 {
+.hero .content .icon-box-hero h4 {
   font-size: 20px;
   font-weight: 700;
   margin: 10px 0 20px 0;
 }
 
-.hero .content .icon-box p {
+.hero .content .icon-box-hero p {
   font-size: 15px;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
-.hero .content .icon-box .more-btn {
+.hero .content .icon-box-hero .more-btn {
   color: #fff;
   font-size: 15px;
   background: #56b8e6;
@@ -173,12 +173,12 @@
   transition: all ease-in-out 0.4s;
 }
 
-.hero .content .icon-box .more-btn i {
+.hero .content .icon-box-hero .more-btn i {
   font-size: 14px;
   color: #fff;
 }
 
-.hero .content .icon-box .more-btn:hover {
+.hero .content .icon-box-hero .more-btn:hover {
   background: var(--surface-color);
   color: #fff;
 }
