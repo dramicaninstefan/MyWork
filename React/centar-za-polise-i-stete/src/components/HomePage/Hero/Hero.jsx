@@ -5,10 +5,12 @@ import classes from './Hero.module.css';
 
 import bgImage from '../../../assets/img/hero-bg.jpg';
 
+import click from '../../../assets/img/icon/click1.gif';
+
 const Hero = ({ handleClick }) => {
   return (
     <section id="hero" className={`${classes.hero} section dark-background`}>
-      <img src={bgImage} alt="" data-aos="fade-in" />
+      <img src={bgImage} className={classes.bgimage} alt="" data-aos="fade-in" />
 
       <div className={`${classes.container} container d-xl-flex`}>
         <div className="row col-xl-5 pr-0 pb-5 mt-5">
@@ -21,23 +23,29 @@ const Hero = ({ handleClick }) => {
                 <br />
                 Bavimo se <span style={{ textTransform: `uppercase`, fontWeight: `bold` }}>svim vrstama osiguranja</span>, kao i organizacijom
                 <span style={{ textTransform: `uppercase`, fontWeight: `bold` }}> naplate štete </span>iz osiguranja.
+                <br />
+                <br />
+                Naša usluga je prema Vama u potpunosti <span style={{ textTransform: `uppercase`, fontWeight: `bold` }}>BESPLATNA</span> za polise i bez skrivenih troškova.
               </p>
             </blockquote>
-            <div className="d-flex" data-aos="fade-up" data-aos-delay="200">
-              <Link
-                className={classes['btn-get-started']}
+            <div className="d-xl-flex" data-aos="fade-up" data-aos-delay="200">
+              <button
+                className={classes.btn}
+                style={{ marginRight: `15px` }}
                 onClick={(e) => {
                   e.preventDefault();
                   const y = document.getElementById('contact').offsetTop;
                   window.scrollTo({ top: y - 180, behavior: 'smooth' });
                 }}
               >
-                Pošalji upit
-              </Link>
-              <Link alt="" className={`${classes['btn-watch-video']} d-flex align-items-center`} onClick={handleClick}>
-                <i className="bi bi-play-circle"></i>
+                <span>Pošalji upit</span>
+              </button>
+
+              <button className={`${classes.btn} mt-4 mt-xl-0`} onClick={handleClick}>
                 <span>Ko smo mi?</span>
-              </Link>
+                <i className="fa-regular fa-circle-play"></i>
+                <img src={click} alt="" className={classes.clickIcon} />
+              </button>
             </div>
           </div>
         </div>

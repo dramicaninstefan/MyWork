@@ -118,7 +118,7 @@ const NaplataStete = () => {
         <Features />
         <Counter image={image} />
         <FAQ data={faq} />
-        <ContactForm />
+        <ContactForm defaultValue={'Naplata štete'} />
         {/* <SteteForm /> */}
         <InfiniteLooper />
       </main>

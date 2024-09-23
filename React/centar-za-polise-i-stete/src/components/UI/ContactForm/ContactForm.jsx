@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 
 import classes from './ContactForm.module.css';
 
-const ContactForm = () => {
+const ContactForm = ({ defaultValue }) => {
   const submitBtn = useRef();
   const form = useRef();
 
@@ -14,7 +14,7 @@ const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const [email, setEmail] = useState('');
-  const [select, setSelect] = useState('');
+  const [select, setSelect] = useState(defaultValue ? defaultValue : '');
   const [message, setMessage] = useState('');
 
   const templateParams = {
@@ -151,7 +151,7 @@ const ContactForm = () => {
                           onChange={(e) => {
                             setSelect(e.target.value);
                           }}
-                          value={select}
+                          value={select ? select : defaultValue}
                           required
                         >
                           <option value=""></option>

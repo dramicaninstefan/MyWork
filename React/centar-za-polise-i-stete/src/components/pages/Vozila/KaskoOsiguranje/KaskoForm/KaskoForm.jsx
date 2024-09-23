@@ -322,7 +322,7 @@ const KaskoForm = () => {
               </div>
 
               <div className="col-12 ">
-                <button ref={submitBtn} type onClick={sendEmail} className={`${classes.bt} col-xl-2 col-md-12`} id="bt">
+                <button ref={submitBtn} onClick={sendEmail} className={`${classes.bt} col-xl-2 col-md-12`} id="bt">
                   <span className={classes.msg} id="msg"></span>
                   Pošalji zahtev
                 </button>
