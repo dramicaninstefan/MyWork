@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import { Link } from 'react-router-dom';
 
 import classes from './Hero.module.css';
 
@@ -7,7 +8,10 @@ import bgImage from '../../../assets/img/hero-bg.jpg';
 
 import click from '../../../assets/img/icon/click1.gif';
 
-const Hero = ({ handleClickVideo, handleClick }) => {
+const Hero = ({ handleClickVideo }) => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [hideContactForm, setHideContactForm] = useState(false);
+
   const submitBtn = useRef();
   const form = useRef();
 
@@ -63,6 +67,26 @@ const Hero = ({ handleClickVideo, handleClick }) => {
     }
   }
 
+  // changes id for from from contact to empty id
+  useEffect(() => {
+    // Function to update the screen width
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    // Add event listener to update width on window resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    screenWidth < 1200 ? setHideContactForm(true) : setHideContactForm(false);
+  }, [screenWidth]);
+
   return (
     <section id="hero" className={`${classes.hero} section dark-background`}>
       <img src={bgImage} className={classes.bgimage} alt="" data-aos="fade-in" />
@@ -84,18 +108,6 @@ const Hero = ({ handleClickVideo, handleClick }) => {
               </p>
             </blockquote>
             <div className="d-xl-flex" data-aos="fade-up" data-aos-delay="200">
-              {/* <button
-                className={classes.btn}
-                style={{ marginRight: `15px` }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  const y = document.getElementById('contact').offsetTop;
-                  window.scrollTo({ top: y - 180, behavior: 'smooth' });
-                }}
-              >
-                <span>Pošalji upit</span>
-              </button> */}
-
               <button className={`${classes.btn} mt-4 mt-xl-0`} onClick={handleClickVideo}>
                 <span>Ko smo mi?</span>
                 <i className="fa-regular fa-circle-play"></i>
@@ -105,10 +117,80 @@ const Hero = ({ handleClickVideo, handleClick }) => {
           </div>
         </div>
 
-        <div className="row gy-4 col-xl-7 pr-0 justify-content-center pl-xl-5 mt-3" data-aos="fade-up" data-aos-delay="200">
+        <div className={`${classes['icon-box-wrapper']} row gy-4 col-xl-7 pr-0 justify-content-center pl-xl-5 pt-5`} data-aos="fade-up" data-aos-delay="200">
+          <div className="section-title pb-0 pt-5">
+            <h2>Od nas dobijate:</h2>
+          </div>
+          <div className="col-xl-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div className={classes['icon-box']}>
+              <i className="fa-solid fa-file-circle-check pb-3"></i>
+              <h3>
+                <Link
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const y = document.getElementById('contact').offsetTop;
+                    window.scrollTo({ top: y - 180, behavior: 'smooth' });
+                  }}
+                >
+                  <b>Preko 25 </b> ponuda <br /> za osiguranje, bez "sitnih slova"!
+                </Link>
+              </h3>
+            </div>
+          </div>
+          <div className="col-xl-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div className={classes['icon-box']}>
+              <i className="fa-solid fa-handshake pb-3"></i>
+              <h3>
+                <Link
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const y = document.getElementById('contact').offsetTop;
+                    window.scrollTo({ top: y - 180, behavior: 'smooth' });
+                  }}
+                >
+                  <b>BESPLATNE PONUDE,</b> jer nas plaća osiguravajuća kuća kojoj donesemo posao.
+                </Link>
+              </h3>
+            </div>
+          </div>
+          <div className="col-xl-6 col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div className={classes['icon-box']}>
+              <i className="fa-solid fa-magnifying-glass pb-3"></i>
+              <h3>
+                <Link
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const y = document.getElementById('contact').offsetTop;
+                    window.scrollTo({ top: y - 180, behavior: 'smooth' });
+                  }}
+                >
+                  <b>UPOREDITE CENE</b> <br /> i dogovorite <b>polisu</b> osiguranja za sebe!
+                </Link>
+              </h3>
+            </div>
+          </div>
+          <div className="col-xl-6 col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div className={classes['icon-box']}>
+              <i className="fa-solid fa-comments-dollar pb-3"></i>
+              <h3>
+                <Link
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const y = document.getElementById('contact').offsetTop;
+                    window.scrollTo({ top: y - 180, behavior: 'smooth' });
+                  }}
+                >
+                  <b>NAPLATITE ŠTETU </b> <br /> od osiguranja - NAJBOLJA NAPLATA!
+                </Link>
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div className={`${classes['form-wrapper']} row gy-4 col-xl-7 pr-0 justify-content-center pl-xl-5 mt-3`} data-aos="fade-up" data-aos-delay="200">
           <div className="col-lg-12 wow fadeIn" data-aos="fade-left" data-wow-delay="0.5s">
             <div className="bg-white rounded p-5">
-              <form ref={form} className={classes.form} id="contact" action="https://formsubmit.co/gamer95.g@email.com" method="POST">
+              <form ref={form} className={classes.form} id={hideContactForm ? '' : 'contact'} action="https://formsubmit.co/gamer95.g@email.com" method="POST">
                 <div className="row g-3">
                   <div className="col-sm-6">
                     <div>
