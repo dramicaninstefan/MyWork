@@ -19,7 +19,7 @@ const Modal = ({ handleClick }) => {
         ></div>
         <div className={classes.modal}>
           <div className={classes.container} data-aos="fade-down">
-            <video id="vid" controls autoplay className={`${classes.video} rounded`}>
+            <video id="vid" controls autoplay className={`${classes.video} rounded`} controlsList="nodownload">
               <source src={video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
