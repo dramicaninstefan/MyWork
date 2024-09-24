@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 
 import classes from './Domacinstvo.module.css';
 
@@ -91,7 +91,9 @@ const faq = [
 ];
 
 const Domacinstvo = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Fragment>

@@ -44,7 +44,7 @@ const WhyUs = () => {
                     <div>
                       {/* <!-- <h4 className="d-none d-lg-block">Uštedećete vreme</h4> --> */}
                       <p>
-                        <b>Uštedećete vreme</b> - na tržištu osiguranja posluje preko deset osiguravajućih kuća. Odlaskom u sve osiguavajuće kuće, izgubićete vreme. A vreme je novac.
+                        <b>Uštedećete vreme</b> - na tržištu osiguranja posluje preko deset osiguravajućih kuća. Odlaskom u sve osiguavajuće kuće izgubićete vreme. A vreme je novac.
                       </p>
                     </div>
                   </Link>

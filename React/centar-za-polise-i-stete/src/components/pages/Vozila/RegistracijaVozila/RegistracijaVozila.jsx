@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 
 import classes from './RegistracijaVozila.module.css';
 
@@ -63,7 +63,9 @@ const faq = [
 ];
 
 const RegistracijaVozila = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Fragment>

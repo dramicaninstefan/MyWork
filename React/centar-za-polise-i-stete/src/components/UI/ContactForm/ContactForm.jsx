@@ -175,7 +175,7 @@ const ContactForm = ({ defaultValue }) => {
                         <textarea
                           className="form-control"
                           id="message"
-                          style={{ height: `180px` }}
+                          style={{ height: `100px` }}
                           onChange={(e) => {
                             setMessage(e.target.value);
                           }}

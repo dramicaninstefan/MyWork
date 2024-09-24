@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 
 import Hero from './Hero/Hero';
 import Features from './Features/Features';
@@ -109,7 +109,9 @@ const faq = [
 ];
 
 const NaplataStete = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Fragment>

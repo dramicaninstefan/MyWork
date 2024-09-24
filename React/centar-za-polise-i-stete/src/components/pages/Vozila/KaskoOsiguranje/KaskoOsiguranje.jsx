@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 
 import Hero from './Hero/Hero';
 
@@ -168,7 +168,9 @@ const faq = [
 ];
 
 const KaskoOsiguranje = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const [isClicked, setIsClicked] = useState(false);
 

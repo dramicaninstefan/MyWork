@@ -1,10 +1,12 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import classes from './ErrorPage.module.css';
 
 const ErrorPage = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Fragment>

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
-// import classes from './AboutUs.module.css';
+import classes from './AboutUs.module.css';
 
 import aboutImg from '../../../assets/img/about.jpg';
 import icon1 from '../../../assets/img/icon/icon-04-primary.png';
@@ -70,6 +71,100 @@ const AboutUs = () => {
                       <i className="bi bi-envelope" style="font-size: 20px; color: #fff;"></i>
                     </div>
                   </div> --> */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="services" className={`${classes.services} section`}>
+            <div className="container section-title pb-5" data-aos="fade-up">
+              <h2>Od nas dobijate:</h2>
+            </div>
+
+            <div className="container">
+              <div className="row gy-4">
+                <div className="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
+                  <div className={`${classes['service-item']} d-flex`}>
+                    <div className={`${classes.icon} flex-shrink-0`}>
+                      <i className="fa-solid fa-file-circle-check pb-3"></i>
+                    </div>
+                    <div>
+                      <h4 className={classes.title}>
+                        <Link
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const y = document.getElementById('contact').offsetTop;
+                            window.scrollTo({ top: y - 180, behavior: 'smooth' });
+                          }}
+                        >
+                          <b>Preko 25 </b> ponuda <br /> za osiguranje, bez "sitnih slova"!
+                        </Link>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-lg-6 " data-aos="fade-up" data-aos-delay="200">
+                  <div className={`${classes['service-item']} d-flex`}>
+                    <div className={`${classes.icon} flex-shrink-0`}>
+                      <i className="fa-solid fa-handshake pb-3"></i>
+                    </div>
+                    <div>
+                      <h4 className={classes.title}>
+                        <Link
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const y = document.getElementById('contact').offsetTop;
+                            window.scrollTo({ top: y - 180, behavior: 'smooth' });
+                          }}
+                        >
+                          <b>BESPLATNE PONUDE,</b> jer nas plaća osiguravajuća kuća kojoj donesemo posao.
+                        </Link>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-lg-6 " data-aos="fade-up" data-aos-delay="300">
+                  <div className={`${classes['service-item']} d-flex`}>
+                    <div className={`${classes.icon} flex-shrink-0`}>
+                      <i className="fa-solid fa-magnifying-glass pb-3"></i>
+                    </div>
+                    <div>
+                      <h4 className={classes.title}>
+                        <Link
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const y = document.getElementById('contact').offsetTop;
+                            window.scrollTo({ top: y - 180, behavior: 'smooth' });
+                          }}
+                        >
+                          <b>UPOREDITE CENE</b> <br /> i dogovorite <b>polisu</b> osiguranja za sebe!
+                        </Link>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-lg-6 " data-aos="fade-up" data-aos-delay="400">
+                  <div className={`${classes['service-item']} d-flex`}>
+                    <div className={`${classes.icon} flex-shrink-0`}>
+                      <i className="fa-solid fa-comments-dollar pb-3"></i>
+                    </div>
+                    <div>
+                      <h4 className={classes.title}>
+                        <Link
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const y = document.getElementById('contact').offsetTop;
+                            window.scrollTo({ top: y - 180, behavior: 'smooth' });
+                          }}
+                        >
+                          <b>NAPLATITE ŠTETU </b> <br /> od osiguranja - NAJBOLJA NAPLATA!
+                        </Link>
+                      </h4>
+                    </div>
                   </div>
                 </div>
               </div>

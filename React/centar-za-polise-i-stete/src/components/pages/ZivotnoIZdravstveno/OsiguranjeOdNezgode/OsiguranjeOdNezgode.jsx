@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 
 import classes from './OsiguranjeOdNezgode.module.css';
 
@@ -32,7 +32,9 @@ const faq = [
 ];
 
 const OsiguranjeOdNezgode = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Fragment>

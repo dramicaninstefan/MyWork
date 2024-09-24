@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 
 import Hero from './Hero/Hero';
 import AboutUs from '../../HomePage/AboutUs/AboutUs';
@@ -11,7 +11,9 @@ import Modal from '../../UI/Modal/Modal';
 // import bgImage from '../../../assets/img/team-page-title-bg.jpg';
 
 const AboutUsPage = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const [isClicked, setIsClicked] = useState(false);
 

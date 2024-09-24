@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 
 import Hero from './Hero/Hero.jsx';
 import AboutUs from './AboutUs/AboutUs.jsx';
@@ -15,7 +15,9 @@ import ModalVideo from '../UI/ModalVideo/Modal.jsx';
 import ModalButton from '../UI/Modal/ModalButton/ModalButton.jsx';
 
 const HomePage = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const [isClicked, setIsClicked] = useState(false);
   const [isClickedVideo, setIsClickedVideo] = useState(false);
@@ -31,10 +33,9 @@ const HomePage = () => {
   return (
     <Fragment>
       <main className="main">
-        <Hero handleClick={handleIsClickedVideo} />
-        {/* <Hero handleClick={handleIsClicked} /> */}
-        <AboutUs />
+        <Hero handleClickVideo={handleIsClickedVideo} handleClick={handleIsClicked} />
         <ModalButton handleClick={handleIsClicked} />
+        <AboutUs />
         {/* <Counter /> */}
         <InfiniteLooper />
         <WhyUs />
