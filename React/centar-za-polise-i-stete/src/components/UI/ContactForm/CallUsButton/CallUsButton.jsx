@@ -5,7 +5,7 @@ import classes from './CallUsButton.module.css';
 const CallUsButton = () => {
   return (
     <Fragment>
-      <a href="tel:+381608060001" className={classes.callUsBtn}>
+      <a href="tel:+381608060001" id="phone-link" className={classes.callUsBtn}>
         <div className={classes.circle}>
           <i className="fa-solid fa-phone"></i>
         </div>

@@ -3,8 +3,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import './App.css';
-
 import HomePage from './components/HomePage/HomePage';
 
 import KoSmoMi from './components/pages/AboutUsPage/AboutUsPage.jsx';
@@ -27,6 +25,7 @@ import NaplataStete from './components/pages/NaplataStete/NaplataStete';
 import RootLayout from './components/routes/RootLayout';
 import ErrorPage from './components/routes/ErrorPage';
 import PolitikaPrivatnosti from './components/routes/PolitikaPrivatnosti';
+import ThankYouPage from './components/pages/ThankYouPage/ThankYouPage';
 
 import Preloader from './components/UI/Preloader/Preloader.jsx';
 
@@ -74,6 +73,7 @@ function App() {
         { path: '/naplata-naknada-stete', element: <NaplataStete /> },
 
         { path: '/politika-privatnosti', element: <PolitikaPrivatnosti /> },
+        { path: '/hvala-vam', element: <ThankYouPage /> },
       ],
     },
   ]);

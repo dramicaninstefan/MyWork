@@ -5,7 +5,8 @@ import Footer from '../Layout/Footer/Footer';
 import Header from '../Layout/Header/Header';
 import ToTopButton from '../UI/ToTopButton/ToTopButton';
 import ContactFormButton from '../UI/ContactForm/ContactFormButton/ContactFormButton';
-import CallUsButton from '../UI/ContactForm/CallUsButton/CallUsButton';
+import CookieConsent from '../UI/CookieConsent/CookieConsent';
+// import CallUsButton from '../UI/ContactForm/CallUsButton/CallUsButton';
 
 const RootLayout = () => {
   return (
@@ -14,7 +15,8 @@ const RootLayout = () => {
       <Outlet />
       <Footer />
       <ToTopButton />
-      <CallUsButton />
+      {/* <CallUsButton /> */}
+      <CookieConsent />
       <ContactFormButton />
     </Fragment>
   );

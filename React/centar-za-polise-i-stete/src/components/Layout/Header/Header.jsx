@@ -39,6 +39,7 @@ const Header = () => {
       // location.pathname === '/dobrovoljno-zdravstveno-osiguranje' ||
       // location.pathname === '/osiguranje-od-nezgode' ||
       // location.pathname === '/osiguranje-domacinstva' ||
+      location.pathname === '/hvala-vam' ||
       location.pathname === '/politika-privatnosti'
     ) {
       setPathname(true);

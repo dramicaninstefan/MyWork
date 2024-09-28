@@ -10,6 +10,7 @@ import Swiper from './Swiper/Swiper.jsx';
 import InfiniteLooper from '../UI/InfiniteLooper/InfiniteLooper.jsx';
 
 import Modal from '../UI/Modal/Modal.jsx';
+import ModalThankYou from '../UI/ModalThankYou/Modal.jsx';
 import ModalVideo from '../UI/ModalVideo/Modal.jsx';
 
 import ModalButton from '../UI/Modal/ModalButton/ModalButton.jsx';
@@ -21,6 +22,7 @@ const HomePage = () => {
 
   const [isClicked, setIsClicked] = useState(false);
   const [isClickedVideo, setIsClickedVideo] = useState(false);
+  const [isClickedThankYou, setIsClickedThankYou] = useState(false);
 
   const handleIsClicked = () => {
     setIsClicked((current) => !current);
@@ -30,10 +32,14 @@ const HomePage = () => {
     setIsClickedVideo((current) => !current);
   };
 
+  const handleIsClickedThankYou = () => {
+    setIsClickedThankYou((current) => !current);
+  };
+
   return (
     <Fragment>
       <main className="main">
-        <Hero handleClickVideo={handleIsClickedVideo} handleClick={handleIsClicked} />
+        <Hero handleClickVideo={handleIsClickedVideo} handleClickThankYou={handleIsClickedThankYou} handleClick={handleIsClicked} />
         <ModalButton handleClick={handleIsClicked} />
         <AboutUs />
         {/* <Counter /> */}
@@ -43,8 +49,9 @@ const HomePage = () => {
         <ContactForm />
         <Swiper />
 
-        {isClickedVideo ? <ModalVideo handleClick={handleIsClickedVideo} /> : ``}
         {isClicked ? <Modal handleClick={handleIsClicked} /> : ``}
+        {isClickedVideo ? <ModalVideo handleClick={handleIsClickedVideo} /> : ``}
+        {isClickedThankYou ? <ModalThankYou handleClick={handleIsClickedThankYou} /> : ``}
       </main>
     </Fragment>
   );

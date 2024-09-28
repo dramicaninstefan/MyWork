@@ -8,7 +8,7 @@ import bgImage from '../../../assets/img/hero-bg.jpg';
 
 import click from '../../../assets/img/icon/click1.gif';
 
-const Hero = ({ handleClickVideo }) => {
+const Hero = ({ handleClickVideo, handleClickThankYou }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [hideContactForm, setHideContactForm] = useState(false);
 
@@ -43,7 +43,7 @@ const Hero = ({ handleClickVideo }) => {
         })
         .then(
           (response) => {
-            setSuccessMsg(true);
+            handleClickThankYou();
             setName('');
             setNumber('');
             setEmail('');
@@ -192,6 +192,8 @@ const Hero = ({ handleClickVideo }) => {
             <div className="bg-white rounded p-5">
               <form ref={form} className={classes.form} id={hideContactForm ? '' : 'contact'} action="https://formsubmit.co/gamer95.g@email.com" method="POST">
                 <div className="row g-3">
+                  <h2 style={{ color: `#254160`, fontStyle: `italic` }}>Pošaljite upit za konsultaciju</h2>
+
                   <div className="col-sm-6">
                     <div>
                       <label htmlFor="gname">
