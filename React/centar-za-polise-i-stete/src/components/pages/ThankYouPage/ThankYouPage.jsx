@@ -1,9 +1,17 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 
 import classes from './ThankYouPage.module.css';
 import { Link } from 'react-router-dom';
 
 const ThankYou = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant',
+    });
+  }, []);
+
   return (
     <Fragment>
       <div className={classes.wrapper}>

@@ -1,7 +1,10 @@
 import { Fragment, useEffect, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
+// import TagManager from 'react-gtm-module';
 
 import HomePage from './components/HomePage/HomePage';
 
@@ -30,6 +33,13 @@ import ThankYouPage from './components/pages/ThankYouPage/ThankYouPage';
 import Preloader from './components/UI/Preloader/Preloader.jsx';
 
 function App() {
+  // useEffect(() => {
+  //   const tagManagerArgs = {
+  //     gtmId: 'GTM-T43GWMP4',
+  //   };
+  //   TagManager.initialize(tagManagerArgs);
+  // }, []);
+
   // Implement AOS for bootstrap animations
   useEffect(() => {
     AOS.init();

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import classes from './Hero.module.css';
 
@@ -9,6 +9,12 @@ import bgImage from '../../../assets/img/hero-bg.jpg';
 import click from '../../../assets/img/icon/click1.gif';
 
 const Hero = ({ handleClickVideo, handleClickThankYou }) => {
+  // redirect to /hvala-vam page
+  const navigate = useNavigate();
+  const handleRedirectTo = () => {
+    navigate('/hvala-vam');
+  };
+
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [hideContactForm, setHideContactForm] = useState(false);
 
@@ -18,6 +24,7 @@ const Hero = ({ handleClickVideo, handleClickThankYou }) => {
   const [successMsg, setSuccessMsg] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
   const [alertMsg, setAlertMsg] = useState(false);
+  const [alertPhoneMsg, setAlertPhoneMsg] = useState(false);
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -36,28 +43,40 @@ const Hero = ({ handleClickVideo, handleClickThankYou }) => {
   function sendEmail(e) {
     e.preventDefault();
 
-    if (name !== '' && number !== '' && select !== '' && message !== '') {
-      emailjs
-        .send('service_0ee562d', 'template_l23rpm9', templateParams, {
-          publicKey: '_TykGN5dKmnTuxu5y',
-        })
-        .then(
-          (response) => {
-            handleClickThankYou();
-            setName('');
-            setNumber('');
-            setEmail('');
-            setSelect('');
-            setMessage('');
+    var regex = /[^0-9]/g;
 
-            setTimeout(() => {
-              setSuccessMsg(false);
-            }, 3000);
-          },
-          (err) => {
-            setErrorMsg(true);
-          }
-        );
+    if (name !== '' && number !== '' && select !== '' && message !== '') {
+      if (!regex.test(number)) {
+        emailjs
+          .send('service_0ee562d', 'template_l23rpm9', templateParams, {
+            publicKey: '_TykGN5dKmnTuxu5y',
+          })
+          .then(
+            (response) => {
+              handleRedirectTo();
+              // handleClickThankYou();
+              setSuccessMsg(true);
+              setName('');
+              setNumber('');
+              setEmail('');
+              setSelect('');
+              setMessage('');
+
+              setTimeout(() => {
+                setSuccessMsg(false);
+              }, 3000);
+            },
+            (err) => {
+              setErrorMsg(true);
+            }
+          );
+      } else {
+        setAlertPhoneMsg(true);
+
+        setTimeout(() => {
+          setAlertPhoneMsg(false);
+        }, 3000);
+      }
     } else {
       setAlertMsg(true);
 
@@ -298,6 +317,7 @@ const Hero = ({ handleClickVideo, handleClickThankYou }) => {
                   {successMsg ? <div className={classes.success}>Uspesno ste poslali podatke!</div> : null}
                   {errorMsg ? <div className={classes.error}>Došlo je do greške!</div> : null}
                   {alertMsg ? <div className={classes.alert}>Molim Vas popunite obavezna polja! *</div> : null}
+                  {alertPhoneMsg ? <div className={classes.alert}>Molim Vas unesite ispravan broj telefona!</div> : null}
                 </div>
               </form>
             </div>

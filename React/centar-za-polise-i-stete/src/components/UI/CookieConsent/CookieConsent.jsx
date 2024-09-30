@@ -16,6 +16,11 @@ const CookieConsent = () => {
     setCookie('localConsent', 'true', {});
   };
 
+  const declineCookie = () => {
+    setShowConsent(true);
+    setCookie('localConsent', 'false', {});
+  };
+
   if (showConsent) {
     return null;
   }
@@ -29,14 +34,26 @@ const CookieConsent = () => {
           <Link to="/politika-privatnosti">Politika privatnosti</Link>
         </span>
 
-        <button
-          className="bg-white text-dark py-2 px-5 rounded"
-          onClick={() => {
-            acceptCookie();
-          }}
-        >
-          Dozvoli
-        </button>
+        <div>
+          <button
+            style={{ width: `100%` }}
+            className=" btn btn-light py-2 px-5 rounded mb-3"
+            onClick={() => {
+              acceptCookie();
+            }}
+          >
+            Dozvoli
+          </button>
+          <button
+            style={{ width: `100%` }}
+            className="btn btn-outline-light py-2 px-5 rounded"
+            onClick={() => {
+              declineCookie();
+            }}
+          >
+            Odbij
+          </button>
+        </div>
       </div>
     </div>
   );

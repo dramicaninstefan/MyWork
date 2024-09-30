@@ -1,15 +1,23 @@
 import React, { Fragment, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 
 import classes from './ContactForm.module.css';
 
 const ContactForm = ({ defaultValue }) => {
+  // redirect to /hvala-vam page
+  const navigate = useNavigate();
+  const handleRedirectTo = () => {
+    navigate('/hvala-vam');
+  };
+
   const submitBtn = useRef();
   const form = useRef();
 
   const [successMsg, setSuccessMsg] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
   const [alertMsg, setAlertMsg] = useState(false);
+  const [alertPhoneMsg, setAlertPhoneMsg] = useState(false);
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -28,28 +36,39 @@ const ContactForm = ({ defaultValue }) => {
   function sendEmail(e) {
     e.preventDefault();
 
-    if (name !== '' && number !== '' && select !== '' && message !== '') {
-      emailjs
-        .send('service_0ee562d', 'template_l23rpm9', templateParams, {
-          publicKey: '_TykGN5dKmnTuxu5y',
-        })
-        .then(
-          (response) => {
-            setSuccessMsg(true);
-            setName('');
-            setNumber('');
-            setEmail('');
-            setSelect('');
-            setMessage('');
+    var regex = /[^0-9]/g;
 
-            setTimeout(() => {
-              setSuccessMsg(false);
-            }, 3000);
-          },
-          (err) => {
-            setErrorMsg(true);
-          }
-        );
+    if (name !== '' && number !== '' && select !== '' && message !== '') {
+      if (!regex.test(number)) {
+        emailjs
+          .send('service_0ee562d', 'template_l23rpm9', templateParams, {
+            publicKey: '_TykGN5dKmnTuxu5y',
+          })
+          .then(
+            (response) => {
+              handleRedirectTo();
+              setSuccessMsg(true);
+              setName('');
+              setNumber('');
+              setEmail('');
+              setSelect('');
+              setMessage('');
+
+              setTimeout(() => {
+                setSuccessMsg(false);
+              }, 3000);
+            },
+            (err) => {
+              setErrorMsg(true);
+            }
+          );
+      } else {
+        setAlertPhoneMsg(true);
+
+        setTimeout(() => {
+          setAlertPhoneMsg(false);
+        }, 3000);
+      }
     } else {
       setAlertMsg(true);
 
@@ -112,7 +131,7 @@ const ContactForm = ({ defaultValue }) => {
                           Broj telefona <span className="text-danger">*</span>
                         </label>
                         <input
-                          type="text"
+                          type="tel"
                           className="form-control"
                           id="cname"
                           onChange={(e) => {
@@ -193,6 +212,7 @@ const ContactForm = ({ defaultValue }) => {
                     {successMsg ? <div className={classes.success}>Uspesno ste poslali podatke!</div> : null}
                     {errorMsg ? <div className={classes.error}>Došlo je do greške!</div> : null}
                     {alertMsg ? <div className={classes.alert}>Molim Vas popunite obavezna polja! *</div> : null}
+                    {alertPhoneMsg ? <div className={classes.alert}>Molim Vas unesite ispravan broj telefona!</div> : null}
                   </div>
                 </form>
               </div>
