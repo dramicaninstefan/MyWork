@@ -5,7 +5,7 @@ import classes from './PomocNaPutu.module.css';
 import ContactForm from '../../../UI/ContactForm/ContactForm';
 import FAQ from '../../../UI/FAQ/FAQ';
 
-import bgImage from '../../../../assets/img/pomocnaputu-hero-bg.png';
+import bgImage from '../../../../assets/img/pomocnaputu-hero-bg.jpg';
 
 const faq = [
   {

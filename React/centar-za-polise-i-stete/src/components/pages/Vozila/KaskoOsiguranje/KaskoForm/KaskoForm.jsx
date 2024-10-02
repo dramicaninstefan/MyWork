@@ -1,16 +1,24 @@
 import { Fragment, useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import classes from './KaskoForm.module.css';
 
 const KaskoForm = () => {
+  // redirect to /hvala-vam page
+  const navigate = useNavigate();
+  const handleRedirectTo = () => {
+    navigate('/hvala-vam');
+  };
+
   const submitBtn = useRef();
   const form = useRef();
 
   const [successMsg, setSuccessMsg] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
   const [alertMsg, setAlertMsg] = useState(false);
+  const [alertPhoneMsg, setAlertPhoneMsg] = useState(false);
+  const [alertSaglasanMsg, setSaglasanMsg] = useState(false);
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -47,37 +55,56 @@ const KaskoForm = () => {
   function sendEmail(e) {
     e.preventDefault();
 
-    if (name !== '' && number !== '' && address !== '' && place !== '' && mark !== '' && type !== '' && power !== '' && zapremina !== '' && year !== '' && mValue !== '' && saglasan !== false) {
-      emailjs
-        .send('service_90anb7y', 'template_9yiiwdf', templateParams, {
-          publicKey: '_TykGN5dKmnTuxu5y',
-        })
-        .then(
-          (response) => {
-            setSuccessMsg(true);
-            setName('');
-            setNumber('');
-            setEmail('');
-            setAddress('');
-            setPlace('');
+    var regex = /[^0-9]/g;
 
-            setMark('');
-            setType('');
-            setPower('');
-            setZapremina('');
-            setYear('');
-            setMValue('');
+    if (name !== '' && number !== '' && address !== '' && place !== '' && mark !== '' && type !== '' && power !== '' && zapremina !== '' && year !== '' && mValue !== '') {
+      if (!regex.test(number)) {
+        if (saglasan) {
+          emailjs
+            .send('service_90anb7y', 'template_9yiiwdf', templateParams, {
+              publicKey: '_TykGN5dKmnTuxu5y',
+            })
+            .then(
+              (response) => {
+                handleRedirectTo();
+                setSuccessMsg(true);
+                setName('');
+                setNumber('');
+                setEmail('');
+                setAddress('');
+                setPlace('');
 
-            setSaglasan(false);
+                setMark('');
+                setType('');
+                setPower('');
+                setZapremina('');
+                setYear('');
+                setMValue('');
 
-            setTimeout(() => {
-              setSuccessMsg(false);
-            }, 3000);
-          },
-          (err) => {
-            setErrorMsg(true);
-          }
-        );
+                setSaglasan(false);
+
+                setTimeout(() => {
+                  setSuccessMsg(false);
+                }, 3000);
+              },
+              (err) => {
+                setErrorMsg(true);
+              }
+            );
+        } else {
+          setSaglasanMsg(true);
+
+          setTimeout(() => {
+            setSaglasanMsg(false);
+          }, 3000);
+        }
+      } else {
+        setAlertPhoneMsg(true);
+
+        setTimeout(() => {
+          setAlertPhoneMsg(false);
+        }, 3000);
+      }
     } else {
       setAlertMsg(true);
 
@@ -330,6 +357,8 @@ const KaskoForm = () => {
               {successMsg ? <div className={classes.success}>Uspesno ste poslali podatke!</div> : null}
               {errorMsg ? <div className={classes.error}>Došlo je do greške!</div> : null}
               {alertMsg ? <div className={classes.alert}>Molim Vas popunite obavezna polja! *</div> : null}
+              {alertPhoneMsg ? <div className={classes.alert}>Molim Vas unesite ispravan broj telefona!</div> : null}
+              {alertSaglasanMsg ? <div className={classes.alert}>Molimo Vas da potvrdite Vašu saglasnost.</div> : null}
             </form>
           </div>
         </div>
