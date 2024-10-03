@@ -40,6 +40,7 @@ const Header = () => {
       // location.pathname === '/osiguranje-od-nezgode' ||
       // location.pathname === '/osiguranje-domacinstva' ||
       location.pathname === '/hvala-vam' ||
+      location.pathname === '/zasto-mi' ||
       location.pathname === '/politika-privatnosti'
     ) {
       setPathname(true);

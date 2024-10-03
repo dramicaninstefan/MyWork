@@ -29,6 +29,7 @@ import RootLayout from './components/routes/RootLayout';
 import ErrorPage from './components/routes/ErrorPage';
 import PolitikaPrivatnosti from './components/routes/PolitikaPrivatnosti';
 import ThankYouPage from './components/pages/ThankYouPage/ThankYouPage';
+import WhyUsPage from './components/pages/WhyUsPage/WhyUsPage';
 
 import Preloader from './components/UI/Preloader/Preloader.jsx';
 
@@ -84,6 +85,7 @@ function App() {
 
         { path: '/politika-privatnosti', element: <PolitikaPrivatnosti /> },
         { path: '/hvala-vam', element: <ThankYouPage /> },
+        { path: '/zasto-mi', element: <WhyUsPage /> },
       ],
     },
   ]);
