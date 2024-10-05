@@ -134,11 +134,6 @@ const KaskoFormPage = () => {
       <div className={`container my-5`} id="contact" data-aos="fade-up">
         <div className={`${classes['kasko-form-wrapper']} rounded`}>
           <div className={`${classes['kasko-form']}`}>
-            <div className="btn btn-primary conitainer d-flex justify-content-center mb-5">
-              <Link to="/" className="text-white">
-                Vrati se na početnu stranu
-              </Link>
-            </div>
             <form className="row" ref={form} action="https://formsubmit.co/gamer95.g@email.com" method="POST">
               <div className="col-12 section-title">
                 <h2 style={{ fontWeight: `bold` }}>
