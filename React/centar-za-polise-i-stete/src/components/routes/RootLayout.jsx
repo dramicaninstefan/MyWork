@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { Fragment, useState, useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 
 import Footer from '../Layout/Footer/Footer';
 import Header from '../Layout/Header/Header';
@@ -9,11 +9,24 @@ import CookieConsent from '../UI/CookieConsent/CookieConsent';
 // import CallUsButton from '../UI/ContactForm/CallUsButton/CallUsButton';
 
 const RootLayout = () => {
+  const location = useLocation(); // location.pathName
+  const [pahtname, setPathname] = useState(false); //pathname
+
+  useEffect(() => {
+    // Change header bg color on different endpoints
+    if (location.pathname === '/kasko-forma') {
+      setPathname(false);
+    } else {
+      setPathname(true);
+    }
+  }, [location.pathname]);
   return (
     <Fragment>
-      <Header />
+      {pahtname ? <Header /> : undefined}
+      {/* <Header /> */}
       <Outlet />
-      <Footer />
+      {pahtname ? <Footer /> : undefined}
+      {/* <Footer /> */}
       <ToTopButton />
       {/* <CallUsButton /> */}
       <CookieConsent />

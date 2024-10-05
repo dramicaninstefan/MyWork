@@ -2,9 +2,9 @@ import { Fragment, useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Link, useNavigate } from 'react-router-dom';
 
-import classes from './KaskoForm.module.css';
+import classes from './KaskoFormPage.module.css';
 
-const KaskoForm = () => {
+const KaskoFormPage = () => {
   // redirect to /hvala-vam page
   const navigate = useNavigate();
   const handleRedirectTo = () => {
@@ -19,7 +19,7 @@ const KaskoForm = () => {
   const [alertMsg, setAlertMsg] = useState(false);
   const [alertPhoneMsg, setAlertPhoneMsg] = useState(false);
   const [alertSaglasanMsg, setAlertSaglasanMsg] = useState(false);
-  // const [alertJMBGMsg, setAlertJMBGMsg] = useState(false);
+  const [alertJMBGMsg, setAlertJMBGMsg] = useState(false);
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -62,57 +62,57 @@ const KaskoForm = () => {
 
     var regex = /[^0-9]/g;
 
-    if (name !== '' && number !== '' && address !== '' && place !== '' && mark !== '' && type !== '' && power !== '' && zapremina !== '' && year !== '' && mValue !== '') {
+    if (name !== '' && number !== '' && address !== '' && place !== '' && mark !== '' && type !== '' && power !== '' && zapremina !== '' && year !== '' && mValue !== '' && JMBG !== '') {
       if (!regex.test(number)) {
-        // if (JMBG.length === 13) {
-        if (saglasan) {
-          emailjs
-            .send('service_90anb7y', 'template_9yiiwdf', templateParams, {
-              publicKey: '_TykGN5dKmnTuxu5y',
-            })
-            .then(
-              (response) => {
-                handleRedirectTo();
-                setSuccessMsg(true);
-                setName('');
-                setNumber('');
-                setEmail('');
-                setAddress('');
-                setPlace('');
-                setLinkPA('');
-                setJMBG('');
+        if (JMBG.length === 13) {
+          if (saglasan) {
+            emailjs
+              .send('service_90anb7y', 'template_9yiiwdf', templateParams, {
+                publicKey: '_TykGN5dKmnTuxu5y',
+              })
+              .then(
+                (response) => {
+                  handleRedirectTo();
+                  setSuccessMsg(true);
+                  setName('');
+                  setNumber('');
+                  setEmail('');
+                  setAddress('');
+                  setPlace('');
+                  setLinkPA('');
+                  setJMBG('');
 
-                setMark('');
-                setType('');
-                setPower('');
-                setZapremina('');
-                setYear('');
-                setMValue('');
+                  setMark('');
+                  setType('');
+                  setPower('');
+                  setZapremina('');
+                  setYear('');
+                  setMValue('');
 
-                setSaglasan(false);
+                  setSaglasan(false);
 
-                setTimeout(() => {
-                  setSuccessMsg(false);
-                }, 3000);
-              },
-              (err) => {
-                setErrorMsg(true);
-              }
-            );
+                  setTimeout(() => {
+                    setSuccessMsg(false);
+                  }, 3000);
+                },
+                (err) => {
+                  setErrorMsg(true);
+                }
+              );
+          } else {
+            setAlertSaglasanMsg(true);
+
+            setTimeout(() => {
+              setAlertSaglasanMsg(false);
+            }, 3000);
+          }
         } else {
-          setAlertSaglasanMsg(true);
+          setAlertJMBGMsg(true);
 
           setTimeout(() => {
-            setAlertSaglasanMsg(false);
+            setAlertJMBGMsg(false);
           }, 3000);
         }
-        // } else {
-        //   setAlertJMBGMsg(true);
-
-        //   setTimeout(() => {
-        //     setAlertJMBGMsg(false);
-        //   }, 3000);
-        // }
       } else {
         setAlertPhoneMsg(true);
 
@@ -131,9 +131,14 @@ const KaskoForm = () => {
 
   return (
     <Fragment>
-      <div className={` container`} id="contact" data-aos="fade-up">
+      <div className={`container my-5`} id="contact" data-aos="fade-up">
         <div className={`${classes['kasko-form-wrapper']} rounded`}>
           <div className={`${classes['kasko-form']}`}>
+            <div className="btn btn-primary conitainer d-flex justify-content-center mb-5">
+              <Link to="/" className="text-white">
+                Vrati se na početnu stranu
+              </Link>
+            </div>
             <form className="row" ref={form} action="https://formsubmit.co/gamer95.g@email.com" method="POST">
               <div className="col-12 section-title">
                 <h2 style={{ fontWeight: `bold` }}>
@@ -201,12 +206,21 @@ const KaskoForm = () => {
                   </div>
                 </div>
                 <div className="row col-12">
-                  {/* <div className="form-group col-xl-4 col-md-12">
+                  <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputJMBG">
                       JMBG <span>*</span>
                     </label>
-                    <input type="text" className="form-control" id="InputJMBG" required />
-                  </div> */}
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="InputJMBG"
+                      onChange={(e) => {
+                        setJMBG(e.target.value);
+                      }}
+                      value={JMBG}
+                      required
+                    />
+                  </div>
                   <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputNumber">
                       Telefon <span>*</span>
@@ -358,6 +372,7 @@ const KaskoForm = () => {
                     />
                   </div>
                 </div>
+
                 <div className="col-12 py-5">
                   <div className="form-group form-check ">
                     <input
@@ -389,7 +404,7 @@ const KaskoForm = () => {
               {errorMsg ? <div className={classes.error}>Došlo je do greške!</div> : null}
               {alertMsg ? <div className={classes.alert}>Molim Vas popunite obavezna polja! *</div> : null}
               {alertPhoneMsg ? <div className={classes.alert}>Molim Vas unesite ispravan broj telefona!</div> : null}
-              {/* {alertJMBGMsg ? <div className={classes.alert}>JMBG mora imati 13 cifara.</div> : null} */}
+              {alertJMBGMsg ? <div className={classes.alert}>JMBG mora imati 13 cifara.</div> : null}
               {alertSaglasanMsg ? <div className={classes.alert}>Molimo Vas da potvrdite Vašu saglasnost.</div> : null}
             </form>
           </div>
@@ -399,4 +414,4 @@ const KaskoForm = () => {
   );
 };
 
-export default KaskoForm;
+export default KaskoFormPage;
