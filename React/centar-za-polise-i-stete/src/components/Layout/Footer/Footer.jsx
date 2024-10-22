@@ -63,9 +63,6 @@ const Footer = () => {
             </div>
             <div className="col-lg-4 col-md-6">
               <h5 className="text-light mb-4">Linkovi</h5>
-              <Link className="btn btn-link" to="/ko-smo-mi">
-                Naš tim
-              </Link>
               <Link className="btn btn-link" to="/kasko-osiguranje-vozila">
                 Kasko osiguranje
               </Link>
@@ -74,6 +71,12 @@ const Footer = () => {
               </Link>
               <Link className="btn btn-link" to="/putno-osiguranje">
                 Putno osiguranje
+              </Link>
+              <Link className="btn btn-link" to="/nas-tim">
+                Naš tim
+              </Link>
+              <Link className="btn btn-link" to="/zasto-mi">
+                Zašto mi?
               </Link>
               <Link className="btn btn-link" to="/politika-privatnosti">
                 Politika privatnosti

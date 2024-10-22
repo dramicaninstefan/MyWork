@@ -17,8 +17,7 @@ const ModalButton = ({ handleClick }) => {
         <span className={classes['button_lg']}>
           <span className={classes['button_sl']}></span>
           <span className={classes['button_text']}>
-            Zašto je bolje zaključiti osiguranje preko zastupnika, nego direktno preko osiguravajuće kuće?
-            <br />
+            <p>Zašto je bolje zaključiti osiguranje preko zastupnika, nego direktno preko osiguravajuće kuće?</p>
             <small style={{ fontWeight: `bold`, textTransform: `none`, fontSize: `17px` }}>
               Saznajte više <i className="fa-solid fa-caret-right"></i>
             </small>

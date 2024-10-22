@@ -14,6 +14,16 @@ const Modal = ({ handleClick }) => {
         ></div>
         <div className={classes.modal}>
           <div className={classes.container} data-aos="fade-down">
+            <button
+              id={classes.btn}
+              className="btn btn-light"
+              style={{ border: `1px solid black`, fontWeight: `bold` }}
+              onClick={(e) => {
+                handleClick();
+              }}
+            >
+              X
+            </button>
             <div className={classes.nav}>
               <h3>Zašto je bolje zaključiti osiguranje preko zastupnika, nego direktno preko osiguravajuće kuće?</h3>
             </div>

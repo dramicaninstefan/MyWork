@@ -25,10 +25,10 @@ const AboutUsPage = () => {
     <Fragment>
       <main className="main">
         <Hero />
-        <AboutUs />
-        <ModalButton handleClick={handleIsClicked} />
         <Team />
         <ContactForm />
+        <ModalButton handleClick={handleIsClicked} />
+        <AboutUs />
 
         {isClicked ? <Modal handleClick={handleIsClicked} /> : undefined}
       </main>

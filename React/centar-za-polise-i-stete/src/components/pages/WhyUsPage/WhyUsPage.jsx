@@ -1,8 +1,12 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 
 import classes from './WhyUsPage.module.css';
 
 const WhyUsPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Fragment>
       <div className={`${classes.modal} container`}>

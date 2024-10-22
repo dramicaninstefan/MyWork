@@ -73,7 +73,7 @@ function App() {
       errorElement: <ErrorPage />,
       children: [
         { path: '/', element: <HomePage /> },
-        { path: '/ko-smo-mi', element: <KoSmoMi /> },
+        { path: '/nas-tim', element: <KoSmoMi /> },
         { path: '/kasko-osiguranje-vozila', element: <KaskoOsiguranje /> },
         { path: '/autoodgovornost', element: <Autoodgovornost /> },
         { path: '/pomoc-na-putu', element: <PomocNaPutu /> },
