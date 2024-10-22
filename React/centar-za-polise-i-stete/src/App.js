@@ -44,7 +44,12 @@ function App() {
 
   // Implement AOS for bootstrap animations
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      disable: function () {
+        var maxWidth = 800;
+        return window.innerWidth < maxWidth;
+      },
+    });
   }, []);
 
   // Preloader
