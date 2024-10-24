@@ -31,17 +31,17 @@ const CookieConsent = () => {
       <div className={`${classes.box} position-fixed bottom-0 left-0 px-4 py-5 bg-dark text-white`} data-aos="fade-up" data-aos-delay="500">
         <span className="text-white mr-xl-5">
           Koristimo kolačiće za personalizaciju sadržaja i oglasa, pružanje funkcija društvenih medija i analiziranje saobraćaja.{readMore ? '' : '..'}
-          <span style={{ display: readMore ? `inline` : `none` }}>
+          <span className={readMore ? `${classes.readMoreText}` : `${classes.readMoreText} ${classes.active}`}>
             Takođe delimo informacije o tome kako koristite sajt sa partnerima za društvene medije, oglašavanje i analitiku koji mogu da ih kombinuju sa drugim informacijama koje ste im dali ili koje
             su prikupili na osnovu koriscenja usluga. <Link to="/politika-privatnosti">Politika privatnosti</Link>
           </span>
           <span
-            style={{ display: `block`, color: `var(--accent-color)`, marginTop: `8px` }}
+            className={readMore ? `${classes.readMoreBtn}` : `${classes.readMoreBtn} ${classes.active}`}
             onClick={() => {
               setReadMore((current) => !current);
             }}
           >
-            {readMore ? 'Pročitaj manje' : 'Pročitaj više'}
+            Pročitaj više
           </span>
         </span>
 
