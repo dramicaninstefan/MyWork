@@ -13,6 +13,16 @@
     })(window, document, 'script', 'dataLayer', 'GTM-T43GWMP4');</script>
   <!-- End Google Tag Manager -->
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11101931880"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-11101931880');
+  </script>
+
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -92,7 +102,16 @@
   <!-- Main JS File -->
   <script src="../src/index.js" type="text/JSX"></script>
 
+  <!-- 
+  <script>
+    const currentUrl = window.location;
+    console.log(currentUrl);
 
+    if (currentUrl.pathname === `/hvala-vam`) {
+      // Event snippet for Ispunjena Forma - Lid conversion page
+      gtag('event', 'conversion', { 'send_to': 'AW-11101931880/tV6vCODjptcZEOiS6K0p' });
+    }
+  </script> -->
 
 
 </body>
