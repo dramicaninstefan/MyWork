@@ -1,10 +1,16 @@
-import { Fragment, useState, useRef } from 'react';
+import { Fragment, useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { Link, useNavigate } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 
 import classes from './KaskoForm.module.css';
 
 const KaskoForm = () => {
+  // initiialize Google Analitics
+  useEffect(() => {
+    ReactGA.initialize('G-2GSEYZZHQ8');
+  }, []);
+
   // redirect to /hvala-vam page
   const navigate = useNavigate();
   const handleRedirectTo = () => {
@@ -90,6 +96,11 @@ const KaskoForm = () => {
                 setMValue('');
 
                 setSaglasan(false);
+
+                // run gtag for Google Analitics
+                window.gtag('event', 'conversion', {
+                  send_to: 'AW-11101931880/tV6vCODjptcZEOiS6K0p',
+                });
 
                 setTimeout(() => {
                   setSuccessMsg(false);

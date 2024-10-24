@@ -1,5 +1,5 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import classes from './ThankYouPage.module.css';
 
@@ -11,30 +11,6 @@ const ThankYou = () => {
       behavior: 'instant',
     });
   }, []);
-
-  const location = useLocation(); // location.pathName
-  const [pagePath, setPagePath] = useState(false); //pathname
-
-  useEffect(() => {
-    if (location.pathname === '/hvala-vam') {
-      setPagePath(true);
-    } else {
-      setPagePath(false);
-    }
-
-    if (pagePath) {
-      const script = document.createElement('script');
-      script.id = 'idScript';
-      script.innerHTML = `gtag('event', 'conversion', {'send_to': 'AW-11101931880/tV6vCODjptcZEOiS6K0p'});`;
-      document.body.appendChild(script);
-
-      return () => {
-        document.getElementById('idScript')?.remove();
-      };
-    } else {
-      document.getElementById('demand-base')?.remove();
-    }
-  }, [location.pathname, pagePath]);
 
   return (
     <Fragment>

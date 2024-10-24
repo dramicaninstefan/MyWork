@@ -1,10 +1,15 @@
-import React, { Fragment, useState, useRef } from 'react';
+import React, { Fragment, useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
+import ReactGA from 'react-ga4';
 
 import classes from './ContactForm.module.css';
 
 const ContactForm = ({ defaultValue }) => {
+  useEffect(() => {
+    ReactGA.initialize('G-2GSEYZZHQ8');
+  }, []);
+
   // redirect to /hvala-vam page
   const navigate = useNavigate();
   const handleRedirectTo = () => {
@@ -53,6 +58,11 @@ const ContactForm = ({ defaultValue }) => {
               setEmail('');
               setSelect('');
               setMessage('');
+
+              // run gtag for Google Analitics
+              window.gtag('event', 'conversion', {
+                send_to: 'AW-11101931880/tV6vCODjptcZEOiS6K0p',
+              });
 
               setTimeout(() => {
                 setSuccessMsg(false);
