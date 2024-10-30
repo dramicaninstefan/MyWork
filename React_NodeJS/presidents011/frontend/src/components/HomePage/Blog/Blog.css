@@ -1,0 +1,68 @@
+/*--------------------------------------------------------------
+# Blog Posts Section
+--------------------------------------------------------------*/
+.blog-posts article {
+  background-color: var(--surface-color);
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 150px;
+}
+
+.blog-posts .read-more {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 12px 30px;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-posts .read-more i {
+  font-size: 18px;
+  margin-left: 5px;
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.blog-posts .read-more:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  padding-right: 25px;
+}
+
+.blog-posts .read-more:hover i {
+  margin-left: 10px;
+}
+
+.blog-posts .post-img {
+  max-height: 240px;
+  margin: -30px -30px 15px -30px;
+  overflow: hidden;
+}
+
+.blog-posts .post-category {
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  margin-bottom: 10px;
+}
+
+.blog-posts .title {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.blog-posts .title a {
+  color: var(--heading-color);
+  transition: 0.3s;
+}
+
+.blog-posts .title a:hover {
+  color: var(--accent-color);
+}

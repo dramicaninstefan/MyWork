@@ -1,0 +1,35 @@
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info-item {
+  background-color: var(--accent-color);
+  /* background-color: #e3dacf; */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 24px 0 30px 0;
+}
+
+.contact .info-item i {
+  font-size: 20px;
+  color: #fff;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  border: 2px dotted color-mix(in srgb, #fff, transparent 40%);
+}
+
+.contact .info-item h3 {
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.contact .info-item p {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
