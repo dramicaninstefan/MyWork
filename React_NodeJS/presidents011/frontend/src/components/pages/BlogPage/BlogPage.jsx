@@ -54,7 +54,7 @@ const BlogPage = () => {
                       <Link to={`/blog/${blog.id}`}>{blog.title}</Link>
                     </h2>
 
-                    <p className="mb-4">{blog.description}</p>
+                    <div className="mb-4" style={{ maxHeight: `6em`, overflow: `hidden` }} dangerouslySetInnerHTML={{ __html: blog.description }}></div>
 
                     <Link to={`/blog/${blog.id}`} className="read-more rounded">
                       <span>Pročitaj više</span>

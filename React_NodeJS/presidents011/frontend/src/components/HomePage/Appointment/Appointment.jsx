@@ -2,6 +2,13 @@ import React, { Fragment } from 'react';
 
 import './Appointment.css';
 
+import coctail1 from '../../../assets/img/menu/coctail-1.jpg';
+import coctail2 from '../../../assets/img/menu/coctail-2.jpg';
+import coctail3 from '../../../assets/img/menu/coctail-3.jpg';
+import coctail4 from '../../../assets/img/menu/coctail-4.jpg';
+import coctail5 from '../../../assets/img/menu/coctail-5.jpg';
+import coctail6 from '../../../assets/img/menu/coctail-6.jpg';
+
 const Appointment = () => {
   return (
     <Fragment>
@@ -16,33 +23,21 @@ const Appointment = () => {
               <h2>Lista pića</h2>
             </div>
             <div className="row g-5">
-              <div className="col-lg-3 d-none d-lg-block">
+              <div className="col-lg-3 d-none d-lg-block" data-aos="fade-up">
                 <div className="testimonial-left h-100">
-                  <img className="img-fluid animated pulse infinite" src="assets/img/portfolio/portfolio-1.jpg" alt="" />
-                  <img className="img-fluid animated pulse infinite" src="assets/img/portfolio/portfolio-2.jpg" alt="" />
-                  <img className="img-fluid animated pulse infinite" src="assets/img/portfolio/portfolio-3.jpg" alt="" />
+                  <img className="img-fluid animated pulse infinite" src={coctail1} alt="" />
+                  <img className="img-fluid animated pulse infinite" src={coctail2} alt="" />
+                  <img className="img-fluid animated pulse infinite" src={coctail3} alt="" />
                 </div>
               </div>
-              <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                <div className="owl-carousel testimonial-carousel">
-                  <div className="testimonial-item text-center">
-                    <img className="img-fluid rounded mx-auto mb-4" src="img/testimonial-1.jpg" alt="" />
-                    <p className="fs-5">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos molestias aliquid enim, unde numquam, fugiat, molestiae corrupti voluptatum et aut sit! Magni expedita quia quae.
-                      Obcaecati numquam dignissimos delectus nam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae, consequuntur dicta aliquid sequi, dolores placeat maxime eveniet
-                      nostrum nisi voluptatum dignissimos, commodi iusto magnam aut et? Perferendis eius libero architecto! Natus libero voluptatum dignissimos doloremque, dolore eligendi tempore eius
-                      labore sit veniam magnam eveniet reiciendis rerum illum nemo minima. Similique necessitatibus non porro ullam consequuntur, laboriosam expedita beatae atque iusto.
-                    </p>
-                    <h5>Client Name</h5>
-                    <span>Profession</span>
-                  </div>
-                </div>
+              <div className="col-lg-6 wow fadeIn" data-aos="fade-up" data-aos-delay="100">
+                <img className="img-fluid" src="../../../assets/img/about.jpg" alt="" />
               </div>
-              <div className="col-lg-3 d-none d-lg-block">
+              <div className="col-lg-3 d-none d-lg-block" data-aos="fade-up">
                 <div className="testimonial-right h-100">
-                  <img className="img-fluid animated pulse infinite" src="assets/img/portfolio/portfolio-1.jpg" alt="" />
-                  <img className="img-fluid animated pulse infinite" src="assets/img/portfolio/portfolio-2.jpg" alt="" />
-                  <img className="img-fluid animated pulse infinite" src="assets/img/portfolio/portfolio-3.jpg" alt="" />
+                  <img className="img-fluid animated pulse infinite" src={coctail4} alt="" />
+                  <img className="img-fluid animated pulse infinite" src={coctail5} alt="" />
+                  <img className="img-fluid animated pulse infinite" src={coctail6} alt="" />
                 </div>
               </div>
             </div>

@@ -20,11 +20,11 @@ const AboutUs = () => {
 
         <div className="container">
           <div className="row gy-4">
-            <div className="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+            <div className="col-lg-6 order-1 order-lg-1" data-aos="fade-up" data-aos-delay="100">
               <img src="assets/img/about.jpg" className="img-fluid rounded" alt="" />
             </div>
 
-            <div className="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
+            <div className="col-lg-6 order-2 order-lg-2 content" data-aos="fade-up" data-aos-delay="200">
               <h3>Najbolji provod u gradu</h3>
               <p className="fst-italic py-4">
                 Uživo muzika, najbolje cene i usluga u centru grada. Ovo je mesto duge tradicije i provoda koji se zauvek pamti. Svako ko nas je barem jednom posetio, ponovo se rado vratio i ponovo

@@ -9,14 +9,16 @@ class Blog {
   }
 
   async save() {
-    let d = new Date();
-    let yyyy = d.getFullYear();
-    let mm = d.getMonth() + 1;
-    let dd = d.getDate();
+    // const date = new Date();
+    // const formattedForDatabase = date.toISOString();
 
-    let createdAtDate = `${yyyy}-${mm}-${dd}`;
+    const date = new Date();
+    const formattedForDatabase = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')} ${date
+      .getHours()
+      .toString()
+      .padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}:${date.getSeconds().toString().padStart(2, '0')}`;
 
-    let sql = `INSERT INTO blogs(title, description, category, image, CreatedAt) VALUES ('${this.title}', '${this.description}', '${this.category}', '${this.image}', '${createdAtDate}')`;
+    let sql = `INSERT INTO blogs(title, description, category, image, CreatedAt) VALUES ('${this.title}', '${this.description}', '${this.category}', '${this.image}', '${formattedForDatabase}')`;
 
     const [newBlog, _] = await db.execute(sql);
 

@@ -3,6 +3,7 @@ require('dotenv').config(); // ALLOWS ENVIRONMENT VARIABLES TO BE SET ON PROCESS
 const morgan = require('morgan');
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -10,6 +11,7 @@ const app = express();
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json()); // parse json bodies in the request object
+app.use(bodyParser.json());
 
 // Redirect requests to endpoint starting with /posts to postRoutes.js
 app.use('/blogs', require('./routes/blogRoutes'));
