@@ -1,8 +1,14 @@
 import React, { Fragment } from 'react';
 
 import classes from './Features.model.css';
+import styles from '../../AboutUsPage/Team/Team.module.css';
 
 import image from '../../../../assets/img/stete-img.jpg';
+
+import team1 from '../../../../assets/img/team/team-1.png';
+import team2 from '../../../../assets/img/team/team-2.png';
+import team6 from '../../../../assets/img/team/team-6.png';
+import team7 from '../../../../assets/img/team/team-7.png';
 
 const Features = () => {
   return (
@@ -20,7 +26,7 @@ const Features = () => {
               <p>Najbolje je da nas kontaktirate i dogovorimo detalje.</p>
             </div>
 
-            <div className="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style={{ visibility: 'visible', animationDelay: '0.1s', animationName: 'fadeInUp' }}>
+            <div className="container-fluid py-5 wow fadeInUp" data-aos="fade-up" style={{ visibility: 'visible', animationDelay: '0.1s', animationName: 'fadeInUp' }}>
               <div className="container pb-5">
                 <div className="section-title text-center position-relative pb-3 mb-5 mx-auto" style={{ maxWidth: '800px' }}>
                   <h5 className="fw-bold text-uppercase" style={{ color: `var(--accent-color)` }}>
@@ -29,7 +35,66 @@ const Features = () => {
                   <h2 className="mb-0">Ceo postupak naplate štete mi vodimo</h2>
                   <p className="pt-2">Dovoljno je da nam se javite i mi preuzimamo postupak naplate (od dokumentacije, procene štete, komunikaciju za osiguravajućom kućom i drugo)</p>
                 </div>
-                <div className="row g-5">
+
+                <section id="team" className={`${styles.team} section mb-5`}>
+                  <div className="container">
+                    <div className="row gy-5">
+                      <div className={`${styles.member} col-lg-3 col-md-6`} data-aos="fade-up" data-aos-delay="100">
+                        <div className={styles['member-img']}>
+                          <img src={team1} className="img-fluid" alt="" />
+                          <div className={styles.social}></div>
+                        </div>
+                        <div className={`${styles['member-info']} text-center`}>
+                          <h4>
+                            Goran Dramićanin, <br /> dipl.inž.
+                          </h4>
+                          <span>Savetnik za osiguranja - Direktor</span>
+                        </div>
+                      </div>
+
+                      <div className={`${styles.member} col-lg-3 col-md-6`} data-aos="fade-up" data-aos-delay="200">
+                        <div className={styles['member-img']}>
+                          <img src={team2} className="img-fluid" alt="" />
+                          <div className={styles.social}></div>
+                        </div>
+                        <div className={`${styles['member-info']} text-center`}>
+                          <h4>
+                            Mirjana Jokić, <br /> Ekon.
+                          </h4>
+                          <span>Office asistent</span>
+                        </div>
+                      </div>
+
+                      <div className={`${styles.member} col-lg-3 col-md-6`} data-aos="fade-up" data-aos-delay="300">
+                        <div className={styles['member-img']}>
+                          <img src={team6} className="img-fluid" alt="" />
+                          <div className={styles.social}></div>
+                        </div>
+                        <div className={`${styles['member-info']} text-center`}>
+                          <h4>
+                            Borivoje Marković, <br /> dipl.prav.
+                          </h4>
+                          <span>Advokat</span>
+                        </div>
+                      </div>
+
+                      <div className={`${styles.member} col-lg-3 col-md-6`} data-aos="fade-up" data-aos-delay="300">
+                        <div className={styles['member-img']}>
+                          <img src={team7} className="img-fluid" alt="" />
+                          <div className={styles.social}></div>
+                        </div>
+                        <div className={`${styles['member-info']} text-center`}>
+                          <h4>
+                            Luka Jovanović, <br /> dipl.maš.inž
+                          </h4>
+                          <span>Sudski veštak - procenitelj šteta</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <div className="row g-5" data-aos="fade-up">
                   <div className="col-lg-4">
                     <div className="row g-5">
                       <div className="col-12 wow zoomIn" data-wow-delay="0.1s" style={{ visibility: 'visible', animationDelay: '0.1s', animationName: 'zoomIn' }}>

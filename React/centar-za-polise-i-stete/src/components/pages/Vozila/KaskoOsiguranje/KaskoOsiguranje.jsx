@@ -4,10 +4,12 @@ import Hero from './Hero/Hero';
 
 import FAQ from '../../../UI/FAQ/FAQ';
 import Modal from '../../../UI/Modal/Modal';
+import ModalKasko from '../../../UI/ModalKasko/ModalKasko';
 import Features from './Features/Features';
 import KaskoForm from './KaskoForm/KaskoForm';
 import Counter from '../../../UI/Counter/Counter';
 import InfiniteLooper from '../../../UI/InfiniteLooper/InfiniteLooper';
+import ModalButtonKasko from '../../../UI/ModalKasko/ModalButtonKasko/ModalButtonKasko';
 
 import image from '../../../../assets/img/kasko-counter-bg.jpg';
 
@@ -173,21 +175,28 @@ const KaskoOsiguranje = () => {
   }, []);
 
   const [isClicked, setIsClicked] = useState(false);
+  const [isClickedKasko, setIsClickedKasko] = useState(false);
 
   const handleIsClicked = () => {
     setIsClicked((current) => !current);
+  };
+
+  const handleIsClickedKasko = () => {
+    setIsClickedKasko((current) => !current);
   };
 
   return (
     <Fragment>
       <main className="main">
         <Hero handleClick={handleIsClicked} />
+        <ModalButtonKasko handleClick={handleIsClickedKasko} />
         <Features />
         <Counter image={image} />
         <FAQ data={faq} />
         <KaskoForm />
         <InfiniteLooper />
         {isClicked ? <Modal handleClick={handleIsClicked} /> : undefined}
+        {isClickedKasko ? <ModalKasko handleClick={handleIsClickedKasko} /> : undefined}
       </main>
     </Fragment>
   );
