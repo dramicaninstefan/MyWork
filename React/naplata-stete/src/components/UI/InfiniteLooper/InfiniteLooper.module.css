@@ -1,0 +1,48 @@
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.wrapper {
+  background-color: #f5f9ff;
+}
+
+.logos {
+  overflow-x: hidden;
+  padding: 40px 0;
+  margin-block: 50px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logo-slide {
+  display: inline-block;
+  animation: 40s slide infinite linear;
+}
+
+.logo-slide img {
+  max-width: 150px;
+  max-height: 800px;
+  width: auto;
+  height: auto;
+  margin: 0 50px;
+  transition: all 0.5s;
+}
+
+.logo-slide img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1200px) {
+  .logo-slide img {
+    max-width: 110px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    margin: 0 50px;
+  }
+}

@@ -1,0 +1,11 @@
+/*--------------------------------------------------------------
+# kasko Section
+--------------------------------------------------------------*/
+.stete .content h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.stete .content p:last-child {
+  margin-bottom: 0;
+}
