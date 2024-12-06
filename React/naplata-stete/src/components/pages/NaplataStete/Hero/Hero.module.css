@@ -142,7 +142,7 @@
   font-size: 18px;
   color: white;
   text-align: center;
-  background-color: #0873bd;
+  background-color: var(--accent-color);
   border-radius: 10px;
   height: 60px;
   line-height: 60px;

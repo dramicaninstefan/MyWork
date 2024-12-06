@@ -11,9 +11,7 @@ const Team = () => {
       <section id="team" class="team section light-background">
         <div class="container section-title" data-aos="fade-up">
           <h2>Naš tim</h2>
-          <p>
-            <span>Naš Vredan</span> <span class="description-title">Tim</span>
-          </p>
+          <p>{/* <span>Naš Vredan</span> <span class="description-title">Tim</span> */}</p>
         </div>
 
         <div class="container">

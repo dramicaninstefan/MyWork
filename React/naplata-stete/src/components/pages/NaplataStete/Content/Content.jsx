@@ -8,66 +8,69 @@ const Features = () => {
     <Fragment>
       <section className={`${classes.stete} section`}>
         <div className="container">
-          <div class="row gy-4 pb-5 ">
+          <div class="row gy-4 sticky-top-100">
             <div class="container section-title p-0" data-aos="fade-up">
               <h2>Upoznajte se sa postupkom za različite vrste šteta.</h2>
             </div>
-            <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-4 col-md-4 mt-0" data-aos="fade-up" data-aos-delay="100">
               <div class="features-item">
-                <i class="fa-solid fa-turn-down" style={{ color: `#47aeff`, fontSize: `16px` }}></i>
+                <i class="fa-solid fa-turn-down" style={{ color: `#fff`, fontSize: `16px` }}></i>
+                {/* <i class="fa-solid fa-turn-down" style={{ color: `#47aeff`, fontSize: `16px` }}></i> */}
                 <h3>
                   <Link
                     onClick={(e) => {
                       e.preventDefault();
                       const y = document.getElementById('stete1').offsetTop;
-                      window.scrollTo({ top: y - 150, behavior: 'smooth' });
+                      window.scrollTo({ top: y - 220, behavior: 'smooth' });
                     }}
                     class="stretched-link"
                   >
-                    Naplata štete na vozilu
+                    Naplata štete na vozilu - <span style={{ color: '#ffff3f' }}>Pročitaj više</span>
                   </Link>
                 </h3>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 mt-0" data-aos="fade-up" data-aos-delay="200">
               <div class="features-item">
-                <i class="fa-solid fa-turn-down" style={{ color: `#5578ff`, fontSize: `16px` }}></i>
+                <i class="fa-solid fa-turn-down" style={{ color: `#fff`, fontSize: `16px` }}></i>
+                {/* <i class="fa-solid fa-turn-down" style={{ color: `#5578ff`, fontSize: `16px` }}></i> */}
                 <h3>
                   <Link
                     onClick={(e) => {
                       e.preventDefault();
                       const y = document.getElementById('stete2').offsetTop;
-                      window.scrollTo({ top: y - 150, behavior: 'smooth' });
+                      window.scrollTo({ top: y - 220, behavior: 'smooth' });
                     }}
                     class="stretched-link"
                   >
-                    Naplata štete za povrede
+                    Naplata štete za povrede - <span style={{ color: '#ffff3f' }}>Pročitaj više</span>
                   </Link>
                 </h3>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-4 col-md-4 mt-0" data-aos="fade-up" data-aos-delay="300">
               <div class="features-item">
-                <i class="fa-solid fa-turn-down" style={{ color: `#11dbcf`, fontSize: `16px` }}></i>
+                <i class="fa-solid fa-turn-down" style={{ color: `#fff`, fontSize: `16px` }}></i>
+                {/* <i class="fa-solid fa-turn-down" style={{ color: `#11dbcf`, fontSize: `16px` }}></i> */}
                 <h3>
                   <Link
                     onClick={(e) => {
                       e.preventDefault();
                       const y = document.getElementById('stete3').offsetTop;
-                      window.scrollTo({ top: y - 150, behavior: 'smooth' });
+                      window.scrollTo({ top: y - 220, behavior: 'smooth' });
                     }}
                     class="stretched-link"
                   >
-                    Druge naplate štete
+                    Druge naplate štete - <span style={{ color: '#ffff3f' }}>Pročitaj više</span>
                   </Link>
                 </h3>
               </div>
             </div>
           </div>
 
-          <div className="row gy-4">
+          <div className="row gy-4 pt-5">
             <div className={`${classes.content} col-lg-12 mb-4`} data-aos="fade-up">
               <p>Da bi smo Vas zastupali u postpupku naplate štete iz osiguranja, potrebno je sledeće:</p>
               <ol>

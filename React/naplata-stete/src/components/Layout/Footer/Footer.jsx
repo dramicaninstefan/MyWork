@@ -13,13 +13,11 @@ const Footer = () => {
                 <img src={logo} alt="" style={{ maxHeight: `40px` }} />
               </a>
               <div class="footer-contact pt-3">
-                {/* <p>A108 Adam Street</p> */}
-                {/* <p>New York, NY 535022</p> */}
                 <p class="mt-3">
-                  <strong>Phone:</strong> <span>+1 5589 55488 55</span>
+                  <strong>Phone:</strong> <span>+381 63 84 89 439</span>
                 </p>
                 <p>
-                  <strong>Email:</strong> <span>info@example.com</span>
+                  <strong>Email:</strong> <span>office@najboljanaplatastete.rs</span>
                 </p>
               </div>
             </div>

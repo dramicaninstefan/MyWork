@@ -98,20 +98,20 @@ const ContactForm = ({ defaultValue }) => {
                 Vaš lični konsultant
               </h1>
               <h2 style={{ marginBlock: `20px` }}>
-                <a href=" tel:+381608060001" style={{ color: `#fff` }}>
+                <a href=" tel:+381638489439" style={{ color: `#fff` }}>
                   <i className=" fa-solid fa-phone" style={{ fontSize: `25px`, marginRight: `10px`, transform: `translateY(-1px)` }}></i>Telefon
                 </a>
               </h2>
-              <a href="tel:+381608060001" style={{ color: `#fff`, fontSize: `22px` }} target="_blank" rel="noreferrer">
-                +381 60 80 60 001
+              <a href="tel:+381638489439" style={{ color: `#fff`, fontSize: `22px` }} target="_blank" rel="noreferrer">
+                +381 63 84 89 439
               </a>
               <h2 style={{ marginBlock: `20px` }}>
-                <a href="mailto: svezaosiguranje@gmail.com" style={{ color: `#fff` }}>
+                <a href="mailto:office@najboljanaplatastete.rs	" style={{ color: `#fff` }}>
                   <i className="fa-solid fa-envelope" style={{ fontSize: `25px`, marginRight: `10px`, transform: `translateY(-1px)` }}></i>Email
                 </a>
               </h2>
-              <a href="mailto: svezaosiguranje@gmail.com" style={{ color: `#fff`, fontSize: `22px` }} target="_blank" rel="noreferrer">
-                office@centarzapoliseistete.rs
+              <a href="mailto:office@najboljanaplatastete.rs	" style={{ color: `#fff`, fontSize: `22px` }} target="_blank" rel="noreferrer">
+                office@najboljanaplatastete.rs
               </a>
             </div>
             <div className="col-lg-6 wow fadeIn" data-aos="fade-left" data-wow-delay="0.5s">
