@@ -2073,9 +2073,11 @@ section,
   }
 }
 
-.sticky-top-100 {
-  position: sticky;
-  top: 100px; /* Distance from the top */
-  background-color: var(--background-color);
-  z-index: 10; /* Ensure it stays above other elements */
+@media (min-width: 1200px) {
+  .sticky-top-100 {
+    position: sticky;
+    top: 100px; /* Distance from the top */
+    background-color: var(--background-color);
+    z-index: 10; /* Ensure it stays above other elements */
+  }
 }

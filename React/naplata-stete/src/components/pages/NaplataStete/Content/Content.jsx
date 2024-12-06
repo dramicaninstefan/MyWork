@@ -1,9 +1,31 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import classes from './Content.model.css';
 
 const Features = () => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [mobileScreen, setMobileScreen] = useState(false);
+
+  useEffect(() => {
+    // Function to update the screen width
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    // Add event listener to update width on window resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    screenWidth < 1200 ? setMobileScreen(true) : setMobileScreen(false);
+  }, [screenWidth]);
+
   return (
     <Fragment>
       <section className={`${classes.stete} section`}>
@@ -12,7 +34,7 @@ const Features = () => {
             <div class="container section-title p-0" data-aos="fade-up">
               <h2>Upoznajte se sa postupkom za različite vrste šteta.</h2>
             </div>
-            <div class="col-lg-4 col-md-4 mt-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-4 col-md-4 py-lg-0 py-2 mt-0" data-aos="fade-up" data-aos-delay="100">
               <div class="features-item">
                 <i class="fa-solid fa-turn-down" style={{ color: `#fff`, fontSize: `16px` }}></i>
                 {/* <i class="fa-solid fa-turn-down" style={{ color: `#47aeff`, fontSize: `16px` }}></i> */}
@@ -21,7 +43,7 @@ const Features = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       const y = document.getElementById('stete1').offsetTop;
-                      window.scrollTo({ top: y - 220, behavior: 'smooth' });
+                      window.scrollTo({ top: y - `${mobileScreen ? `100` : `220`}`, behavior: 'smooth' });
                     }}
                     class="stretched-link"
                   >
@@ -31,7 +53,7 @@ const Features = () => {
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 mt-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-4 py-lg-0 py-2 mt-0" data-aos="fade-up" data-aos-delay="200">
               <div class="features-item">
                 <i class="fa-solid fa-turn-down" style={{ color: `#fff`, fontSize: `16px` }}></i>
                 {/* <i class="fa-solid fa-turn-down" style={{ color: `#5578ff`, fontSize: `16px` }}></i> */}
@@ -40,7 +62,7 @@ const Features = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       const y = document.getElementById('stete2').offsetTop;
-                      window.scrollTo({ top: y - 220, behavior: 'smooth' });
+                      window.scrollTo({ top: y - `${mobileScreen ? `100` : `220`}`, behavior: 'smooth' });
                     }}
                     class="stretched-link"
                   >
@@ -50,7 +72,7 @@ const Features = () => {
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 mt-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-4 col-md-4 py-lg-0 py-2 mt-0" data-aos="fade-up" data-aos-delay="300">
               <div class="features-item">
                 <i class="fa-solid fa-turn-down" style={{ color: `#fff`, fontSize: `16px` }}></i>
                 {/* <i class="fa-solid fa-turn-down" style={{ color: `#11dbcf`, fontSize: `16px` }}></i> */}
@@ -59,7 +81,7 @@ const Features = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       const y = document.getElementById('stete3').offsetTop;
-                      window.scrollTo({ top: y - 220, behavior: 'smooth' });
+                      window.scrollTo({ top: y - `${mobileScreen ? `100` : `220`}`, behavior: 'smooth' });
                     }}
                     class="stretched-link"
                   >
