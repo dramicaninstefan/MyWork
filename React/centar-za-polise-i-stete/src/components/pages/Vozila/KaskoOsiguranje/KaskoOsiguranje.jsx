@@ -174,6 +174,28 @@ const KaskoOsiguranje = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [showInfinte, setShowInfinte] = useState(false);
+
+  useEffect(() => {
+    // Function to update the screen width
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    // Add event listener to update width on window resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    screenWidth < 1200 ? setShowInfinte(true) : setShowInfinte(false);
+  }, [screenWidth]);
+
   const [isClicked, setIsClicked] = useState(false);
   const [isClickedKasko, setIsClickedKasko] = useState(false);
 
@@ -194,7 +216,8 @@ const KaskoOsiguranje = () => {
         <Counter image={image} />
         <FAQ data={faq} />
         <KaskoForm />
-        <InfiniteLooper />
+        {showInfinte ? `` : <InfiniteLooper />}
+
         {isClicked ? <Modal handleClick={handleIsClicked} /> : undefined}
         {isClickedKasko ? <ModalKasko handleClick={handleIsClickedKasko} /> : undefined}
       </main>

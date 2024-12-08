@@ -5,11 +5,35 @@ import ReactGA from 'react-ga4';
 
 import classes from './KaskoForm.module.css';
 
+import InfiniteLooper from '../../../../UI/InfiniteLooper/InfiniteLooper';
+
 const KaskoForm = () => {
   // initiialize Google Analitics
   useEffect(() => {
     ReactGA.initialize('G-2GSEYZZHQ8');
   }, []);
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [showInfinte, setShowInfinte] = useState(false);
+
+  useEffect(() => {
+    // Function to update the screen width
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    // Add event listener to update width on window resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    screenWidth < 1200 ? setShowInfinte(true) : setShowInfinte(false);
+  }, [screenWidth]);
 
   // redirect to /hvala-vam page
   const navigate = useNavigate();
@@ -146,9 +170,10 @@ const KaskoForm = () => {
         <div className={`${classes['kasko-form-wrapper']} rounded`}>
           <div className={`${classes['kasko-form']}`}>
             <form className="row" ref={form} action="https://formsubmit.co/gamer95.g@email.com" method="POST">
-              <div className="col-12 section-title">
+              <div className="col-12 pb-lg-5 pb-0 section-title">
                 <h2 style={{ fontWeight: `bold` }}>
-                  Za dobijanje kasko ponuda direktno od osiguravajućih kuća <br /> (bez sitnih slova), molimo vas da popunite formu u nastavku, a mi ćemo Vas kontaktirati u najkraćem roku.
+                  Za dobijanje kasko ponuda od <b style={{ color: `var(--accent-color)` }}>SVIH OSIGURAVAJUĆIH KUĆA</b> <br /> (bez sitnih slova), molimo vas da popunite formu u nastavku, a mi ćemo
+                  Vas kontaktirati u najkraćem roku.
                 </h2>
                 <h4>
                   Ukoliko imate pitanja ili Vam je potreban savet, možete nas kontaktirati na broj
@@ -156,6 +181,9 @@ const KaskoForm = () => {
                   <a href="tel:+381608060001">+381 60 80 60 001</a>
                 </h4>
               </div>
+
+              {showInfinte ? <InfiniteLooper /> : ``}
+
               <div className="col-12 rounded" style={{ backgroundColor: `#f1f1f1f1`, paddingBlock: `30px` }}>
                 <div className="section-title pb-5">
                   <h3>

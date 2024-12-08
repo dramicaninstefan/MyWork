@@ -48,6 +48,13 @@
   animation: 20s slide infinite linear;
 }
 
+@media (max-width: 1200px) {
+  .logo-slide {
+    display: inline-block;
+    animation: 10s slide infinite linear;
+  }
+}
+
 .logo-slide img {
   max-width: 150px;
   max-height: 800px;
