@@ -15,7 +15,7 @@ const Team = () => {
         </div>
 
         <div class="container d-flex justify-content-center">
-          <div class="row gy-4 col-lg-12 col-10">
+          <div class="row gy-4 col-lg-12gt col-10">
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
               <div class="team-member">
                 <div class="member-img">
