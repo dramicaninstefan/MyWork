@@ -289,7 +289,7 @@ const PolitikaPrivatnosti = () => {
           <br />
           <ul>
             <li>
-              Putem imejla:{' '}
+              Putem imejla:
               <a href="mailto:svezaosiguranje@gmail.com" target="_blank" rel="noreferrer">
                 office@centarzapoliseistete.com
               </a>
