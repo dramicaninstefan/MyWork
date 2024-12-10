@@ -1,5 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 
+import logo from '../../assets/img/logo/logo-blue-trans.png';
+
 const PolitikaPrivatnosti = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -296,6 +298,7 @@ const PolitikaPrivatnosti = () => {
               Putem broja telefona: <a href="tel:+381608060001">+381 608060001</a>
             </li>
           </ul>
+          <img style={{ maxHeight: `150px` }} src={logo} alt="" />
         </p>
       </main>
     </Fragment>
