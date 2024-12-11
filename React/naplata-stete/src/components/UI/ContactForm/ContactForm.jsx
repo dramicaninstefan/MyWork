@@ -29,6 +29,7 @@ const ContactForm = ({ defaultValue }) => {
   const [email, setEmail] = useState('');
   const [select, setSelect] = useState(defaultValue ? defaultValue : 'Naplata Štete');
   const [message, setMessage] = useState('');
+  const [sajt, setSajt] = useState('Najbolja Naplata Štete');
 
   const templateParams = {
     user_name: name,
@@ -36,6 +37,7 @@ const ContactForm = ({ defaultValue }) => {
     user_email: email,
     user_option: select,
     message: message,
+    sajt: sajt,
   };
 
   function sendEmail(e) {

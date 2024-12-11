@@ -31,6 +31,7 @@ const Hero = ({ handleClickVideo, handleClickThankYou }) => {
   const [email, setEmail] = useState('');
   const [select, setSelect] = useState('');
   const [message, setMessage] = useState('');
+  const [sajt, setSajt] = useState('Centar Za Polise i Štete');
 
   const templateParams = {
     user_name: name,
@@ -38,6 +39,7 @@ const Hero = ({ handleClickVideo, handleClickThankYou }) => {
     user_email: email,
     user_option: select,
     message: message,
+    sajt: sajt,
   };
 
   function sendEmail(e) {

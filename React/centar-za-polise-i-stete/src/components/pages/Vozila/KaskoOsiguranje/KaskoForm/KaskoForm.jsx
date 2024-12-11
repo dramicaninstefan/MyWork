@@ -311,7 +311,7 @@ const KaskoForm = () => {
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputType">
-                      Tip vozila <span>*</span>
+                      Model vozila <span>*</span>
                     </label>
                     <input
                       type="text"

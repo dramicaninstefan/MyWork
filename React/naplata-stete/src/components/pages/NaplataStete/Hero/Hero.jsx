@@ -29,6 +29,7 @@ const Hero = ({ handleClickVideo, handleClickThankYou }) => {
   const [email, setEmail] = useState('');
   const [select, setSelect] = useState('Naplata Štete');
   const [message, setMessage] = useState('');
+  const [sajt, setSajt] = useState('Najbolja Naplata Štete');
 
   const templateParams = {
     user_name: name,
@@ -36,6 +37,7 @@ const Hero = ({ handleClickVideo, handleClickThankYou }) => {
     user_email: email,
     user_option: select,
     message: message,
+    sajt: sajt,
   };
 
   function sendEmail(e) {

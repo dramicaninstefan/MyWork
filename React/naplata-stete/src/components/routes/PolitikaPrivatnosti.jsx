@@ -287,13 +287,13 @@ const PolitikaPrivatnosti = () => {
           <br />
           <ul>
             <li>
-              Putem imejla:{' '}
+              Putem imejla:
               <a href="mailto:svezaosiguranje@gmail.com" target="_blank" rel="noreferrer">
-                office@centarzapoliseistete.com
+                office@najboljanaplatastete.rs
               </a>
             </li>
             <li>
-              Putem broja telefona: <a href="tel:+381608060001">+381 608060001</a>
+              Putem broja telefona: <a href="tel:+381638489439">+381 638489439</a>
             </li>
           </ul>
         </p>
