@@ -122,13 +122,13 @@ const ContactForm = ({ defaultValue }) => {
                   <div className="row g-3">
                     <div className="col-sm-6">
                       <div className="">
-                        <label htmlFor="gname">
+                        <label htmlFor="gnames">
                           Ime <span className="text-danger">*</span>
                         </label>
                         <input
                           type="text"
                           className="form-control"
-                          id="gname"
+                          id="gnames"
                           onChange={(e) => {
                             setName(e.target.value);
                           }}
@@ -139,13 +139,13 @@ const ContactForm = ({ defaultValue }) => {
                     </div>
                     <div className="col-sm-6">
                       <div className="">
-                        <label htmlFor="cname">
+                        <label htmlFor="cnames">
                           Broj telefona <span className="text-danger">*</span>
                         </label>
                         <input
                           type="tel"
                           className="form-control"
-                          id="cname"
+                          id="cnames"
                           onChange={(e) => {
                             setNumber(e.target.value);
                           }}
@@ -156,13 +156,13 @@ const ContactForm = ({ defaultValue }) => {
                     </div>
                     <div className="col-sm-6">
                       <div className="">
-                        <label htmlFor="gmail">
+                        <label htmlFor="gmails">
                           Email <span className="text-danger">(Opciono)</span>
                         </label>
                         <input
                           type="email"
                           className="form-control"
-                          id="gmail"
+                          id="gmails"
                           onChange={(e) => {
                             setEmail(e.target.value);
                           }}
@@ -172,13 +172,13 @@ const ContactForm = ({ defaultValue }) => {
                     </div>
                     <div className="col-sm-6">
                       <div className="">
-                        <label htmlFor="select">
+                        <label htmlFor="selects">
                           Zainteresovan sam za: <span className="text-danger">*</span>
                         </label>
                         <select
                           className="form-control form-select"
                           name=""
-                          id="select"
+                          id="selects"
                           onChange={(e) => {
                             setSelect(e.target.value);
                           }}
@@ -200,12 +200,12 @@ const ContactForm = ({ defaultValue }) => {
                     </div>
                     <div className="col-12">
                       <div className="">
-                        <label htmlFor="message" style={{ textWrap: `wrap` }}>
+                        <label htmlFor="messages" style={{ textWrap: `wrap` }}>
                           Kako možemo da Vam pomognemo? <span className="text-danger">*</span>
                         </label>
                         <textarea
                           className="form-control"
-                          id="message"
+                          id="messages"
                           style={{ height: `100px` }}
                           onChange={(e) => {
                             setMessage(e.target.value);
