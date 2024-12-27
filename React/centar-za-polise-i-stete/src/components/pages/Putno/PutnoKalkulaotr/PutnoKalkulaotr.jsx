@@ -6,7 +6,7 @@ const PutnoKalkulaotr = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [insuranceType, setInsuranceType] = useState('individual');
+  const [insuranceType, setInsuranceType] = useState(1); // 1 for individual, 2 for family
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [annualCoverage, setAnnualCoverage] = useState(false);
@@ -18,6 +18,14 @@ const PutnoKalkulaotr = () => {
 
   const today = new Date().toISOString().split('T')[0];
   const nextYear = new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0];
+
+  useEffect(() => {
+    if (annualCoverage && startDate) {
+      const start = new Date(startDate);
+      start.setFullYear(start.getFullYear() + 1);
+      setEndDate(start.toISOString().split('T')[0]);
+    }
+  }, [startDate, annualCoverage]);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -53,11 +61,11 @@ const PutnoKalkulaotr = () => {
           <div className="row mb-4">
             {/* Individual Insurance Card */}
             <div className="col-md-6 mb-3 mb-md-0">
-              <div className={`${classes.insuranceCard} card h-100 ${insuranceType === 'individual' ? classes.active : ''}`} onClick={() => setInsuranceType('individual')}>
+              <div className={`${classes.insuranceCard} card h-100 ${insuranceType === 1 ? classes.active : ''}`} onClick={() => setInsuranceType(1)}>
                 <div className="card-body">
                   <div className="d-flex justify-content-between align-items-center mb-3">
                     <h2 className="h5 mb-0">INDIVIDUALNO</h2>
-                    <div className={classes.radioButton}>{insuranceType === 'individual' && <div className={classes.radioInner} />}</div>
+                    <div className={classes.radioButton}>{insuranceType === 1 && <div className={classes.radioInner} />}</div>
                   </div>
                   <p className="small">uz mogućnost ugovaranja pokrića pandemije, pokrića za skijanje i otkaza putovanja.</p>
                 </div>
@@ -66,11 +74,11 @@ const PutnoKalkulaotr = () => {
 
             {/* Family Insurance Card */}
             <div className="col-md-6">
-              <div className={`${classes.insuranceCard} card h-100 ${insuranceType === 'family' ? classes.active : ''}`} onClick={() => setInsuranceType('family')}>
+              <div className={`${classes.insuranceCard} card h-100 ${insuranceType === 2 ? classes.active : ''}`} onClick={() => setInsuranceType(2)}>
                 <div className="card-body">
                   <div className="d-flex justify-content-between align-items-center mb-3">
                     <h2 className="h5 mb-0">PORODIČNO</h2>
-                    <div className={classes.radioButton}>{insuranceType === 'family' && <div className={classes.radioInner} />}</div>
+                    <div className={classes.radioButton}>{insuranceType === 2 && <div className={classes.radioInner} />}</div>
                   </div>
                   <p className="small">
                     uz mogućnost ugovaranja pokrića pandemije, pokrića za skijanje i otkaza putovanja. Obuhvata do dve punoletne osobe (starosti do 70 godina) koje ne moraju biti u krvnoj zajednici ni
@@ -81,6 +89,7 @@ const PutnoKalkulaotr = () => {
             </div>
           </div>
         </div>
+
         <div className="col-lg-6">
           <div className="row mb-4">
             <div className="col-md-6 mb-3 mb-md-0">
@@ -92,7 +101,17 @@ const PutnoKalkulaotr = () => {
             <div className="col-md-6">
               <label className="form-label small text-muted">ISTEK OSIGURANJA</label>
               <div className="position-relative">
-                <input type="date" className="form-control" min={today} max={nextYear} value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+                <input
+                  type="date"
+                  className={annualCoverage ? `form-control ${classes['readonly-input']}` : `form-control`}
+                  min={today}
+                  max={nextYear}
+                  value={endDate}
+                  onChange={(e) => setEndDate(e.target.value)}
+                  readOnly={annualCoverage}
+                  onFocus={annualCoverage ? (e) => e.target.blur() : undefined}
+                  tabIndex={annualCoverage ? -1 : 0}
+                />
               </div>
             </div>
           </div>
