@@ -20,6 +20,7 @@ import DobrovoljnoZdravstvenoOsiguranje from './components/pages/ZivotnoIZdravst
 import OsiguranjeOdNezgode from './components/pages/ZivotnoIZdravstveno/OsiguranjeOdNezgode/OsiguranjeOdNezgode';
 
 import Putno from './components/pages/Putno/Putno';
+import PutnoKalkulaotr from './components/pages/Putno/PutnoKalkulaotr/PutnoKalkulaotr.jsx';
 
 import NaplataStete from './components/pages/NaplataStete/NaplataStete';
 
@@ -77,6 +78,7 @@ function App() {
         { path: '/osiguranje-od-nezgode', element: <OsiguranjeOdNezgode /> },
 
         { path: '/putno-osiguranje', element: <Putno /> },
+        { path: '/kalkulator-putno-osiguranje', element: <PutnoKalkulaotr /> },
 
         { path: '/naplata-naknada-stete', element: <NaplataStete /> },
 

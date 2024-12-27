@@ -1,0 +1,50 @@
+.insuranceCard {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #e9ecef;
+}
+
+.insuranceCard:hover {
+  border-color: var(--accent-color);
+}
+
+.insuranceCard.active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+}
+
+.radioButton {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active .radioButton {
+  border-color: white;
+}
+
+.radioInner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.calendarIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: #6c757d;
+}
+
+.active p {
+  color: rgba(255, 255, 255, 0.8);
+}
