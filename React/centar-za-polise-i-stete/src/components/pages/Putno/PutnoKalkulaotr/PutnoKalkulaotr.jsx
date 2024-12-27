@@ -6,26 +6,18 @@ const PutnoKalkulaotr = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [insuranceType, setInsuranceType] = useState(1); // 1 for individual, 2 for family
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [annualCoverage, setAnnualCoverage] = useState(false);
-  const [travelPurpose, setTravelPurpose] = useState(0); // Set default value to 0
-  const [territorialCoverage, setTerritorialCoverage] = useState(0); // Set default value to 0
-  const [ageGroup, setAgeGroup] = useState(0); // Set default value to 0
-  const [pandemicCoverage, setPandemicCoverage] = useState(false);
-  const [skiCoverage, setSkiCoverage] = useState(false);
-
   const today = new Date().toISOString().split('T')[0];
   const nextYear = new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0];
 
-  useEffect(() => {
-    if (annualCoverage && startDate) {
-      const start = new Date(startDate);
-      start.setFullYear(start.getFullYear() + 1);
-      setEndDate(start.toISOString().split('T')[0]);
-    }
-  }, [startDate, annualCoverage]);
+  const [insuranceType, setInsuranceType] = useState('individual');
+  const [startDate, setStartDate] = useState(today);
+  const [endDate, setEndDate] = useState('');
+  const [annualCoverage, setAnnualCoverage] = useState(false);
+  const [travelPurpose, setTravelPurpose] = useState(0); // Set default value to 0
+  const [territorialCoverage, setTerritorialCoverage] = useState(''); // Set default value to 0
+  const [ageGroup, setAgeGroup] = useState(''); // Set default value to 0
+  const [pandemicCoverage, setPandemicCoverage] = useState(false);
+  const [skiCoverage, setSkiCoverage] = useState(false);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -42,6 +34,16 @@ const PutnoKalkulaotr = () => {
       skiCoverage,
     };
     console.log(formData);
+  };
+
+  const handleAnnualCoverageChange = () => {
+    setAnnualCoverage(!annualCoverage);
+    if (!annualCoverage) {
+      const nextYearDate = new Date(new Date(startDate).setFullYear(new Date(startDate).getFullYear() + 1)).toISOString().split('T')[0];
+      setEndDate(nextYearDate);
+    } else {
+      setEndDate('');
+    }
   };
 
   return (
@@ -61,11 +63,11 @@ const PutnoKalkulaotr = () => {
           <div className="row mb-4">
             {/* Individual Insurance Card */}
             <div className="col-md-6 mb-3 mb-md-0">
-              <div className={`${classes.insuranceCard} card h-100 ${insuranceType === 1 ? classes.active : ''}`} onClick={() => setInsuranceType(1)}>
+              <div className={`${classes.insuranceCard} card h-100 ${insuranceType === 'individual' ? classes.active : ''}`} onClick={() => setInsuranceType('individual')}>
                 <div className="card-body">
                   <div className="d-flex justify-content-between align-items-center mb-3">
                     <h2 className="h5 mb-0">INDIVIDUALNO</h2>
-                    <div className={classes.radioButton}>{insuranceType === 1 && <div className={classes.radioInner} />}</div>
+                    <div className={classes.radioButton}>{insuranceType === 'individual' && <div className={classes.radioInner} />}</div>
                   </div>
                   <p className="small">uz mogućnost ugovaranja pokrića pandemije, pokrića za skijanje i otkaza putovanja.</p>
                 </div>
@@ -74,11 +76,11 @@ const PutnoKalkulaotr = () => {
 
             {/* Family Insurance Card */}
             <div className="col-md-6">
-              <div className={`${classes.insuranceCard} card h-100 ${insuranceType === 2 ? classes.active : ''}`} onClick={() => setInsuranceType(2)}>
+              <div className={`${classes.insuranceCard} card h-100 ${insuranceType === 'family' ? classes.active : ''}`} onClick={() => setInsuranceType('family')}>
                 <div className="card-body">
                   <div className="d-flex justify-content-between align-items-center mb-3">
                     <h2 className="h5 mb-0">PORODIČNO</h2>
-                    <div className={classes.radioButton}>{insuranceType === 2 && <div className={classes.radioInner} />}</div>
+                    <div className={classes.radioButton}>{insuranceType === 'family' && <div className={classes.radioInner} />}</div>
                   </div>
                   <p className="small">
                     uz mogućnost ugovaranja pokrića pandemije, pokrića za skijanje i otkaza putovanja. Obuhvata do dve punoletne osobe (starosti do 70 godina) koje ne moraju biti u krvnoj zajednici ni
@@ -103,14 +105,13 @@ const PutnoKalkulaotr = () => {
               <div className="position-relative">
                 <input
                   type="date"
-                  className={annualCoverage ? `form-control ${classes['readonly-input']}` : `form-control`}
+                  className="form-control"
                   min={today}
                   max={nextYear}
                   value={endDate}
                   onChange={(e) => setEndDate(e.target.value)}
                   readOnly={annualCoverage}
-                  onFocus={annualCoverage ? (e) => e.target.blur() : undefined}
-                  tabIndex={annualCoverage ? -1 : 0}
+                  style={annualCoverage ? { pointerEvents: 'none' } : {}}
                 />
               </div>
             </div>
@@ -126,7 +127,7 @@ const PutnoKalkulaotr = () => {
                   id="annualCoverage"
                   style={{ border: `1px solid var(--accent-color)` }}
                   checked={annualCoverage}
-                  onChange={() => setAnnualCoverage(!annualCoverage)}
+                  onChange={handleAnnualCoverageChange}
                 />
                 <label className="form-check-label" htmlFor="annualCoverage">
                   GODIŠNJE POKRIĆE
@@ -146,6 +147,7 @@ const PutnoKalkulaotr = () => {
               <div className="mb-3">
                 <label className="form-label small text-muted">TERITORIJALNO POKRIĆE*</label>
                 <select className="form-select" value={territorialCoverage} onChange={(e) => setTerritorialCoverage(Number(e.target.value))}>
+                  <option value="hidden" hidden></option>
                   <option value={0}>Evropa* (+ RU|TR|TU|EG)</option>
                   <option value={1}>Ceo svet</option>
                 </select>
@@ -154,6 +156,7 @@ const PutnoKalkulaotr = () => {
               <div className="mb-3">
                 <label className="form-label small text-muted">STAROST OSIGURANIKA*</label>
                 <select className="form-select" value={ageGroup} onChange={(e) => setAgeGroup(Number(e.target.value))}>
+                  <option value="hidden" hidden></option>
                   <option value={0}>do 71 godina</option>
                   <option value={1}>između 71 i 81 godina</option>
                   <option value={2}>preko 81 godine</option>
