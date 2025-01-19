@@ -68,6 +68,7 @@ const KaskoForm = () => {
   const [mValue, setMValue] = useState('');
   const [taxi, setTaxi] = useState('');
   const [LinkPA, setLinkPA] = useState('');
+  const [VIN, setVIN] = useState('');
 
   const [saglasan, setSaglasan] = useState(false);
 
@@ -88,6 +89,7 @@ const KaskoForm = () => {
     car_taxi: taxi === `Da` ? `Taksi vozilo: DA` : ``,
     car_taxi_m: taxi === `Da` ? `, za TAXI VOZILO` : `.`,
     car_link: LinkPA,
+    car_vin: VIN,
 
     user_saglasan: saglasan ? 'JESAM' : 'NISAM',
   };
@@ -123,6 +125,7 @@ const KaskoForm = () => {
                 setYear('');
                 setMValue('');
                 setLinkPA('');
+                setVIN('');
                 setTaxi('');
 
                 setSaglasan(false);
@@ -416,17 +419,32 @@ const KaskoForm = () => {
                     </div>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
-                    <label htmlFor="InputPayment">
+                    <label htmlFor="InputLink">
                       Link sa oglasa (npr. Polovni Automovili) <span>(opciono)</span>
                     </label>
                     <input
                       type="text"
                       className="form-control"
-                      id="InputPayment"
+                      id="InputLink"
                       onChange={(e) => {
                         setLinkPA(e.target.value);
                       }}
                       value={LinkPA}
+                    />
+                  </div>
+
+                  <div className="form-group col-xl-4 col-md-12">
+                    <label htmlFor="InputVIN">
+                      Broj šasije (potreban za odredjivanje kataloške vrednosti vozila) <span>(opciono)</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="InputVIN"
+                      onChange={(e) => {
+                        setVIN(e.target.value);
+                      }}
+                      value={VIN}
                     />
                   </div>
                 </div>

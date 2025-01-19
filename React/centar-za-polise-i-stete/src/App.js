@@ -78,7 +78,7 @@ function App() {
         { path: '/osiguranje-od-nezgode', element: <OsiguranjeOdNezgode /> },
 
         { path: '/putno-osiguranje', element: <Putno /> },
-        { path: '/kalkulator-putno-osiguranje', element: <PutnoKalkulaotr /> },
+        // { path: '/kalkulator-putno-osiguranje', element: <PutnoKalkulaotr /> },
 
         { path: '/naplata-naknada-stete', element: <NaplataStete /> },
 
