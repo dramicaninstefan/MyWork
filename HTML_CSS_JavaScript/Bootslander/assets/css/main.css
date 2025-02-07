@@ -904,6 +904,7 @@ section,
   padding: 10px 28px 12px 28px;
   border-radius: 50px;
   transition: 0.5s;
+  cursor: pointer;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
 }
 
@@ -1528,6 +1529,7 @@ section,
   transition: 0.3s;
   margin-top: 20px;
   margin-bottom: 6px;
+  cursor: pointer;
 }
 
 .pricing .cta-btn:hover {
