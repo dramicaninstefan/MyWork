@@ -1,0 +1,33 @@
+.box {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.readMoreText {
+  display: inline;
+}
+
+.readMoreBtn {
+  display: none;
+  color: var(--accent-color);
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .readMoreText.active {
+    display: none;
+  }
+
+  .readMoreBtn.active {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .box {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
