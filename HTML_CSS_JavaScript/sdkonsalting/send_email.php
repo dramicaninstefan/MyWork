@@ -5,7 +5,7 @@ use Dotenv\Dotenv;
 
 require "vendor/autoload.php";
 
-// Učitaj .env fajl
+// Učitavanje .env fajla
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
@@ -53,20 +53,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // Ako je sve validno, šaljemo email
+        
+        // $mail->SMTPDebug = SMTP::DEBUG_SERVER; 
+        $mail->SMTPDebug = "0"; 
 
         $mail->isSMTP();
-        $mail->SMTPAuth = true;
-    
-        $mail->Host = "smtp.gmail.com";
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;
-    
-        $mail->Username = "sdkonsalting.ads@gmail.com";
-        $mail->Password = $_ENV['EMAIL_PASSWORD']; // Koristi password iz .env fajla
-    
-        $mail->setFrom($email, "SDKonsalting");
-        // $mail->addAddress("office@sdkonsalting.rs", "SDKonsalting");
-        $mail->addAddress("sdkonsalting.ads@gmail.com", "ads");
+        $mail->Host       = $_ENV['MAIL_HOST'];
+        $mail->SMTPAuth   = true;
+        $mail->Username   = $_ENV['MAIL_USERNAME'];
+        $mail->Password   = $_ENV['MAIL_PASSWORD'];
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // koristi SMTPS za port 465
+        $mail->Port       = 465; 
+            
+        $mail->setFrom("office@sdkonsalting.rs", "SDKonsalting");
+        $mail->addAddress("office@sdkonsalting.rs", "SDKonsalting");
+        // $mail->addAddress("sdkonsalting.ads@gmail.com", "ads");
     
         $mail->Subject = "UPIT SAJT | $name | $phone | $email";
         $mail->Body = "
@@ -80,6 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->send();
 
         header("Location: thank-you.html");
+        exit();
     }
 }
 ?>
