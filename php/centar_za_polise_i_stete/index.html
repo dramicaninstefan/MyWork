@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prijava štete</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body class="bg-light">
+
+    <div class="container-fluid">
+        <div class="row" style="height: 100vh;">
+            <nav class="col-md-3 col-lg-2 d-md-block bg-dark sidebar text-white">
+                <div class="position-sticky p-3">
+                    <h3 class="text-center py-3">Meni</h3>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="email_logs.php">Lista</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="col-md-9 col-lg-10 p-4">
+                <div class="card shadow p-4">
+                    <h2 class="text-center text-dark mb-4">Priloži dokumente</h2>
+
+                    <form action="send_email.php" method="POST" enctype="multipart/form-data" class="needs-validation"
+                        novalidate>
+                        <!-- Select za Primaoca Emaila (Advokati) -->
+                        <div class="mb-3">
+                            <label for="email_to" class="form-label fw-bold">Izaberite advokata:</label>
+                            <select class="form-select" name="email_to" id="email_to" required>
+                                <option value="">Izaberite advokata</option>
+                                <option value="dramicanin.stefan@gmail.com">Stefan Dramićanin
+                                    (dramicanin.stefan@gmail.com)
+                                </option>
+                                <option value="">Advokat 2</option>
+                            </select>
+                            <div class="invalid-feedback">Molimo vas izaberite advokata.</div>
+                        </div>
+
+                        <!-- Naslov -->
+                        <div class="mb-3">
+                            <label for="subject" class="form-label fw-bold">Naslov (Subject):</label>
+                            <input type="text" class="form-control" name="subject" id="subject" required>
+                            <div class="invalid-feedback">Polje za naslov je obavezno.</div>
+                        </div>
+
+                        <!-- Poruka (nije obavezna) -->
+                        <div class="mb-3">
+                            <label for="message" class="form-label fw-bold">Poruka:</label>
+                            <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                            <!-- <div class="invalid-feedback">Poruka je obavezna.</div> -->
+                        </div>
+
+                        <!-- GRID za Oštećenog i Štetnika -->
+                        <div class="row">
+                            <!-- Oštećeni -->
+                            <div class="col-12">
+                                <div class="d-flex justify-content-between align-items-center btn btn-secondary  my-2 py-2"
+                                    data-bs-toggle="collapse" href="#osteceni" role="button" aria-expanded="false"
+                                    aria-controls="osteceni">
+                                    <h5 class="mb-0">Oštećeni</h5>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                                    </svg>
+                                </div>
+                                <div class="collapse" id="osteceni">
+                                    <hr>
+                                    <div class="row">
+                                        <!-- Inputi Oštećenog -->
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="osteceni_licna_prednja" class="form-label fw-bold">1.
+                                                    Prednja strana lične karte:</label>
+                                                <input type="file" class="form-control" name="osteceni_licna_prednja"
+                                                    required>
+                                                <div class="invalid-feedback">Polje za prednju ličnu kartu je obavezno.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="osteceni_licna_zadnja" class="form-label fw-bold">2. Zadnja
+                                                    strana
+                                                    lične karte:</label>
+                                                <input type="file" class="form-control" name="osteceni_licna_zadnja"
+                                                    required>
+                                                <div class="invalid-feedback">Polje za zadnju ličnu kartu je obavezno.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="osteceni_saobracajna_prednja" class="form-label fw-bold">3.
+                                                    Prednja
+                                                    strana saobraćajne:</label>
+                                                <input type="file" class="form-control"
+                                                    name="osteceni_saobracajna_prednja" required>
+                                                <div class="invalid-feedback">Polje za prednju saobraćajnu je obavezno.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="osteceni_saobracajna_zadnja" class="form-label fw-bold">4.
+                                                    Zadnja
+                                                    strana saobraćajne:</label>
+                                                <input type="file" class="form-control"
+                                                    name="osteceni_saobracajna_zadnja" required>
+                                                <div class="invalid-feedback">Polje za zadnju saobraćajnu je obavezno.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="osteceni_vozacka_prednja" class="form-label fw-bold">5.
+                                                    Prednja
+                                                    strana vozačke dozvole:</label>
+                                                <input type="file" class="form-control" name="osteceni_vozacka_prednja"
+                                                    required>
+                                                <div class="invalid-feedback">Polje za prednju vozačku dozvolu je
+                                                    obavezno.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="osteceni_vozacka_zadnja" class="form-label fw-bold">6.
+                                                    Zadnja
+                                                    strana
+                                                    vozačke dozvole:</label>
+                                                <input type="file" class="form-control" name="osteceni_vozacka_zadnja"
+                                                    required>
+                                                <div class="invalid-feedback">Polje za zadnju vozačku dozvolu je
+                                                    obavezno.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Ostatak inputa za Oštećenog (Evropski izveštaj, Izjava, Polisa) -->
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="osteceni_izvestaj" class="form-label fw-bold">7. Evropski
+                                                    izveštaj:</label>
+                                                <input type="file" class="form-control" name="osteceni_izvestaj"
+                                                    required>
+                                                <div class="invalid-feedback">Polje za evropski izveštaj je obavezno.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="osteceni_izjava" class="form-label fw-bold">8.
+                                                    Izjava:</label>
+                                                <input type="file" class="form-control" name="osteceni_izjava" required>
+                                                <div class="invalid-feedback">Polje za izjavu je obavezno.</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="osteceni_polisa" class="form-label fw-bold">9. AO
+                                                    Polisa:</label>
+                                                <input type="file" class="form-control" name="osteceni_polisa" required>
+                                                <div class="invalid-feedback">Polje za AO polisu je obavezno.</div>
+                                            </div>
+
+
+                                            <div class="mb-3">
+                                                <label for="osteceni_tekuci" class="form-label fw-bold">10. Tekuću
+                                                    račun:</label>
+                                                <input type="file" class="form-control" name="osteceni_tekuci" required>
+                                                <div class="invalid-feedback">Polje za Tekući račun je obavezno.</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Štetnik -->
+                            <div class="col-12">
+                                <div class="d-flex justify-content-between align-items-center btn btn-secondary  my-2 py-2 "
+                                    data-bs-toggle="collapse" href="#stetnik" role="button" aria-expanded="false"
+                                    aria-controls="stetnik">
+                                    <h5 class="mb-0">Štetnik</h5>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                                    </svg>
+                                </div>
+
+                                <div class="collapse" id="stetnik">
+                                    <hr>
+                                    <div class="row">
+                                        <!-- Inputi Štetnika -->
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="stetnik_licna_prednja" class="form-label fw-bold">1. Prednja
+                                                    strana
+                                                    lične karte:</label>
+                                                <input type="file" class="form-control" name="stetnik_licna_prednja"
+                                                    required>
+                                                <div class="invalid-feedback">Polje za prednju ličnu kartu je obavezno.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="stetnik_licna_zadnja" class="form-label fw-bold">2. Zadnja
+                                                    strana
+                                                    lične karte:</label>
+                                                <input type="file" class="form-control" name="stetnik_licna_zadnja"
+                                                    required>
+                                                <div class="invalid-feedback">Polje za zadnju ličnu kartu je obavezno.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="stetnik_saobracajna_prednja" class="form-label fw-bold">3.
+                                                    Prednja
+                                                    strana saobraćajne:</label>
+                                                <input type="file" class="form-control"
+                                                    name="stetnik_saobracajna_prednja" required>
+                                                <div class="invalid-feedback">Polje za prednju saobraćajnu je obavezno.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="stetnik_saobracajna_zadnja" class="form-label fw-bold">4.
+                                                    Zadnja
+                                                    strana saobraćajne:</label>
+                                                <input type="file" class="form-control"
+                                                    name="stetnik_saobracajna_zadnja" required>
+                                                <div class="invalid-feedback">Polje za zadnju saobraćajnu je obavezno.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="stetnik_vozacka_prednja" class="form-label fw-bold">5.
+                                                    Prednja
+                                                    strana vozačke dozvole:</label>
+                                                <input type="file" class="form-control" name="stetnik_vozacka_prednja"
+                                                    required>
+                                                <div class="invalid-feedback">Polje za prednju vozačku dozvolu je
+                                                    obavezno.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="stetnik_vozacka_zadnja" class="form-label fw-bold">6. Zadnja
+                                                    strana
+                                                    vozačke dozvole:</label>
+                                                <input type="file" class="form-control" name="stetnik_vozacka_zadnja"
+                                                    required>
+                                                <div class="invalid-feedback">Polje za zadnju vozačku dozvolu je
+                                                    obavezno.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Ostatak inputa za Štetnika (Izjava, Polisa) -->
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="stetnik_izjava" class="form-label fw-bold">7.
+                                                    Izjava:</label>
+                                                <input type="file" class="form-control" name="stetnik_izjava" required>
+                                                <div class="invalid-feedback">Polje za izjavu je obavezno.</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="stetnik_polisa" class="form-label fw-bold">8. AO
+                                                    Polisa:</label>
+                                                <input type="file" class="form-control" name="stetnik_polisa" required>
+                                                <div class="invalid-feedback">Polje za AO polisu je obavezno.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Štetnik -->
+                            <div class="col-12">
+                                <div class="d-flex justify-content-between align-items-center btn btn-secondary  my-2 py-2 "
+                                    data-bs-toggle="collapse" href="#dodatna_dokumenta" role="button"
+                                    aria-expanded="false" aria-controls="dodatna_dokumenta">
+                                    <h5 class="mb-0">Dodatna dokumenta</h5>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                                    </svg>
+                                </div>
+
+                                <div class="collapse" id="dodatna_dokumenta">
+                                    <hr>
+                                    <div class="row">
+                                        <!-- Inputi Štetnika -->
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="stetnik_licna_prednja" class="form-label fw-bold">Dodatna
+                                                    dokumenta</label>
+                                                <input type="file" class="form-control" name="dodatna_dokumenta[]"
+                                                    multiple>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-success btn-lg w-100">Prijavi štetu</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Bootstrap validacija (JS)
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+
+</html>
