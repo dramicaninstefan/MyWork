@@ -9,7 +9,7 @@ $dotenv->load();
 
 // Konekcija sa bazom podataka (PDO)
 try {
-    $pdo = new PDO("mysql:host=" . $_ENV['DB_HOST'] . ";dbname=" . $_ENV['DB_NAME'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
+    $pdo = new PDO("mysql:host=" . $_ENV['DB_HOST'] . ";dbname=" . $_ENV['DB_NAME'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD']);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Greška sa bazom podataka: " . $e->getMessage());
@@ -55,6 +55,7 @@ $fajl_list = [
 
 <!DOCTYPE html>
 <html lang="sr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,34 +64,35 @@ $fajl_list = [
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        table{
-            border: 2px solid black;
-        }
-        
-        td{
-            padding: 15px;
-        }
+    table {
+        border: 2px solid black;
+    }
+
+    td {
+        padding: 15px;
+    }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <!-- Tabela za ispis fajlova -->
-    <table class="table table-bordered table-striped">
-        <thead class="table-dark ">
-            <tr>
-                <th>Ime Fajla</th>
-                <th>Preuzmi</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php 
-$index = 0; // Početni indeks
-echo '<tr><td colspan="2"><b>Oštećeni</b></td></tr>';
-foreach ($attachments as $attachment): ?>
-    <tr>
-        <td>
-            <?php 
+    <div class="container">
+        <!-- Tabela za ispis fajlova -->
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark ">
+                <tr>
+                    <th>Ime Fajla</th>
+                    <th>Preuzmi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+            $index = 0; // Početni indeks
+            echo '<tr><td colspan="2"><b>Oštećeni</b></td></tr>';
+            foreach ($attachments as $attachment): ?>
+                <tr>
+                    <td>
+                        <?php 
             // Provera da li je indeks validan
             if (isset($fajl_list[$index])) {
                 echo htmlspecialchars($fajl_list[$index]);
@@ -98,12 +100,13 @@ foreach ($attachments as $attachment): ?>
                 echo "Nepoznata stavka"; // Ako indeks nije validan
             }
             ?> :
-            <?php echo htmlspecialchars($attachment['file_name']); ?>
-        </td>
-        <td><a href="download.php?attachment_id=<?php echo $attachment['id']; ?>" class="btn btn-success">Preuzmi</a></td>
-    </tr>
+                        <?php echo htmlspecialchars($attachment['file_name']); ?>
+                    </td>
+                    <td><a href="download.php?attachment_id=<?php echo $attachment['id']; ?>"
+                            class="btn btn-success">Preuzmi</a></td>
+                </tr>
 
-    <?php 
+                <?php 
         
 
     // Dodaj prazan red nakon 9. indeksa (deseti red)
@@ -114,12 +117,13 @@ foreach ($attachments as $attachment): ?>
 endforeach; 
 ?>
 
-        </tbody>
-    </table>
-</div>
+            </tbody>
+        </table>
+    </div>
 
-<!-- Uključivanje Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Uključivanje Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

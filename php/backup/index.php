@@ -1,33 +1,132 @@
+<?php
+    require 'config.php'; // Uključi konekciju sa bazom
+
+    // Prikazivanje svih klijenata iz baze
+    $sql    = "SELECT * FROM klijenti ORDER BY vreme_prijave DESC";
+    $result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="sr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prijava štete</title>
+    <title>Lista Klijenata</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Dodajte ovaj link za Bootstrap ikone -->
+
+    <style>
+    .status-green {
+        background-color: green;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .status-red {
+        background-color: red;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    </style>
 </head>
 
-<body class="bg-light">
+<body class="container mt-5">
 
-    <div class="container-fluid">
-        <div class="row" style="height: 100vh;">
-            <nav class="col-md-3 col-lg-2 d-md-block bg-dark sidebar text-white">
-                <div class="position-sticky p-3">
-                    <h3 class="text-center py-3">Meni</h3>
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="email_logs.php">Lista</a>
-                        </li>
-                    </ul>
+    <h2 class="mb-4">Lista Klijenata</h2>
+
+    <!-- Polje za pretragu -->
+    <div class="mb-3">
+        <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-search"></i></span> <!-- Ikona lupom -->
+            <input type="text" class="form-control" id="searchInput" placeholder="Pretraži klijente">
+        </div>
+    </div>
+
+    <div class="d-flex">
+        <!-- Dugme za otvaranje modala -->
+        <button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#prijavaModal">
+            Dodaj Klijenta
+        </button>
+
+        <form method="post">
+            <button type="submit" name="redirect" class="btn btn-danger m-1">Istorija prijava</button>
+        </form>
+    </div>
+
+    <?php
+    if (isset($_POST['redirect'])) {
+        header("Location: email_logs.php");
+        exit();
+    }
+    ?>
+
+    <!-- Prikazivanje liste klijenata -->
+    <table class="table table-bordered mt-4" id="klijentTable">
+        <thead class="table-dark">
+            <tr>
+                <th>Ime i Prezime</th>
+                <th>Kontakt</th>
+                <th>JMBG</th>
+                <th>Vreme Prijave</th>
+                <th>Poslato</th>
+                <th>Akcije</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if ($result->num_rows > 0): ?>
+            <?php while ($row = $result->fetch_assoc()): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($row['ime_prezime']) ?></td>
+                <td><?php echo htmlspecialchars($row['kontakt']) ?></td>
+                <td><?php echo htmlspecialchars($row['jmbg'] ?: 'N/A') ?></td>
+                <td><?php echo $row['vreme_prijave'] ?></td>
+                <td><?php echo $row['poslato'] == 1 ? 'Da' : 'Ne' ?></td>
+                <td>
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal"
+                        onclick="editKlijent(<?php echo htmlspecialchars(json_encode($row)); ?>)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                        </svg>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal"
+                        data-bs-target="#fileUploadModal">
+                        Prijavi štetu
+                    </button>
+                </td>
+            </tr>
+            <?php endwhile; ?>
+            <?php else: ?>
+            <tr>
+                <td colspan="7" class="text-center">Nema unetih klijenata</td>
+            </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+
+
+    <!-- Modal za upload fajlova -->
+    <div class="modal fade" id="fileUploadModal" tabindex="-1" aria-labelledby="fileUploadModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fileUploadModalLabel">Dodavanje Fajlova</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </nav>
-
-            <div class="col-md-9 col-lg-10 p-4">
-                <div class="card shadow p-4">
-                    <h2 class="text-center text-dark mb-4">Priloži dokumente</h2>
-
+                <div class="modal-body">
                     <form action="send_email.php" method="POST" enctype="multipart/form-data" class="needs-validation"
                         novalidate>
                         <!-- Select za Primaoca Emaila (Advokati) -->
@@ -316,23 +415,169 @@
         </div>
     </div>
 
+
+    <!-- Modal za prijavu klijenta -->
+    <div class="modal fade" id="prijavaModal" tabindex="-1" aria-labelledby="prijavaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="prijavaModalLabel">Forma za prijavu klijenata</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Forma za prijavu klijenata -->
+                    <form action="add_klijent.php" method="post" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="ime_prezime" class="form-label">Ime i Prezime:</label>
+                            <input type="text" class="form-control" id="ime_prezime" name="ime_prezime" required>
+                            <div class="invalid-feedback">Molimo unesite ime i prezime.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="kontakt" class="form-label">Kontakt (broj telefona):</label>
+                            <input type="text" class="form-control" id="kontakt" name="kontakt" pattern="^\+?\d{6,15}$"
+                                required>
+                            <div class="invalid-feedback">Unesite ispravan broj telefona (min. 6 cifara, opcioni +).
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jmbg" class="form-label">JMBG (opciono):</label>
+                            <input type="text" class="form-control" id="jmbg" name="jmbg" pattern="^\d{13}$">
+                            <div class="invalid-feedback">JMBG mora imati tačno 13 cifara.</div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Dodaj klijenta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal za izmenu klijenta -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Izmeni Email Log</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm" method="POST" action="edit_klijent.php">
+                        <input type="hidden" name="id" id="editId">
+
+                        <div class="mb-3">
+                            <label for="editFirstLast">Ime i prezime</label>
+                            <input type="text" name="ime_prezime" id="editFirstLast" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="editKontakt">Kontakt</label>
+                            <input type="text" name="kontakt" id="editKontakt" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="editJMBG">JMBG</label>
+                            <input type="text" name="jmbg" id="editJMBG" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="editSent">Isplaćeno</label>
+                            <select name="poslato" id="editSent" class="form-control form-select">
+                                <option value="1">Isplaćeno</option>
+                                <option value="0">Nije isplaćeno</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Sačuvaj</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Bootstrap validacija (JS)
-        (function () {
-            'use strict'
-            var forms = document.querySelectorAll('.needs-validation')
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
-                        }
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-        })()
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            const storedFile = localStorage.getItem(input.name);
+
+            if (storedFile) {
+                const blob = new Blob([new Uint8Array(JSON.parse(storedFile).data)], {
+                    type: JSON.parse(storedFile).type
+                });
+                const file = new File([blob], JSON.parse(storedFile).name, {
+                    type: JSON.parse(storedFile).type
+                });
+
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                input.files = dataTransfer.files;
+            }
+
+            input.addEventListener("change", function(event) {
+                const file = event.target.files[0];
+
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const fileData = {
+                            name: file.name,
+                            type: file.type,
+                            data: Array.from(new Uint8Array(e.target.result))
+                        };
+
+                        localStorage.setItem(input.name, JSON.stringify(fileData));
+                    };
+                    reader.readAsArrayBuffer(file);
+                }
+            });
+        });
+    });
+
+
+    // Pretraga u tabeli klijenata
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        let filter = this.value.toLowerCase();
+        let rows = document.querySelectorAll("#klijentTable tbody tr");
+
+        rows.forEach(row => {
+            let text = row.innerText.toLowerCase();
+            row.style.display = text.includes(filter) ? '' : 'none';
+        });
+    });
+
+
+    // Bootstrap validacija (JS)
+    (function() {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+        Array.prototype.slice.call(forms)
+            .forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+
+
+    function editKlijent(log) {
+        document.getElementById('editId').value = log.id;
+        document.getElementById('editFirstLast').value = log.ime_prezime;
+        document.getElementById('editKontakt').value = log.kontakt;
+        document.getElementById('editJMBG').value = log.jmbg;
+        document.getElementById('editSent').value = log.poslato;
+    }
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
+
+<?php
+    $conn->close(); // Zatvaranje konekcije sa bazom
+?>

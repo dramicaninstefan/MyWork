@@ -11,7 +11,7 @@ $dotenv->load();
 
 // Konekcija sa bazom podataka (PDO)
 try {
-    $pdo = new PDO("mysql:host=" . $_ENV['DB_HOST'] . ";dbname=" . $_ENV['DB_NAME'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
+    $pdo = new PDO("mysql:host=" . $_ENV['DB_HOST'] . ";dbname=" . $_ENV['DB_NAME'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD']);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Greška sa bazom podataka: " . $e->getMessage());
@@ -112,7 +112,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->execute();
             }
 
-            header("Location: email_logs.php");
+            echo '<script type="text/javascript">
+                    localStorage.clear(); // Očisti localStorage
+                    setTimeout(function() {
+                        window.location.href = "index.php"; // Preusmeri na index.php
+                    }, 1000); // Očisti localStorage i preusmeri nakon 2 sekunde
+                    </script>';
+            exit();
         } catch (Exception $e) {
             echo "Greška prilikom slanja email-a: {$mail->ErrorInfo}";
         }
