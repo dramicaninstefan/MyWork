@@ -15,16 +15,16 @@ try {
     die("Greška sa bazom podataka: " . $e->getMessage());
 }
 
-// Provera da li je email_log_id postavljen
-$email_log_id = isset($_GET['email_log_id']) ? $_GET['email_log_id'] : null;
+// Provera da li je client_id postavljen
+$client_id = isset($_GET['client_id']) ? $_GET['client_id'] : null;
 
-if (!$email_log_id) {
+if (!$client_id) {
     die("Email log ID nije postavljen.");
 }
 
-// SQL upit za dobijanje fajlova koji su povezani sa određenim email_log_id
-$stmt = $pdo->prepare("SELECT id, file_name FROM email_attachments WHERE email_log_id = :email_log_id");
-$stmt->bindParam(':email_log_id', $email_log_id, PDO::PARAM_INT);
+// SQL upit za dobijanje fajlova koji su povezani sa određenim client_id
+$stmt = $pdo->prepare("SELECT id, file_name FROM email_attachments WHERE email_log_id = :client_id");
+$stmt->bindParam(':client_id', $client_id, PDO::PARAM_INT);
 $stmt->execute();
 $attachments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -47,7 +47,12 @@ $fajl_list = [
     "Zadnja strana vozačke dozvole",
     "Evropski izveštaj",
     "Izjava",
-    "AO Polisa",
+    "Dodatna dokumenta:",
+    "Dodatna dokumenta:",
+    "Dodatna dokumenta:",
+    "Dodatna dokumenta:",
+    "Dodatna dokumenta:",
+    "Dodatna dokumenta:"
   ];
 ?>
 

@@ -26,7 +26,7 @@ $email_logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Logovi</title>
+    <title>Istorija prijava</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
@@ -59,7 +59,7 @@ $email_logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <div class="container my-5">
-        <h2>Email Logovi</h2>
+        <h2 class="mb-4">Email Logovi</h2>
 
         <!-- Search input -->
         <div class="mb-3 position-relative">
@@ -74,10 +74,11 @@ $email_logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th>Primalac</th>
                     <th>Naslov mejla</th>
                     <th>Poslato</th>
-                    <th>Fajlovi</th>
+                    <!-- <th>Fajlovi</th> -->
                 </tr>
             </thead>
             <tbody>
+                <?php if ($email_logs): ?>
                 <?php foreach ($email_logs as $log): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($log['email_to']); ?></td>
@@ -87,7 +88,7 @@ $email_logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php echo htmlspecialchars($log['sent_at']); ?>
                         </div>
                     </td>
-                    <td>
+                    <!-- <td>
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#attachmentModal"
                             onclick="loadAttachment(<?php echo $log['id']; ?>)">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -96,9 +97,14 @@ $email_logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2m2.354 6.854-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708" />
                             </svg>
                         </button>
-                    </td>
+                    </td> -->
                 </tr>
                 <?php endforeach; ?>
+                <?php else: ?>
+                <tr>
+                    <td colspan="7" class="text-center">Nema poslatih mejlova</td>
+                </tr>
+                <?php endif; ?>
             </tbody>
         </table>
 
@@ -106,7 +112,7 @@ $email_logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <!-- Modal za prikazivanje attachmenta -->
-    <div class="modal fade" id="attachmentModal" tabindex="-1" aria-labelledby="attachmentModalLabel"
+    <!-- <div class="modal fade" id="attachmentModal" tabindex="-1" aria-labelledby="attachmentModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -114,12 +120,12 @@ $email_logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <h5 class="modal-title" id="attachmentModalLabel">Pregled fajlova</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="attachmentContent">
-                    <!-- Content loaded dynamically -->
-                </div>
+                <div class="modal-body" id="attachmentContent"> -->
+    <!-- Content loaded dynamically -->
+    <!-- </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- JavaScript za pretragu i popunjavanje modala -->
     <script>
@@ -133,16 +139,16 @@ $email_logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
         });
     });
 
-    function loadAttachment(logId) {
-        fetch('attachments.php?email_log_id=' + logId)
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('attachmentContent').innerHTML = data;
-            })
-            .catch(error => {
-                document.getElementById('attachmentContent').innerHTML = "Greška pri učitavanju attachmenta.";
-            });
-    }
+    // function loadAttachment(logId) {
+    //     fetch('attachments.php?email_log_id=' + logId)
+    //         .then(response => response.text())
+    //         .then(data => {
+    //             document.getElementById('attachmentContent').innerHTML = data;
+    //         })
+    //         .catch(error => {
+    //             document.getElementById('attachmentContent').innerHTML = "Greška pri učitavanju attachmenta.";
+    //         });
+    // }
 
     function editLog(log) {
         document.getElementById('editId').value = log.id;

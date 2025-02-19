@@ -1,6 +1,14 @@
 <?php
     require 'config.php'; // Uključi konekciju sa bazom
 
+    use Dotenv\Dotenv;
+
+    require "vendor/autoload.php";  // Uključivanje Dotenv biblioteke
+
+    // Učitaj .env fajl
+    $dotenv = Dotenv::createImmutable(__DIR__);
+    $dotenv->load(); 
+
     // Prikazivanje svih klijenata iz baze
     $sql    = "SELECT * FROM klijenti ORDER BY vreme_prijave DESC";
     $result = $conn->query($sql);
@@ -15,7 +23,8 @@
     <title>Lista Klijenata</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Dodajte ovaj link za Bootstrap ikone -->
+
+
 
     <style>
     .status-green {
@@ -40,23 +49,29 @@
 
     <h2 class="mb-4">Lista Klijenata</h2>
 
-    <!-- Polje za pretragu -->
-    <div class="mb-3">
-        <div class="input-group">
-            <span class="input-group-text"><i class="bi bi-search"></i></span> <!-- Ikona lupom -->
-            <input type="text" class="form-control" id="searchInput" placeholder="Pretraži klijente">
-        </div>
+    <!-- Search input -->
+    <div class="mb-3 position-relative">
+        <input type="text" id="searchInput" class="form-control ps-5" placeholder="Pretraži email logove...">
+        <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
     </div>
 
-    <div class="d-flex">
-        <!-- Dugme za otvaranje modala -->
-        <button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#prijavaModal">
-            Dodaj Klijenta
-        </button>
+    <div class="d-flex justify-content-between">
+        <div class="d-flex">
+            <!-- Dugme za otvaranje modala -->
+            <button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#prijavaModal">
+                <i class="bi bi-person-add" style="font-size: 15px; margin-right: 5px;"></i> Dodaj Klijenta
+            </button>
 
-        <form method="post">
-            <button type="submit" name="redirect" class="btn btn-danger m-1">Istorija prijava</button>
-        </form>
+            <form method="post">
+                <button type="submit" name="redirect" class="btn btn-danger m-1">
+                    <i class="bi bi-clock-history" style="font-size: 15px; margin-right: 5px;"></i> Istorija
+                    prijava</button>
+            </form>
+        </div>
+
+        <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#fileUploadModal">
+            <i class="bi bi-send" style="font-size: 15px; margin-right: 5px;"></i> Prijavi štetu
+        </button>
     </div>
 
     <?php
@@ -74,9 +89,8 @@
                 <th>Kontakt</th>
                 <th>JMBG</th>
                 <th>Vreme Prijave</th>
-                <th>Poslato</th>
-                <th>Akcije</th>
-                <th></th>
+                <th width="200px">Poslato</th>
+                <th colspan="2">Akcije</th>
             </tr>
         </thead>
         <tbody>
@@ -87,7 +101,11 @@
                 <td><?php echo htmlspecialchars($row['kontakt']) ?></td>
                 <td><?php echo htmlspecialchars($row['jmbg'] ?: 'N/A') ?></td>
                 <td><?php echo $row['vreme_prijave'] ?></td>
-                <td><?php echo $row['poslato'] == 1 ? 'Da' : 'Ne' ?></td>
+                <td>
+                    <div class="<?php echo $row['poslato'] ? 'status-green' : 'status-red'; ?>">
+                        <?php echo $row['poslato_kada'] ?? 'NIJE' ?>
+                    </div>
+                </td>
                 <td>
                     <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal"
                         onclick="editKlijent(<?php echo htmlspecialchars(json_encode($row)); ?>)">
@@ -99,11 +117,13 @@
                                 d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                         </svg>
                     </button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal"
-                        data-bs-target="#fileUploadModal">
-                        Prijavi štetu
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#attachmentModal"
+                        onclick="loadAttachment(<?php echo $row['id']; ?>)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-cloud-arrow-down-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2m2.354 6.854-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708" />
+                        </svg>
                     </button>
                 </td>
             </tr>
@@ -115,6 +135,22 @@
             <?php endif; ?>
         </tbody>
     </table>
+
+    <!-- Modal za prikazivanje attachmenta -->
+    <div class="modal fade" id="attachmentModal" tabindex="-1" aria-labelledby="attachmentModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="attachmentModalLabel">Pregled fajlova</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="attachmentContent">
+                    <!-- Content loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Modal za upload fajlova -->
@@ -130,7 +166,7 @@
                     <form action="send_email.php" method="POST" enctype="multipart/form-data" class="needs-validation"
                         novalidate>
                         <!-- Select za Primaoca Emaila (Advokati) -->
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <label for="email_to" class="form-label fw-bold">Izaberite advokata:</label>
                             <select class="form-select" name="email_to" id="email_to" required>
                                 <option value="">Izaberite advokata</option>
@@ -140,19 +176,42 @@
                                 <option value="">Advokat 2</option>
                             </select>
                             <div class="invalid-feedback">Molimo vas izaberite advokata.</div>
+                        </div> -->
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="email_to" class="form-label fw-bold">Email:</label>
+                            <input type="text" class="form-control" name="email_to" id="email_to"
+                                value="<?php echo $_ENV['MAIL_FROM']?>" disabled>
+                            <div class="invalid-feedback">Polje za naslov je obavezno.</div>
                         </div>
 
-                        <!-- Naslov -->
+                        <!-- Polje za izbor klijenta -->
                         <div class="mb-3">
+                            <label for="client_select" class="form-label fw-bold">Izaberite klijenta za prijavu
+                                (Subject): </label>
+                            <select class="form-select" name="client_id" id="client_select" required>
+                                <option value="">Klijent...</option>
+                                <?php include 'get_clients.php'; ?>
+                            </select>
+                            <div class="invalid-feedback">Molimo vas izaberite klijenta.</div>
+                        </div>
+
+                        <!-- Skriveno polje za subject, koje će biti popunjeno sa imenom klijenta -->
+                        <input type="hidden" name="subject" id="subject">
+
+
+                        <!-- Naslov -->
+                        <!-- <div class="mb-3">
                             <label for="subject" class="form-label fw-bold">Naslov (Subject):</label>
                             <input type="text" class="form-control" name="subject" id="subject" required>
                             <div class="invalid-feedback">Polje za naslov je obavezno.</div>
-                        </div>
+                        </div> -->
 
                         <!-- Poruka (nije obavezna) -->
                         <div class="mb-3">
                             <label for="message" class="form-label fw-bold">Poruka:</label>
-                            <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                            <textarea class="form-control" name="message" id="message" rows="3" value=""></textarea>
                             <!-- <div class="invalid-feedback">Poruka je obavezna.</div> -->
                         </div>
 
@@ -376,7 +435,7 @@
                                 </div>
                             </div>
 
-                            <!-- Štetnik -->
+                            <!-- Dodatna dokumenta -->
                             <div class="col-12">
                                 <div class="d-flex justify-content-between align-items-center btn btn-secondary  my-2 py-2 "
                                     data-bs-toggle="collapse" href="#dodatna_dokumenta" role="button"
@@ -392,27 +451,64 @@
                                 <div class="collapse" id="dodatna_dokumenta">
                                     <hr>
                                     <div class="row">
-                                        <!-- Inputi Štetnika -->
-                                        <div class="col-md-12">
+                                        <!-- Ostatak inputa za Štetnika (Izjava, Polisa) -->
+                                        <div class="col-6">
                                             <div class="mb-3">
-                                                <label for="stetnik_licna_prednja" class="form-label fw-bold">Dodatna
-                                                    dokumenta</label>
-                                                <input type="file" class="form-control" name="dodatna_dokumenta[]"
-                                                    multiple>
+                                                <label for="dodatni_dokument1" class="form-label fw-bold">1.
+                                                    Dodatna dokumenta:</label>
+                                                <input type="file" class="form-control" name="dodatni_dokument1">
+                                                <div class="invalid-feedback">Polje za izjavu je obavezno.</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="dodatni_dokument2" class="form-label fw-bold">2.
+                                                    Dodatna dokumenta:</label>
+                                                <input type="file" class="form-control" name="dodatni_dokument2">
+                                                <div class="invalid-feedback">Polje za izjavu je obavezno.</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="dodatni_dokument3" class="form-label fw-bold">3.
+                                                    Dodatna dokumenta:</label>
+                                                <input type="file" class="form-control" name="dodatni_dokument3">
+                                                <div class="invalid-feedback">Polje za izjavu je obavezno.</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="dodatni_dokument4" class="form-label fw-bold">4.
+                                                    Dodatna dokumenta:</label>
+                                                <input type="file" class="form-control" name="dodatni_dokument4">
+                                                <div class="invalid-feedback">Polje za izjavu je obavezno.</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="dodatni_dokument5" class="form-label fw-bold">5.
+                                                    Dodatna dokumenta:</label>
+                                                <input type="file" class="form-control" name="dodatni_dokument5">
+                                                <div class="invalid-feedback">Polje za izjavu je obavezno.</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="dodatni_dokument6" class="form-label fw-bold">6.
+                                                    Dodatna dokumenta:</label>
+                                                <input type="file" class="form-control" name="dodatni_dokument6">
+                                                <div class="invalid-feedback">Polje za izjavu je obavezno.</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="text-center mt-4">
-                            <button type="submit" class="btn btn-success btn-lg w-100">Prijavi štetu</button>
-                        </div>
-                    </form>
                 </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success btn-lg w-100">Prijavi štetu</button>
+                </div>
+                </form>
             </div>
         </div>
+    </div>
     </div>
 
 
@@ -461,7 +557,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="editForm" method="POST" action="edit_klijent.php">
+                    <form id="editForm" method="POST" action="edit_klijent.php" class="needs-validation" novalidate>
                         <input type="hidden" name="id" id="editId">
 
                         <div class="mb-3">
@@ -479,14 +575,6 @@
                             <input type="text" name="jmbg" id="editJMBG" class="form-control">
                         </div>
 
-                        <div class="mb-3">
-                            <label for="editSent">Isplaćeno</label>
-                            <select name="poslato" id="editSent" class="form-control form-select">
-                                <option value="1">Isplaćeno</option>
-                                <option value="0">Nije isplaćeno</option>
-                            </select>
-                        </div>
-
                         <button type="submit" class="btn btn-success">Sačuvaj</button>
                     </form>
                 </div>
@@ -495,6 +583,33 @@
     </div>
 
     <script>
+    //load attacmente
+    function loadAttachment(logId) {
+        fetch('attachments.php?client_id=' + logId)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('attachmentContent').innerHTML = data;
+            })
+            .catch(error => {
+                document.getElementById('attachmentContent').innerHTML = "Greška pri učitavanju attachmenta.";
+            });
+    }
+
+
+    // Kada korisnik izabere klijenta, postavite ime klijenta kao subject
+    document.getElementById('client_select').addEventListener('change', function() {
+        var clientSelect = this;
+        var subjectField = document.getElementById('subject');
+
+        // Ako je izabran klijent, postavljamo ime klijenta kao subject
+        if (clientSelect.value) {
+            var clientName = clientSelect.options[clientSelect.selectedIndex].text;
+            subjectField.value = clientName; // Postavljamo ime klijenta u hidden input za subject
+        } else {
+            subjectField.value = ''; // Ako nije izabran klijent, clear-ujemo subject
+        }
+    });
+
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('input[type="file"]').forEach(input => {
             const storedFile = localStorage.getItem(input.name);
