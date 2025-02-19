@@ -18,10 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ime_prezime = $_POST['ime_prezime'];
     $kontakt = $_POST['kontakt'];
     $jmbg = $_POST['jmbg'];
-    $poslato = $_POST['poslato'];
 
-    $stmt = $pdo->prepare("UPDATE klijenti SET ime_prezime = ?, kontakt = ?, jmbg = ?, poslato = ? WHERE id = ?");
-    $stmt->execute([$ime_prezime, $kontakt, $jmbg, $poslato, $id]);
+    $stmt = $pdo->prepare("UPDATE klijenti SET ime_prezime = ?, kontakt = ?, jmbg = ? WHERE id = ?");
+    $stmt->execute([$ime_prezime, $kontakt, $jmbg, $id]);
 
     header("Location: index.php"); // Vrati se na glavnu stranicu
     exit();

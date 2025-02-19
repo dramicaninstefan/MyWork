@@ -2,7 +2,7 @@
 // get_clients.php
 require 'config.php';
 
-$sql = "SELECT * FROM klijenti"; // Upit za dobijanje klijenata
+$sql = "SELECT * FROM klijenti WHERE poslato = '0'"; // Upit za dobijanje klijenata
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

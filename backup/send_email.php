@@ -22,8 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Podaci iz forme
     $email_to = $_ENV['MAIL_USERNAME'];
-    $subject = trim($_POST['subject'] . "Steta");  // Subject je sada ime klijenta
+    $subject = trim($_POST['subject'] . " Steta");  // Subject je sada ime klijenta
     $message = trim($_POST['message']);
+    $client_id = isset($_POST['client_id']) ? (int) $_POST['client_id'] : null;
+
 
     // Validacija za email, subject, i message
     if (empty($email_to)) {
@@ -80,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $email_log_id = $pdo->lastInsertId();
 
             // Ažuriranje polja za klijenta u bazi
-            $updateStmt = $pdo->prepare("UPDATE klijenti SET poslato = 1 WHERE id = :client_id");
+            $updateStmt = $pdo->prepare("UPDATE klijenti SET poslato = '1' WHERE id = :client_id");
             $updateStmt->bindParam(':client_id', $client_id, PDO::PARAM_INT);
             $updateStmt->execute();
 
@@ -117,10 +119,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $mail->send();
 
-            // localStorage.clear();
+                    // localStorage.clear();
+            
 
             echo '<script type="text/javascript">
-                    
                     setTimeout(function() {
                         window.location.href = "email_logs.php";
                     }, 1000);

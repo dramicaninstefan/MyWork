@@ -23,7 +23,8 @@
     <title>Lista Klijenata</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Dodajte ovaj link za Bootstrap ikone -->
+
+
 
     <style>
     .status-green {
@@ -163,9 +164,10 @@
 
                         <!-- Polje za izbor klijenta -->
                         <div class="mb-3">
-                            <label for="client_select" class="form-label fw-bold">Izaberite klijenta:</label>
+                            <label for="client_select" class="form-label fw-bold">Izaberite klijenta za prijavu
+                                (Subject): </label>
                             <select class="form-select" name="client_id" id="client_select" required>
-                                <option value="">Izaberite klijenta</option>
+                                <option value="">Klijent...</option>
                                 <?php include 'get_clients.php'; ?>
                             </select>
                             <div class="invalid-feedback">Molimo vas izaberite klijenta.</div>
@@ -531,7 +533,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="editForm" method="POST" action="edit_klijent.php">
+                    <form id="editForm" method="POST" action="edit_klijent.php" class="needs-validation" novalidate>
                         <input type="hidden" name="id" id="editId">
 
                         <div class="mb-3">
@@ -547,14 +549,6 @@
                         <div class="mb-3">
                             <label for="editJMBG">JMBG</label>
                             <input type="text" name="jmbg" id="editJMBG" class="form-control">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="editSent">Isplaćeno</label>
-                            <select name="poslato" id="editSent" class="form-control form-select">
-                                <option value="1">Isplaćeno</option>
-                                <option value="0">Nije isplaćeno</option>
-                            </select>
                         </div>
 
                         <button type="submit" class="btn btn-success">Sačuvaj</button>
