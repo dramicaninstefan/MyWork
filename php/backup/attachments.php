@@ -53,10 +53,8 @@ $fajl_list = [
     "Dodatna dokumenta:",
     "Dodatna dokumenta:",
     "Dodatna dokumenta:"
-  ];
+];
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="sr">
@@ -65,9 +63,7 @@ $fajl_list = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fajlovi za Email Log</title>
-    <!-- Uključivanje Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <style>
     table {
         border: 2px solid black;
@@ -80,11 +76,9 @@ $fajl_list = [
 </head>
 
 <body>
-
     <div class="container">
-        <!-- Tabela za ispis fajlova -->
         <table class="table table-bordered table-striped">
-            <thead class="table-dark ">
+            <thead class="table-dark">
                 <tr>
                     <th>Ime Fajla</th>
                     <th>Preuzmi</th>
@@ -92,43 +86,37 @@ $fajl_list = [
             </thead>
             <tbody>
                 <?php 
-            $index = 0; // Početni indeks
-            echo '<tr><td colspan="2"><b>Oštećeni</b></td></tr>';
-            foreach ($attachments as $attachment): ?>
+                if (empty($attachments)) {
+                    echo '<tr><td colspan="2" class="text-center">Nema dostupnih dokumenata.</td></tr>';
+                } else {
+                    $index = 0;
+                    echo '<tr><td colspan="2"><b>Oštećeni</b></td></tr>';
+                    foreach ($attachments as $attachment): ?>
                 <tr>
                     <td>
-                        <?php 
-            // Provera da li je indeks validan
-            if (isset($fajl_list[$index])) {
-                echo htmlspecialchars($fajl_list[$index]);
-            } else {
-                echo "Nepoznata stavka"; // Ako indeks nije validan
-            }
-            ?> :
+                        <?php echo isset($fajl_list[$index]) ? htmlspecialchars($fajl_list[$index]) : "Nepoznata stavka"; ?>
+                        :
                         <?php echo htmlspecialchars($attachment['file_name']); ?>
                     </td>
                     <td><a href="download.php?attachment_id=<?php echo $attachment['id']; ?>"
                             class="btn btn-success">Preuzmi</a></td>
                 </tr>
+                <?php   
+                        if ($index == 9) {
+                            echo '<tr><td colspan="2"></td></tr><tr><td colspan="2"><b>Štetnik</b></td></tr>';
+                        }
 
-                <?php 
-        
-
-    // Dodaj prazan red nakon 9. indeksa (deseti red)
-    if ($index == 9) {
-        echo '<tr><td colspan="2"></td></tr><tr><td colspan="2"><b>Štetnik</b></td></tr>';
-    }
-    $index++; // Povećaj indeks sa svakim prolaskom kroz petlju
-endforeach; 
-?>
-
+                        if ($index == 17) {
+                            echo '<tr><td colspan="2"></td></tr><tr><td colspan="2"><b>Dodatna dokumenta:</b></td></tr>';
+                        }
+                        $index++;
+                    endforeach;
+                }
+                ?>
             </tbody>
         </table>
     </div>
-
-    <!-- Uključivanje Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
