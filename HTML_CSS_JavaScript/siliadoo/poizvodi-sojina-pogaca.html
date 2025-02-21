@@ -29,6 +29,28 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <style>
+    @media (max-width: 800px) {
+      #imagebox1 {
+        display: none;
+      }
+
+      #imagebox2 {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 800px) {
+      #imagebox1 {
+        display: block;
+      }
+
+      #imagebox2 {
+        display: none;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -93,76 +115,107 @@
       <div class="container">
         <div class="row">
           <div class="row order-xl-2 order-1">
-            <div class="col-lg-6 mb-3">
-              <div class="">
+            <div class="col-md-3" id="imagebox1">
+              <div class="col-6 col-xl-12">
                 <img src="./assets/img/sojina-pogaca.jpg" alt="Glavna slika" class="img-fluid">
               </div>
+              <div class="col-6 col-xl-12 mt-3">
+                <img src="./assets/img/sojina-pogaca3.jpg" alt="Glavna slika" class="img-fluid">
+              </div>
+
+              <h4 class="mt-5">Kontaktirajte nas</h4>
+
+              <ul>
+                <li>
+                  <a class="phoneNumber" href="tel:+381628440870">+381 62 84 40 870</a>
+                </li>
+                <li>
+                  <a class="phoneNumber" href="tel:+381691100212">+381 69 11 00 212</a>
+                </li>
+                <li>
+                  <a class="mailTo" href="mailto:office@silia.rs">office@silia.rs</a>
+                </li>
+              </ul>
             </div>
-            <div class="col-lg-6">
-              <h3>Informacije</h3>
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th>Sojina Pogača</th>
-                    <th>Prosečna Vrednost</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Sirovi protein</td>
-                    <td>42%</td>
-                  </tr>
-                  <tr>
-                    <td>Masti</td>
-                    <td>7%</td>
-                  </tr>
-                  <tr>
-                    <td>Celuloza</td>
-                    <td>5.5%</td>
-                  </tr>
-                  <tr>
-                    <td>Pepeo</td>
-                    <td>5.5%</td>
-                  </tr>
-                  <tr>
-                    <td>Vlaga</td>
-                    <td>12%</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="col-md-9 ">
+              <div class="row mb-3">
+                <div class="col-12">
+                  <img src="./assets/img/soy-cake.jpg" alt="Glavna slika" class="img-fluid">
+                </div>
+              </div>
+              <div id="imagebox2" class="row">
+                <div class="col-6 col-xl-12">
+                  <img src="./assets/img/sojina-pogaca.jpg" alt="Glavna slika" class="img-fluid">
+                </div>
+                <div class="col-6 col-xl-12">
+                  <img src="./assets/img/sojina-pogaca3.jpg" alt="Glavna slika" class="img-fluid">
+                </div>
+              </div>
+              <div class="">
+                <h3>Informacije</h3>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Sojina Pogača</th>
+                      <th>Prosečna Vrednost</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Sirovi protein</td>
+                      <td>42%</td>
+                    </tr>
+                    <tr>
+                      <td>Masti</td>
+                      <td>7%</td>
+                    </tr>
+                    <tr>
+                      <td>Celuloza</td>
+                      <td>5.5%</td>
+                    </tr>
+                    <tr>
+                      <td>Pepeo</td>
+                      <td>5.5%</td>
+                    </tr>
+                    <tr>
+                      <td>Vlaga</td>
+                      <td>12%</td>
+                    </tr>
+                  </tbody>
+                </table>
 
-              <p>Sojina pogača dobija se ekstudiranjem i presovanjem sojinog zrna
-                <br>
-                <b>Boja:</b> svetožuta do svetlosmeđa
-                <br>
-                <b>Pakovanje:</b> PP džambo vreće ~900kg (90*90*180)cm
-                <br>
-                <b>Rok trajanja:</b> 6 meseci
-              </p>
+                <p>Sojina pogača dobija se ekstudiranjem i presovanjem sojinog zrna
+                  <br>
+                  <b>Boja:</b> svetožuta do svetlosmeđa
+                  <br>
+                  <b>Pakovanje:</b> PP džambo vreće ~900kg (90*90*180)cm
+                  <br>
+                  <b>Rok trajanja:</b> 6 meseci
+                </p>
 
-              <p><b>SOJINA POGAČA</b> je krmivo bogato proteinima. Srednje je bogato energijom.
-                <br>
-                <br>
-                Namenjena je svim kategorijama domaćih životinja, naročito u fazi rasta.
-                <br>
-                <br>
-                Uvođenjem sojine pogače u smese za ishranu domaćih životinja dobijaju se do 10% bolji proizvodni
-                rezultati
-                (prirast, broj i masa jaja, mleka, a i popravljaju se i reproduktivna svojstva) u odnosu na smeše na
-                bazi
-                sojine sačme.
-                <br>
-                Istovremeno utrosak hrane po jedinici proizvoda (konverzija) takodje se smanjuje.
-                <br>
-                <br>
-                Sve nedvosmisleno ukazuje na <b>ekonomsku opravdanost</b> uvodenja sojine pogace u obroke
-                domach zivotinja
+                <p><b>SOJINA POGAČA</b> je krmivo bogato proteinima. Srednje je bogato energijom.
+                  <br>
+                  <br>
+                  Namenjena je svim kategorijama domaćih životinja, naročito u fazi rasta.
+                  <br>
+                  <br>
+                  Uvođenjem sojine pogače u smese za ishranu domaćih životinja dobijaju se do 10% bolji proizvodni
+                  rezultati
+                  (prirast, broj i masa jaja, mleka, a i popravljaju se i reproduktivna svojstva) u odnosu na smeše na
+                  bazi
+                  sojine sačme.
+                  <br>
+                  Istovremeno utrosak hrane po jedinici proizvoda (konverzija) takodje se smanjuje.
+                  <br>
+                  <br>
+                  Sve nedvosmisleno ukazuje na <b>ekonomsku opravdanost</b> uvodenja sojine pogace u obroke
+                  domach zivotinja
 
-              </p>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </section><!-- End Contact Section -->
 
 

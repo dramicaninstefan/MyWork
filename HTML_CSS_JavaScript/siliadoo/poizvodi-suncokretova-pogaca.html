@@ -29,6 +29,28 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <style>
+    @media (max-width: 800px) {
+      #imagebox1 {
+        display: none;
+      }
+
+      #imagebox2 {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 800px) {
+      #imagebox1 {
+        display: block;
+      }
+
+      #imagebox2 {
+        display: none;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -92,13 +114,43 @@
     <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
       <div class="container">
         <div class="row">
-          <div class="row order-xl-2 order-1">
-            <div class="col-lg-6 mb-3">
+          <div class="col-md-3" id="imagebox1">
+            <div class="col-6 col-xl-12">
+              <img src="./assets/img/suncokretova-pogaca2.png" alt="Glavna slika" class="img-fluid">
+            </div>
+            <div class="col-6 col-xl-12">
+              <img src="./assets/img/suncokretova-pogaca1.jpg" alt="Glavna slika" class="img-fluid">
+            </div>
+
+            <h4 class="mt-5">Kontaktirajte nas</h4>
+
+            <ul>
+              <li>
+                <a class="phoneNumber" href="tel:+381628440870">+381 62 84 40 870</a>
+              </li>
+              <li>
+                <a class="phoneNumber" href="tel:+381691100212">+381 69 11 00 212</a>
+              </li>
+              <li>
+                <a class="mailTo" href="mailto:office@silia.rs">office@silia.rs</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-9 ">
+            <div class="row mb-3">
               <div class="col-12">
                 <img src="./assets/img/suncoketova-pogaca.jpg" alt="Glavna slika" class="img-fluid">
               </div>
             </div>
-            <div class="col-lg-6">
+            <div id="imagebox2" class="row">
+              <div class="col-6 col-xl-12">
+                <img src="./assets/img/suncokretova-pogaca2.png" alt="Glavna slika" class="img-fluid">
+              </div>
+              <div class="col-6 col-xl-12">
+                <img src="./assets/img/suncokretova-pogaca1.jpg" alt="Glavna slika" class="img-fluid">
+              </div>
+            </div>
+            <div class="">
               <h3>Informacije</h3>
               <table class="table table-bordered">
                 <thead>
@@ -146,7 +198,6 @@
             </div>
           </div>
         </div>
-      </div>
     </section><!-- End Contact Section -->
 
 
