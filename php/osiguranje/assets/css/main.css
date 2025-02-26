@@ -48,3 +48,19 @@ thead {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
+.status-green {
+  background-color: green;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.status-red {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+}

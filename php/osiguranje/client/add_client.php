@@ -4,13 +4,14 @@ require '../config.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ime_prezime = $_POST['ime_prezime'];
     $kontakt = $_POST['kontakt'];
+    $email = $_POST['email'];
     $jmbg = $_POST['jmbg'];
     $adresa = $_POST['adresa'];
     $mesto = $_POST['mesto'];
 
-    $sql = "INSERT INTO klijent (ime_prezime, kontakt, jmbg, adresa, mesto) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO klijent (ime_prezime, kontakt, email, jmbg, adresa, mesto) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssss", $ime_prezime, $kontakt, $jmbg, $adresa, $mesto);
+    $stmt->bind_param("ssssss", $ime_prezime, $kontakt, $email, $jmbg, $adresa, $mesto);
 
     try {
         if ($stmt->execute()) {

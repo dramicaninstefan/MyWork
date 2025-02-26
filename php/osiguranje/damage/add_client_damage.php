@@ -1,72 +1,66 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require '../config.php';
 
-$servername = "localhost";
-$username = "root"; // tvoj MySQL username
-$password = ""; // tvoj MySQL password
-$dbname = "osiguranje";
+// Uzimanje podataka iz POST zahteva
+$klijent_id = $_POST['klijent_id'];
+$status = 0; // ili vrednost koja ti odgovara
+$poslato = 0; // ili vrednost koja ti odgovara
+$poslato_kada = NULL; // trenutni datum i vreme
 
-// Povezivanje na bazu podataka
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Provera konekcije
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Proveri da li su podaci poslati POST metodom
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Uzimanje podataka iz forme
-    $klijent_id = $_POST['klijent_id'];
-    
-    // Postavi status i poslato
-    $status = 0; // ili vrednost koja ti odgovara
-    $poslato = 0; // ili vrednost koja ti odgovara
-
-    // Pripremi i izvrši INSERT upit
-    $stmt = $conn->prepare("INSERT INTO klijenti_stete (klijent_id, status, poslato, poslato_kada) VALUES (?, ?, ?, NOW())");
-    $stmt->bind_param("iii", $klijent_id, $status, $poslato);
-
-    try {
-        if ($stmt->execute()) {
-            // Redirekcija ili poruka o uspehu
-            echo '<script>
-                sessionStorage.setItem("status", "success");
-                sessionStorage.setItem("message", "Uspesno ste kreirali štetu!");
-                window.location.href = "/client_damage";
-            </script>';
-
-            
+// Funkcija za učitavanje fajlova
+function uploadFiles($fileNames) {
+    $uploadedFiles = [];
+    foreach ($fileNames as $fileName) {
+        if (isset($_FILES[$fileName]) && $_FILES[$fileName]['error'] == 0) {
+            $uploadedFiles[$fileName] = file_get_contents($_FILES[$fileName]['tmp_name']);
         } else {
-            // U slučaju greške, redirekcija sa greškom
-            echo '<script>
-                    sessionStorage.setItem("status", "error");
-                    sessionStorage.setItem("message", "Došlo je do greške, molim vas pokušajte ponovo!");
-                    window.location.href = "/client_damage";
-                </script>';
-        }
-    } catch (mysqli_sql_exception $e) {
-        if ($e->getCode() == 1062) { // Kod greške za duplikate
-            echo '<script>
-                    sessionStorage.setItem("status", "error");
-                    sessionStorage.setItem("message", "Šteta sa odabranim klijentom već postoji!");
-                    window.location.href = "/client_damage";
-                </script>';
-        } else {
-            // Druga greška
-            echo '<script>
-                    sessionStorage.setItem("status", "error");
-                    sessionStorage.setItem("message", "Došlo je do greške, molim vas pokušajte ponovo!");
-                    window.location.href = "/client_damage";
-                </script>';
+            $uploadedFiles[$fileName] = NULL; // Ako fajl nije učitan, postavi na NULL
         }
     }
-
-    // Zatvaranje pripremljenog upita
-    $stmt->close();
+    return $uploadedFiles;
 }
 
-// Zatvaranje konekcije
-$conn->close();
+// Spisak fajlova za učitavanje
+$fileNames = [
+    'osteceni_licna_prednja', 'osteceni_licna_zadnja', 'osteceni_saobracajna_prednja',
+    'osteceni_saobracajna_zadnja', 'osteceni_vozacka_prednja', 'osteceni_vozacka_zadnja',
+    'osteceni_izjava', 'osteceni_polisa', 'osteceni_tekuci', 'emin_procena',
+    'stetnik_licna_prednja', 'stetnik_licna_zadnja', 'stetnik_saobracajna_prednja',
+    'stetnik_saobracajna_zadnja', 'stetnik_vozacka_prednja', 'stetnik_vozacka_zadnja',
+    'stetnik_izjava', 'stetnik_polisa',
+    'dodatni_dokument1', 'dodatni_dokument2', 'dodatni_dokument3',
+    'dodatni_dokument4', 'dodatni_dokument5', 'dodatni_dokument6'
+];
+
+// Učitaj fajlove
+$uploadedFiles = uploadFiles($fileNames);
+
+// Pripremi upit za umetanje podataka
+$stmt = $conn->prepare("INSERT INTO `klijenti_stete` (`id`, `klijent_id`, `status`, `poslato`, `poslato_kada`, 
+    `osteceni_licna_prednja`, `osteceni_licna_zadnja`, `osteceni_saobracajna_prednja`, 
+    `osteceni_saobracajna_zadnja`, `osteceni_vozacka_prednja`, `osteceni_vozacka_zadnja`, 
+    `osteceni_izjava`, `osteceni_polisa`, `osteceni_tekuci`, `emin_procena`, 
+    `stetnik_licna_prednja`, `stetnik_licna_zadnja`, `stetnik_saobracajna_prednja`, 
+    `stetnik_saobracajna_zadnja`, `stetnik_vozacka_prednja`, `stetnik_vozacka_zadnja`, 
+    `stetnik_izjava`, `stetnik_polisa`, `dodatni_dokument1`, `dodatni_dokument2`, 
+    `dodatni_dokument3`, `dodatni_dokument4`, `dodatni_dokument5`, `dodatni_dokument6`) 
+VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+
+$stmt->bind_param("ibbsssssssssssssssssssssssss", 
+    $klijent_id, 
+    $status, 
+    $poslato, 
+    $poslato_kada, 
+    ...array_values($uploadedFiles) // Unesi sve učitane fajlove
+);
+
+// Izvrši upit
+if ($stmt->execute()) {
+    echo "Podaci su uspešno sačuvani.";
+} else {
+    echo "Greška pri čuvanju podataka: " . $stmt->error;
+}
+
+// Zatvori pripremljeni iskaz
+$stmt->close();
 ?>

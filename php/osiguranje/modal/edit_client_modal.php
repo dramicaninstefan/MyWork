@@ -22,6 +22,11 @@
                         <div class="invalid-feedback">Unesite kontakt.</div>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control" name="email" id="editEmail">
+                        <div class="invalid-feedback">Unesite email.</div>
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">JMBG</label>
                         <input type="text" class="form-control" name="jmbg" id="editJMBG" pattern="\d{13}">
                         <div class="invalid-feedback">Unesite validan JMBG (13 cifara).</div>
@@ -36,7 +41,7 @@
                         <input type="text" class="form-control" name="mesto" id="editMesto">
                         <div class="invalid-feedback">Unesite mesto.</div>
                     </div>
-                    <button type="submit" class="btn btn-warning">Ažuriraj</button>
+                    <button type="submit" class="btn btn-warning">Sačuvaj</button>
                 </form>
             </div>
         </div>
@@ -44,10 +49,11 @@
 </div>
 
 <script>
-function openEditModal(id, ime, kontakt, jmbg, adresa, mesto) {
+function openEditModal(id, ime, kontakt, email, jmbg, adresa, mesto) {
     document.getElementById('editClientId').value = id;
     document.getElementById('editImePrezime').value = ime;
     document.getElementById('editKontakt').value = kontakt;
+    document.getElementById('editEmail').value = email;
     document.getElementById('editJMBG').value = jmbg;
     document.getElementById('editAdresa').value = adresa;
     document.getElementById('editMesto').value = mesto;

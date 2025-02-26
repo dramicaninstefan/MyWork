@@ -22,6 +22,11 @@
                         <!-- <div class="invalid-feedback">Unesite kontakt.</div> -->
                     </div>
                     <div class="mb-3 position-relative">
+                        <i class="bi bi-envelope position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                        <input type="text" class="form-control ps-5" name="email" placeholder="Unesite email">
+                        <!-- <div class="invalid-feedback">Unesite kontakt.</div> -->
+                    </div>
+                    <div class="mb-3 position-relative">
                         <i class="bi bi-card-text position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                         <input type="text" class="form-control ps-5" name="jmbg" pattern="\d{13}"
                             placeholder="Unesite JMBG (13 cifara)" required>

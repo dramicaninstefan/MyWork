@@ -21,6 +21,7 @@ $result = $conn->query($sql);
             <tr>
                 <th>Ime i Prezime</th>
                 <th>Kontakt</th>
+                <th>Email</th>
                 <th>JMBG</th>
                 <th>Adresa</th>
                 <th>Mesto</th>
@@ -32,12 +33,13 @@ $result = $conn->query($sql);
             <tr>
                 <td><?php echo htmlspecialchars($row['ime_prezime']); ?></td>
                 <td><?php echo htmlspecialchars($row['kontakt']); ?></td>
+                <td><?php echo htmlspecialchars($row['email']) ?: 'N/A'; ?></td>
                 <td><?php echo htmlspecialchars($row['jmbg']) ?: 'N/A'; ?></td>
                 <td><?php echo htmlspecialchars($row['adresa']) ?: 'N/A'; ?></td>
                 <td><?php echo htmlspecialchars($row['mesto']) ?: 'N/A'; ?></td>
                 <td>
                     <button class="btn btn-warning"
-                        onclick="openEditModal(<?php echo htmlspecialchars($row['id']); ?>, '<?php echo htmlspecialchars($row['ime_prezime']); ?>', '<?php echo htmlspecialchars($row['kontakt']); ?>', '<?php echo htmlspecialchars($row['jmbg']); ?>', '<?php echo htmlspecialchars($row['adresa']); ?>', '<?php echo htmlspecialchars($row['mesto']); ?>')">
+                        onclick="openEditModal(<?php echo htmlspecialchars($row['id']); ?>, '<?php echo htmlspecialchars($row['ime_prezime']); ?>', '<?php echo htmlspecialchars($row['kontakt']); ?>', '<?php echo htmlspecialchars($row['email']); ?>', '<?php echo htmlspecialchars($row['jmbg']); ?>', '<?php echo htmlspecialchars($row['adresa']); ?>', '<?php echo htmlspecialchars($row['mesto']); ?>')">
                         <i class="bi bi-pencil-square"></i>
                     </button>
                 </td>
@@ -61,19 +63,4 @@ document.getElementById('searchInput').addEventListener('keyup', function() {
         row.style.display = text.includes(filter) ? '' : 'none';
     });
 });
-
-(function() {
-    'use strict'
-    var forms = document.querySelectorAll('.needs-validation')
-    Array.prototype.slice.call(forms)
-        .forEach(function(form) {
-            form.addEventListener('submit', function(event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-                form.classList.add('was-validated')
-            }, false)
-        })
-})()
 </script>
