@@ -1,14 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root"; // tvoj MySQL username
-$password = ""; // tvoj MySQL password
-$dbname = "osiguranje";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Uključite config.php za povezivanje sa bazom
+include('config.php'); // Ovaj fajl mora biti u istoj fascikli ili navedite apsolutnu putanju
 
 
 // Dodajemo logiku za ažuriranje statusa

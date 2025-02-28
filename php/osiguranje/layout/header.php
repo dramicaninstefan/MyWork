@@ -50,6 +50,13 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="/client_damage">Lista šteta</a></li>
+                        <li>
+                            <!-- Dugme unutar <a> taga za otvaranje modala -->
+                            <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#punomocModal">
+                                Kreiraj punomoć
+                            </a>
+
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -90,6 +97,12 @@ if (status === "success") {
     statusAlertTitle.textContent = 'Uspešno!';
     statusAlertMessage.textContent = message;
     statusAlert.classList.add('alert-success');
+    statusAlert.style.display = 'block';
+}
+if (status === "info") {
+    statusAlertTitle.textContent = 'Info!';
+    statusAlertMessage.textContent = message;
+    statusAlert.classList.add('alert-info');
     statusAlert.style.display = 'block';
 } else if (status === "error") {
     statusAlertTitle.textContent = 'Greška!';

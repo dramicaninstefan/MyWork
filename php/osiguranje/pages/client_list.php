@@ -1,5 +1,7 @@
 <?php
-require 'config.php';
+// Uključite config.php za povezivanje sa bazom
+include('config.php'); // Ovaj fajl mora biti u istoj fascikli ili navedite apsolutnu putanju
+
 
 $sql = "SELECT * FROM klijent";
 $result = $conn->query($sql);
@@ -38,7 +40,7 @@ $result = $conn->query($sql);
                 <td><?php echo htmlspecialchars($row['adresa']) ?: 'N/A'; ?></td>
                 <td><?php echo htmlspecialchars($row['mesto']) ?: 'N/A'; ?></td>
                 <td>
-                    <button class="btn btn-warning"
+                    <button class="btn btn-sm btn-warning"
                         onclick="openEditModal(<?php echo htmlspecialchars($row['id']); ?>, '<?php echo htmlspecialchars($row['ime_prezime']); ?>', '<?php echo htmlspecialchars($row['kontakt']); ?>', '<?php echo htmlspecialchars($row['email']); ?>', '<?php echo htmlspecialchars($row['jmbg']); ?>', '<?php echo htmlspecialchars($row['adresa']); ?>', '<?php echo htmlspecialchars($row['mesto']); ?>')">
                         <i class="bi bi-pencil-square"></i>
                     </button>

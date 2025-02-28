@@ -1,19 +1,11 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "osiguranje";
+// Uključite config.php za povezivanje sa bazom
+include('config.php'); // Ovaj fajl mora biti u istoj fascikli ili navedite apsolutnu putanju
+
 
 $id = isset($_POST['id']) ? $_POST['id'] : null;
 $klijent_id = isset($_POST['klijent_id']) ? $_POST['klijent_id'] : null;
 
-// Inicijalizacija konekcije
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Provera konekcije
-if ($conn->connect_error) {
-    die("Konekcija nije uspela: " . $conn->connect_error);
-}
 
 $query = "SELECT ime_prezime FROM klijent WHERE id = $klijent_id";
 $klijent_ime_prezime = $conn->query($query);

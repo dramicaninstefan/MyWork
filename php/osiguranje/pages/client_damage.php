@@ -1,21 +1,11 @@
 <?php
-$servername = "localhost";
-$username = "root"; // tvoj MySQL username
-$password = ""; // tvoj MySQL password
-$dbname = "osiguranje";
-
-// Povezivanje na bazu podataka
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Provera konekcije
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Uključite config.php za povezivanje sa bazom
+include('config.php'); // Ovaj fajl mora biti u istoj fascikli ili navedite apsolutnu putanju
 
 // Izvlačenje podataka
-$query = "SELECT t.id, t.klijent_id, k.ime_prezime, k.kontakt, t.status, t.poslato, t.poslato_kada 
+$query = "SELECT t.id, t.klijent_id, k.ime_prezime, k.kontakt, t.status_izvrsenja, t.poslato, t.created_at
           FROM klijenti_stete t 
-          JOIN klijent k ON t.klijent_id = k.id";
+          JOIN klijent k ON t.klijent_id = k.id ORDER BY t.created_at DESC;";
 
 $result = $conn->query($query);
 
@@ -43,12 +33,12 @@ if (!$result) {
     <table class="table table-bordered" id="steteTable">
         <thead class="table-dark">
             <tr>
-                <th>Ime i Prezime</th>
-                <th>Kontakt</th>
-                <th widht='100px'>Status</th>
-                <th widht='100px'>Poslato</th>
-                <th>Poslato Kada</th>
-                <th></th>
+                <th style="width: 300px">Ime i Prezime</th>
+                <th style="width: 135px">Kontakt</th>
+                <th style="width: 135px">Status</th>
+                <!-- <th style="width: 180px">Vreme slanja</th> -->
+                <th>Akcije</th>
+                <th style="width: 170px">Datum kreiranja</th>
             </tr>
         </thead>
         <tbody>
@@ -56,27 +46,64 @@ if (!$result) {
             <?php while ($row = $result->fetch_assoc()): ?>
             <tr>
                 <td><?php echo htmlspecialchars($row['ime_prezime']); ?></td>
-                <td><?php echo htmlspecialchars($row['kontakt']); ?></td>
                 <td>
-                    <div class="<?php echo $row['status'] ? 'status-green' : 'status-red'; ?>">
-                        <?php echo $row['status'] ? "JESTE ": 'NIJE' ?>
-                    </div>
+                    <?php
+                    $broj = $row['kontakt'];
+                    $broj_bez_plus = ltrim($broj, '+');
+                    ?>
+                    <a class="link-primary link-offset-2 link-offset-3-hover"
+                        href="viber://chat/?number=%2B<?php echo $broj_bez_plus;?>" target="_blank" rel="noreferrer">
+                        <?php echo htmlspecialchars( $row['kontakt']); ?>
+                    </a>
                 </td>
                 <td>
-                    <div class="<?php echo $row['poslato'] ? 'status-green' : 'status-red'; ?>">
-                        <?php echo $row['poslato'] ? "JESTE ": 'NIJE' ?>
+                    <?php
+                    $statusClass = '';
+                    switch (strtolower($row['status_izvrsenja'])) {
+                        case 'kreirano':
+                            $statusClass = 'status-kreirano';
+                            break;
+                        case 'punomoc':
+                            $statusClass = 'status-punomoc';
+                            break;
+                        case 'u pripremi':  
+                        case 'u izradi':
+                            $statusClass = 'status-u-izradi';
+                            break;
+                        case 'poslato':
+                        case 'poslato':
+                            $statusClass = 'status-poslato';
+                            break;
+                        default:
+                            $statusClass = '';
+                            break;
+                    }
+                    ?>
+
+                    <div class="<?php echo htmlspecialchars($statusClass); ?>">
+                        <?php echo htmlspecialchars($row['status_izvrsenja']); ?>
                     </div>
+
                 </td>
+                <!-- <td>
+                    <div
+                        class="<?php echo $row['poslato'] && $row['poslato'] !== '0000-00-00 00:00:00' ? 'status-green' : 'status-red'; ?>">
+                        <?php echo ($row['poslato'] === '0000-00-00 00:00:00' || !$row['poslato']) ? 'NIJE' : $row['poslato']; ?>
+                    </div>
+                </td> -->
                 </td>
-                <td><?php echo htmlspecialchars($row['poslato_kada']); ?></td>
                 <td>
                     <form action="/client_damage_files" method="post">
                         <input type="hidden" name="id" value="<?php echo htmlspecialchars($row['id']); ?>">
                         <input type="hidden" name="klijent_id"
                             value="<?php echo htmlspecialchars($row['klijent_id']); ?>">
-                        <button type="submit" class="btn btn-primary">Pogledaj fajlove</button>
+                        <button type="submit" class="btn btn-sm btn-primary">
+                            <i class="bi bi-file-earmark"></i>
+                            Dokumenta
+                        </button>
                     </form>
                 </td>
+                <td><?php echo htmlspecialchars($row['created_at']); ?></td>
             </tr>
             <?php endwhile; ?>
             <?php else: ?>
@@ -121,6 +148,8 @@ if (!$result) {
                             </select>
                             <div class="invalid-feedback">Odaberite klijenta</div>
                         </div>
+
+
                         <div class="row">
                             <?php
                             $fileGroups = [
@@ -170,6 +199,17 @@ if (!$result) {
                         </div>
                         <button type="submit" class="btn btn-success">Završi krerianje štete</button>
                     </form>
+
+                    <div>
+                        <!-- Informativna poruka -->
+                        <div class="mt-4 alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Napomena:</strong> Možete uploadovati fajlove u različitim formatima (JPEG, PNG,
+                            PDF, itd.), ali
+                            imajte na umu da pregled (preview) neće biti dostupan za PDF i druge formate osim slika.
+                            Preporučuje se da
+                            uploadujete slike (JPEG, PNG) za lakšu obradu i pregled. Hvala na razumevanju!
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

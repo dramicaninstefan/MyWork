@@ -1,17 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "osiguranje";
+// Uključite config.php za povezivanje sa bazom
+include('../config.php'); // Ovaj fajl mora biti u istoj fascikli ili navedite apsolutnu putanju
 
 $id = isset($_POST['damage_id']) ? $_POST['damage_id'] : null;
 $klijent_id = isset($_POST['klijent_id']) ? $_POST['klijent_id'] : null;
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Konekcija nije uspela: " . $conn->connect_error);
-}
 
 $fileNames = [
     "osteceni_licna_prednja", "osteceni_licna_zadnja", "osteceni_saobracajna_prednja", "osteceni_saobracajna_zadnja",
@@ -24,35 +17,43 @@ $fileNames = [
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fileContents = [];
+    $hasFiles = false; // Flag za proveru da li su fajlovi poslati
     
     foreach ($fileNames as $fileName) {
         if (isset($_FILES['data_files']['tmp_name'][$fileName]) && $_FILES['data_files']['error'][$fileName] == 0) {
             $fileContent = file_get_contents($_FILES['data_files']['tmp_name'][$fileName]);
             $fileContents[$fileName] = $conn->real_escape_string($fileContent);
-        } else {
-            $fileContents[$fileName] = null;
+            $hasFiles = true; // Ako je makar jedan fajl pronađen, setujemo flag
         }
     }
 
+    // Ako nema nijednog fajla, samo preusmeri korisnika bez SQL upita
+    if (!$hasFiles) {
+        echo '
+        <script>
+            sessionStorage.setItem("status", "info");
+            sessionStorage.setItem("message", "Nema novih fajlova za dodavanje.");
+            window.location.href = "/client_damage";
+        </script>';
+        exit;
+    }
+
+    // Formiranje SQL upita samo ako postoje novi fajlovi
     $updateQuery = "UPDATE klijenti_stete SET ";
     $updates = [];
     foreach ($fileContents as $column => $value) {
-        if ($value !== null) {
-            $updates[] = "$column = '$value'";
-        }
+        $updates[] = "$column = '$value'";
     }
     $updateQuery .= implode(", ", $updates) . " WHERE id = $id and klijent_id = $klijent_id";
 
     if ($conn->query($updateQuery) === TRUE) {
-        // Redirekcija ili poruka o uspehu
         echo '
         <script>
             sessionStorage.setItem("status", "success");
-            sessionStorage.setItem("message", "Uspesno ste dodali slike za predmet!");
+            sessionStorage.setItem("message", "Uspešno ste dodali slike za predmet!");
             window.location.href = "/client_damage";
         </script>';
     } else {
-        // Redirekcija ili poruka o uspehu
         echo '
         <script>
             sessionStorage.setItem("status", "error");
