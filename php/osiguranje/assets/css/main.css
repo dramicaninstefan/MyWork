@@ -65,22 +65,6 @@ thead {
   text-align: center;
 }
 
-.status-kreirano {
-  background-color: #6c757d;
-  color: white;
-  padding: 3px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.status-punomoc {
-  background-color: #8338ec;
-  color: white;
-  padding: 3px;
-  border-radius: 5px;
-  text-align: center;
-}
-
 .status-u-izradi {
   background-color: #ffc107;
   color: white;

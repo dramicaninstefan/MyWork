@@ -14,26 +14,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssssssi", $ime_prezime, $kontakt, $email, $jmbg, $adresa, $mesto, $client_id);
 
-    if ($stmt->execute()) {
-        // Redirekcija ili poruka o uspehu
-        echo '<script>
-                sessionStorage.setItem("status", "success");
-                sessionStorage.setItem("message", "Uspešno ste ažurirali klijenta!");
-                window.location.href = "/client_list";
-            </script>';
-
-
-    } else {
-        // Poruka o grešci
-        echo '<script>
-                sessionStorage.setItem("status", "error");
-                sessionStorage.setItem("message", "Došlo je do greške, molim vas pokušajte ponovo!");
-                window.location.href = "/client_list";
-            </script>';
-
+    try {
+        if ($stmt->execute()) {
+            echo '<script>
+                    sessionStorage.setItem("status", "success");
+                    sessionStorage.setItem("message", "Uspešno ste ažurirali klijenta!");
+                    window.location.href = "/client_list";
+                </script>';
+        }
+    } catch (mysqli_sql_exception $e) {
+        if (strpos($e->getMessage(), "Duplicate entry") !== false && strpos($e->getMessage(), "for key 'jmbg'") !== false) {
+            echo '<script>
+                    sessionStorage.setItem("status", "error");
+                    sessionStorage.setItem("message", "Klijent sa unetim JMBG-om već postoji!");
+                    window.location.href = "/client_list";
+                </script>';
+        } else {
+            echo '<script>
+                    sessionStorage.setItem("status", "error");
+                    sessionStorage.setItem("message", "Došlo je do greške, molim vas pokušajte ponovo!");
+                    window.location.href = "/client_list";
+                </script>';
+        }
     }
-
-   
 
     $stmt->close();
 }

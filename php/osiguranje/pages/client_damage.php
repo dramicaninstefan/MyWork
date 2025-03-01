@@ -52,25 +52,18 @@ if (!$result) {
                     $broj_bez_plus = ltrim($broj, '+');
                     ?>
                     <a class="link-primary link-offset-2 link-offset-3-hover"
-                        href="viber://chat/?number=%2B<?php echo $broj_bez_plus;?>" target="_blank" rel="noreferrer">
+                        href="viber://chat/?number=%2B<?php echo $broj_bez_plus;?>">
                         <?php echo htmlspecialchars( $row['kontakt']); ?>
                     </a>
                 </td>
                 <td>
                     <?php
+                    // menja boju na osnovu statusa
                     $statusClass = '';
                     switch (strtolower($row['status_izvrsenja'])) {
-                        case 'kreirano':
-                            $statusClass = 'status-kreirano';
-                            break;
-                        case 'punomoc':
-                            $statusClass = 'status-punomoc';
-                            break;
                         case 'u pripremi':  
-                        case 'u izradi':
                             $statusClass = 'status-u-izradi';
                             break;
-                        case 'poslato':
                         case 'poslato':
                             $statusClass = 'status-poslato';
                             break;

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Klijenata</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -29,33 +28,28 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">To Do</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item">
+                    <a class="nav-link" href="/client_list">
                         Klijenti
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li>
-                            <!-- <a class="dropdown-item" href="/#addClientModal" data-bs-toggle="modal"
-                                data-bs-target="#addClientModal">Novi Klijent</a> -->
-                        </li>
-                        <li><a class="dropdown-item" href="/client_list">Lista klijenti</a></li>
-                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/client_damage">Štete</a>
+                </li>
+
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Štete
+                        Punomoć
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/client_damage">Lista šteta</a></li>
                         <li>
-                            <!-- Dugme unutar <a> taga za otvaranje modala -->
                             <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#punomocModal">
                                 Kreiraj punomoć
                             </a>
-
                         </li>
                     </ul>
                 </li>

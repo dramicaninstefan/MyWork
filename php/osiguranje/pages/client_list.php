@@ -34,7 +34,17 @@ $result = $conn->query($sql);
             <?php while ($row = $result->fetch_assoc()) { ?>
             <tr>
                 <td><?php echo htmlspecialchars($row['ime_prezime']); ?></td>
-                <td><?php echo htmlspecialchars($row['kontakt']); ?></td>
+
+                <td>
+                    <?php
+                    $broj = $row['kontakt'];
+                    $broj_bez_plus = ltrim($broj, '+');
+                    ?>
+                    <a class="link-primary link-offset-2 link-offset-3-hover"
+                        href="viber://chat/?number=%2B<?php echo $broj_bez_plus;?>">
+                        <?php echo htmlspecialchars( $row['kontakt']); ?>
+                    </a>
+                </td>
                 <td><?php echo htmlspecialchars($row['email']) ?: 'N/A'; ?></td>
                 <td><?php echo htmlspecialchars($row['jmbg']) ?: 'N/A'; ?></td>
                 <td><?php echo htmlspecialchars($row['adresa']) ?: 'N/A'; ?></td>

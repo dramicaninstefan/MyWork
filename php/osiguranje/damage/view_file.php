@@ -1,10 +1,19 @@
 <?php
-// Uključite config.php za povezivanje sa bazom
-include('../config.php'); // Ovaj fajl mora biti u istoj fascikli ili navedite apsolutnu putanju
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "osiguranje";
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : null;
 $klijent_id = isset($_GET['klijent_id']) ? intval($_GET['klijent_id']) : null;
 
+// Inicijalizacija konekcije
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Provera konekcije
+if ($conn->connect_error) {
+    die("Konekcija nije uspela: " . $conn->connect_error);
+}
 
 if (isset($_GET['file'])) {
     $fileName = $conn->real_escape_string($_GET['file']); // Sanitizacija ulaza
