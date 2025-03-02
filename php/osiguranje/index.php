@@ -11,14 +11,14 @@ if (!isset($_SESSION['user_id'])) {
 $page = trim($_SERVER['REQUEST_URI'], '/');
 
 // Definišemo dostupne stranice
-$allowed_pages = ['client_list', 'todo', 'client_damage', 'client_damage_files'];
+$allowed_pages = ['client_list', 'client_damage', 'client_damage_files'];
 
 // Učitavamo header (zajednički deo stranica)
 require 'layout/header.php';
 
 // Ako je korisnik otišao na početnu stranicu, učitavamo home.php
 if ($page == '' || $page == 'index.php') {
-    require 'pages/todo.php';
+    require 'pages/client_damage.php';
 } 
 // Ako stranica postoji u listi dozvoljenih, učitavamo je
 elseif (in_array($page, $allowed_pages)) {

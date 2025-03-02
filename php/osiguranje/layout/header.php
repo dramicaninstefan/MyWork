@@ -26,9 +26,6 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">To Do</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/client_list">
                         Klijenti
                     </a>

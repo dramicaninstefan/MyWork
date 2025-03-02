@@ -3,7 +3,7 @@
 include('config.php'); // Ovaj fajl mora biti u istoj fascikli ili navedite apsolutnu putanju
 
 // Izvlačenje podataka
-$query = "SELECT t.id, t.klijent_id, k.ime_prezime, k.kontakt, t.status_izvrsenja, t.poslato, t.created_at
+$query = "SELECT t.id, t.klijent_id, k.ime_prezime, k.kontakt, t.status_izvrsenja, t.poslato, t.created_at, t.emin_procena_status, t.punomoc_status
           FROM klijenti_stete t 
           JOIN klijent k ON t.klijent_id = k.id ORDER BY t.created_at DESC;";
 
@@ -36,8 +36,10 @@ if (!$result) {
                 <th style="width: 300px">Ime i Prezime</th>
                 <th style="width: 135px">Kontakt</th>
                 <th style="width: 135px">Status</th>
+                <th style="width: 90px">Punomoć</th>
+                <th style="width: 60px">Emin</th>
                 <!-- <th style="width: 180px">Vreme slanja</th> -->
-                <th>Akcije</th>
+                <th></th>
                 <th style="width: 170px">Datum kreiranja</th>
             </tr>
         </thead>
@@ -76,46 +78,109 @@ if (!$result) {
                     <div class="<?php echo htmlspecialchars($statusClass); ?>">
                         <?php echo htmlspecialchars($row['status_izvrsenja']); ?>
                     </div>
-
                 </td>
-                <!-- <td>
+
+
+                <td>
+                    <div class="<?php echo $row['punomoc_status'] == 0 ? 'status-red' : 'status-green'; ?>">
+                        <?php echo htmlspecialchars($row['punomoc_status']);  ?>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="<?php echo $row['emin_procena_status'] == 0 ? 'status-red' : 'status-green'; ?>">
+                        <?php echo htmlspecialchars($row['emin_procena_status']); ?>
+                    </div>
+                </td>
+
+                <!-- <?php if ($row['status_izvrsenja'] === $row['poslato']) : ?>
+                <td>
                     <div
                         class="<?php echo $row['poslato'] && $row['poslato'] !== '0000-00-00 00:00:00' ? 'status-green' : 'status-red'; ?>">
                         <?php echo ($row['poslato'] === '0000-00-00 00:00:00' || !$row['poslato']) ? 'NIJE' : $row['poslato']; ?>
                     </div>
-                </td> -->
                 </td>
-                <td>
+                <?php endif; ?> -->
+
+                </td>
+                <td class="d-flex justify-content-between gy-5">
                     <form action="/client_damage_files" method="post">
                         <input type="hidden" name="id" value="<?php echo htmlspecialchars($row['id']); ?>">
                         <input type="hidden" name="klijent_id"
                             value="<?php echo htmlspecialchars($row['klijent_id']); ?>">
                         <button type="submit" class="btn btn-sm btn-primary">
-                            <i class="bi bi-file-earmark"></i>
-                            Dokumenta
+                            <i class="bi bi-pencil-square"></i>
+                            Uredi
                         </button>
                     </form>
+
+                    <?php
+                    // Provera statusa i postavljanje disabled atributa ako neka vrednost nije 1
+                    $disabled = ($row['emin_procena_status'] != 1 || $row['punomoc_status'] != 1) ? 'disabled' : '';
+
+                    // Ako je status_izvrsenja "Poslato", onemogući i input polja
+                    $input_disabled = ($row['status_izvrsenja'] === "Poslato") ? 'disabled' : '';
+
+                    // Provera statusa izvršenja i postavljanje teksta dugmeta
+                    $button_text = ($row['status_izvrsenja'] === "Poslato") ? "Poslato" : "Pošalji";
+                    ?>
+
+                    <form id="emailForm" action="../damage/send_email.php" method="post">
+                        <input type="hidden" name="id" value="<?php echo htmlspecialchars($row['id']); ?>"
+                            <?php echo $input_disabled; ?>>
+                        <input type="hidden" name="klijent_id"
+                            value="<?php echo htmlspecialchars($row['klijent_id']); ?>" <?php echo $input_disabled; ?>>
+                        <button type="button" class="btn btn-sm btn-success" id="openConfirmModal"
+                            <?php echo $disabled . ' ' . $input_disabled; ?>>
+                            <?php echo $button_text; ?>
+                        </button>
+                    </form>
+
+
+
+
+
                 </td>
                 <td><?php echo htmlspecialchars($row['created_at']); ?></td>
             </tr>
             <?php endwhile; ?>
             <?php else: ?>
             <tr>
-                <td colspan="5">Nema kreiranih šteta</td>
+                <td colspan="7">Nema kreiranih šteta</td>
             </tr>
             <?php endif; ?>
         </tbody>
     </table>
 
+    <!-- Modal za potvrdu slanja  -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Potvrda slanja mejla</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Da li ste sigurni da želite da pošaljete mejl?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Odustani</button>
+                    <button type="button" class="btn btn-success" id="confirmSend">Pošalji</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Modal kreiraj novu stetu -->
     <div class="modal fade" id="dodajStetuModal" tabindex="-1" aria-labelledby="dodajStetuModalLabel"
         data-bs-backdrop="static" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content ">
+            <div class="modal-content modal-custom">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="dodajStetuModalLabel">Dodaj novu štetu</h5>
+                    <h5 class="modal-title" id="dodajStetuModalLabel">Kreiraj novu štetu</h5>
+                    <!-- Dodaj HTML za poruku -->
+
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -126,21 +191,27 @@ if (!$result) {
                             <select name="klijent_id" id="klijent_id" class="form-control" required>
                                 <option value=''>Izaberite klijenta</option>
                                 <?php
-                                    // Izvlačenje klijenata za padajući meni
-                                    $klijentiQuery = "SELECT id, ime_prezime FROM klijent";
-                                    $klijentiResult = $conn->query($klijentiQuery);
+                                // Izvlačenje klijenata za padajući meni
+                                $klijentiQuery = "SELECT id, ime_prezime FROM klijent";
+                                $klijentiResult = $conn->query($klijentiQuery);
 
-                                    if ($klijentiResult->num_rows > 0) {
-                                        while ($klijent = $klijentiResult->fetch_assoc()) {
-                                            echo '<option value="' . htmlspecialchars($klijent['id']) . '">' . htmlspecialchars($klijent['ime_prezime']) . '</option>';
-                                        }
-                                    } else {
-                                        echo '<option value="">Nema dostupnih klijenata</option>';
+                                if ($klijentiResult->num_rows > 0) {
+                                    while ($klijent = $klijentiResult->fetch_assoc()) {
+                                        echo '<option value="' . htmlspecialchars($klijent['id']) . '">' . htmlspecialchars($klijent['ime_prezime']) . '</option>';
                                     }
-                                ?>
+                                } else {
+                                    echo '<option value="">Nema dostupnih klijenata</option>';
+                                }
+                            ?>
                             </select>
-                            <div class="invalid-feedback">Odaberite klijenta</div>
+                            <div class="invalid-feedback">Izaberi klijenta</div>
                         </div>
+
+                        <div class="form-group mt-3">
+                            <h5>Opis (nije obavezno):</h5>
+                            <textarea name="opis" id="opis" class="form-control" rows="4"></textarea>
+                        </div>
+
 
 
                         <div class="row">
@@ -156,13 +227,23 @@ if (!$result) {
                                     "stetnik_vozacka_prednja", "stetnik_vozacka_zadnja", "stetnik_izjava", "stetnik_polisa"
                                 ],
                                 "Dodatna dokumenta" => [
-                                    "dodatni_dokument1", "dodatni_dokument2", "dodatni_dokument3", "dodatni_dokument4", "dodatni_dokument5", "dodatni_dokument6"
+                                    "dodatni_dokument1", "dodatni_dokument2", "dodatni_dokument3", "dodatni_dokument4", "dodatni_dokument5", "dodatni_dokument6",
+                                    'dodatni_dokument7', 'dodatni_dokument8', 'dodatni_dokument9', 'dodatni_dokument10', 'dodatni_dokument11', 'dodatni_dokument12',
+                                    'dodatni_dokument13', 'dodatni_dokument14', 'dodatni_dokument15', 'dodatni_dokument16'
                                 ]
                             ];
                             ?>
 
                             <div class="accordion my-5" id="fileAccordion">
                                 <h5>Dokumenta</h5>
+
+                                <!-- Input za punomoć odmah ispod h5 -->
+                                <div class="col-md-12 mb-3">
+                                    <label for="punomoc" class="form-label">Izaberite punomoć:</label>
+                                    <input type="file" name="punomoc" id="punomoc" class="form-control" required>
+                                    <div class="invalid-feedback">Punomoć je obavezna</div>
+                                </div>
+
                                 <?php foreach ($fileGroups as $groupName => $files): ?>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -191,7 +272,13 @@ if (!$result) {
                             </div>
                         </div>
                         <button type="submit" class="btn btn-success">Završi krerianje štete</button>
+
                     </form>
+
+                    <div id="limitMessage" class="alert alert-warning mt-4" style="display: none;" tabindex="0">
+                        Dostignut je maksimalan broj fajlova za unos (10). Završi kreiranje i nastavi dodavanje u uredi
+                        štetu.
+                    </div>
 
                     <div>
                         <!-- Informativna poruka -->
@@ -211,6 +298,72 @@ if (!$result) {
 
 
     <script>
+    // otvaranje modala za potvrdu slanja
+    document.addEventListener("DOMContentLoaded", function() {
+        var confirmModal = new bootstrap.Modal(document.getElementById("confirmModal"));
+        var emailForm = document.getElementById("emailForm");
+
+        document.getElementById("openConfirmModal").addEventListener("click", function() {
+            confirmModal.show();
+        });
+
+        document.getElementById("confirmSend").addEventListener("click", function() {
+            emailForm.submit();
+        });
+    });
+
+    // Funkcija za praćenje broja popunjenih inputa
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileInputs = document.querySelectorAll('input[type="file"]');
+        const limitMessage = document.getElementById('limitMessage');
+        let fileCount = 0;
+
+        fileInputs.forEach(input => {
+            input.addEventListener('change', function() {
+                fileCount = 0;
+
+                // Broji popunjene fajl inpute
+                fileInputs.forEach(input => {
+                    if (input.files.length > 0) {
+                        fileCount++;
+                    }
+                });
+
+                // Ograničava broj popunjenih inputa na 10
+                if (fileCount >= 10) {
+                    fileInputs.forEach(input => {
+                        if (input.files.length === 0) {
+                            input.disabled = true; // Onemogućava unos novih fajlova
+                        }
+                    });
+
+                    limitMessage.style.display = 'block'; // Prikazuje poruku
+                    limitMessage.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    }); // Skroluje do poruke
+
+                    // Dodaje pulsirajuću animaciju
+                    limitMessage.classList.add('pulse');
+
+                    // Uklanja pulsiranje nakon što animacija završi (0.8s)
+                    setTimeout(() => {
+                        limitMessage.classList.remove('pulse');
+                    }, 800);
+                } else {
+                    fileInputs.forEach(input => {
+                        input.disabled =
+                            false; // Omogućava unos fajlova ako nije dostignut limit
+                    });
+
+                    limitMessage.style.display =
+                        'none'; // Sakriva poruku ako broj nije dostigao limit
+                }
+            });
+        });
+    });
+
+
     // Pretraga u tabeli klijenata
     document.getElementById('searchInput').addEventListener('keyup', function() {
         let filter = this.value.toLowerCase();

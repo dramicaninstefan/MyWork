@@ -8,9 +8,14 @@ include('../config.php'); // Ovaj fajl mora biti u istoj fascikli ili navedite a
 
 
 // Provera da li su POST parametri prosleđeni
-if (isset($_POST['klijent_id']) && isset($_POST['procenat'])) {
+if (isset($_POST['klijent_id'])) {
     $klijent_id = $_POST['klijent_id'];
     $procenat = $_POST['procenat']; 
+    $dinara = $_POST['dinara']; 
+    $osig_kuce = $_POST['osig_kuce']; 
+    $broj_stete = $_POST['broj_stete']; 
+    $created_at = date('d-m-Y'); // trenutni datum i vreme
+
 
     // SQL upit za uzimanje podataka o klijentu prema ID-u
     $stmt = $conn->prepare("SELECT * FROM klijent WHERE id = ?");
@@ -26,7 +31,7 @@ if (isset($_POST['klijent_id']) && isset($_POST['procenat'])) {
             $jmbg = $row['jmbg'];
             $adresa = $row['adresa'];
             $mesto = $row['mesto'];
-            $telefon = $row['telefon'];
+            $telefon = $row['kontakt'];
         }
     } else {
         echo "Nema podataka za datog klijenta.";
@@ -70,7 +75,7 @@ $dompdf = new Dompdf($options);
 
 // HTML sadržaj
 $html = '
- <div style="width: 100%; font-size: 13px; font-family: DejaVu Sans, Verdana, Geneva, Tahoma, sans-serif; margin: auto; background: white; line-height: 12px;">
+ <div style="width: 100%; font-size: 13px; font-family: DejaVu Sans, Verdana, Geneva, Tahoma, sans-serif; margin: auto; background: white; line-height: 13px;">
                 <table>
                     <tr style="border-bottom: 3px solid lightblue;">
                         <td class="header" style="text-align: center; font-weight: bold;" colspan="2">
@@ -119,8 +124,11 @@ $html = '
                                     Srbije, nadležnim javim</li>
                                 <li>tužilaštvima i sudovima, a povodom saobraćajne nezgode koja se dogodila dana
                                     _________________ , u mestu __________________________________.</li>
-                                <li>da u moje ime podnese prigovor _____________ - __________________________ osiguranju
-                                    i da preduzima radnje upostupku po tom prigovoru
+                                <li>da u moje ime podnese prigovor 
+                                <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px; padding-botton: 5px;  display: inline-block; width: 90px;"> ' . $osig_kuce . ' </span> - 
+                                <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px; padding-botton: 5px;  display: inline-block; width: 180px;"> ' . $broj_stete . ' </span>
+                                osiguranju
+                                    i da preduzima radnje u postupku po tom prigovoru
                                 </li>
                                 <li>da koristi moje podatke o ličnosti i da mu se isti učine dostupnim, u smislu Zakona
                                     kojim se uređuje zaštita
@@ -151,7 +159,7 @@ $html = '
                         </td>
                     </tr>
                     <tr>
-                        <td style="vertical-align: top;">U Beogradu, dana: 24. 2. 2025.</td>
+                        <td style="vertical-align: top;">U Beogradu, dana: <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px; display: inline-block; width: 100px;"> ' . $created_at . ' </span>
                         <td style="vertical-align: top; text-align: center;">
                             <strong>Davalac punomoćja:</strong>
                             <br>
@@ -188,16 +196,17 @@ $html .= '
         </tr>
 
         <tr>
-            <td colspan="2">Zaključen dana _________________ godine, u Beogradu, između:</td>
+            <td colspan="2">Zaključen dana <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px; display: inline-block; width: 100px;"> ' . $created_at . ' </span> godine, u Beogradu, između:</td>
         </tr>
         <tr>
-            <td colspan="2">
+             <tr>
+                <td colspan="2">
                 <br>
                 1. VLASTODAVCA: <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px;  display: inline-block; width: 200px;"> ' . $ime_prezime . ' </span>,
                 ul. <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px;  display: inline-block; width: 300px;"> ' . $adresa . ' </span>
                 <br> Grad <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px;  display: inline-block; width: 100px;"> ' . $mesto . ' </span>
-                , Br.l.k./PIB <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px;  display: inline-block; width: 100px;"> ' . $jmbg . ' </span>, 
-                Tel. <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px;  display: inline-block; width: 100px;"> ' . $telefon . ' </span>
+                , Br.l.k./PIB <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px;  display: inline-block; width: 200px;"> ' . $jmbg . ' </span>, 
+                Tel. <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px;  display: inline-block; width: 150px;"> ' . $telefon . ' </span>
             </td>
         </tr>
         <tr>
@@ -248,7 +257,7 @@ $html .= '
                 Vlastodavac se obavezuje da na ime naknade za rad Advokata, od svake naplaćene akontacije i
                 kasnije ukupno konačno
                 naplaćene štete, plati ugovorenu proviziju u visini od 
-                <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px; padding-botton: 5px;  display: inline-block; width: 80px;"> ' . $procenat . ' % </span> koja uključuje i
+                <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px; padding-botton: 5px;  display: inline-block; width:' . (isset($procenat) ? '60px' : '150px')  . ';"> ' . (isset($procenat) ? $procenat . ' %' : $dinara . ' dinara') . ' </span> koja uključuje i
                 naplaćenu zateznu kamatu,
                 najkasnije u roku od 8 dana od dana prijema naplaćenih iznosa.
                 Vlastodavac nema nikakvih troškova sve do završetka postupka ostvarivanja naknade štete u
@@ -259,7 +268,7 @@ $html .= '
                 Ako se Advokat uključuje u postupak ostvarivanja naknade štete koji nije vodio u
                 prvostepenom postupku, ili ako se
                 naknada štete potražuje isključivo u sudskom postupku, onda visina provizije iznosi
-                <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px; padding-botton: 5px;  display: inline-block; width: 80px;"> ' . $procenat . ' % </span> koja uključuje i.
+                <span style="text-align: center; border-bottom: 1px solid black; padding-top: 5px; padding-botton: 5px;  display: inline-block; width:' . (isset($procenat) ? '60px' : '150px')  . ';"> ' . (isset($procenat) ? $procenat . ' %' : $dinara . ' dinara') . '</span>.
             </td>
         </tr>
 
@@ -442,7 +451,7 @@ $html .= '
                 ______________________________
             </td>
             <td style="vertical-align: top; text-align: center;">
-                <strong>Vlastodavac:</strong>
+                <strong>VLASTODAVAC:</strong>
                 <br>
                 <br>
                 <br>
