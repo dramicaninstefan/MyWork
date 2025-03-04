@@ -1,8 +1,0 @@
-[03-Mar-2025 02:42:03 UTC] PHP Warning:  Undefined array key "username" in /home/centarzapoliseis/dramicodes.xyz/auth/login.php on line 8
-[03-Mar-2025 02:42:03 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/centarzapoliseis/dramicodes.xyz/auth/login.php on line 8
-[03-Mar-2025 02:42:03 UTC] PHP Warning:  Undefined array key "password" in /home/centarzapoliseis/dramicodes.xyz/auth/login.php on line 9
-[03-Mar-2025 02:42:03 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/centarzapoliseis/dramicodes.xyz/auth/login.php on line 9
-[04-Mar-2025 02:13:49 UTC] PHP Warning:  Undefined array key "username" in /home/centarzapoliseis/dramicodes.xyz/auth/login.php on line 8
-[04-Mar-2025 02:13:49 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/centarzapoliseis/dramicodes.xyz/auth/login.php on line 8
-[04-Mar-2025 02:13:49 UTC] PHP Warning:  Undefined array key "password" in /home/centarzapoliseis/dramicodes.xyz/auth/login.php on line 9
-[04-Mar-2025 02:13:49 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/centarzapoliseis/dramicodes.xyz/auth/login.php on line 9
