@@ -137,7 +137,7 @@ while ($row = $result->fetch_assoc()) {  // Ispravljeno ovde
 }
 
 // Generisanje i čuvanje PDF fajla
-$pdfOutputPath = 'output.pdf';
+$pdfOutputPath = 'ALL.pdf';
 $pdf->Output('F', $pdfOutputPath);
 
 // Slanje PDF-a putem emaila
