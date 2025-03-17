@@ -1,0 +1,43 @@
+[06-Mar-2025 09:49:02 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php:11
+Stack trace:
+#0 /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php(11): mysqli->__construct('localhost', 'root', '', 'osiguranje')
+#1 {main}
+  thrown in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php on line 11
+[06-Mar-2025 09:49:04 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php:11
+Stack trace:
+#0 /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php(11): mysqli->__construct('localhost', 'root', '', 'osiguranje')
+#1 {main}
+  thrown in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php on line 11
+[06-Mar-2025 09:49:05 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php:11
+Stack trace:
+#0 /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php(11): mysqli->__construct('localhost', 'root', '', 'osiguranje')
+#1 {main}
+  thrown in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php on line 11
+[06-Mar-2025 09:49:07 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php:11
+Stack trace:
+#0 /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php(11): mysqli->__construct('localhost', 'root', '', 'osiguranje')
+#1 {main}
+  thrown in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php on line 11
+[06-Mar-2025 09:59:00 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php:11
+Stack trace:
+#0 /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php(11): mysqli->__construct('localhost', 'root', '', 'osiguranje')
+#1 {main}
+  thrown in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php on line 11
+[06-Mar-2025 10:13:01 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php:11
+Stack trace:
+#0 /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php(11): mysqli->__construct('localhost', 'root', '', 'osiguranje')
+#1 {main}
+  thrown in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php on line 11
+[06-Mar-2025 10:20:29 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php:11
+Stack trace:
+#0 /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php(11): mysqli->__construct('localhost', 'root', '', 'osiguranje')
+#1 {main}
+  thrown in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php on line 11
+[06-Mar-2025 10:20:32 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php:11
+Stack trace:
+#0 /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php(11): mysqli->__construct('localhost', 'root', '', 'osiguranje')
+#1 {main}
+  thrown in /home/centarzapoliseis/dramicodes.xyz/damage/view_file.php on line 11
+[11-Mar-2025 11:43:31 UTC] PHP Warning:  Undefined array key "dinara" in /home/centarzapoliseis/dramicodes.xyz/damage/punomoc-adv3.php on line 14
+[11-Mar-2025 12:16:24 UTC] PHP Warning:  Undefined array key "dinara" in /home/centarzapoliseis/dramicodes.xyz/damage/punomoc-adv3.php on line 14
+[11-Mar-2025 12:22:23 UTC] PHP Warning:  Undefined array key "dinara" in /home/centarzapoliseis/dramicodes.xyz/damage/punomoc-adv3.php on line 14
