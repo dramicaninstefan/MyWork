@@ -266,7 +266,6 @@ $html = '
                     13.500,00 RSD
                     <br>
                     ' . ((!$sluz_beleska) ? '' : $sluz_beleska . ' RSD <br>') . '
-                    
                     <br>
                     <span style="border-top: 2px solid black; font-weight: bold; text-align: right; display: inline-block; width: 120px;"> ' . number_format($total13, 2, ',', '.') . ' RSD</span>
                </td>

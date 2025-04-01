@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2025 at 10:22 AM
+-- Generation Time: Apr 01, 2025 at 02:15 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -58,6 +58,7 @@ CREATE TABLE `klijenti_stete` (
   `klijent_id` int(11) NOT NULL,
   `opis` text DEFAULT NULL,
   `preporucilac` varchar(255) DEFAULT NULL,
+  `mail_subject` varchar(255) DEFAULT NULL,
   `reg_oznaka` varchar(20) DEFAULT NULL,
   `osig_kuca_stetnik` varchar(255) DEFAULT NULL,
   `status_izvrsenja` enum('U pripremi','Poslato') NOT NULL DEFAULT 'U pripremi',
@@ -175,15 +176,15 @@ END
 $$
 DELIMITER ;
 DELIMITER $$
-CREATE TRIGGER `set_null_if_empty_weTransfer_link` BEFORE UPDATE ON `klijenti_stete` FOR EACH ROW BEGIN
-    IF NEW.weTransfer_link = '' THEN
-        SET NEW.weTransfer_link = NULL;
+CREATE TRIGGER `disabled_update_emin_procena` BEFORE UPDATE ON `klijenti_stete` FOR EACH ROW BEGIN
+    IF NEW.emin_procena_disabled = 1 THEN
+        SET NEW.emin_procena = NULL;
+        SET NEW.emin_procena_extension = NULL;
+        SET NEW.emin_procena_status = 1;
+    ELSEIF NEW.emin_procena_disabled = 0 THEN
+        SET NEW.emin_procena_status = 0;
     END IF;
-END
-$$
-DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `trg_insert_emin_procena` BEFORE INSERT ON `klijenti_stete` FOR EACH ROW BEGIN
+    
     IF NEW.emin_procena IS NOT NULL THEN
         SET NEW.emin_procena_status = 1;
     END IF;
@@ -191,11 +192,25 @@ END
 $$
 DELIMITER ;
 DELIMITER $$
-CREATE TRIGGER `trg_insert_emin_procena_status` BEFORE INSERT ON `klijenti_stete` FOR EACH ROW BEGIN
-    IF NEW.emin_procena_disabled = 1 THEN
-        SET NEW.emin_procena_status = 1;
-    ELSEIF NEW.emin_procena_disabled = 0 THEN
-        SET NEW.emin_procena_status = 0;
+CREATE TRIGGER `disabled_update_sluzbena_beleska` BEFORE UPDATE ON `klijenti_stete` FOR EACH ROW BEGIN
+    IF NEW.sluzbena_beleska_disabled = 1 THEN
+        SET NEW.sluzbena_beleska = NULL;
+        SET NEW.sluzbena_beleska_extension = NULL;
+        SET NEW.sluzbena_beleska_status = 1;
+    ELSEIF NEW.sluzbena_beleska_disabled = 0 THEN
+        SET NEW.sluzbena_beleska_status = 0;
+    END IF;
+    
+    IF NEW.sluzbena_beleska IS NOT NULL THEN
+        SET NEW.sluzbena_beleska_status = 1;
+    END IF;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `set_null_if_empty_weTransfer_link` BEFORE UPDATE ON `klijenti_stete` FOR EACH ROW BEGIN
+    IF NEW.weTransfer_link = '' THEN
+        SET NEW.weTransfer_link = NULL;
     END IF;
 END
 $$
@@ -289,13 +304,6 @@ CREATE TABLE `obracun_stete` (
   `trosak7` decimal(10,2) DEFAULT 0.00,
   `total_sum` decimal(10,2) DEFAULT 0.00
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `obracun_stete`
---
-
-INSERT INTO `obracun_stete` (`obracun_id`, `steta_id`, `klijent_id`, `osig_kuca`, `nas_procenat`, `isplaceno_klijent`, `advokatski_troskovi`, `emin_procena`, `uplatnica`, `preporucilac`, `trosak1`, `trosak2`, `trosak3`, `trosak4`, `trosak5`, `trosak6`, `trosak7`, `total_sum`) VALUES
-(52, 87, 14, 'GRAWE Osiguranje', 15000.00, 100000.00, 0.00, 0.00, 0.00, NULL, NULL, NULL, NULL, 0.00, 0.00, 0.00, 0.00, 0.00);
 
 --
 -- Triggers `obracun_stete`
@@ -415,13 +423,13 @@ ALTER TABLE `klijent`
 -- AUTO_INCREMENT for table `klijenti_stete`
 --
 ALTER TABLE `klijenti_stete`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `obracun_stete`
 --
 ALTER TABLE `obracun_stete`
-  MODIFY `obracun_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `obracun_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `odstetni_zahtev`

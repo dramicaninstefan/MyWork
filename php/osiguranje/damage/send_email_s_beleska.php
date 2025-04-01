@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '
                 <script>
                     sessionStorage.setItem("status", "success");
-                    sessionStorage.setItem("message", "Mejl je uspesno poslat!");
+                    sessionStorage.setItem("message", "Mejl je uspesno poslat na goran.dramicanin@centarzapoliseistete.rs!");
                     window.location.href = "/stete";
                 </script>';
         } catch (Exception $e) {

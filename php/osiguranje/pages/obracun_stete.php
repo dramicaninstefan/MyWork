@@ -3,7 +3,7 @@
 include('config.php');
 
 // SQL upit za dobijanje podataka sa JOIN-om
-$sql = "SELECT o.*, k.*, s.osig_kuca_stetnik, s.preporucilac as steta_preporucilac
+$sql = "SELECT o.*, k.*, s.osig_kuca_stetnik, s.preporucilac as steta_preporucilac, s.emin_procena as emin_procena_ks
         FROM obracun_stete o
         JOIN klijent k ON o.klijent_id = k.id
         JOIN klijenti_stete s ON o.steta_id = s.id";
@@ -115,40 +115,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <?php echo htmlspecialchars( $row['kontakt']); ?>
                         </a>
                     </td>
-                    <td><?php echo $row["osig_kuca_stetnik"]; ?></td>
-
-                    <td><input type="number" name="isplaceno_klijent" step="0.01"
-                            value="<?php echo $row["isplaceno_klijent"]; ?>" class="form-control" min="0"></td>
-
-                    <td><input type="number" name="nas_procenat" value="<?php echo $row["nas_procenat"]; ?>"
-                            class="form-control" min="0" readonly></td>
-
-                    <td><input type="number" name="advokatski_troskovi"
-                            value="<?php echo $row["advokatski_troskovi"]; ?>" class="form-control" min="0"></td>
                     <td>
-                        <input type="number" name="emin_procena" value="<?php echo $row["emin_procena"]; ?>"
-                            class="form-control <?php echo $row["emin_procena"] == 0 ? 'status-red-white' : 'status-green-white'; ?>"
-                            min="0">
+                        <?php echo $row["osig_kuca_stetnik"]; ?>
+                    </td>
+
+                    <td>
+                        <input type="number" step="0.01" step="0.01" name="isplaceno_klijent"
+                            value="<?php echo $row["isplaceno_klijent"]; ?>" class="form-control" min="0">
+                    </td>
+
+                    <td>
+                        <input type="number" step="0.01" name="nas_procenat" value="<?php echo $row["nas_procenat"]; ?>"
+                            class="form-control" min="0" readonly>
+                    </td>
+
+                    <td>
+                        <input type="number" step="0.01" name="advokatski_troskovi"
+                            value="<?php echo $row["advokatski_troskovi"]; ?>" class="form-control" min="0">
                     </td>
 
                     <?php
                     // Provera statusa i postavljanje disabled atributa ako neka vrednost nije 1
-                    $disabled = ($row['steta_preporucilac'] == NULL) ? 'disabled' : '';
+                    $disabled_emin = ($row['emin_procena_ks'] == NULL) ? 'disabled' : '';
+                    ?>
+
+
+                    <td>
+                        <input type="number" step="0.01" name="emin_procena" value="<?php echo $row["emin_procena"]; ?>"
+                            class="form-control <?php echo $row["emin_procena"] == 0 ? 'status-red-white' : 'status-green-white'; ?>"
+                            min="0" <?php echo $disabled_emin; ?>>
+                    </td>
+
+                    <?php
+                    // Provera statusa i postavljanje disabled atributa ako neka vrednost nije 1
+                    $disabled_preporucilac = ($row['steta_preporucilac'] == NULL) ? 'disabled' : '';
                     ?>
 
                     <td>
-                        <input type="number" name="preporucilac" value="<?php echo $row["preporucilac"]; ?>"
+                        <input type="number" step="0.01" name="preporucilac" value="<?php echo $row["preporucilac"]; ?>"
                             class="form-control <?php echo $row["preporucilac"] == 0 ? 'status-red-white' : 'status-green-white'; ?>"
-                            min="0" <?php echo $disabled; ?>>
+                            min="0" <?php echo $disabled_preporucilac; ?>>
                     </td>
 
-                    <td><input type="number" name="uplatnica" value="<?php echo $row["uplatnica"]; ?>"
+                    <td><input type="number" step="0.01" name="uplatnica" value="<?php echo $row["uplatnica"]; ?>"
                             class="form-control" min="0"></td>
-                    <!-- <td><input type="number" name="trosak1" value="<?php echo $row["trosak1"]; ?>" class="form-control"
+                    <!-- <td><input type="number" step="0.01" name="trosak1" value="<?php echo $row["trosak1"]; ?>" class="form-control"
                             min="0"></td> -->
-                    <!-- <td><input type="number" name="trosak2" value="<?php echo $row["trosak2"]; ?>" class="form-control"
+                    <!-- <td><input type="number" step="0.01" name="trosak2" value="<?php echo $row["trosak2"]; ?>" class="form-control"
                             min="0"></td>
-                    <td><input type="number" name="trosak3" value="<?php echo $row["trosak3"]; ?>" class="form-control"
+                    <td><input type="number" step="0.01" name="trosak3" value="<?php echo $row["trosak3"]; ?>" class="form-control"
                             min="0"></td> -->
                     <td>
                         <input type="hidden" name="id" value="<?php echo $row["obracun_id"];?>">

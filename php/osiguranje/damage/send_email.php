@@ -129,7 +129,13 @@ foreach ($images as $index => $image) {
                 $pdf->Image($tempImageFile, $x, $y, $newWidth, $newHeight);
                 unlink($tempImageFile); // Brišemo privremeni fajl nakon dodavanja u PDF
             } catch (Exception $e) {
-                echo "Greška prilikom dodavanja slike u PDF: " . $e->getMessage();
+                echo '
+                    <script>
+                        sessionStorage.setItem("status", "error");
+                        sessionStorage.setItem("message", "Došlo je do greške prilikom umetanja punomoci. Pokušaj ponovo ili kontaktiraj podršku.");
+                        window.location.href = "/stete";
+                    </script>';
+                // echo "Greška prilikom dodavanja slike u PDF: " . $e->getMessage();
             }
         } elseif ($imageExtension === 'pdf') {
             // Unikatno ime za PDF fajl
@@ -153,7 +159,13 @@ foreach ($images as $index => $image) {
 
                 unlink($tempPdfFile); // Brišemo privremeni PDF fajl nakon umetanja
             } catch (Exception $e) {
-                echo "Greška prilikom umetanja PDF stranica: " . $e->getMessage();
+                echo '
+                    <script>
+                        sessionStorage.setItem("status", "error");
+                        sessionStorage.setItem("message", "Došlo je do greške prilikom umetanja punomoci. Pokušaj ponovo ili kontaktiraj podršku.");
+                        window.location.href = "/stete";
+                    </script>';
+                // echo "Greška prilikom umetanja PDF stranica: " . $e->getMessage();
             }
         } else {
             echo "Nepodržani tip fajla: " . $imageExtension;
@@ -176,7 +188,13 @@ foreach ($images as $index => $image) {
 
             // Sačuvajte PDF fajl kao privremeni fajl
             if (file_put_contents($tempPunomocFile, $punomocData) === false) {
-                echo "Greška pri čuvanju punomoći kao privremeni fajl.";
+                echo '
+                    <script>
+                        sessionStorage.setItem("status", "error");
+                        sessionStorage.setItem("message", "Došlo je do greška pri čuvanju punomoći kao privremeni fajl. Pokušaj ponovo ili kontaktiraj podršku.");
+                        window.location.href = "/stete";
+                    </script>';
+                // echo "Greška pri čuvanju punomoći kao privremeni fajl.";
                 exit;
             }
 
@@ -192,7 +210,13 @@ foreach ($images as $index => $image) {
 
                 unlink($tempPunomocFile); // Brišemo privremeni PDF fajl nakon umetanja
             } catch (Exception $e) {
-                echo "Greška prilikom umetanja punomoći: " . $e->getMessage();
+                echo '
+                    <script>
+                        sessionStorage.setItem("status", "error");
+                        sessionStorage.setItem("message", "Došlo je do greške prilikom umetanja punomoci. Pokušaj ponovo ili kontaktiraj podršku.");
+                        window.location.href = "/stete";
+                    </script>';
+                // echo "Greška prilikom umetanja punomoći: " . $e->getMessage();
             }
         } elseif (in_array($punomocExtension, ['jpg', 'jpeg', 'png'])) {
             // Ako je punomoć slika, ubacujemo je u PDF
@@ -200,7 +224,13 @@ foreach ($images as $index => $image) {
 
             // Sačuvamo sliku kao privremeni fajl
             if (file_put_contents($tempImageFile, $punomocData) === false) {
-                echo "Greška pri čuvanju slike punomoći.";
+                echo '
+                    <script>
+                        sessionStorage.setItem("status", "error");
+                        sessionStorage.setItem("message", "Došlo je do greške prilikom umetanja punomoci. Pokušaj ponovo ili kontaktiraj podršku.");
+                        window.location.href = "/stete";
+                    </script>';
+                // echo "Greška pri čuvanju slike punomoći.";
                 exit;
             }
 
@@ -211,7 +241,13 @@ foreach ($images as $index => $image) {
                 $pdfPunoMoc->Image($tempImageFile, 10, 10, 190); // Postavljamo sliku u PDF
                 unlink($tempImageFile); // Brišemo privremeni fajl nakon umetanja
             } catch (Exception $e) {
-                echo "Greška prilikom umetanja slike punomoći: " . $e->getMessage();
+                echo '
+                    <script>
+                        sessionStorage.setItem("status", "error");
+                        sessionStorage.setItem("message", "Došlo je do greške prilikom umetanja punomoci. Pokušaj ponovo ili kontaktiraj podršku.");
+                        window.location.href = "/stete";
+                    </script>';
+                // echo "Greška prilikom umetanja slike punomoći: " . $e->getMessage();
             }
         } else {
             echo "Nepodržani tip fajla za punomoć: " . $punomocExtension;
@@ -246,7 +282,13 @@ foreach ($images as $index => $image) {
 
                 unlink($tempOdstetniFile); // Brišemo privremeni PDF fajl nakon umetanja
             } catch (Exception $e) {
-                echo "Greška prilikom umetanja odštetnog zahteva: " . $e->getMessage();
+                echo '
+                    <script>
+                        sessionStorage.setItem("status", "error");
+                        sessionStorage.setItem("message", "Došlo je do greške prilikom umetanja odštetnog zahteva. Pokušaj ponovo ili kontaktiraj podršku.");
+                        window.location.href = "/stete";
+                    </script>';
+                // echo "Greška prilikom umetanja odštetnog zahteva: " . $e->getMessage();
             }
         } elseif (in_array($odstetniZahtevExtension, ['jpg', 'jpeg', 'png'])) {
             // Ako je odštetni zahtev slika, ubacujemo je u PDF
@@ -265,7 +307,13 @@ foreach ($images as $index => $image) {
                 $pdfOdstetni->Image($tempImageFile, 10, 10, 190); // Postavljamo sliku u PDF
                 unlink($tempImageFile); // Brišemo privremeni fajl nakon umetanja
             } catch (Exception $e) {
-                echo "Greška prilikom umetanja slike odštetnog zahteva: " . $e->getMessage();
+                echo '
+                    <script>
+                        sessionStorage.setItem("status", "error");
+                        sessionStorage.setItem("message", "Došlo je do greške prilikom umetanja slike odštetnog zahteva. Pokušaj ponovo ili kontaktiraj podršku.");
+                        window.location.href = "/stete";
+                    </script>';
+                // echo "Greška prilikom umetanja slike odštetnog zahteva: " . $e->getMessage();
             }
         } else {
             echo "Nepodržani tip fajla za odštetni zahtev: " . $odstetniZahtevExtension;
@@ -332,6 +380,7 @@ try {
     // Telo mejla
     $mail->isHTML(true);
     $mail->Subject =  'Odštetni zahtev ' . $reg_oznaka . ' ' . $ime_prezime;
+    $main_subject_save = 'Odštetni zahtev ' . $reg_oznaka . ' ' . $ime_prezime;
     // $mail->Body = $opis_text;
 
     $opis = "<p>Šalje se u <strong>" . $osig_kuca_stetnik . "</strong> na sledeću mejl adresu: <strong>" . $mejlAdresaOsiguranje . "</strong></p>";
@@ -351,10 +400,6 @@ try {
 
     
     $mail->Body = $opis; // Postavljanje tela poruke
-    
-
-
-    $mail->Body = $opis; // Postavljanje tela poruke
 
     // Prilogaćemo PDF fajl
     $mail->addAttachment($pdfPunoMocOutputPath);
@@ -364,28 +409,40 @@ try {
     
    // Pošaljite mejl
    if ($mail->send()) {
-        // Ažurirajte polje "poslato" sa trenutnim vremenom
-        $updateSql = "UPDATE klijenti_stete SET poslato = ? WHERE id = ?";
-        $stmt = $conn->prepare($updateSql);
-        $currentDateTime = date('Y-m-d H:i:s');
-        $stmt->bind_param("si", $currentDateTime, $id);
-        $stmt->execute();
+       // Ažurirajte polje "poslato" sa trenutnim vremenom
+    $updateSql = "UPDATE klijenti_stete SET poslato = ? WHERE id = ?";
+    $stmt = $conn->prepare($updateSql);
+    $currentDateTime = date('Y-m-d H:i:s');
+    $stmt->bind_param("si", $currentDateTime, $id);
+    $stmt->execute();
 
-        // Priprema SQL upita za unos podataka
-        $insertObracun = "INSERT INTO obracun_stete (obracun_id, steta_id, klijent_id, osig_kuca) 
-        VALUES (NULL, ?, ?, ?)";
+    $updateSql = "UPDATE klijenti_stete SET mail_subject = ? WHERE id = ?";
+    $stmt = $conn->prepare($updateSql);
+    $stmt->bind_param("si", $main_subject_save, $id);
+    $stmt->execute();
 
-        // Priprema upita
-        $stmt = $conn->prepare($insertObracun);
-        $stmt->bind_param("iis", $id, $klijent_id, $osig_kuca_stetnik);
+    // Prvo proverite da li postoji red sa istim steta_id i klijent_id, i ako postoji, obrišite ga
+    $deleteSql = "DELETE FROM obracun_stete WHERE steta_id = ? AND klijent_id = ?";
+    $stmt = $conn->prepare($deleteSql);
+    $stmt->bind_param("ii", $id, $klijent_id);  // Proverite da li je tip podataka odgovarajući
+    $stmt->execute();
 
-        // Izvršavanje upita
-        $stmt->execute();
+    // Priprema SQL upita za unos novih podataka
+    $insertObracun = "INSERT INTO obracun_stete (obracun_id, steta_id, klijent_id, osig_kuca) 
+    VALUES (NULL, ?, ?, ?)";
+
+    // Priprema upita za unos podataka
+    $stmt = $conn->prepare($insertObracun);
+    $stmt->bind_param("iis", $id, $klijent_id, $osig_kuca_stetnik);
+
+    // Izvršavanje upita
+    $stmt->execute();
+
         // Preusmerite korisnika
         echo '
         <script>
             sessionStorage.setItem("status", "success");
-            sessionStorage.setItem("message", "Mejl je uspesno poslat!");
+            sessionStorage.setItem("message", "Mejl je uspesno poslat na goran.dramicanin@centarzapoliseistete.rs!");
             window.location.href = "/stete";
         </script>';
     } else {
@@ -401,7 +458,7 @@ try {
     echo '
         <script>
             sessionStorage.setItem("status", "error");
-            sessionStorage.setItem("message", "Došlo je do greške, neki od fajlova nije kompresovan!");
+            sessionStorage.setItem("message", "Došlo je do greške prilikom obrade podataka. Pokušaj ponovo ili kontaktiraj podršku.");
             window.location.href = "/stete";
         </script>';
 }
