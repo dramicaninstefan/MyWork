@@ -29,6 +29,27 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <style>
+    @media (max-width: 800px) {
+      #imagebox1 {
+        display: none;
+      }
+
+      #imagebox2 {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 800px) {
+      #imagebox1 {
+        display: block;
+      }
+
+      #imagebox2 {
+        display: none;
+      }
+    }
+  </style>
 
 </head>
 
@@ -41,13 +62,14 @@
       <div class="logo">
         <!-- <h1 class="text-light"><a href="index.html"><span>Silia doo</span></a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="indexeng.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+        <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="indexeng.html">Home</a></li>
-          <li class="dropdown"><a href="#"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#" class="active"><span>Products</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="./products-soy-cake.html">Soy Cake</a></li>
               <li><a href="./products-sunflower-cake.html">Sunflower Cake</a></li>
@@ -57,7 +79,7 @@
           </li>
           <li><a href="abouteng.html">About Us</a></li>
           <li><a href="sertifikatieng.html">Certificates</a></li>
-          <li><a href="contacteng.html" class="active">Contact</a></li>
+          <li><a href="contacteng.html">Contact</a></li>
           <li class="languageBtn"><a class="languageLink" href="index.html"><img src="./assets/img/serbia.png"
                 alt=""></a></li>
           <li class="languageBtn"><a class="languageLink" href="indexeng.html"><img
@@ -73,100 +95,170 @@
 
   <main id="main">
 
-    <!-- ======= Contact Section ======= -->
+    <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Contact</h2>
+          <h2>Sunflower Cake</h2>
           <ol>
             <li><a href="indexeng.html">Home</a></li>
-            <li>Contact</li>
+            <li>Sunflower Cake</li>
           </ol>
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section><!-- End Breadcrumbs Section -->
 
     <!-- ======= Contact Section ======= -->
     <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
       <div class="container">
-
         <div class="row">
-
-          <div class="col-lg-12">
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="info-box">
-                  <i class="bx bx-map"></i>
-                  <h3>Our adress</h3>
-                  <p>Žarka Zrenjanina 106, Pancevo, 26000, Serbia</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bx bx-envelope"></i>
-                  <h3>Email</h3>
-                  <a class="mailTo" href="mailto:office@silia.rs">office@silia.rs</a>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bx bx-phone-call"></i>
-                  <h3>Phone</h3>
-                  <a class="phoneNumber" href="tel:+381628440870">+381 62 84 40 870</a>
-                  <br>
-                  <a class="phoneNumber" href="tel:+381691100212">+381 69 11 00 212</a>
-                </div>
-              </div>
+          <div class="col-md-3" id="imagebox1">
+            <div class="col-6 col-xl-12">
+              <img src="./assets/img/suncokretova-pogaca2.png" alt="Main image" class="img-fluid">
+            </div>
+            <div class="col-6 col-xl-12">
+              <img src="./assets/img/suncokretova-pogaca1.jpg" alt="Main image" class="img-fluid">
             </div>
 
+            <h4 class="mt-5">Contact Us</h4>
+
+            <ul>
+              <li>
+                <a class="phoneNumber" href="tel:+381628440870">+381 62 84 40 870</a>
+              </li>
+              <li>
+                <a class="phoneNumber" href="tel:+381691100212">+381 69 11 00 212</a>
+              </li>
+              <li>
+                <a class="mailTo" href="mailto:office@silia.rs">office@silia.rs</a>
+              </li>
+            </ul>
           </div>
+          <div class="col-md-9 ">
+            <div class="row mb-3">
+              <div class="col-12">
+                <img src="./assets/img/suncoketova-pogaca.jpg" alt="Main image" class="img-fluid">
+              </div>
+            </div>
+            <div id="imagebox2" class="row">
+              <div class="col-6 col-xl-12">
+                <img src="./assets/img/suncokretova-pogaca2.png" alt="Main image" class="img-fluid">
+              </div>
+              <div class="col-6 col-xl-12">
+                <img src="./assets/img/suncokretova-pogaca1.jpg" alt="Main image" class="img-fluid">
+              </div>
+            </div>
+            <div class="">
+              <h3>Information</h3>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Sunflower Cake</th>
+                    <th>Average Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Crude protein</td>
+                    <td>27%</td>
+                  </tr>
+                  <tr>
+                    <td>Fats</td>
+                    <td>12%</td>
+                  </tr>
+                  <tr>
+                    <td>Cellulose</td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>Ash</td>
+                    <td>6%</td>
+                  </tr>
+                  <tr>
+                    <td>Moisture</td>
+                    <td>10%</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Sunflower cake is obtained by pressing thermally processed sunflower seeds
+                <br>
+                <b>Color:</b> gray-brown
+                <br>
+                <b>Packaging:</b> PP jumbo bags ~900kg (90*90*180)cm, bulk
+                <br>
+                <b>Expiration date:</b> 6 months
+              </p>
 
-          <!-- <div class="col-lg-6">
-            <form action="" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Vaše ime" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Vaš email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Naslov" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Poruka" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Vaša poruka je poslata. Hvala Vam!</div>
-              </div>
-              <div class="text-center"><button type="submit">Pošalji</button></div>
-            </form>
-          </div> -->
-
+              <p>Oil cakes are used as high-protein additives in the production of animal feed mixtures. This is because
+                they contain natural proteins, fibers, vitamins, especially vitamin B, phosphorus, and other mineral
+                substances.</p>
+            </div>
+          </div>
         </div>
-
       </div>
     </section><!-- End Contact Section -->
 
-    <!-- ======= Map Section ======= -->
-    <section class="map mt-2">
-      <div class="container p-0 mb-4">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.184035873406!2d20.6521828!3d44.8585481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7ed974127d75%3A0x4d3de7c0dba91f78!2s%C5%BDarka%20Zrenjanina%20106%2C%20Pan%C4%8Devo%2026000!5e0!3m2!1sen!2srs!4v1740080286299!5m2!1sen!2srs"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </section><!-- End Map Section -->
 
+
+    <div class="logos">
+      <div class="logo-slide">
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+      </div>
+
+      <div class="logo-slide">
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+        <img src="assets/img/aqra-logo.png" alt="" />
+      </div>
+    </div>
 
 
   </main><!-- End #main -->
+
+
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
@@ -224,8 +316,8 @@
       class="bi bi-telephone-fill"></i>
   </a>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -236,7 +328,6 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
