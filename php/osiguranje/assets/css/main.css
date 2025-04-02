@@ -1,0 +1,180 @@
+*:focus {
+  box-shadow: none !important;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body {
+  padding-top: 56px;
+  background-color: #e7ecef;
+  /* Da ne bi bio pokriven navbar-om */
+}
+
+.modal-custom {
+  background-color: #e7ecef;
+}
+
+thead {
+  background-color: rebeccapurple;
+}
+
+.sticky-top {
+  top: 55px; /* Visina navigacione trake */
+}
+
+.select-green {
+  background-color: #aaf683;
+  color: black;
+}
+
+.select-yellow {
+  background-color: #ffd97d;
+  color: black;
+}
+
+.error-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.error-code {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #dc3545;
+}
+
+.error-message {
+  font-size: 1.5rem;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.status-red {
+  background-color: #dc3545;
+  color: #dc3545;
+  padding: 3px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.status-green {
+  background-color: #28a745;
+  color: #28a745;
+  padding: 3px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.status-green-white {
+  background-color: #28a745;
+  color: #fff;
+  padding: 7px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.status-red-white {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 7px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.status-neutral-white {
+  background-color: #fff;
+  color: #111;
+  padding: 7px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.status-u-izradi {
+  background-color: #ffc107;
+  color: black;
+  padding: 3px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.status-poslato {
+  background-color: #28a745;
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+td {
+  vertical-align: middle;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 0.8s ease-in-out;
+}
+
+/* loader */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none; /* Skriven dok se ne aktivira */
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  border-top: 5px solid #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
