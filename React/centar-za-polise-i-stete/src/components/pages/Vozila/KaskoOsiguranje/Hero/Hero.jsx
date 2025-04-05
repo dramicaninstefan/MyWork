@@ -19,23 +19,28 @@ const Hero = ({ handleClick }) => {
             <div className={`${classes.content} row gy-4`} style={{ margin: `auto` }}>
               <div className="col-lg-4 d-flex align-items-stretch">
                 <div className={classes['why-box']} data-aos="zoom-out" data-aos-delay="200">
-                  <h3 style={{ textTransform: `uppercase` }}>Kasko benefiti</h3>
+                  <h3 style={{ textTransform: `uppercase` }}>Šta pokriva kasko osiguranje?</h3>
                   <ul>
                     <li>
-                      <i className="bi bi-check" style={{ color: `var(--accent-color)`, fontSize: `25px`, transform: `translateY(-5px)` }}></i>
-                      <p>Širok spektar osiguranih rizika</p>
+                      <p>Kasko osiguranje štiti vaše vozilo od:</p>
                     </li>
                     <li>
-                      <i className="bi bi-check" style={{ color: `var(--accent-color)`, fontSize: `25px`, transform: `translateY(-5px)` }}></i>
-                      <p>Osiguravajuća zaštita od delimičnog ili potpunog oštećenja vozila</p>
+                      <p>
+                        1. <b>UDARA</b> - kada neko ili nešto udari u Vaše vozilo
+                      </p>
                     </li>
                     <li>
-                      <i className="bi bi-check" style={{ color: `var(--accent-color)`, fontSize: `25px`, transform: `translateY(-5px)` }}></i>
-                      <p>Mogućnost ugovaranja dopunskog osiguranja</p>
+                      <p>
+                        2. <b>SUDARA</b> - kada se sudarite svojom krivicom, ali niste u prekršaju
+                      </p>
                     </li>
                     <li>
-                      <i className="bi bi-check" style={{ color: `var(--accent-color)`, fontSize: `25px`, transform: `translateY(-5px)` }}></i>
-                      <p>Brza i efikasna isplata šteta</p>
+                      <p>
+                        3. <b>KRAĐA</b> - kada Vam je vozilo ukradeno
+                      </p>
+                    </li>
+                    <li>
+                      <p>Sve to uz brzu i efikasnu isplatu štete!</p>
                     </li>
                   </ul>
                   <div className="text-center">
@@ -81,7 +86,7 @@ const Hero = ({ handleClick }) => {
                         <h4>
                           Delimično kasko <br /> osiguranje
                         </h4>
-                        <p style={{ minHeight: '140px' }}>Lom i oštećenje stakala, troškovi vuče ili prevoza putničkog vozila do mesta prebivališta, lom i oštećenje farova na vozilu, drugo</p>
+                        <p style={{ minHeight: '140px' }}>Lom i oštećenje stakala, troškovi vuče ili prevoza putničkog vozila do mesta prebivališta, lom i oštećenje farova na vozilu, drugo.</p>
                         <Link
                           onClick={(e) => {
                             e.preventDefault();
@@ -99,7 +104,7 @@ const Hero = ({ handleClick }) => {
                       <div className={classes['icon-box-hero']} data-aos="zoom-out" data-aos-delay="400">
                         {/* <i className="bi bi-gem"></i> */}
                         <h4>Dopunska osiguranja</h4>
-                        <p style={{ minHeight: '140px' }}>Dopunski rizik krađe i dopusnki rizik utaje</p>
+                        <p style={{ minHeight: '140px' }}>Dopunski rizik krađe i dopunski rizik utaje.</p>
                         <Link
                           onClick={(e) => {
                             e.preventDefault();
