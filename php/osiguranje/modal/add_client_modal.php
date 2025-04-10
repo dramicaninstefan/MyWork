@@ -5,8 +5,7 @@
         <div class="modal-content modal-custom">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Dodaj Klijenta</h5>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Spusti
-                    prozor</button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="./client/add_client.php" method="POST" class="needs-validation" novalidate>
@@ -14,7 +13,7 @@
                         <input type="text" class="form-control" id="ime_prezime" name="ime_prezime"
                             placeholder="Unesite ime i prezime" autocomplete="off" required>
                         <label for="ime_prezime">Ime i prezime</label>
-                        <div class="invalid-feedback">Morate uneti ime i prezime.</div>
+                        <div class="invalid-feedback">Ime i prezime je obavezno.</div>
                     </div>
 
                     <div class="form-floating mt-2">
@@ -29,7 +28,7 @@
                         <input type="email" class="form-control" id="email" name="email" placeholder="Unesite email"
                             autocomplete="off">
                         <label for="email">Email</label>
-                        <div class="invalid-feedback">Morate uneti ispravan email.</div>
+                        <div class="valid-feedback">Email je nije obavezan.</div>
                     </div>
 
                     <div class="form-floating mt-2">
@@ -43,14 +42,14 @@
                         <input type="text" class="form-control" id="adresa" name="adresa"
                             placeholder="Unesite adresu i broj" autocomplete="off" required>
                         <label for="adresa">Adresa i broj</label>
-                        <div class="invalid-feedback">Morate uneti adresu i broj.</div>
+                        <div class="invalid-feedback">Adresa i broj su obavezni.</div>
                     </div>
 
                     <div class="form-floating mt-2 mb-4">
                         <input type="text" class="form-control" id="mesto" name="mesto" placeholder="Unesite mesto"
                             autocomplete="off" required>
                         <label for="mesto">Mesto</label>
-                        <div class="invalid-feedback">Morate uneti mesto.</div>
+                        <div class="invalid-feedback">Mesto je obavezno.</div>
                     </div>
 
                     <button type="submit" class="btn btn-success">Dodaj</button>

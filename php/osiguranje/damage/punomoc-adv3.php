@@ -12,8 +12,8 @@ if (isset($_POST['klijent_id'])) {
     $klijent_id = $_POST['klijent_id'];
     $procenat = !empty($_POST['procenat']) ? $_POST['procenat'] : '0';  // Ako je prazno, postavi na NULL
     $dinara = !empty($_POST['dinara']) ? $_POST['dinara'] : 0;  // Ako je prazno, postavi na NULL
-    $osig_kuce = $_POST['osig_kuce']; 
-    $broj_stete = $_POST['broj_stete']; 
+    $osig_kuce = $_POST['osig_kuce'] ? $_POST['osig_kuce'] : ''; 
+    $broj_stete = $_POST['broj_stete'] ? $_POST['broj_stete'] : ''; 
     $created_at = date('d.m.Y'); // trenutni datum i vreme
 
 

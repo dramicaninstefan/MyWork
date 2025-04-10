@@ -16,7 +16,7 @@
                         <input type="text" class="form-control" id="editImePrezime" name="ime_prezime"
                             placeholder="Unesite ime i prezime" autocomplete="off" required>
                         <label for="ime_prezime">Ime i prezime</label>
-                        <div class="invalid-feedback">Morate uneti ime i prezime.</div>
+                        <div class="invalid-feedback">Ime i prezime je obavezno.</div>
                     </div>
 
                     <div class="form-floating mt-2">
@@ -31,7 +31,7 @@
                         <input type="email" class="form-control" id="editEmail" name="email" placeholder="Unesite email"
                             autocomplete="off">
                         <label for="email">Email</label>
-                        <div class="invalid-feedback">Morate uneti ispravan email.</div>
+                        <div class="valid-feedback">Email nije obavezan.</div>
                     </div>
 
                     <div class="form-floating mt-2">
@@ -45,19 +45,20 @@
                         <input type="text" class="form-control" id="editAdresa" name="adresa"
                             placeholder="Unesite adresu i broj" autocomplete="off" required>
                         <label for="adresa">Adresa i broj</label>
-                        <div class="invalid-feedback">Morate uneti adresu i broj.</div>
+                        <div class="invalid-feedback">Adresa i broj su obavezni.</div>
                     </div>
 
                     <div class="form-floating mt-2 mb-4">
                         <input type="text" class="form-control" id="editMesto" name="mesto" placeholder="Unesite mesto"
                             autocomplete="off" required>
                         <label for="mesto">Mesto</label>
-                        <div class="invalid-feedback">Morate uneti mesto.</div>
+                        <div class="invalid-feedback">Mesto je obavezno.</div>
                     </div>
 
 
-                    <button type="submit" class="btn btn-warning">Sačuvaj</button>
+                    <button type="submit" class="btn btn-success">Sačuvaj promene</button>
                 </form>
+
             </div>
         </div>
     </div>

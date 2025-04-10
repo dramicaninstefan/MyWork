@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CZPIS WEBPORTAL</title>
+    <link rel="icon" href="../assets/img/favicon.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/main.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+
+
 
 </head>
 
@@ -72,6 +76,11 @@
                                 Obnove
                             </a>
                         </li>
+                        <li>
+                            <a href="/skadencar_placanja" class="dropdown-item">
+                                Placanja %
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
@@ -120,16 +129,21 @@
 </div>
 
 <script>
-// omogucava otvaranje dropdown na hover
-document.querySelectorAll('.nav-item.dropdown').forEach(function(dropdown) {
-    dropdown.addEventListener('mouseenter', function() {
-        this.querySelector('.dropdown-menu').classList.add('show');
-    });
-
-    dropdown.addEventListener('mouseleave', function() {
-        this.querySelector('.dropdown-menu').classList.remove('show');
-    });
+// Kada se stranica učita, sakrij loader
+window.addEventListener('load', function() {
+    document.getElementById('loader').style.display = 'none';
 });
+
+// omogucava otvaranje dropdown na hover
+// document.querySelectorAll('.nav-item.dropdown').forEach(function(dropdown) {
+//     dropdown.addEventListener('mouseenter', function() {
+//         this.querySelector('.dropdown-menu').classList.add('show');
+//     });
+
+//     dropdown.addEventListener('mouseleave', function() {
+//         this.querySelector('.dropdown-menu').classList.remove('show');
+//     });
+// });
 
 const statusAlert = document.getElementById('statusAlert');
 const statusAlertTitle = document.getElementById('statusAlertTitle');
@@ -149,6 +163,12 @@ if (status === "info") {
     statusAlertMessage.textContent = message;
     statusAlert.classList.add('alert-info');
     statusAlert.style.display = 'block';
+}
+if (status === "warning") {
+    statusAlertTitle.textContent = 'Upozorenje!';
+    statusAlertMessage.textContent = message;
+    statusAlert.classList.add('alert-warning');
+    statusAlert.style.display = 'block';
 } else if (status === "error") {
     statusAlertTitle.textContent = 'Greška!';
     statusAlertMessage.textContent = message;
@@ -163,5 +183,5 @@ setTimeout(() => {
     }
     sessionStorage.removeItem("status");
     sessionStorage.removeItem("message");
-}, 3000); // 5000 ms = 5 sekundi
+}, 4000); // 5000 ms = 5 sekundi
 </script>

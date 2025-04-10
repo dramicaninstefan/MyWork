@@ -50,7 +50,7 @@
 
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
-                                    echo '<option value="' . $row['id'] . '" data-mbpib="' . $row['mb_pib'] . '">' . $row['ime_prezime'] . '</option>';
+                                    echo '<option value="' . $row['id'] . '" data-mbpib="' . $row['jmbg'] . '">' . $row['ime_prezime'] . '</option>';
                                 }
                             } else {
                                 echo '<option value="">Nema klijenata</option>';
@@ -69,6 +69,16 @@
 
                     <!-- JavaScript -->
                     <script>
+                    // Dodajte event listener na prvi input polje
+                    document.getElementById('searchKlijent').addEventListener('keydown', function(event) {
+                        // Ako je pritisnut taster "ArrowDown" (strelica na dole)
+                        if (event.key === "ArrowDown") {
+                            event.preventDefault(); // Sprečava default ponašanje (ako je potrebno)
+                            // Premesti fokus na sledeći input
+                            document.getElementById('klijent').focus();
+                        }
+                    });
+
                     document.addEventListener("DOMContentLoaded", function() {
                         let searchInput = document.getElementById("searchKlijent");
                         let mbPibContainer = document.getElementById("mb_pib_container");
@@ -169,17 +179,17 @@
                     <div class="form-floating mb-2">
                         <select class="form-select mb-2" name="osig_kuca" autocomplete="off" required>
                             <option value="">Izaberi...</option>
-                            <option value="Dunav Osiguranje">Dunav osiguranje</option>
-                            <option value="DDOR Osiguranje">DDOR Novi Sad</option>
-                            <option value="Uniqa Osiguranje">Uniqa osiguranje</option>
-                            <option value="Triglav Osiguranje">Triglav osiguranje</option>
-                            <option value="Generali Osiguranje">Generali osiguranje</option>
-                            <option value="Wiener Osiguranje">Wiener Stadtische</option>
-                            <option value="Sava Osiguranje">Sava osiguranje</option>
-                            <option value="Milenijum Osiguranje">Milenijum osiguranje</option>
-                            <option value="Globos Osiguranje">Globos osiguranje</option>
-                            <option value="AMS Osiguranje">AMS osiguranje</option>
-                            <option value="GRAWE Osiguranje">Grawe osiguranje</option>
+                            <option value="DUNAV">Dunav osiguranje</option>
+                            <option value="DDOR">DDOR Novi Sad</option>
+                            <option value="AMS">AMS osiguranje</option>
+                            <option value="GLOBOS">Globos osiguranje</option>
+                            <option value="UNIQA">Uniqa osiguranje</option>
+                            <option value="TRIGLAV">Triglav osiguranje</option>
+                            <option value="GENARALI">Generali osiguranje</option>
+                            <option value="MILENIJUM">Milenijum osiguranje</option>
+                            <option value="WIENER">Wiener Stadtische</option>
+                            <option value="GRAWE">Grawe osiguranje</option>
+                            <option value="SAVA">Sava osiguranje</option>
                         </select>
                         <label for="osig_kuca">Osiguravajuća kuća</label>
                         <div class="invalid-feedback">Osiguravajuća kuća je obavezna!</div>
@@ -196,19 +206,20 @@
                         <select class="form-select mb-2" name="grana_tarifa" autocomplete="off" required>
                             <option value="">Izaberi...</option>
                             <option value="CMR">CMR</option>
-                            <option value="Imovina">Imovina</option>
-                            <option value="Kasko">Kasko</option>
-                            <option value="Nezgoda">Nezgoda</option>
-                            <option value="Odgovornost">Odgovornost</option>
-                            <option value="Paket putnog">Paket putnog</option>
-                            <option value="Poljoprivreda">Poljoprivreda</option>
-                            <option value="Pomoć na putu">Pomoć na putu</option>
+                            <option value="IMOVINA">Imovina</option>
+                            <option value="KASKO">Kasko</option>
+                            <option value="NEZGODA">Nezgoda</option>
+                            <option value="ODGOVORNOST">Odgovornost</option>
+                            <option value="PAKET PUTNOG">Paket putnog</option>
+                            <option value="POLJOPRIVREDA">Poljoprivreda</option>
+                            <option value="POMOĆ NA PUTU">Pomoć na putu</option>
                             <option value="PZO">PZO</option>
-                            <option value="Stakla">Stakla</option>
-                            <option value="Usevi">Usevi</option>
-                            <option value="Zdravstveno">Zdravstveno</option>
-                            <option value="Životno">Životno</option>
-                            <option value="Životno kredit">Životno kredit</option>
+                            <option value="STAKLA">Stakla</option>
+                            <option value="USEVI">Usevi</option>
+                            <option value="ZDRAVSTVENO">Zdravstveno</option>
+                            <option value="ŽIVOTNO">Životno</option>
+                            <option value="ŽIVOTNO KREDIT">Životno kredit</option>
+
                         </select>
                         <label for="grana_tarifa">Grana tarife</label>
                         <div class="invalid-feedback">Grana tarife je obavezna!</div>
@@ -226,8 +237,8 @@
                         <div class="form-floating mb-2">
                             <select class="form-select mb-2" name="nacin_placanja" autocomplete="off" required>
                                 <option value="">Izaberi...</option>
-                                <option value="U celosti">U celosti</option>
-                                <option value="Na rate">Na rate</option>
+                                <option value="U CELOSTI">U celosti</option>
+                                <option value="NA RATE">Na rate</option>
                             </select>
                             <label for="regOznaka">Način plaćanja</label>
                             <div class="invalid-feedback">Način plaćanja je obavezan!</div>

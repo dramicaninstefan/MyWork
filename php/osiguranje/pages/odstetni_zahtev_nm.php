@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         class="needs-validation mb-5 no-loader" novalidate>
         <div class="sticky-top pt-4 modal-custom">
             <div style="text-align: center;">
-                <h2 class="pb-2 text-uppercase">Odštetni zahtev (ne materijalna)</h2>
+                <h2 class="pb-2 text-uppercase">Odštetni zahtev (nematerijalna)</h2>
             </div>
 
             <div class="d-flex justify-content-between">

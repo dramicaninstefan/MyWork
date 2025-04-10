@@ -128,8 +128,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </td>
 
                     <td>
-                        <input type="number" step="0.01" name="advokatski_troskovi"
-                            value="<?php echo $row["advokatski_troskovi"]; ?>" class="form-control" min="0">
+                        <input type="number" title="<?php echo $row["advokatski_troskovi_uplaceno"];?>" step="0.01"
+                            name="advokatski_troskovi" value="<?php echo $row["advokatski_troskovi"]; ?>"
+                            class="form-control" min="0">
                     </td>
 
                     <?php
@@ -139,7 +140,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
                     <td>
-                        <input type="number" step="0.01" name="emin_procena" value="<?php echo $row["emin_procena"]; ?>"
+                        <input type="number" title="<?php echo $row["emin_procena_uplaceno"];?>" step="0.01"
+                            name="emin_procena" value="<?php echo $row["emin_procena"]; ?>"
                             class="form-control <?php echo $row["emin_procena"] == 0 ? 'status-red-white' : 'status-green-white'; ?>"
                             min="0" <?php echo $disabled_emin; ?>>
                     </td>
@@ -150,7 +152,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     ?>
 
                     <td>
-                        <input type="number" step="0.01" name="preporucilac" value="<?php echo $row["preporucilac"]; ?>"
+                        <input type="number" title="<?php echo $row["preporucilac_uplaceno"];?>" step="0.01"
+                            name="preporucilac" value="<?php echo $row["preporucilac"]; ?>"
                             class="form-control <?php echo $row["preporucilac"] == 0 ? 'status-red-white' : 'status-green-white'; ?>"
                             min="0" <?php echo $disabled_preporucilac; ?>>
                     </td>

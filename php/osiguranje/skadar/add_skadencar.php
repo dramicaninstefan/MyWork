@@ -5,7 +5,6 @@ include('../config.php');  // Uključi konekciju na bazu
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Izdvajanje podataka iz forme
     $broj_polise = $_POST['broj_polise'];
-    $klijent_id = $_POST['klijent_id'] ? $_POST['klijent_id'] : null;  // Ime i prezime klijenta
     
     $osig_kuca = $_POST['osig_kuca'];
     $skadencar_pocetak = $_POST['skadencar_pocetak']; // Datum početka
@@ -14,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $premija_bez_poreza = $_POST['premija_bez_poreza'];  // Premija bez poreza
     $premija_sa_porezom = $_POST['premija_sa_porezom']; // Premija sa porezom
     $nacin_placanja = $_POST['nacin_placanja'];
-    $brokerska_kuca = $_POST['brokerska_kuca'];
+    $brokerska_kuca = strtoupper($_POST['brokerska_kuca']);
     $komentar = $_POST['komentar']; // Komentar (može biti null)
 
     // Ako je klijent_id postavljen (nije null), pokreće se SELECT upit

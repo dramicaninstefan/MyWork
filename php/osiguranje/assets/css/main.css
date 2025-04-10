@@ -2,14 +2,14 @@
   box-shadow: none !important;
 } */
 
-/* input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 input[type="number"] {
   -moz-appearance: textfield;
-} */
+}
 
 body {
   padding-top: 56px;
@@ -123,7 +123,13 @@ thead {
   text-align: center;
 }
 
-td {
+.table-success-strong {
+  background-color: #70e000 !important;
+  color: white;
+}
+
+td,
+tr {
   vertical-align: middle;
 }
 
@@ -177,11 +183,4 @@ td {
   to {
     transform: rotate(360deg);
   }
-}
-
-.form-control.is-invalid {
-  /* Jači border za nevalidne unose */
-  border: 3px solid red !important;
-  /* Koristimo !important da bismo pregazili Bootstrap stilove */
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
 }

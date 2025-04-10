@@ -107,7 +107,7 @@ if (!$result) {
                                 <li class="px-1">
                                     <?php
                                     // Provera statusa i postavljanje disabled atributa ako neka vrednost nije 1
-                                    $disabled = ($row['odstetni_zahtev_status'] == 1) ? 'disabled' : '';
+                                    $disabled = ($row['odstetni_zahtev_status'] == 1) ? '' : '';
                                     ?>
                                     <!-- Dugme za prosleđivanje podataka -->
                                     <form action="/odstetni_zahtev_m" method="post">
@@ -125,7 +125,7 @@ if (!$result) {
                                 <li class="px-1  mt-2">
                                     <?php
                                     // Provera statusa i postavljanje disabled atributa ako neka vrednost nije 1
-                                    $disabled = ($row['odstetni_zahtev_status'] == 1) ? 'disabled' : '';
+                                    $disabled = ($row['odstetni_zahtev_status'] == 1) ? '' : '';
                                     ?>
                                     <!-- Dugme za prosleđivanje podataka -->
                                     <form action="/odstetni_zahtev_nm" method="post">
@@ -135,7 +135,7 @@ if (!$result) {
                                             value="<?php echo htmlspecialchars($row['klijent_id']); ?>">
                                         <button type="submit" class="dropdown-item w-100 d-flex align-items-center"
                                             <?php echo $disabled; ?>>
-                                            Odštetni zahtev (ne materijalna)
+                                            Odštetni zahtev (nematerijalna)
                                         </button>
                                     </form>
                                 </li>
@@ -260,14 +260,24 @@ if (!$result) {
                     <form method="POST" action="../damage/add_client_damage.php" enctype="multipart/form-data"
                         class="needs-validation" novalidate>
 
-                        <div class="form-floating mb-2">
-                            <input type="text" class="form-control" id="searchKlijentNew" name="searchKlijentNew"
+                        <!-- Pretraga klijenata i Select sa filtriranjem -->
+                        <div class="form-floating mt-2 position-relative">
+                            <input type="text" id="searchKlijentSteta" name="searchKlijentSteta" class="form-control"
                                 placeholder="Pretraži klijente..." autocomplete="off" required>
-                            <label for="searchKlijentNew">Pretraži klijente...</label>
+                            <label for="searchKlijentSteta">Ime i prezime</label>
+                            <div class="invalid-feedback">Ime i prezime je obavezno!</div>
+
+
+                            <!-- Dugme X za resetovanje -->
+                            <button type="button" tabindex="-1" id="resetSearch" class="btn btn-light position-absolute"
+                                style="right: 10px; top: 50%; transform: translateY(-50%); display: none;">
+                                <i class="bi bi-arrow-clockwise"></i>
+                            </button>
                         </div>
 
-                        <div class="mb-3">
-                            <select class="form-select" name="klijent_id" id="klijentNew" required size="5"
+                        <!-- Select za klijente -->
+                        <div class="mb-2">
+                            <select class="form-select" autocomplete="off" name="klijent_id" id="klijentSteta" size="5"
                                 style="display: none;">
                                 <?php
                             include('config.php');
@@ -277,7 +287,7 @@ if (!$result) {
 
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
-                                    echo '<option style="padding-block: 2px;" value="' . $row['id'] . '">' . $row['ime_prezime'] . '</option>';
+                                    echo '<option value="' . $row['id'] . '" data-mbpib="' . $row['jmbg'] . '">' . $row['ime_prezime'] . '</option>';
                                 }
                             } else {
                                 echo '<option value="">Nema klijenata</option>';
@@ -286,78 +296,93 @@ if (!$result) {
                             </select>
                         </div>
 
-                        <!-- JavaScript za style za input -->
+                        <!-- JavaScript -->
                         <script>
+                        // Dodajte event listener na prvi input polje
+                        document.getElementById('searchKlijentSteta').addEventListener('keydown', function(event) {
+                            // Ako je pritisnut taster "ArrowDown" (strelica na dole)
+                            if (event.key === "ArrowDown") {
+                                event.preventDefault(); // Sprečava default ponašanje (ako je potrebno)
+                                // Premesti fokus na sledeći input
+                                document.getElementById('klijentSteta').focus();
+                            }
+                        });
+
                         document.addEventListener("DOMContentLoaded", function() {
-                            let options = document.querySelectorAll("#klijentNew option");
+                            let searchInput = document.getElementById("searchKlijentSteta");
+                            let selectKlijent = document.getElementById("klijentSteta");
+                            let resetButton = document.getElementById("resetSearch");
 
-                            options.forEach((option, index) => {
-                                // Postavi osnovne boje
-                                if (index % 2 === 0) {
-                                    option.style.backgroundColor = "#fff"; // Bela
-                                } else {
-                                    option.style.backgroundColor = "#fff"; // Siva
-                                }
+                            let options = document.querySelectorAll("#klijentSteta option");
 
-                                // Dodaj hover efekat
+                            // Stilizacija opcija u select-u
+                            options.forEach((option) => {
+                                option.style.backgroundColor = "#fff";
+
                                 option.addEventListener("mouseenter", function() {
-                                    this.style.backgroundColor =
-                                        "#e7ecef"; // Plava nijansa na hover
+                                    this.style.backgroundColor = "#e7ecef";
                                 });
 
                                 option.addEventListener("mouseleave", function() {
-                                    // Vrati originalnu boju
-                                    if (index % 2 === 0) {
-                                        this.style.backgroundColor = "#fff";
-                                    } else {
-                                        this.style.backgroundColor = "#fff";
-                                    }
+                                    this.style.backgroundColor = "#fff";
                                 });
                             });
-                        });
-                        </script>
 
-                        <!-- JavaScript za filtriranje, otvaranje select-a, i postavljanje vrednosti u input -->
-                        <script>
-                        // Otvori select kada se klikne na pretragu
-                        document.getElementById('searchKlijentNew').addEventListener('focus', function() {
-                            document.getElementById('klijentNew').style.display = 'block'; // Prikazati select
-                        });
-
-                        // Filtriranje opcija u select-u dok korisnik unosi tekst
-                        document.getElementById('searchKlijentNew').addEventListener('keyup', function() {
-                            let filter = this.value.toLowerCase();
-                            let options = document.querySelectorAll("#klijentNew option");
-
-                            options.forEach(option => {
-                                let text = option.textContent.toLowerCase();
-                                option.style.display = text.includes(filter) || option.value === "" ?
-                                    "" :
-                                    "none";
+                            // Prikaz select-a pri fokusu na pretragu
+                            searchInput.addEventListener("focus", function() {
+                                selectKlijent.style.display = "block";
                             });
-                        });
 
-                        // Zatvori select ako korisnik klikne izvan njega
-                        document.addEventListener('click', function(e) {
-                            let select = document.getElementById('klijentNew');
-                            if (!select.contains(e.target) && e.target !== document.getElementById(
-                                    'searchKlijentNew')) {
-                                select.style.display = 'none'; // Zatvori select ako klikneš izvan njega
-                            }
-                        });
+                            // Filtriranje opcija
+                            searchInput.addEventListener("keyup", function() {
+                                let filter = this.value.toLowerCase();
+                                let hasValue = this.value.trim() !== "";
 
-                        // Postavljanje vrednosti u input kada je odabran klijent iz select-a
-                        document.getElementById('klijentNew').addEventListener('change', function() {
-                            let selectedOption = this.options[this.selectedIndex];
-                            let searchInput = document.getElementById('searchKlijentNew');
-                            if (selectedOption.value !== "") {
-                                searchInput.value = selectedOption
-                                    .textContent; // Postavi naziv odabranog klijenta u input
-                            } else {
-                                searchInput.value = ''; // Ako nije odabran klijent, input ostaje prazan
-                            }
-                            // Zatvori select nakon što je odabran klijent
-                            document.getElementById('klijentNew').style.display = 'none';
+                                options.forEach(option => {
+                                    let text = option.textContent.toLowerCase();
+                                    option.style.display = text.includes(filter) || option
+                                        .value ===
+                                        "" ? "" : "none";
+                                });
+
+                                // Prikaz dugmeta X ako postoji unos
+                                resetButton.style.display = hasValue ? "block" : "none";
+                            });
+
+                            // Zatvaranje select-a klikom van njega
+                            document.addEventListener("click", function(e) {
+                                if (!selectKlijent.contains(e.target) && e.target !== searchInput) {
+                                    selectKlijent.style.display = "none";
+                                }
+                            });
+
+                            // Postavljanje vrednosti u input polja i sakrivanje MB/PIB inputa
+                            selectKlijent.addEventListener("change", function() {
+                                let selectedOption = this.options[this.selectedIndex];
+
+                                if (selectedOption.value !== "") {
+                                    searchInput.value = selectedOption.textContent;
+                                } else {
+                                    searchInput.value = '';
+                                    "block"; // Prikazuje MB/PIB input ako ništa nije odabrano
+                                }
+
+                                resetButton.style.display = "block"; // Prikaz dugmeta X nakon izbora
+                            });
+
+                            // Reset dugme - briše unos i prikazuje MB/PIB input
+                            resetButton.addEventListener("click", function() {
+                                searchInput.value = "";
+                                selectKlijent.style.display = "none"; // Sakriva select
+                                resetButton.style.display = "none"; // Sakriva X dugme
+                            });
+
+                            // Dodajemo blur event na search input
+                            selectKlijent.addEventListener("blur", function() {
+                                setTimeout(function() { // Koristimo setTimeout da bismo sačekali da tab navigacija završi
+                                    selectKlijent.style.display = "none";
+                                }, 100);
+                            });
                         });
                         </script>
 
@@ -387,13 +412,14 @@ if (!$result) {
                                     <input type="text" class="form-control" id="regOznaka" name="reg_oznaka"
                                         placeholder="Registarska oznaka (Oštećenog)" autocomplete="off" required>
                                     <label for="regOznaka">Registarska oznaka (Oštećenog)</label>
+                                    <div class="invalid-feedback">Registraciona oznaka (Oštećenog) je obavezna.</div>
                                 </div>
                             </div>
 
                             <div class="col-4">
 
                                 <div class="form-floating mb-2">
-                                    <select class="form-select mb-2" name="osig_kuca" autocomplete="off" required>
+                                    <select class="form-select" name="osig_kuca" autocomplete="off" required>
                                         <option value="">Izaberi...</option>
                                         <option value="Dunav Osiguranje">Dunav osiguranje</option>
                                         <option value="DDOR Osiguranje">DDOR Novi Sad</option>
@@ -409,17 +435,19 @@ if (!$result) {
                                         <option value="Ne zna se">Ne zna se</option>
                                     </select>
                                     <label for="regOznaka">Osiguravajuća kuća (Štetnika)</label>
+                                    <div class="invalid-feedback">Osiguravajuća kuća (Štetnika) je obavezna.</div>
                                 </div>
                             </div>
 
                             <div class="col-4">
                                 <div class="form-floating mb-2">
-                                    <select class="form-select mb-2" name="vrsta_stete" autocomplete="off" required>
+                                    <select class="form-select" name="vrsta_stete" autocomplete="off" required>
                                         <option value="">Izaberi...</option>
                                         <option value="Materijalna">Materijalna</option>
                                         <option value="Nematerijalna">Nematerijalna</option>
                                     </select>
                                     <label for="regOznaka">Vrsta stete</label>
+                                    <div class="invalid-feedback">Vrsta stete je obavezna.</div>
                                 </div>
                             </div>
                         </div>

@@ -45,6 +45,17 @@ document.querySelectorAll("form").forEach(function(form) {
             }, false)
         })
 })()
+
+let shouldWarnOnUnload = true;
+
+// Deaktiviramo upozorenje kada korisnik klikne na interni link
+document.addEventListener("click", function(e) {
+    const target = e.target.closest("a");
+    if (target && target.href && target.origin === location.origin) {
+        // Kliknut je interni link — ne prikazuj upozorenje
+        shouldWarnOnUnload = false;
+    }
+});
 </script>
 
 </body>

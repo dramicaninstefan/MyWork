@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 $page = trim($_SERVER['REQUEST_URI'], '/');
 
 // Definišemo dostupne stranice
-$allowed_pages = ['klijenti', 'stete', 'skadencar_unos', 'skadencar_obnove', 'uredi_stetu',  'obracun_stete', 'odstetni_zahtev_m', 'odstetni_zahtev_nm', 'sluzbena_beleska', 'potvrdi'];
+$allowed_pages = ['klijenti', 'stete', 'skadencar_unos', 'skadencar_obnove', 'skadencar_placanja', 'uredi_stetu',  'obracun_stete', 'odstetni_zahtev_m', 'odstetni_zahtev_nm', 'sluzbena_beleska', 'potvrdi'];
 
 // Učitavamo header (zajednički deo stranica)
 require 'layout/header.php';

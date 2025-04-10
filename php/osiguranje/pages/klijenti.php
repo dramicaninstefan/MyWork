@@ -18,6 +18,17 @@ $result = $conn->query($sql);
 
     <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addClientModal">Novi klijent</button>
 
+    <button type="button" class="btn btn-primary  mb-3" data-bs-toggle="modal" data-bs-target="#csvKlijentiModal">
+        Upload CSV <i class="bi bi-file-earmark-arrow-up"></i>
+    </button>
+
+    <form class="d-inline" action="../client/klijenti_export_excel.php" method="post" id="exportForm">
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal"
+            data-bs-target="#confirmDownloadKlijentiModal">
+            Exportuj u Excel <i class="bi bi-file-earmark-arrow-down"></i>
+        </button>
+    </form>
+
     <table class="table table-bordered" id="klijentTable">
         <thead class="table-dark">
             <tr>
@@ -79,6 +90,35 @@ $result = $conn->query($sql);
 
 <?php require './modal/add_client_modal.php'?>
 <?php require './modal/edit_client_modal.php'?>
+<?php require './modal/import_klijenti_cvs.php'?>
+
+<!-- Modal za potvrdu preuzimanja -->
+<div class="modal fade" id="confirmDownloadKlijentiModal" tabindex="-1"
+    aria-labelledby="confirmDownloadModalKlijentiLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDownloadModalKlijentiLabel">Potvrdi skidanje</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Da li ste sigurni da želite da eksportujete podatke u Excel?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Otkaži</button>
+                <button type="button" class="btn btn-success" id="confirmExportBtn">Eksportuj</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Kada korisnik potvrdi akciju
+document.getElementById('confirmExportBtn').addEventListener('click', function() {
+    // Poslati formu
+    document.getElementById('exportForm').submit();
+});
+</script>
 
 <script>
 // Funkcija za uklanjanje dijakritika
