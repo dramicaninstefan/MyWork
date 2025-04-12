@@ -1,9 +1,11 @@
 {
   "dependencies": {
     "fs": "^0.0.1-security",
-    "inquirer": "^9.2.16",
+    "inquirer": "^8.2.6",
+    "jimp": "^1.6.0",
     "qr-code": "file:",
-    "qr-image": "^3.2.0"
+    "qr-image": "^3.2.0",
+    "qrcode": "^1.5.4"
   },
   "name": "qr-code",
   "version": "1.0.0",
