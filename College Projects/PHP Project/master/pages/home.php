@@ -117,40 +117,85 @@
                 </div>
 
                 <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
-                    <form action="forms/quote.php" method="post" class="php-email-form">
-                        <h3>Dobijte ponudu</h3>
-                        <p>Popunite formu kako bismo vam poslali personalizovanu ponudu za ugradnju sistema interfona i
-                            video nadzora. Naši stručnjaci će vas kontaktirati sa svim informacijama i detaljima.</p>
-                        <div class="row gy-3">
+                    <form id="contactForm" action="../core/send_email.php" method="post" class="needs-validation"
+                        novalidate>
+                        <h3 class="mb-4">Dobijte ponudu</h3>
+                        <p class="mb-4">Popunite formu kako bismo vam poslali personalizovanu ponudu za ugradnju sistema
+                            interfona i video nadzora. Naši stručnjaci će vas kontaktirati sa svim informacijama i
+                            detaljima.</p>
 
+                        <div id="responseMessage" class="my-2"></div>
+
+                        <div class="row gy-3">
                             <div class="col-12">
                                 <input type="text" name="name" class="form-control" placeholder="Ime i Prezime"
-                                    required="">
+                                    required>
                             </div>
 
                             <div class="col-12">
-                                <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                                <input type="email" class="form-control" name="email" placeholder="Email" required>
                             </div>
 
                             <div class="col-12">
-                                <input type="text" class="form-control" name="phone" placeholder="Telefon" required="">
+                                <input type="text" class="form-control" name="phone" placeholder="Telefon" required>
                             </div>
 
                             <div class="col-12">
                                 <textarea class="form-control" name="message" rows="6" placeholder="Poruka"
-                                    required=""></textarea>
+                                    required></textarea>
                             </div>
 
                             <div class="col-12 text-center">
-                                <div class="loading">Učitavanje...</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Vaš zahtev za ponudu je uspešno poslat. Hvala vam!</div>
-
-                                <button type="submit">Pošaljite ponudu</button>
+                                <button type="submit" class="btn btn-primary">Pošaljite ponudu</button>
                             </div>
-
                         </div>
                     </form>
+
+                    <!-- Prikazivanje poruke o uspehu ili grešci -->
+
+
+                    <!-- Prikazivanje poruke o uspehu ili grešci -->
+                    <div id="responseMessage"></div>
+
+                    <script>
+                    document.getElementById("contactForm").addEventListener("submit", function(e) {
+                        e.preventDefault(); // Sprečava reload stranice
+
+                        // Provera validnosti forme
+                        if (!this.checkValidity()) {
+                            // Ako forma nije validna, pokaži poruku
+                            this.classList.add("was-validated");
+                            return; // Ne šaljemo formu
+                        }
+
+                        let formData = new FormData(this); // Prikuplja podatke sa forme
+
+                        // AJAX zahtev
+                        fetch("../core/send_email.php", {
+                                method: "POST",
+                                body: formData
+                            })
+                            .then(response => response.json()) // Očekuje JSON odgovor
+                            .then(data => {
+                                if (data.status === "success") {
+                                    // Ako je email uspešno poslat, prikazujemo poruku i resetujemo formu
+                                    document.getElementById("responseMessage").innerHTML =
+                                        `<div class="alert alert-success">${data.message}</div>`;
+                                    this.reset(); // Resetuje formu (očistiti inpute)
+                                } else {
+                                    // Ako nije uspešno, prikazuje grešku
+                                    document.getElementById("responseMessage").innerHTML =
+                                        `<div class="alert alert-danger">${data.message}</div>`;
+                                }
+                            })
+                            .catch(error => {
+                                console.error("Greška:", error);
+                                document.getElementById("responseMessage").innerHTML =
+                                    `<div class="alert alert-danger">Došlo je do greške. Pokušajte ponovo.</div>`;
+                            });
+                    });
+                    </script>
+
                 </div><!-- End Quote Form -->
 
             </div>

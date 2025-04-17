@@ -45,6 +45,8 @@ if ($user_id) {
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
 
@@ -116,6 +118,10 @@ if ($user_id) {
                                 <a href="/auth/logout.php">Logout</a>
                             </li>
                         </ul>
+                    </li>
+                    <li style="display: none;">
+                        <a href="/detalji-proizvod">
+                        </a>
                     </li>
                     <?php endif; ?>
                 </ul>

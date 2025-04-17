@@ -2,10 +2,11 @@
 session_start();
 require('config.php');
 
-$user_id = $_SESSION['user_id'] ?? 0;
+// Proveri da li je korisnik prijavljen (primer)
+$user_id = $_SESSION['user_id'] ?? null;
 
 if (!$user_id) {
-    echo "Morate biti ulogovani da biste videli korpu.";
+    header("Location: ../auth/login.php");
     exit;
 }
 
@@ -38,7 +39,7 @@ $result = $conn->query($sql);
         <h1>Moja korpa</h1>
         <nav class="breadcrumbs">
             <ol>
-                <li><a href="/">Home</a></li>
+                <li><a href="/">Početna</a></li>
                 <li class="current">Moja korpa</li>
             </ol>
         </nav>

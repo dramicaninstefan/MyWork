@@ -15,7 +15,7 @@ $page = trim($_SERVER['REQUEST_URI'], '/');
 $no_layout_pages = ['hvala-vam']; 
 
 // Definišemo dostupne stranice
-$allowed_pages = ['klijenti', 'o-nama', 'prodavnica', 'korpa', 'detalji-kupovine', 'kontakt', 'moj-profil', 'moje-porudzbine', 'hvala-vam'];
+$allowed_pages = ['klijenti', 'o-nama', 'prodavnica', 'detalji-proizvod', 'korpa', 'detalji-kupovine', 'kontakt', 'moj-profil', 'moje-porudzbine', 'hvala-vam'];
 
 // Definišemo stranice koje zahtevaju prijavu
 $protected_pages = ['admin_panel'];

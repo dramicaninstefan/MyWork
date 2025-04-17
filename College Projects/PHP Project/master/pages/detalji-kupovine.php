@@ -1,14 +1,13 @@
 <?php
 session_start();
 
+// Proveri da li je korisnik prijavljen (primer)
+$user_id = $_SESSION['user_id'] ?? null;
 
-// Proverite da li je korisnik prijavljen
-if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php'); // Ako nije prijavljen, preusmerite ga na login
+if (!$user_id) {
+    header("Location: ../auth/login.php");
     exit;
 }
-
-$user_id = $_SESSION['user_id'];  // ID korisnika iz sesije
 
 // Povezivanje sa bazom podataka (koristite vašu konekciju sa bazom)
 $mysqli = new mysqli("localhost", "root", "", "interbell"); // Zamenite sa stvarnim podacima
@@ -33,7 +32,7 @@ $result = $conn->query($sql);
         <h1>Zavrsi kupovinu</h1>
         <nav class="breadcrumbs">
             <ol>
-                <li><a href="/">Home</a></li>
+                <li><a href="/">Početna</a></li>
                 <li class="current">Zavrsi kupovinu</li>
             </ol>
         </nav>

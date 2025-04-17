@@ -2,13 +2,13 @@
 session_start();
 include 'config.php';
 
-// Provera da li je korisnik ulogovan
-if (!isset($_SESSION['user_id'])) {
-    echo "<div class='alert alert-warning'>Morate biti prijavljeni da biste videli svoje porudžbine.</div>";
-    exit();
-}
+// Proveri da li je korisnik prijavljen (primer)
+$user_id = $_SESSION['user_id'] ?? null;
 
-$user_id = $_SESSION['user_id'];
+if (!$user_id) {
+    header("Location: ../auth/login.php");
+    exit;
+}
 
 // SQL upit
 $sql = "SELECT * FROM porudzbine WHERE user_id = '$user_id' ORDER BY created_at DESC";
@@ -21,14 +21,14 @@ $result = $conn->query($sql);
         <h1>Moje Porudžbine</h1>
         <nav class="breadcrumbs">
             <ol>
-                <li><a href="/">Home</a></li>
+                <li><a href="/">Početna</a></li>
                 <li class="current">Moje Porudžbine</li>
             </ol>
         </nav>
     </div>
 </div><!-- End Page Title -->
 
-<div class="container mt-5">
+<div class="container mt-5" style="min-height: 800px">
     <h2>Moje porudžbine</h2>
 
     <?php if ($result->num_rows > 0): ?>
@@ -51,8 +51,9 @@ $result = $conn->query($sql);
                     <td><?= number_format($row['total_amount'], 2) ?> RSD</td>
                     <td><?= date('d.m.Y H:i', strtotime($row['created_at'])) ?></td>
                     <td>
-                        <a href="moje-porudzbine-detalji.php?id=<?= $row['id'] ?>"
-                            class="btn btn-sm btn-primary">Pogledaj</a>
+                        <!-- <a href="moje-porudzbine-detalji.php?id=<?= $row['id'] ?>"
+                            class="btn btn-sm btn-primary">Detaljnije</a> -->
+                        <a href="#" class="btn btn-sm btn-primary">Detaljnije</a>
                     </td>
                 </tr>
                 <?php endwhile; ?>
