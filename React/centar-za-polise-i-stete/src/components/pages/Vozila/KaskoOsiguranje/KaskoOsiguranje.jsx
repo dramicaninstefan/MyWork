@@ -2,6 +2,7 @@ import { Fragment, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 
 import Hero from './Hero/Hero';
+import Hero2 from './Hero2/Hero';
 
 import FAQ from '../../../UI/FAQ/FAQ';
 import Modal from '../../../UI/Modal/Modal';
@@ -263,7 +264,8 @@ const KaskoOsiguranje = () => {
           <title>Kasko osiguranje - Centar za polise i štete</title>
           <meta name="description" content="Kasko osiguranje je najsigurniji vid zaštite vozila. Ne prepuštajte ništa slučaju! Zaštitite sebe i svoj automobil - pokrijte svaki neplaniran trošak." />
         </Helmet>
-        <Hero handleClick={handleIsClicked} />
+        {/* <Hero handleClick={handleIsClicked} /> */}
+        <Hero2 handleClick={handleIsClicked} />
         <ModalButtonKasko handleClick={handleIsClickedKasko} />
         <Features />
         <Counter image={image} />

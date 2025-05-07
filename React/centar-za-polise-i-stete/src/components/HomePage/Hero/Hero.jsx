@@ -118,7 +118,8 @@ const Hero = ({ handleClickVideo, handleClickThankYou }) => {
             <h1 data-aos="fade-up">CENTAR ZA POLISE I ŠTETE</h1>
             <blockquote data-aos="fade-up" data-aos-delay="100">
               <p>
-                Mi smo zastupnička agencija za osiguranje koja ima ugovor sa <span style={{ textTransform: `uppercase`, fontWeight: `bold` }}>svim osiguravajućim kućama</span> u Srbiji.
+                Mi smo zastupnici u osiguranju, zastupamo <span style={{ textTransform: `uppercase`, fontWeight: `bold` }}>SVE OSIGURAVAJUĆE KUĆE</span> u Srbiji, pod istim uslovima kao da ste otišli
+                direktno u osiguravajuću kuću.
                 <br />
                 <br />
                 Bavimo se <span style={{ textTransform: `uppercase`, fontWeight: `bold` }}>svim vrstama osiguranja</span>, kao i organizacijom
