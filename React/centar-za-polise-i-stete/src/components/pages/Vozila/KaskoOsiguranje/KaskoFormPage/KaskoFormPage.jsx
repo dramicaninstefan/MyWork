@@ -1,32 +1,29 @@
-import { Fragment, useState, useRef } from 'react';
+import { Fragment, useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import { useLocation } from 'react-router-dom';
 import { Link, useNavigate } from 'react-router-dom';
 
 import classes from './KaskoFormPage.module.css';
 
 const KaskoFormPage = () => {
-  // redirect to /hvala-vam page
+  const location = useLocation();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const params = new URLSearchParams(location.search);
+
+  const [saradnikGet, setSaradnikGet] = useState('');
+
   const navigate = useNavigate();
   const handleRedirectTo = () => {
     navigate('/hvala-vam');
   };
 
-  const submitBtn = useRef();
   const form = useRef();
-
-  const [successMsg, setSuccessMsg] = useState(false);
-  const [errorMsg, setErrorMsg] = useState(false);
-  const [alertMsg, setAlertMsg] = useState(false);
-  const [alertPhoneMsg, setAlertPhoneMsg] = useState(false);
-  const [alertSaglasanMsg, setAlertSaglasanMsg] = useState(false);
-  const [alertJMBGMsg, setAlertJMBGMsg] = useState(false);
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
   const [place, setPlace] = useState('');
-  const [JMBG, setJMBG] = useState('');
 
   const [mark, setMark] = useState('');
   const [type, setType] = useState('');
@@ -38,13 +35,14 @@ const KaskoFormPage = () => {
 
   const [saglasan, setSaglasan] = useState(false);
 
+  const [disabledInput, setDisabledInput] = useState(false);
+
   const templateParams = {
     user_name: name,
     user_number: number,
     user_email: email,
     user_address: address,
     user_place: place,
-    user_JMBG: JMBG,
 
     car_marka: mark,
     car_tip: type,
@@ -55,78 +53,110 @@ const KaskoFormPage = () => {
     car_link: LinkPA,
 
     user_saglasan: saglasan ? 'JESAM' : 'NISAM',
+
+    saradnik: saradnikGet,
   };
 
-  function sendEmail(e) {
+  useEffect(() => {
+    const saradnik = params.get('saradnik');
+    const marka = params.get('marka');
+    const model = params.get('model');
+    const godiste = params.get('godiste');
+    const trzisnaVrednost = params.get('trzisna-vrednost');
+    const cm3 = params.get('cm3');
+    const kw = params.get('kW');
+    const linkOglas = params.get('link');
+
+    if (saradnik) {
+      setSaradnikGet(saradnik);
+    }
+    if (marka) {
+      setMark(marka);
+      setDisabledInput(true);
+    }
+    if (model) {
+      setType(model);
+      setDisabledInput(true);
+    }
+    if (godiste) {
+      setYear(godiste);
+      setDisabledInput(true);
+    }
+    if (trzisnaVrednost) {
+      setMValue(trzisnaVrednost);
+      setDisabledInput(true);
+    }
+    if (cm3) {
+      setZapremina(cm3);
+      setDisabledInput(true);
+    }
+    if (kw) {
+      setPower(kw);
+      setDisabledInput(true);
+    }
+    if (linkOglas) {
+      setLinkPA(linkOglas);
+      setDisabledInput(true);
+    }
+  }, [params]);
+
+  console.log({
+    saradnikGet,
+    mark,
+    type,
+    power,
+    zapremina,
+    year,
+    mValue,
+    LinkPA,
+  });
+
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    var regex = /[^0-9]/g;
+    const formValid = form.current.checkValidity();
+    form.current.classList.add('was-validated');
 
-    if (name !== '' && number !== '' && address !== '' && place !== '' && mark !== '' && type !== '' && power !== '' && zapremina !== '' && year !== '' && mValue !== '' && JMBG !== '') {
-      if (!regex.test(number)) {
-        if (JMBG.length === 13) {
-          if (saglasan) {
-            emailjs
-              .send('service_90anb7y', 'template_9yiiwdf', templateParams, {
-                publicKey: '_TykGN5dKmnTuxu5y',
-              })
-              .then(
-                (response) => {
-                  handleRedirectTo();
-                  setSuccessMsg(true);
-                  setName('');
-                  setNumber('');
-                  setEmail('');
-                  setAddress('');
-                  setPlace('');
-                  setLinkPA('');
-                  setJMBG('');
-
-                  setMark('');
-                  setType('');
-                  setPower('');
-                  setZapremina('');
-                  setYear('');
-                  setMValue('');
-
-                  setSaglasan(false);
-
-                  setTimeout(() => {
-                    setSuccessMsg(false);
-                  }, 3000);
-                },
-                (err) => {
-                  setErrorMsg(true);
-                }
-              );
-          } else {
-            setAlertSaglasanMsg(true);
-
-            setTimeout(() => {
-              setAlertSaglasanMsg(false);
-            }, 3000);
-          }
-        } else {
-          setAlertJMBGMsg(true);
-
-          setTimeout(() => {
-            setAlertJMBGMsg(false);
-          }, 3000);
-        }
-      } else {
-        setAlertPhoneMsg(true);
-
-        setTimeout(() => {
-          setAlertPhoneMsg(false);
-        }, 3000);
-      }
-    } else {
-      setAlertMsg(true);
-
-      setTimeout(() => {
-        setAlertMsg(false);
-      }, 3000);
+    if (!formValid) {
+      console.log('invalid');
+      setShowAlert(true); // Prikazujemo alert
+      return;
     }
+
+    console.log('valid');
+    setShowAlert(false); // Sakrivamo alert ako je forma validna
+
+    sendEmail();
+  };
+
+  function sendEmail() {
+    emailjs
+      .send('service_90anb7y', 'template_9yiiwdf', templateParams, {
+        publicKey: '_TykGN5dKmnTuxu5y',
+      })
+      .then(
+        (response) => {
+          handleRedirectTo();
+          setName('');
+          setNumber('');
+          setEmail('');
+          setAddress('');
+          setPlace('');
+          setLinkPA('');
+
+          setMark('');
+          setType('');
+          setPower('');
+          setZapremina('');
+          setYear('');
+          setMValue('');
+
+          setSaglasan(false);
+        },
+        (err) => {}
+      );
   }
 
   return (
@@ -134,17 +164,17 @@ const KaskoFormPage = () => {
       <div className={`container my-5`} id="contact" data-aos="fade-up">
         <div className={`${classes['kasko-form-wrapper']} rounded`}>
           <div className={`${classes['kasko-form']}`}>
-            <form className="row" ref={form} action="https://formsubmit.co/gamer95.g@email.com" method="POST">
-              <div className="col-12 section-title">
-                <h2 style={{ fontWeight: `bold` }}>
-                  Za dobijanje kasko ponuda direktno od osiguravajućih kuća <br /> (bez sitnih slova), molimo vas da popunite formu u nastavku, a mi ćemo Vas kontaktirati u najkraćem roku.
-                </h2>
-                <h4>
-                  Ukoliko imate pitanja ili Vam je potreban savet, možete nas kontaktirati na broj
-                  <br />
-                  <a href="tel:+381608060001">+381 60 80 60 001</a>
-                </h4>
-              </div>
+            <form className="row needs-validation" ref={form} onSubmit={handleSubmit} noValidate>
+              {/* <div className="col-12 section-title">
+                    <h2 style={{ fontWeight: `bold` }}>
+                      Za dobijanje kasko ponuda direktno od osiguravajućih kuća <br /> (bez sitnih slova), molimo Vas da popunite formu u nastavku, a mi ćemo Vas kontaktirati u najkraćem roku.
+                    </h2>
+                    <h4>
+                      Ukoliko imate pitanja ili Vam je potreban savet, možete nas kontaktirati na broj
+                      <br />
+                      <a href="tel:+381608060001">+381 60 80 60 001</a>
+                    </h4>
+                  </div> */}
               <div className="col-12 rounded" style={{ backgroundColor: `#f1f1f1f1`, paddingBlock: `30px` }}>
                 <div className="section-title pb-5">
                   <h3>
@@ -168,6 +198,7 @@ const KaskoFormPage = () => {
                       value={name}
                       required
                     />
+                    <div className="invalid-feedback">Molimo Vas unesite ime i prezime.</div>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputAddress">
@@ -183,6 +214,7 @@ const KaskoFormPage = () => {
                       value={address}
                       required
                     />
+                    <div className="invalid-feedback">Molimo Vas unesite adresu.</div>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputCity">
@@ -198,10 +230,11 @@ const KaskoFormPage = () => {
                       value={place}
                       required
                     />
+                    <div className="invalid-feedback">Molimo Vas unesite mesto.</div>
                   </div>
                 </div>
                 <div className="row col-12">
-                  <div className="form-group col-xl-4 col-md-12">
+                  {/* <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputJMBG">
                       JMBG <span>*</span>
                     </label>
@@ -215,7 +248,8 @@ const KaskoFormPage = () => {
                       value={JMBG}
                       required
                     />
-                  </div>
+                    <div className="invalid-feedback">Molimo Vas unesite JMBG.</div>
+                  </div> */}
                   <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputNumber">
                       Telefon <span>*</span>
@@ -228,9 +262,13 @@ const KaskoFormPage = () => {
                         setNumber(e.target.value);
                       }}
                       value={number}
+                      pattern="\d{5,10}"
+                      title="Broj mora imati između 5 i 10 cifara."
                       required
                     />
+                    <div className="invalid-feedback">Unesite validan broj telefona (5 do 10 cifara).</div>
                   </div>
+
                   <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputEmail1">
                       Email <span>(opciono)</span>
@@ -245,6 +283,7 @@ const KaskoFormPage = () => {
                       }}
                       value={email}
                     />
+                    <div className="invalid-feedback">Molimo Vas unesite validan email.</div>
                   </div>
                 </div>
               </div>
@@ -262,16 +301,8 @@ const KaskoFormPage = () => {
                     <label htmlFor="InputMark">
                       Marka vozila <span>*</span>
                     </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="InputMark"
-                      onChange={(e) => {
-                        setMark(e.target.value);
-                      }}
-                      value={mark}
-                      required
-                    />
+                    <input type="text" className="form-control" id="InputMark" onChange={(e) => setMark(e.target.value)} value={mark} disabled={disabledInput} required={!disabledInput} />
+                    <div className="invalid-feedback">Molimo Vas unesite marku vozila.</div>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputType">
@@ -285,8 +316,10 @@ const KaskoFormPage = () => {
                         setType(e.target.value);
                       }}
                       value={type}
-                      required
+                      disabled={disabledInput}
+                      required={!disabledInput}
                     />
+                    <div className="invalid-feedback">Molimo Vas unesite tip vozila.</div>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputPower">
@@ -300,8 +333,10 @@ const KaskoFormPage = () => {
                         setPower(e.target.value);
                       }}
                       value={power}
-                      required
+                      disabled={disabledInput}
+                      required={!disabledInput}
                     />
+                    <div className="invalid-feedback">Molimo Vas unesite snagu motora.</div>
                   </div>
                 </div>
                 <div className="row col-12">
@@ -317,8 +352,10 @@ const KaskoFormPage = () => {
                         setZapremina(e.target.value);
                       }}
                       value={zapremina}
-                      required
+                      disabled={disabledInput}
+                      required={!disabledInput}
                     />
+                    <div className="invalid-feedback">Molimo Vas unesite zapreminu motora.</div>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputYear">
@@ -332,8 +369,10 @@ const KaskoFormPage = () => {
                         setYear(e.target.value);
                       }}
                       value={year}
-                      required
+                      disabled={disabledInput}
+                      required={!disabledInput}
                     />
+                    <div className="invalid-feedback">Molimo Vas unesite godinu proizvodnje vozila.</div>
                   </div>
                   <div className="form-group col-xl-4 col-md-12">
                     <label htmlFor="InputPayment">
@@ -347,8 +386,10 @@ const KaskoFormPage = () => {
                         setMValue(e.target.value);
                       }}
                       value={mValue}
-                      required
+                      disabled={disabledInput}
+                      required={!disabledInput}
                     />
+                    <div className="invalid-feedback">Molimo Vas unesite tržišnu vrednost vozila.</div>
                   </div>
                 </div>
                 <div className="row col-12">
@@ -364,12 +405,13 @@ const KaskoFormPage = () => {
                         setLinkPA(e.target.value);
                       }}
                       value={LinkPA}
+                      disabled={disabledInput}
                     />
                   </div>
                 </div>
 
                 <div className="col-12 py-5">
-                  <div className="form-group form-check ">
+                  <div className="form-group form-check">
                     <input
                       type="checkbox"
                       style={{ width: '20px', height: `20px`, border: `2px solid var(--accent-color)`, cursor: `pointer` }}
@@ -389,18 +431,18 @@ const KaskoFormPage = () => {
                 </div>
               </div>
 
+              {showAlert && (
+                <div className="alert alert-danger" role="alert">
+                  Molimo popunite sva obavezna polja.
+                </div>
+              )}
+
               <div className="col-12 ">
-                <button ref={submitBtn} onClick={sendEmail} className={`${classes.bt} col-xl-2 col-md-12`} id="bt">
+                <button className={`${classes.bt} col-xl-2 col-md-12`} id="bt">
                   <span className={classes.msg} id="msg"></span>
                   Pošalji zahtev
                 </button>
               </div>
-              {successMsg ? <div className={classes.success}>Uspesno ste poslali podatke!</div> : null}
-              {errorMsg ? <div className={classes.error}>Došlo je do greške!</div> : null}
-              {alertMsg ? <div className={classes.alert}>Molim Vas popunite obavezna polja! *</div> : null}
-              {alertPhoneMsg ? <div className={classes.alert}>Molim Vas unesite ispravan broj telefona!</div> : null}
-              {alertJMBGMsg ? <div className={classes.alert}>JMBG mora imati 13 cifara.</div> : null}
-              {alertSaglasanMsg ? <div className={classes.alert}>Molimo Vas da potvrdite Vašu saglasnost.</div> : null}
             </form>
           </div>
         </div>
