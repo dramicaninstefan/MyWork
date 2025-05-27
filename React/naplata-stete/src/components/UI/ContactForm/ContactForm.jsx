@@ -100,12 +100,12 @@ const ContactForm = ({ defaultValue }) => {
                 Vaš lični konsultant
               </h1>
               <h2 style={{ marginBlock: `20px` }}>
-                <a href=" tel:+381638489439" style={{ color: `#fff` }}>
+                <a href=" tel:+381608060001" style={{ color: `#fff` }}>
                   <i className=" fa-solid fa-phone" style={{ fontSize: `25px`, marginRight: `10px`, transform: `translateY(-1px)` }}></i>Telefon
                 </a>
               </h2>
-              <a href="tel:+381638489439" style={{ color: `#fff`, fontSize: `22px` }} target="_blank" rel="noreferrer">
-                +381 63 84 89 439
+              <a href="tel:+381608060001" style={{ color: `#fff`, fontSize: `22px` }} target="_blank" rel="noreferrer">
+                +381 60 80 60 001
               </a>
               <h2 style={{ marginBlock: `20px` }}>
                 <a href="mailto:office@najboljanaplatastete.rs	" style={{ color: `#fff` }}>

@@ -49,29 +49,49 @@ const Hero = ({ handleClickVideo, handleClickThankYou }) => {
 
     if (name !== '' && number !== '' && select !== '' && message !== '') {
       if (!regex.test(number)) {
-        emailjs
-          .send('service_0ee562d', 'template_l23rpm9', templateParams, {
-            publicKey: '_TykGN5dKmnTuxu5y',
-          })
-          .then(
-            (response) => {
-              handleRedirectTo();
-              // handleClickThankYou();
-              setSuccessMsg(true);
-              setName('');
-              setNumber('');
-              setEmail('');
-              setSelect('');
-              setMessage('');
+        fetch('https://czpis.in.rs/api/add_client_api.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ime_prezime: name,
+            kontakt: number,
+            email: email,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log('API odgovor:', data);
 
-              setTimeout(() => {
-                setSuccessMsg(false);
-              }, 3000);
-            },
-            (err) => {
-              setErrorMsg(true);
-            }
-          );
+            // 2. Nakon uspešnog API poziva, šalji email
+            emailjs
+              .send('service_0ee562d', 'template_l23rpm9', templateParams, {
+                publicKey: '_TykGN5dKmnTuxu5y',
+              })
+              .then(
+                (response) => {
+                  handleRedirectTo();
+                  // handleClickThankYou();
+                  setSuccessMsg(true);
+                  setName('');
+                  setNumber('');
+                  setEmail('');
+                  setSelect('');
+                  setMessage('');
+
+                  setTimeout(() => {
+                    setSuccessMsg(false);
+                  }, 3000);
+                },
+                (err) => {
+                  setErrorMsg(true);
+                }
+              );
+          })
+          .catch((err) => {
+            console.error('Greška pri slanju podataka na server:', err);
+          });
       } else {
         setAlertPhoneMsg(true);
 

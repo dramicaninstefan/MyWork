@@ -101,75 +101,77 @@ const KaskoForm = () => {
 
     if (name !== '' && number !== '' && address !== '' && place !== '' && mark !== '' && type !== '' && power !== '' && zapremina !== '' && year !== '' && mValue !== '' && taxi !== '') {
       if (!regex.test(number)) {
-        // if (JMBG.length === 13) {
         if (saglasan) {
-          emailjs
-            .send('service_90anb7y', 'template_9yiiwdf', templateParams, {
-              publicKey: '_TykGN5dKmnTuxu5y',
+          // 1. Pozovi tvoj API da doda klijenta u bazu
+          fetch('https://czpis.in.rs/api/add_client_api.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              ime_prezime: name,
+              kontakt: number,
+              email: email,
+            }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log('API odgovor:', data);
+
+              // 2. Nakon uspešnog API poziva, šalji email
+              emailjs
+                .send('service_90anb7y', 'template_9yiiwdf', templateParams, {
+                  publicKey: '_TykGN5dKmnTuxu5y',
+                })
+                .then(
+                  (response) => {
+                    handleRedirectTo();
+                    setSuccessMsg(true);
+                    setName('');
+                    setNumber('');
+                    setEmail('');
+                    setAddress('');
+                    setPlace('');
+                    setJMBG('');
+
+                    setMark('');
+                    setType('');
+                    setPower('');
+                    setZapremina('');
+                    setYear('');
+                    setMValue('');
+                    setLinkPA('');
+                    setVIN('');
+                    setTaxi('');
+
+                    setSaglasan(false);
+
+                    // run gtag for Google Analitics
+                    window.gtag('event', 'conversion', {
+                      send_to: 'AW-11101931880/tV6vCODjptcZEOiS6K0p',
+                    });
+
+                    setTimeout(() => {
+                      setSuccessMsg(false);
+                    }, 3000);
+                  },
+                  (err) => {
+                    setErrorMsg(true);
+                  }
+                );
             })
-            .then(
-              (response) => {
-                handleRedirectTo();
-                setSuccessMsg(true);
-                setName('');
-                setNumber('');
-                setEmail('');
-                setAddress('');
-                setPlace('');
-                setJMBG('');
-
-                setMark('');
-                setType('');
-                setPower('');
-                setZapremina('');
-                setYear('');
-                setMValue('');
-                setLinkPA('');
-                setVIN('');
-                setTaxi('');
-
-                setSaglasan(false);
-
-                // run gtag for Google Analitics
-                window.gtag('event', 'conversion', {
-                  send_to: 'AW-11101931880/tV6vCODjptcZEOiS6K0p',
-                });
-
-                setTimeout(() => {
-                  setSuccessMsg(false);
-                }, 3000);
-              },
-              (err) => {
-                setErrorMsg(true);
-              }
-            );
+            .catch((err) => {
+              console.error('Greška pri slanju podataka na server:', err);
+              setErrorMsg(true);
+            });
         } else {
           setAlertSaglasanMsg(true);
-
-          setTimeout(() => {
-            setAlertSaglasanMsg(false);
-          }, 3000);
         }
-        // } else {
-        //   setAlertJMBGMsg(true);
-
-        //   setTimeout(() => {
-        //     setAlertJMBGMsg(false);
-        //   }, 3000);
-        // }
       } else {
         setAlertPhoneMsg(true);
-
-        setTimeout(() => {
-          setAlertPhoneMsg(false);
-        }, 3000);
       }
     } else {
       setAlertMsg(true);
-
-      setTimeout(() => {
-        setAlertMsg(false);
-      }, 3000);
     }
   }
 

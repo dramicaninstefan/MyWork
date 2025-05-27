@@ -14,7 +14,7 @@ const Footer = () => {
               </a>
               <div class="footer-contact pt-3">
                 <p class="mt-3">
-                  <strong>Phone:</strong> <span>+381 63 84 89 439</span>
+                  <strong>Phone:</strong> <span>+381608060001</span>
                 </p>
                 <p>
                   <strong>Email:</strong> <span>office@najboljanaplatastete.rs</span>

@@ -23,7 +23,7 @@ const Team = () => {
                 </div>
                 <div class="member-info">
                   <h4>
-                    Goran Petrović,
+                    Goran Dramićanin,
                     <br /> dipl.inž.
                   </h4>
                   <span>Savetnik za osiguranja - Direktor</span>

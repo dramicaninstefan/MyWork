@@ -13,7 +13,7 @@ const Header = () => {
                 <a href="mailto:office@najboljanaplatastete.rs	">office@najboljanaplatastete.rs</a>
               </i>
               <i className="bi bi-phone d-flex align-items-center ms-4">
-                <a href="tel:+381638489439">+381 63 84 89 439</a>
+                <a href="tel:+381608060001">+381 60 80 60 001</a>
               </i>
             </div>
             <div className="social-links d-none d-md-flex align-items-center">

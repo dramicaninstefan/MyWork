@@ -132,31 +132,52 @@ const KaskoFormPage = () => {
   };
 
   function sendEmail() {
-    emailjs
-      .send('service_90anb7y', 'template_9yiiwdf', templateParams, {
-        publicKey: '_TykGN5dKmnTuxu5y',
+    // 1. Pozovi tvoj API da doda klijenta u bazu
+    fetch('https://czpis.in.rs/api/add_client_api.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ime_prezime: name,
+        kontakt: number,
+        email: email,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('API odgovor:', data);
+
+        // 2. Nakon uspešnog API poziva, šalji email
+        emailjs
+          .send('service_90anb7y', 'template_9yiiwdf', templateParams, {
+            publicKey: '_TykGN5dKmnTuxu5y',
+          })
+          .then(
+            (response) => {
+              handleRedirectTo();
+              setName('');
+              setNumber('');
+              setEmail('');
+              setAddress('');
+              setPlace('');
+              setLinkPA('');
+
+              setMark('');
+              setType('');
+              setPower('');
+              setZapremina('');
+              setYear('');
+              setMValue('');
+
+              setSaglasan(false);
+            },
+            (err) => {}
+          );
       })
-      .then(
-        (response) => {
-          handleRedirectTo();
-          setName('');
-          setNumber('');
-          setEmail('');
-          setAddress('');
-          setPlace('');
-          setLinkPA('');
-
-          setMark('');
-          setType('');
-          setPower('');
-          setZapremina('');
-          setYear('');
-          setMValue('');
-
-          setSaglasan(false);
-        },
-        (err) => {}
-      );
+      .catch((err) => {
+        console.error('Greška pri slanju podataka na server:', err);
+      });
   }
 
   return (
