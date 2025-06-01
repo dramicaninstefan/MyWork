@@ -1,0 +1,79 @@
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow-x: hidden;
+  padding: 40px 0;
+  margin-block: 50px;
+  white-space: nowrap;
+  background-color: #fff;
+  -webkit-box-shadow: inset 0px 0px 50px 3px rgba(209, 209, 209, 1);
+  -moz-box-shadow: inset 0px 0px 50px 3px rgba(209, 209, 209, 1);
+  box-shadow: inset 0px 0px 50px 3px rgba(209, 209, 209, 1);
+  position: relative;
+}
+/* 
+.logos::before,
+.logos::after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: '';
+  z-index: 2;
+}
+
+.logos::before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), #fff);
+}
+.logos::after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff);
+} */
+
+/* Uncomment to enable pause on hover */
+.logos:hover .logo-slide {
+  animation-play-state: paused;
+}
+
+.logo-slide {
+  display: inline-block;
+  animation: 20s slide infinite linear;
+}
+
+@media (max-width: 1200px) {
+  .logo-slide {
+    display: inline-block;
+    animation: 10s slide infinite linear;
+  }
+}
+
+.logo-slide img {
+  max-width: 150px;
+  max-height: 800px;
+  width: auto;
+  height: auto;
+  margin: 0 50px;
+  transition: all 0.5s;
+}
+
+.logo-slide img:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 1200px) {
+  .logo-slide img {
+    max-width: 110px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    margin: 0 50px;
+  }
+}

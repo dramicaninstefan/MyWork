@@ -3,6 +3,7 @@ import { Fragment, useEffect } from 'react';
 import classes from './Putno.module.css';
 
 import ContactForm from '../../UI/ContactForm/ContactForm';
+import InfiniteLooperPutno from '../../UI/InfiniteLooperPutno/InfiniteLooper';
 import FAQ from '../../UI/FAQ/FAQ';
 
 import bgImage from '../../../assets/img/putno-hero-bg.jpg';
@@ -103,6 +104,7 @@ const Putno = () => {
         </section>
         <ContactForm />
         <FAQ data={faq} />
+        <InfiniteLooperPutno />
       </main>
     </Fragment>
   );
