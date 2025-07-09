@@ -204,3 +204,4 @@ if __name__ == "__main__":
     root = TkinterDnD.Tk()
     app = PasosOCRApp(root)
     root.mainloop()
+
