@@ -4,6 +4,7 @@
     "inquirer": "^8.2.6",
     "jimp": "^1.6.0",
     "qr-code": "file:",
+    "qr-code-styling": "^1.9.2",
     "qr-image": "^3.2.0",
     "qrcode": "^1.5.4"
   },
